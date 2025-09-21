@@ -3,10 +3,16 @@ import { serve } from "https://deno.land/std@0.220.1/http/server.ts";
 const handler = async (req: Request): Promise<Response> => {
   const url = new URL(req.url);
 
+  // Log incoming requests for debugging
+  console.log(`${req.method} ${url.pathname}`);
+
   if (url.pathname === "/api/hello" && req.method === "GET") {
     return new Response(JSON.stringify({ message: "Hello from Deno!" }), {
       status: 200,
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      },
     });
   }
 
