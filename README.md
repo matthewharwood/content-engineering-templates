@@ -14,8 +14,7 @@ A simple Deno server template with API endpoints and static file serving, ready 
 
 ```
 .
-├── server.ts       # Main server file
-├── index.html      # Static HTML page
+├── main.ts         # Main server file
 └── deno.json       # Deno configuration
 ```
 
@@ -42,7 +41,7 @@ deno task start
 Or directly:
 
 ```bash
-deno run --allow-net --allow-read --allow-env server.ts
+deno run --allow-net --allow-read --allow-env main.ts
 ```
 
 ## API Endpoints
@@ -73,7 +72,7 @@ curl http://localhost:8000/api/hello
 1. Push your code to a GitHub repository
 2. Go to [Deno Deploy](https://deno.com/deploy)
 3. Create a new project and link your GitHub repository
-4. Set the entry point to `server.ts`
+4. Set the entry point to `main.ts`
 5. Deploy!
 
 The server automatically uses the PORT environment variable provided by Deno Deploy.
