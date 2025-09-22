@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test API</title>
+</head>
+<body>
+  <h1>API Test Page</h1>
+  <button onclick="testApi()">Call /api/hello</button>
+  <pre id="result"></pre>
+  <script>
+    async function testApi() {
+      const result = document.getElementById('result');
+      result.textContent = 'Loading...';
+      try {
+        const response = await fetch('/api/hello');
+        const text = await response.text();
+        result.textContent = 'Response: ' + text;
+      } catch (error) {
+        result.textContent = 'Error: ' + error.message;
+      }
+    }
+  </script>
+</body>
+</html>
