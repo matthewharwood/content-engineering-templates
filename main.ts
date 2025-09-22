@@ -1,4 +1,4 @@
-Deno.serve(async (request: Request) => {
+Deno.serve((request: Request) => {
   const url = new URL(request.url);
 
   // API endpoint
