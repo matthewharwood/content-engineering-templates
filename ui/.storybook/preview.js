@@ -1,6 +1,5 @@
-import type { Preview } from '@storybook/html-vite';
-
-const preview: Preview = {
+/** @type { import('@storybook/html-vite').Preview } */
+const preview = {
   parameters: {
     controls: {
       matchers: {
