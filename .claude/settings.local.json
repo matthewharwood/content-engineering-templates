@@ -1,7 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:docs.deno.com)"
+      "WebFetch(domain:docs.deno.com)",
+      "WebSearch",
+      "Bash(mkdir:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(taskkill:*)"
     ],
     "deny": [],
     "ask": []
