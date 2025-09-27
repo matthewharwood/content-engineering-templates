@@ -7,18 +7,14 @@ Deno.serve(async (req) => {
     return new Response("Hello, world!");
   }
 
-  // Serve Storybook if it exists
+  // Serve Storybook static files
   if (url.pathname.startsWith("/storybook")) {
-    try {
-      const path = url.pathname.replace("/storybook", "");
-      return serveDir(req, {
-        fsRoot: "./ui/storybook-static",
-        urlRoot: "storybook",
-        quiet: true,
-      });
-    } catch (error) {
-      return new Response("Storybook not available", { status: 404 });
-    }
+    const path = url.pathname.replace("/storybook", "");
+    return serveDir(req, {
+      fsRoot: "./ui/storybook-static",
+      urlRoot: "storybook",
+      quiet: true,
+    });
   }
 
   if (url.pathname === "/") {
