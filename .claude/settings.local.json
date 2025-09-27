@@ -12,7 +12,8 @@
       "Bash(npm install)",
       "Bash(npm run storybook:*)",
       "Bash(del:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(npm run build-storybook:*)"
     ],
     "deny": [],
     "ask": []

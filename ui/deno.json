@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "exports": "./main.ts",
   "tasks": {
+    "dev": "deno run --allow-net --allow-read --watch main.ts",
+    "start": "deno run --allow-net --allow-read main.ts",
     "storybook": "npx storybook dev -p 6006",
+    "build": "npm run build-storybook",
     "build-storybook": "npx storybook build"
   }
 }
