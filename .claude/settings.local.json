@@ -6,7 +6,13 @@
       "Bash(mkdir:*)",
       "Bash(netstat:*)",
       "Bash(findstr:*)",
-      "Bash(taskkill:*)"
+      "Bash(taskkill:*)",
+      "Bash(npm init:*)",
+      "Bash(npx storybook@latest init:*)",
+      "Bash(npm install)",
+      "Bash(npm run storybook:*)",
+      "Bash(del:*)",
+      "Bash(npm install:*)"
     ],
     "deny": [],
     "ask": []

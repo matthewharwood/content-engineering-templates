@@ -1,0 +1,9 @@
+{
+  "name": "@content-engineering/ui",
+  "version": "1.0.0",
+  "exports": "./main.ts",
+  "tasks": {
+    "storybook": "npx storybook dev -p 6006",
+    "build-storybook": "npx storybook build"
+  }
+}

@@ -1,2 +1,5 @@
 # IDE files
 .idea/
+*storybook.log
+storybook-static
+ui/node_modules/
