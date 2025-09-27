@@ -7,7 +7,7 @@ Deno.serve(async (req) => {
 
   if (url.pathname === "/") {
     try {
-      const html = await Deno.readTextFile("../index.html");
+      const html = await Deno.readTextFile("./index.html");
       return new Response(html, {
         headers: { "Content-Type": "text/html" }
       });
