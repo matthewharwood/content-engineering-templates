@@ -1,4 +1,4 @@
-name: Deploy Storybook to GitHub Pages
+name: Build and Deploy Storybook
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -31,9 +31,6 @@ jobs:
           cache: 'npm'
           cache-dependency-path: ui/package-lock.json
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
       - name: Install dependencies
         run: npm ci
         working-directory: ./ui
@@ -42,18 +39,28 @@ jobs:
         run: npm run build-storybook
         working-directory: ./ui
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      # Option 1: Deploy to GitHub Pages (if you have it enabled)
+      - name: Deploy to GitHub Pages (optional)
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
         with:
-          path: ./ui/storybook-static
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./ui/storybook-static
+          destination_dir: storybook
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      # Option 2: Commit the build for Deno Deploy
+      - name: Commit Storybook build for Deno Deploy
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+          # Remove storybook-static from .gitignore temporarily
+          sed -i '/storybook-static/d' ui/.gitignore
+
+          # Add and commit the built files
+          git add ui/storybook-static -f
+          git diff --staged --quiet || git commit -m "Build: Storybook static files [skip ci]"
+
+          # Push to a separate branch for deployments
+          git push origin HEAD:storybook-build --force
+        if: github.ref == 'refs/heads/main'

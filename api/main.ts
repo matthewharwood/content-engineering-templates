@@ -1,8 +1,24 @@
+import { serveDir } from "https://deno.land/std@0.224.0/http/file_server.ts";
+
 Deno.serve(async (req) => {
   const url = new URL(req.url);
 
   if (url.pathname === "/api/hello") {
     return new Response("Hello, world!");
+  }
+
+  // Serve Storybook if it exists
+  if (url.pathname.startsWith("/storybook")) {
+    try {
+      const path = url.pathname.replace("/storybook", "");
+      return serveDir(req, {
+        fsRoot: "./ui/storybook-static",
+        urlRoot: "storybook",
+        quiet: true,
+      });
+    } catch (error) {
+      return new Response("Storybook not available", { status: 404 });
+    }
   }
 
   if (url.pathname === "/") {
