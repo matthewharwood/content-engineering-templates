@@ -1,15 +1,12 @@
-name: Build and Deploy Storybook
+name: Deploy Storybook to GitHub Pages
 
 on:
   push:
     branches: [main]
-    paths:
-      - 'ui/**'
-      - '.github/workflows/deploy-storybook.yml'
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -28,8 +25,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
-          cache-dependency-path: ui/package-lock.json
 
       - name: Install dependencies
         run: npm ci
@@ -39,28 +34,21 @@ jobs:
         run: npm run build-storybook
         working-directory: ./ui
 
-      # Option 1: Deploy to GitHub Pages (if you have it enabled)
-      - name: Deploy to GitHub Pages (optional)
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./ui/storybook-static
-          destination_dir: storybook
+          path: ./ui/storybook-static
 
-      # Option 2: Commit the build for Deno Deploy
-      - name: Commit Storybook build for Deno Deploy
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-
-          # Remove storybook-static from .gitignore temporarily
-          sed -i '/storybook-static/d' ui/.gitignore
-
-          # Add and commit the built files
-          git add ui/storybook-static -f
-          git diff --staged --quiet || git commit -m "Build: Storybook static files [skip ci]"
-
-          # Push to a separate branch for deployments
-          git push origin HEAD:storybook-build --force
-        if: github.ref == 'refs/heads/main'
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
