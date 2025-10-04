@@ -1,0 +1,174 @@
+@import "../../../styles/tokens/colors.css";
+@import "../../../styles/typography.css";
+@import "../../../styles/space.css";
+@import "../../../styles/fonts.css";
+@import "../../../styles/icons.css";
+
+.link {
+  text-decoration: underline;
+  text-decoration-color: var(--color-outline-variant);
+  text-underline-offset: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-family: var(--font-sans);
+  font-weight: inherit;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Link Variants */
+.link--primary {
+  color: var(--color-primary);
+  text-decoration-color: var(--color-outline-variant);
+}
+
+.link--primary:hover {
+  color: var(--color-primary);
+  text-decoration-color: var(--color-primary);
+  text-decoration-thickness: 2px;
+}
+
+.link--primary:active {
+  color: var(--color-primary);
+  opacity: 0.8;
+}
+
+.link--primary:visited {
+  color: var(--color-tertiary);
+  text-decoration-color: var(--color-outline-variant);
+}
+
+.link--secondary {
+  color: var(--color-secondary);
+  text-decoration-color: var(--color-outline-variant);
+}
+
+.link--secondary:hover {
+  color: var(--color-secondary);
+  text-decoration-color: var(--color-secondary);
+  text-decoration-thickness: 2px;
+}
+
+.link--secondary:active {
+  color: var(--color-secondary);
+  opacity: 0.8;
+}
+
+.link--secondary:visited {
+  color: var(--color-tertiary);
+  text-decoration-color: var(--color-outline-variant);
+}
+
+.link--on-surface {
+  color: var(--color-on-surface);
+  text-decoration-color: var(--color-outline);
+}
+
+.link--on-surface:hover {
+  color: var(--color-primary);
+  text-decoration-color: var(--color-primary);
+  text-decoration-thickness: 2px;
+}
+
+.link--on-surface:active {
+  opacity: 0.8;
+}
+
+.link--on-surface:visited {
+  color: var(--color-on-surface-variant);
+  text-decoration-color: var(--color-outline-variant);
+}
+
+/* No underline variant */
+.link--no-underline {
+  text-decoration: none !important;
+}
+
+.link--no-underline:hover {
+  text-decoration: underline !important;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 1px;
+}
+
+/* Sizes */
+.link--small {
+  font-size: var(--step--1);
+  gap: var(--space-3xs);
+}
+
+.link--medium {
+  font-size: var(--step-0);
+  gap: var(--space-2xs);
+}
+
+.link--large {
+  font-size: var(--step-1);
+  gap: var(--space-xs);
+}
+
+/* Icon support - remove underlines to avoid staggered appearance */
+.link--with-start-icon,
+.link--with-end-icon {
+  text-decoration: none;
+  gap: var(--space-2xs);
+}
+
+.link--with-start-icon:hover,
+.link--with-end-icon:hover {
+  text-decoration: none;
+}
+
+.link--small.link--with-start-icon,
+.link--small.link--with-end-icon {
+  gap: var(--space-3xs);
+}
+
+.link--large.link--with-start-icon,
+.link--large.link--with-end-icon {
+  gap: var(--space-xs);
+}
+
+/* Icon sizing */
+.link--small .icon {
+  font-size: var(--icon-size-sm);
+  --icon-optical-size: 20;
+}
+
+.link--medium .icon {
+  font-size: var(--icon-size-md);
+  --icon-optical-size: 24;
+}
+
+.link--large .icon {
+  font-size: var(--icon-size-md);
+  --icon-optical-size: 24;
+}
+
+.link .icon {
+  color: currentColor;
+}
+
+/* External link indicator */
+.link--external::after {
+  content: '';
+  display: inline-block;
+  width: 0.85em;
+  height: 0.85em;
+  margin-left: var(--space-3xs);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  vertical-align: middle;
+}
+
+.link--external:hover::after {
+  opacity: 1;
+}

@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="./Link.css">
+
+<div style="display: flex; flex-direction: column; gap: var(--space-xl); max-width: 800px;">
+  <div>
+    <h3 style="margin-bottom: var(--space-s); color: var(--color-on-surface);">Pseudo-state Guide</h3>
+    <p style="color: var(--color-on-surface-variant); margin-bottom: var(--space-m);">
+      Hover over links to see thicker underlines. Click to see active states. Already-clicked links show visited states.
+    </p>
+  </div>
+
+  <div>
+    <h4 style="margin-bottom: var(--space-xs); color: var(--color-on-surface);">Primary Link States</h4>
+    <div style="display: flex; gap: var(--space-m); flex-wrap: wrap; align-items: center;">
+      <a href="#primary-default" class="link link--primary link--medium">Default</a>
+      <a href="#primary-visited" class="link link--primary link--medium">Hover me</a>
+      <span style="color: var(--color-on-surface-variant); font-size: var(--step--1);">
+        (Click to see visited state)
+      </span>
+    </div>
+  </div>
+
+  <div>
+    <h4 style="margin-bottom: var(--space-xs); color: var(--color-on-surface);">Secondary Link States</h4>
+    <div style="display: flex; gap: var(--space-m); flex-wrap: wrap; align-items: center;">
+      <a href="#secondary-test" class="link link--secondary link--medium">Hover me</a>
+      <span style="color: var(--color-on-surface-variant); font-size: var(--step--1);">
+        (Notice underline gets thicker)
+      </span>
+    </div>
+  </div>
+
+  <div>
+    <h4 style="margin-bottom: var(--space-xs); color: var(--color-on-surface);">On Surface Link States</h4>
+    <p style="font-size: var(--step-0); color: var(--color-on-surface);">
+      The <a href="#surface-test" class="link link--on-surface">on-surface link</a> changes to primary color on hover, making it stand out from the surrounding text.
+    </p>
+  </div>
+
+  <div>
+    <h4 style="margin-bottom: var(--space-xs); color: var(--color-on-surface);">No Underline Variant</h4>
+    <div style="display: flex; gap: var(--space-m); flex-wrap: wrap;">
+      <a href="#no-underline-1" class="link link--primary link--medium link--no-underline">Clean Link</a>
+      <a href="#no-underline-2" class="link link--secondary link--medium link--no-underline">Another Clean Link</a>
+    </div>
+  </div>
+
+  <div>
+    <h4 style="margin-bottom: var(--space-xs); color: var(--color-on-surface);">Focus States</h4>
+    <p style="color: var(--color-on-surface-variant); font-size: var(--step--1); margin-bottom: var(--space-xs);">
+      Press Tab to navigate and see focus outlines
+    </p>
+    <div style="display: flex; gap: var(--space-m); flex-wrap: wrap;">
+      <a href="#focus-1" class="link link--primary link--medium">First</a>
+      <a href="#focus-2" class="link link--secondary link--medium">Second</a>
+      <a href="#focus-3" class="link link--on-surface link--medium">Third</a>
+    </div>
+  </div>
+</div>
