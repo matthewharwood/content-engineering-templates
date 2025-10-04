@@ -1,0 +1,32 @@
+/**
+ * Font Configuration
+ *
+ * Change the active import below to switch font themes globally.
+ * Uncomment the font theme you want to use and comment out the others.
+ */
+
+/* Active Font Theme - Change this line to switch fonts */
+@import "./font-themes/default.css";
+
+/* Available Font Themes */
+/* @import "./font-themes/your-custom-fonts.css"; */
+
+/**
+ * Semantic Font Tokens
+ *
+ * Components use these semantic tokens, not the theme values directly.
+ * This allows font themes to be swapped without changing component code.
+ */
+:root {
+  /* Sans Serif - Body text, UI elements, buttons */
+  --font-sans: var(--font-theme-sans);
+
+  /* Serif - Longform content, articles, elegant text */
+  --font-serif: var(--font-theme-serif);
+
+  /* Monospace - Code blocks, technical content */
+  --font-mono: var(--font-theme-mono);
+
+  /* Display - Headings, hero text, marketing content */
+  --font-display: var(--font-theme-display);
+}
