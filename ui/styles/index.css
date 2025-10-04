@@ -1,6 +1,7 @@
 /* Design Tokens */
 @import "./tokens/colors.css";
 @import "./fonts.css";
+@import "./icons.css";
 
 /* Foundational Tokens */
 @import "./typography.css";

@@ -1,0 +1,102 @@
+@import "../../../styles/icons.css";
+@import "../../../styles/tokens/colors.css";
+@import "../../../styles/grid.css";
+@import "../../../styles/space.css";
+
+/* Icon showcase specific styles */
+.icon-showcase {
+  max-width: var(--grid-max-width);
+  margin-inline: auto;
+  padding-inline: var(--grid-gutter);
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--grid-gutter);
+  margin-bottom: var(--space-xl);
+}
+
+.icon-section {
+  margin-bottom: var(--space-3xl);
+  padding-block: var(--space-xl);
+  border-bottom: 1px solid var(--color-outline-variant);
+}
+
+.icon-section:last-child {
+  border-bottom: none;
+}
+
+.section-title {
+  font-family: var(--font-sans);
+  font-size: var(--step-3);
+  font-weight: 700;
+  margin: 0 0 var(--space-m) 0;
+  color: var(--color-on-background);
+}
+
+.section-description {
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  margin: 0 0 var(--space-l) 0;
+  color: var(--color-on-surface-variant);
+}
+
+/* Icon display card */
+.icon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-m);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 8px;
+  gap: var(--space-xs);
+  min-height: 120px;
+  transition: all 0.2s ease;
+}
+
+.icon-card:hover {
+  background-color: var(--color-surface-variant);
+  border-color: var(--color-outline);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon-card__name {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  color: var(--color-on-surface-variant);
+  text-align: center;
+  margin: 0;
+}
+
+.icon-card__label {
+  font-family: var(--font-sans);
+  font-size: var(--step--2);
+  font-weight: 600;
+  color: var(--color-on-surface);
+  text-align: center;
+  margin: 0;
+}
+
+/* Icon demo row */
+.icon-demo-row {
+  display: flex;
+  gap: var(--space-l);
+  align-items: center;
+  padding: var(--space-m);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 8px;
+}
+
+.icon-demo-row__label {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  font-weight: 600;
+  min-width: 120px;
+  color: var(--color-on-surface);
+}
