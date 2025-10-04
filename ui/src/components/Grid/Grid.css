@@ -1,4 +1,5 @@
 @import "../../../styles/space.css";
+@import "../../../styles/tokens/colors.css";
 
 /* @link https://utopia.fyi/grid/calculator?c=360,18,1.2,1240,20,1.25,8,4,1728&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
@@ -31,15 +32,15 @@
 }
 
 .grid-demo-column {
-  background-color: rgba(59, 130, 246, 0.3);
-  border: 1px solid rgba(59, 130, 246, 0.6);
+  background-color: var(--color-surface-variant);
+  border: 1px solid var(--color-outline);
   padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.875rem;
   font-weight: 600;
-  color: #1e40af;
+  color: var(--color-on-surface-variant);
 }
 
 /* Gutter visualization overlay */
@@ -78,6 +79,6 @@
 
 /* Visual helper for gutters */
 .gutter-visual {
-  background-color: rgba(239, 68, 68, 0.3);
-  border: 1px dashed rgba(239, 68, 68, 0.6);
+  background-color: var(--color-error-container);
+  border: 1px dashed var(--color-error);
 }

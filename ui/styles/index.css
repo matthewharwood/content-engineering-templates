@@ -1,2 +1,10 @@
+/* Theme - Change this import to switch themes */
+@import "./themes/default.css";
+/* @import "./themes/blank.css"; */
+
+/* Design Tokens */
+@import "./tokens/colors.css";
+
+/* Foundational Tokens */
 @import "./typography.css";
 @import "./space.css";

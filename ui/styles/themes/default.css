@@ -1,0 +1,58 @@
+/**
+ * Default Theme
+ * A Material Design 3 inspired color scheme
+ *
+ * To create your own theme:
+ * 1. Copy this file
+ * 2. Replace the color values below
+ * 3. Import your theme instead of this one in styles/index.css
+ */
+
+:root {
+  /* Primary - Blue/Purple */
+  --theme-primary: #6750a4;
+  --theme-on-primary: #ffffff;
+  --theme-primary-container: #eaddff;
+  --theme-on-primary-container: #21005e;
+
+  /* Secondary - Purple/Pink */
+  --theme-secondary: #625b71;
+  --theme-on-secondary: #ffffff;
+  --theme-secondary-container: #e8def8;
+  --theme-on-secondary-container: #1e192b;
+
+  /* Tertiary - Pink/Red */
+  --theme-tertiary: #7d5260;
+  --theme-on-tertiary: #ffffff;
+  --theme-tertiary-container: #ffd8e4;
+  --theme-on-tertiary-container: #370b1e;
+
+  /* Error */
+  --theme-error: #ba1a1a;
+  --theme-on-error: #ffffff;
+  --theme-error-container: #ffdad6;
+  --theme-on-error-container: #410002;
+
+  /* Surface */
+  --theme-surface: #fef7ff;
+  --theme-on-surface: #1d1b20;
+  --theme-surface-variant: #e7e0ec;
+  --theme-on-surface-variant: #49454e;
+
+  /* Background */
+  --theme-background: #fef7ff;
+  --theme-on-background: #1d1b20;
+
+  /* Outline */
+  --theme-outline: #7a757f;
+  --theme-outline-variant: #cac4cf;
+
+  /* Inverse */
+  --theme-inverse-surface: #322f35;
+  --theme-inverse-on-surface: #f5eff7;
+  --theme-inverse-primary: #d0bcff;
+
+  /* Shadow & Scrim */
+  --theme-shadow: #000000;
+  --theme-scrim: #000000;
+}

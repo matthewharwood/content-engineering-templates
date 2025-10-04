@@ -1,0 +1,56 @@
+/**
+ * Color Tokens - Design System Color Roles
+ * Based on Material Design 3 principles
+ *
+ * These tokens are semantic - they describe the PURPOSE of the color, not the color itself.
+ * Actual color values are defined in theme files (themes/default.css, themes/blank.css)
+ */
+
+:root {
+  /* Primary - Main brand color */
+  --color-primary: var(--theme-primary);
+  --color-on-primary: var(--theme-on-primary);
+  --color-primary-container: var(--theme-primary-container);
+  --color-on-primary-container: var(--theme-on-primary-container);
+
+  /* Secondary - Complementary brand color */
+  --color-secondary: var(--theme-secondary);
+  --color-on-secondary: var(--theme-on-secondary);
+  --color-secondary-container: var(--theme-secondary-container);
+  --color-on-secondary-container: var(--theme-on-secondary-container);
+
+  /* Tertiary - Additional accent color */
+  --color-tertiary: var(--theme-tertiary);
+  --color-on-tertiary: var(--theme-on-tertiary);
+  --color-tertiary-container: var(--theme-tertiary-container);
+  --color-on-tertiary-container: var(--theme-on-tertiary-container);
+
+  /* Error - Error states */
+  --color-error: var(--theme-error);
+  --color-on-error: var(--theme-on-error);
+  --color-error-container: var(--theme-error-container);
+  --color-on-error-container: var(--theme-on-error-container);
+
+  /* Surface - Component backgrounds */
+  --color-surface: var(--theme-surface);
+  --color-on-surface: var(--theme-on-surface);
+  --color-surface-variant: var(--theme-surface-variant);
+  --color-on-surface-variant: var(--theme-on-surface-variant);
+
+  /* Background - Page background */
+  --color-background: var(--theme-background);
+  --color-on-background: var(--theme-on-background);
+
+  /* Outline - Borders and dividers */
+  --color-outline: var(--theme-outline);
+  --color-outline-variant: var(--theme-outline-variant);
+
+  /* Inverse - For high contrast scenarios */
+  --color-inverse-surface: var(--theme-inverse-surface);
+  --color-inverse-on-surface: var(--theme-inverse-on-surface);
+  --color-inverse-primary: var(--theme-inverse-primary);
+
+  /* Shadow & Scrim */
+  --color-shadow: var(--theme-shadow);
+  --color-scrim: var(--theme-scrim);
+}

@@ -1,0 +1,55 @@
+/**
+ * Blank Theme
+ * Uses browser default colors and minimal styling
+ *
+ * This theme provides a clean slate with standard HTML colors
+ */
+
+:root {
+  /* Primary - Use default link blue */
+  --theme-primary: #0000ee;
+  --theme-on-primary: #ffffff;
+  --theme-primary-container: #e3f2fd;
+  --theme-on-primary-container: #1a237e;
+
+  /* Secondary - Neutral gray */
+  --theme-secondary: #6c757d;
+  --theme-on-secondary: #ffffff;
+  --theme-secondary-container: #e9ecef;
+  --theme-on-secondary-container: #212529;
+
+  /* Tertiary - Subtle accent */
+  --theme-tertiary: #495057;
+  --theme-on-tertiary: #ffffff;
+  --theme-tertiary-container: #dee2e6;
+  --theme-on-tertiary-container: #212529;
+
+  /* Error - Standard red */
+  --theme-error: #dc3545;
+  --theme-on-error: #ffffff;
+  --theme-error-container: #f8d7da;
+  --theme-on-error-container: #721c24;
+
+  /* Surface - White background */
+  --theme-surface: #ffffff;
+  --theme-on-surface: #000000;
+  --theme-surface-variant: #f8f9fa;
+  --theme-on-surface-variant: #495057;
+
+  /* Background - White */
+  --theme-background: #ffffff;
+  --theme-on-background: #000000;
+
+  /* Outline - Light gray borders */
+  --theme-outline: #dee2e6;
+  --theme-outline-variant: #e9ecef;
+
+  /* Inverse - Dark mode style */
+  --theme-inverse-surface: #212529;
+  --theme-inverse-on-surface: #f8f9fa;
+  --theme-inverse-primary: #6ea8fe;
+
+  /* Shadow & Scrim */
+  --theme-shadow: rgba(0, 0, 0, 0.15);
+  --theme-scrim: rgba(0, 0, 0, 0.5);
+}

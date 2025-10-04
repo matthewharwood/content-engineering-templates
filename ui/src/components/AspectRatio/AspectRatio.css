@@ -1,4 +1,5 @@
 @import "../../../styles/space.css";
+@import "../../../styles/tokens/colors.css";
 
 .aspect-ratio {
   width: 100%;
@@ -15,8 +16,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(59, 130, 246, 0.1);
-  border: 2px solid rgba(59, 130, 246, 0.3);
+  background-color: var(--color-surface-variant);
+  border: 2px solid var(--color-outline);
+  color: var(--color-on-surface-variant);
 }
 
 /* Aspect Ratio Utilities */
