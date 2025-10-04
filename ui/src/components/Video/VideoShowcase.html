@@ -1,0 +1,615 @@
+<link rel="stylesheet" href="./Video.css">
+
+<!-- Hero Video Background ---->
+<div class="video-hero">
+  <video
+    class="video"
+    src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+    autoplay
+    muted
+    loop
+    playsinline>
+  </video>
+  <div class="video-hero__content">
+    <h1 class="video-hero__title">Video Component</h1>
+    <p class="video-hero__subtitle">High-quality video player with comprehensive styling and configurations</p>
+  </div>
+</div>
+
+<div class="video-showcase">
+  <!-- Basic Video with Controls ---->
+  <section class="video-section">
+    <h2 class="video-section__title">Basic Video with Native Controls</h2>
+    <p class="video-section__description">
+      Standard HTML5 video element with native browser controls. Supports all major formats and codecs.
+    </p>
+
+    <div class="video-grid">
+      <div style="grid-column: span 12;">
+        <div class="video-container video-container--with-controls">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+            controls
+            preload="metadata">
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aspect Ratios ---->
+  <section class="video-section">
+    <h2 class="video-section__title">Video Aspect Ratios</h2>
+    <p class="video-section__description">
+      Videos constrained to specific aspect ratios using CSS aspect-ratio property with object-fit: cover.
+    </p>
+
+    <div class="video-grid">
+      <!-- 16:9 Landscape ---->
+      <div style="grid-column: span 6;">
+        <div class="video-aspect video-aspect--16-9">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          16:9 Landscape
+        </p>
+      </div>
+
+      <div style="grid-column: span 6;">
+        <div class="video-aspect video-aspect--16-9">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          16:9 Landscape
+        </p>
+      </div>
+
+      <!-- 1:1 Square ---->
+      <div style="grid-column: span 4;">
+        <div class="video-aspect video-aspect--1-1">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          1:1 Square
+        </p>
+      </div>
+
+      <div style="grid-column: span 4;">
+        <div class="video-aspect video-aspect--4-3">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          4:3 Classic
+        </p>
+      </div>
+
+      <div style="grid-column: span 4;">
+        <div class="video-aspect video-aspect--3-2">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          3:2 Photo
+        </p>
+      </div>
+
+      <!-- 21:9 Ultrawide ---->
+      <div style="grid-column: span 12;">
+        <div class="video-aspect video-aspect--21-9">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          21:9 Ultrawide
+        </p>
+      </div>
+
+      <!-- 9:16 Portrait ---->
+      <div style="grid-column: span 3;">
+        <div class="video-aspect video-aspect--9-16">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          9:16 Portrait
+        </p>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="video-aspect video-aspect--9-16">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          9:16 Portrait
+        </p>
+      </div>
+
+      <div style="grid-column: span 6;">
+        <div class="video-aspect video-aspect--2-1">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          2:1 Panoramic
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Object-Fit Modes ---->
+  <section class="video-section">
+    <h2 class="video-section__title">Object-Fit Modes</h2>
+    <p class="video-section__description">
+      The object-fit CSS property determines how video should be resized to fit its container.
+    </p>
+
+    <div class="video-grid">
+      <div style="grid-column: span 4;">
+        <div class="video-container" style="height: 300px;">
+          <video
+            class="video video--cover"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          object-fit: cover
+        </p>
+      </div>
+
+      <div style="grid-column: span 4;">
+        <div class="video-container" style="height: 300px;">
+          <video
+            class="video video--contain"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          object-fit: contain
+        </p>
+      </div>
+
+      <div style="grid-column: span 4;">
+        <div class="video-container" style="height: 300px;">
+          <video
+            class="video video--fill"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          object-fit: fill
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Configurations ---->
+  <section class="video-section">
+    <h2 class="video-section__title">Video Configurations</h2>
+    <p class="video-section__description">
+      Common video configurations: autoplay, muted, loop, preload, and playsinline attributes.
+    </p>
+
+    <div class="video-grid">
+      <!-- Autoplay + Muted + Loop ---->
+      <div style="grid-column: span 6;">
+        <div class="video-aspect video-aspect--16-9">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          autoplay muted loop playsinline
+        </p>
+      </div>
+
+      <!-- Controls + Preload ---->
+      <div style="grid-column: span 6;">
+        <div class="video-aspect video-aspect--16-9 video-container--with-controls">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+            controls
+            preload="metadata">
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          controls preload="metadata"
+        </p>
+      </div>
+
+      <!-- Muted with Controls ---->
+      <div style="grid-column: span 6;">
+        <div class="video-aspect video-aspect--16-9 video-container--with-controls">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+            controls
+            muted
+            preload="auto">
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          controls muted preload="auto"
+        </p>
+      </div>
+
+      <!-- Loop with Controls ---->
+      <div style="grid-column: span 6;">
+        <div class="video-aspect video-aspect--16-9 video-container--with-controls">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+            controls
+            loop
+            preload="none">
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          controls loop preload="none"
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Videos with Poster Images ---->
+  <section class="video-section">
+    <h2 class="video-section__title">Videos with Poster Images</h2>
+    <p class="video-section__description">
+      Display a poster image while the video loads or before playback starts.
+    </p>
+
+    <div class="video-grid">
+      <div style="grid-column: span 6;">
+        <div class="video-aspect video-aspect--16-9 video-container--with-controls">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+            poster="https://picsum.photos/1600/900?random=200"
+            controls
+            preload="none">
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          With poster image
+        </p>
+      </div>
+
+      <div style="grid-column: span 6;">
+        <div class="video-aspect video-aspect--16-9 video-container--with-controls">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+            poster="https://picsum.photos/1600/900?random=201"
+            controls
+            preload="none">
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          With poster image
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Grid Gallery ---->
+  <section class="video-section">
+    <h2 class="video-section__title">Video Grid Gallery</h2>
+    <p class="video-section__description">
+      Multiple videos displayed in a masonry-style grid with varying aspect ratios.
+    </p>
+
+    <div class="video-grid">
+      <!-- Row 1: Large + 2 stacked ---->
+      <div style="grid-column: span 7;">
+        <div class="video-aspect video-aspect--4-3">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+        </div>
+      </div>
+
+      <div style="grid-column: span 5; display: flex; flex-direction: column; gap: var(--grid-gutter);">
+        <div class="video-aspect video-aspect--16-9">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+        </div>
+        <div class="video-aspect video-aspect--16-9">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+        </div>
+      </div>
+
+      <!-- Row 2: 3 equal squares ---->
+      <div style="grid-column: span 4;">
+        <div class="video-aspect video-aspect--1-1">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+        </div>
+      </div>
+
+      <div style="grid-column: span 4;">
+        <div class="video-aspect video-aspect--1-1">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+        </div>
+      </div>
+
+      <div style="grid-column: span 4;">
+        <div class="video-aspect video-aspect--1-1">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+        </div>
+      </div>
+
+      <!-- Row 3: Full width panoramic ---->
+      <div style="grid-column: span 12;">
+        <div class="video-aspect video-aspect--21-9">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+        </div>
+      </div>
+
+      <!-- Row 4: 4 equal ---->
+      <div style="grid-column: span 3;">
+        <div class="video-aspect video-aspect--1-1">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+        </div>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="video-aspect video-aspect--1-1">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+        </div>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="video-aspect video-aspect--1-1">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+        </div>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="video-aspect video-aspect--1-1">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Sizes ---->
+  <section class="video-section">
+    <h2 class="video-section__title">Video Sizes</h2>
+    <p class="video-section__description">
+      Videos spanning different grid columns to demonstrate size variations.
+    </p>
+
+    <div class="video-grid">
+      <!-- Full Width ---->
+      <div style="grid-column: span 12;">
+        <div class="video-aspect video-aspect--16-9 video-container--with-controls">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+            controls>
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          12 columns (Full Width)
+        </p>
+      </div>
+
+      <!-- Half Width ---->
+      <div style="grid-column: span 6;">
+        <div class="video-aspect video-aspect--16-9 video-container--with-controls">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+            controls>
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          6 columns (Half)
+        </p>
+      </div>
+
+      <div style="grid-column: span 6;">
+        <div class="video-aspect video-aspect--16-9 video-container--with-controls">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+            controls>
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          6 columns (Half)
+        </p>
+      </div>
+
+      <!-- Third Width ---->
+      <div style="grid-column: span 4;">
+        <div class="video-aspect video-aspect--16-9 video-container--with-controls">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+            controls>
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          4 columns (Third)
+        </p>
+      </div>
+
+      <div style="grid-column: span 4;">
+        <div class="video-aspect video-aspect--16-9 video-container--with-controls">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+            controls>
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          4 columns (Third)
+        </p>
+      </div>
+
+      <div style="grid-column: span 4;">
+        <div class="video-aspect video-aspect--16-9 video-container--with-controls">
+          <video
+            class="video"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+            controls>
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          4 columns (Third)
+        </p>
+      </div>
+    </div>
+  </section>
+</div>

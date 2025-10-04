@@ -84,45 +84,6 @@
   aspect-ratio: 21 / 9;
 }
 
-/* Image Card */
-.img-card {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-outline-variant);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: all 0.2s ease;
-}
-
-.img-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
-}
-
-.img-card__image {
-  width: 100%;
-  display: block;
-}
-
-.img-card__content {
-  padding: var(--space-m);
-}
-
-.img-card__title {
-  font-family: var(--font-sans);
-  font-size: var(--step-1);
-  font-weight: 700;
-  margin: 0 0 var(--space-xs) 0;
-  color: var(--color-on-surface);
-}
-
-.img-card__description {
-  font-family: var(--font-sans);
-  font-size: var(--step--1);
-  line-height: 1.6;
-  margin: 0;
-  color: var(--color-on-surface-variant);
-}
-
 /* Image Grid Layouts */
 .img-grid {
   display: grid;
