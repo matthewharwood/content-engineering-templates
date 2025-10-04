@@ -1,0 +1,88 @@
+<link rel="stylesheet" href="./AspectRatio.css">
+
+<h2>Aspect Ratio Component Examples</h2>
+
+<p>
+  This directory contains copy-pasteable HTML examples for aspect ratio containers.
+  Each example can be found in its own HTML file:
+</p>
+
+<ul>
+  <li><strong>AspectRatio1-1.html</strong> - 1:1 (Square)</li>
+  <li><strong>AspectRatio16-9.html</strong> - 16:9 (Landscape Video)</li>
+  <li><strong>AspectRatio9-16.html</strong> - 9:16 (Portrait Video)</li>
+  <li><strong>AspectRatio3-2.html</strong> - 3:2 (Landscape Photo)</li>
+  <li><strong>AspectRatio2-3.html</strong> - 2:3 (Portrait Photo)</li>
+</ul>
+
+<h3>All Aspect Ratios</h3>
+
+<div class="aspect-ratio-grid">
+  <div>
+    <span class="aspect-ratio-label">1:1</span>
+    <div class="aspect-ratio aspect-ratio--1-1">
+      <div class="aspect-ratio__content">
+        <span>1:1</span>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <span class="aspect-ratio-label">16:9</span>
+    <div class="aspect-ratio aspect-ratio--16-9">
+      <div class="aspect-ratio__content">
+        <span>16:9</span>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <span class="aspect-ratio-label">9:16</span>
+    <div class="aspect-ratio aspect-ratio--9-16">
+      <div class="aspect-ratio__content">
+        <span>9:16</span>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <span class="aspect-ratio-label">3:2</span>
+    <div class="aspect-ratio aspect-ratio--3-2">
+      <div class="aspect-ratio__content">
+        <span>3:2</span>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <span class="aspect-ratio-label">2:3</span>
+    <div class="aspect-ratio aspect-ratio--2-3">
+      <div class="aspect-ratio__content">
+        <span>2:3</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>CSS Classes</h3>
+<pre style="background: #f5f5f5; padding: 1rem; border-radius: 4px; margin-top: var(--space-l);">
+Container: .aspect-ratio
+
+Ratios:
+  .aspect-ratio--1-1    (1:1 - Square)
+  .aspect-ratio--16-9   (16:9 - Landscape Video)
+  .aspect-ratio--9-16   (9:16 - Portrait Video)
+  .aspect-ratio--3-2    (3:2 - Landscape Photo)
+  .aspect-ratio--2-3    (2:3 - Portrait Photo)
+
+Content: .aspect-ratio__content
+</pre>
+
+<h3>Usage Example</h3>
+<pre style="background: #f5f5f5; padding: 1rem; border-radius: 4px; margin-top: var(--space-m);">
+&lt;div class="aspect-ratio aspect-ratio--16-9"&gt;
+  &lt;div class="aspect-ratio__content"&gt;
+    &lt;!-- Your content here --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
