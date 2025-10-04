@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="./Grid.css">
+
+<h2>Grid System Examples</h2>
+
+<p>
+  This directory contains copy-pasteable HTML examples for the 12-column grid system.
+  Each example can be found in its own HTML file:
+</p>
+
+<ul>
+  <li><strong>TwelveColumns.html</strong> - Basic 12 column grid</li>
+  <li><strong>ColumnSpans.html</strong> - Column span utilities (col-span-3, col-span-6, etc.)</li>
+  <li><strong>ResponsiveLayout.html</strong> - Simple sidebar + main layout</li>
+  <li><strong>HolyGrailLayout.html</strong> - Desktop-only Holy Grail layout</li>
+  <li><strong>HolyGrailResponsive.html</strong> - Fully responsive Holy Grail layout</li>
+</ul>
+
+<h3>12 Column Grid</h3>
+<div class="grid-demo">
+  <div class="grid-demo-column">1</div>
+  <div class="grid-demo-column">2</div>
+  <div class="grid-demo-column">3</div>
+  <div class="grid-demo-column">4</div>
+  <div class="grid-demo-column">5</div>
+  <div class="grid-demo-column">6</div>
+  <div class="grid-demo-column">7</div>
+  <div class="grid-demo-column">8</div>
+  <div class="grid-demo-column">9</div>
+  <div class="grid-demo-column">10</div>
+  <div class="grid-demo-column">11</div>
+  <div class="grid-demo-column">12</div>
+</div>
+
+<h3>Column Spans</h3>
+<div class="u-grid" style="grid-template-columns: repeat(12, 1fr);">
+  <div class="grid-demo-column col-span-12">col-span-12 (Full Width)</div>
+  <div class="grid-demo-column col-span-6">col-span-6</div>
+  <div class="grid-demo-column col-span-6">col-span-6</div>
+  <div class="grid-demo-column col-span-4">col-span-4</div>
+  <div class="grid-demo-column col-span-4">col-span-4</div>
+  <div class="grid-demo-column col-span-4">col-span-4</div>
+</div>
+
+<h3>Grid Variables</h3>
+<pre style="background: #f5f5f5; padding: 1rem; border-radius: 4px;">
+--grid-max-width: 77.50rem;
+--grid-gutter: var(--space-s-l);  /* Fluid: 18px → 40px */
+--grid-columns: 12;
+</pre>

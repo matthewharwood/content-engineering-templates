@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="./Grid.css">
+
+<div class="u-container" style="min-height: 100vh; display: grid; grid-template-rows: auto 1fr auto; gap: var(--grid-gutter);">
+
+  <header class="grid-demo-column" style="grid-column: 1 / -1; padding: 2rem; text-align: center;">
+    <strong>Header</strong><br>
+    <small>&lt;header&gt;</small>
+  </header>
+
+  <div class="u-grid" style="grid-template-columns: repeat(12, 1fr); align-items: start;">
+    <nav class="grid-demo-column col-span-2" style="min-height: 300px;">
+      <strong>Left Sidebar</strong><br>
+      <small>&lt;nav&gt;</small><br>
+      (2 cols)
+    </nav>
+
+    <main class="grid-demo-column col-span-7" style="min-height: 300px;">
+      <strong>Main Content</strong><br>
+      <small>&lt;main&gt;</small><br>
+      (7 cols)
+    </main>
+
+    <aside class="grid-demo-column col-span-3" style="min-height: 300px;">
+      <strong>Right Sidebar</strong><br>
+      <small>&lt;aside&gt;</small><br>
+      (3 cols)
+    </aside>
+  </div>
+
+  <footer class="grid-demo-column" style="grid-column: 1 / -1; padding: 2rem; text-align: center;">
+    <strong>Footer</strong><br>
+    <small>&lt;footer&gt;</small>
+  </footer>
+
+</div>

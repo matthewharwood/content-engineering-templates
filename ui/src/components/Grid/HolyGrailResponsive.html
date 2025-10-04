@@ -1,0 +1,126 @@
+<link rel="stylesheet" href="./Grid.css">
+
+<style>
+  .holy-grail-responsive {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: var(--grid-gutter);
+  }
+
+  .holy-grail-responsive .content-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--grid-gutter);
+  }
+
+  /* Mobile: All full width, stacked */
+  .holy-grail-responsive header,
+  .holy-grail-responsive footer {
+    grid-column: 1 / -1;
+  }
+
+  .holy-grail-responsive nav,
+  .holy-grail-responsive main,
+  .holy-grail-responsive aside {
+    grid-column: span 12;
+  }
+
+  /* Tablet: Main full width, sidebars side-by-side */
+  @media (min-width: 768px) {
+    .holy-grail-responsive nav {
+      grid-column: span 6;
+    }
+
+    .holy-grail-responsive main {
+      grid-column: span 12;
+      order: -1; /* Main comes before sidebars */
+    }
+
+    .holy-grail-responsive aside {
+      grid-column: span 6;
+    }
+  }
+
+  /* Desktop: Three columns */
+  @media (min-width: 1024px) {
+    .holy-grail-responsive nav {
+      grid-column: span 2;
+      order: 0;
+    }
+
+    .holy-grail-responsive main {
+      grid-column: span 7;
+      order: 0;
+    }
+
+    .holy-grail-responsive aside {
+      grid-column: span 3;
+      order: 0;
+    }
+  }
+
+  .responsive-label {
+    display: block;
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    opacity: 0.7;
+  }
+</style>
+
+<div class="u-container holy-grail-responsive">
+
+  <header class="grid-demo-column" style="padding: 2rem; text-align: center; background-color: rgba(255, 182, 193, 0.5);">
+    <strong>Header</strong><br>
+    <small>&lt;header&gt;</small>
+    <span class="responsive-label">Always full width (12 cols)</span>
+  </header>
+
+  <div class="content-grid">
+    <nav class="grid-demo-column" style="min-height: 300px; background-color: rgba(255, 255, 153, 0.5); padding: 1rem;">
+      <strong>Left Sidebar</strong><br>
+      <small>&lt;nav&gt;</small>
+      <span class="responsive-label">
+        📱 Mobile: 12 cols<br>
+        📱 Tablet: 6 cols<br>
+        💻 Desktop: 2 cols
+      </span>
+    </nav>
+
+    <main class="grid-demo-column" style="min-height: 300px; background-color: rgba(255, 255, 255, 0.8); padding: 1rem;">
+      <strong>Main Content</strong><br>
+      <small>&lt;main&gt;</small>
+      <span class="responsive-label">
+        📱 Mobile: 12 cols<br>
+        📱 Tablet: 12 cols (ordered first)<br>
+        💻 Desktop: 7 cols
+      </span>
+    </main>
+
+    <aside class="grid-demo-column" style="min-height: 300px; background-color: rgba(153, 255, 153, 0.5); padding: 1rem;">
+      <strong>Right Sidebar</strong><br>
+      <small>&lt;aside&gt;</small>
+      <span class="responsive-label">
+        📱 Mobile: 12 cols<br>
+        📱 Tablet: 6 cols<br>
+        💻 Desktop: 3 cols
+      </span>
+    </aside>
+  </div>
+
+  <footer class="grid-demo-column" style="padding: 2rem; text-align: center; background-color: rgba(173, 216, 230, 0.5);">
+    <strong>Footer</strong><br>
+    <small>&lt;footer&gt;</small>
+    <span class="responsive-label">Always full width (12 cols)</span>
+  </footer>
+
+</div>
+
+<div style="margin-top: 2rem; padding: 1rem; background-color: #f0f0f0; border-radius: 4px;">
+  <strong>Resize your browser to see the responsive behavior:</strong>
+  <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+    <li><strong>Mobile (&lt;768px):</strong> All elements stack vertically (12 cols each)</li>
+    <li><strong>Tablet (768px-1023px):</strong> Main full width, sidebars side-by-side below</li>
+    <li><strong>Desktop (≥1024px):</strong> Three columns (Nav 2 cols, Main 7 cols, Aside 3 cols)</li>
+  </ul>
+</div>

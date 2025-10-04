@@ -13,7 +13,8 @@
       "Bash(npm run storybook:*)",
       "Bash(del:*)",
       "Bash(npm install:*)",
-      "Bash(npm run build-storybook:*)"
+      "Bash(npm run build-storybook:*)",
+      "WebFetch(domain:matthewjamestaylor.com)"
     ],
     "deny": [],
     "ask": []
