@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="./Input.css">
+
+<div class="input-field input-field--medium" style="max-width: 600px;">
+  <label for="input-textarea" class="input-field__label input-field__label--required">
+    Message
+  </label>
+  <textarea
+    id="input-textarea"
+    class="input-field__textarea"
+    placeholder="Enter your message here..."
+    rows="5"
+    maxlength="500"
+    required
+    aria-required="true"
+    aria-describedby="input-textarea-helper input-textarea-count"
+  ></textarea>
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <span id="input-textarea-helper" class="input-field__helper">
+      Please provide detailed information
+    </span>
+    <span id="input-textarea-count" class="input-field__count">
+      0 / 500
+    </span>
+  </div>
+</div>
+
+<script>
+  const textarea = document.getElementById('input-textarea');
+  const count = document.getElementById('input-textarea-count');
+
+  textarea?.addEventListener('input', (e) => {
+    const current = e.target.value.length;
+    const max = e.target.maxLength;
+    count.textContent = `${current} / ${max}`;
+
+    if (current > max * 0.9) {
+      count.classList.add('input-field__count--warning');
+    } else {
+      count.classList.remove('input-field__count--warning');
+    }
+  });
+</script>

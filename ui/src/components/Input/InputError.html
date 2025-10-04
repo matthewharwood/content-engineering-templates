@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="./Input.css">
+
+<div class="input-field input-field--medium input-field--error">
+  <label for="input-password-error" class="input-field__label input-field__label--required">
+    Password
+  </label>
+  <div class="input-field__wrapper">
+    <input
+      type="password"
+      id="input-password-error"
+      class="input-field__input"
+      placeholder="Enter your password"
+      required
+      aria-required="true"
+      aria-invalid="true"
+      aria-describedby="input-password-error-message"
+      value="123"
+    />
+  </div>
+  <span id="input-password-error-message" class="input-field__error" role="alert">
+    ⚠ Password must be at least 8 characters long
+  </span>
+</div>

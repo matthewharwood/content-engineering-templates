@@ -1,0 +1,141 @@
+<link rel="stylesheet" href="./Input.css">
+
+<div style="display: flex; flex-direction: column; gap: var(--space-l); max-width: 600px;">
+
+  <!-- Text Input -->
+  <div class="input-field input-field--medium">
+    <label for="input-type-text" class="input-field__label">
+      Text Input
+    </label>
+    <input
+      type="text"
+      id="input-type-text"
+      class="input-field__input"
+      placeholder="Enter text"
+    />
+  </div>
+
+  <!-- Email Input -->
+  <div class="input-field input-field--medium">
+    <label for="input-type-email" class="input-field__label">
+      Email Input
+    </label>
+    <input
+      type="email"
+      id="input-type-email"
+      class="input-field__input"
+      placeholder="email@example.com"
+      aria-describedby="input-type-email-helper"
+    />
+    <span id="input-type-email-helper" class="input-field__helper">
+      HTML5 email validation enabled
+    </span>
+  </div>
+
+  <!-- Password Input -->
+  <div class="input-field input-field--medium">
+    <label for="input-type-password" class="input-field__label">
+      Password Input
+    </label>
+    <input
+      type="password"
+      id="input-type-password"
+      class="input-field__input"
+      placeholder="Enter password"
+    />
+  </div>
+
+  <!-- Number Input -->
+  <div class="input-field input-field--medium">
+    <label for="input-type-number" class="input-field__label">
+      Number Input
+    </label>
+    <input
+      type="number"
+      id="input-type-number"
+      class="input-field__input"
+      placeholder="0"
+      min="0"
+      max="100"
+      step="1"
+    />
+  </div>
+
+  <!-- Tel Input -->
+  <div class="input-field input-field--medium">
+    <label for="input-type-tel" class="input-field__label">
+      Telephone Input
+    </label>
+    <input
+      type="tel"
+      id="input-type-tel"
+      class="input-field__input"
+      placeholder="(555) 555-5555"
+      pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+    />
+  </div>
+
+  <!-- URL Input -->
+  <div class="input-field input-field--medium">
+    <label for="input-type-url" class="input-field__label">
+      URL Input
+    </label>
+    <input
+      type="url"
+      id="input-type-url"
+      class="input-field__input"
+      placeholder="https://example.com"
+    />
+  </div>
+
+  <!-- Search Input -->
+  <div class="input-field input-field--medium">
+    <label for="input-type-search" class="input-field__label">
+      Search Input
+    </label>
+    <input
+      type="search"
+      id="input-type-search"
+      class="input-field__input"
+      placeholder="Search..."
+    />
+  </div>
+
+  <!-- Date Input -->
+  <div class="input-field input-field--medium">
+    <label for="input-type-date" class="input-field__label">
+      Date Input
+    </label>
+    <input
+      type="date"
+      id="input-type-date"
+      class="input-field__input"
+    />
+  </div>
+
+  <!-- Time Input -->
+  <div class="input-field input-field--medium">
+    <label for="input-type-time" class="input-field__label">
+      Time Input
+    </label>
+    <input
+      type="time"
+      id="input-type-time"
+      class="input-field__input"
+    />
+  </div>
+
+  <!-- Color Input -->
+  <div class="input-field input-field--medium">
+    <label for="input-type-color" class="input-field__label">
+      Color Input
+    </label>
+    <input
+      type="color"
+      id="input-type-color"
+      class="input-field__input"
+      value="#6366f1"
+    />
+  </div>
+
+</div>
