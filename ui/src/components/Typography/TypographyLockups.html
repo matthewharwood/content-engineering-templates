@@ -1,0 +1,353 @@
+<link rel="stylesheet" href="./Typography.css">
+<link rel="stylesheet" href="../../../styles/grid.css">
+<link rel="stylesheet" href="../../../styles/fonts.css">
+<link rel="stylesheet" href="../../../styles/space.css">
+<link rel="stylesheet" href="../../../styles/tokens/colors.css">
+
+<style>
+  .lockup-container {
+    max-width: var(--grid-max-width);
+    margin-inline: auto;
+    padding-inline: var(--grid-gutter);
+  }
+
+  .lockup-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--grid-gutter);
+    margin-bottom: var(--space-3xl);
+  }
+
+  .lockup-section {
+    margin-bottom: var(--space-3xl);
+    padding-block: var(--space-xl);
+    border-bottom: 1px solid var(--color-outline-variant);
+  }
+
+  .lockup-section:last-child {
+    border-bottom: none;
+  }
+
+  /* Hero Lockup */
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: var(--step-8);
+    line-height: 1.1;
+    font-weight: 700;
+    margin: 0;
+    color: var(--color-on-background);
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-sans);
+    font-size: var(--step-2);
+    line-height: 1.4;
+    font-weight: 400;
+    margin: var(--space-m) 0 0 0;
+    color: var(--color-on-surface-variant);
+  }
+
+  /* Article Lockup */
+  .article-header {
+    font-family: var(--font-display);
+    font-size: var(--step-5);
+    line-height: 1.2;
+    font-weight: 700;
+    margin: 0 0 var(--space-m) 0;
+    color: var(--color-on-background);
+  }
+
+  .article-meta {
+    font-family: var(--font-sans);
+    font-size: var(--step--1);
+    font-weight: 500;
+    color: var(--color-on-surface-variant);
+    margin: 0 0 var(--space-l) 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .article-body {
+    font-family: var(--font-serif);
+    font-size: var(--step-0);
+    line-height: 1.7;
+    color: var(--color-on-surface);
+    margin: 0 0 var(--space-m) 0;
+  }
+
+  /* UI Lockup */
+  .ui-heading {
+    font-family: var(--font-sans);
+    font-size: var(--step-3);
+    line-height: 1.3;
+    font-weight: 700;
+    margin: 0 0 var(--space-xs) 0;
+    color: var(--color-on-background);
+  }
+
+  .ui-subheading {
+    font-family: var(--font-sans);
+    font-size: var(--step-1);
+    line-height: 1.4;
+    font-weight: 600;
+    margin: 0 0 var(--space-xs) 0;
+    color: var(--color-on-surface);
+  }
+
+  .ui-body {
+    font-family: var(--font-sans);
+    font-size: var(--step-0);
+    line-height: 1.6;
+    font-weight: 400;
+    margin: 0;
+    color: var(--color-on-surface-variant);
+  }
+
+  /* Code Lockup */
+  .code-heading {
+    font-family: var(--font-sans);
+    font-size: var(--step-2);
+    line-height: 1.3;
+    font-weight: 700;
+    margin: 0 0 var(--space-s) 0;
+    color: var(--color-on-background);
+  }
+
+  .code-block {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    line-height: 1.6;
+    background-color: var(--color-surface-variant);
+    padding: var(--space-m);
+    border-radius: 4px;
+    margin: 0;
+    overflow-x: auto;
+    color: var(--color-on-surface);
+  }
+
+  /* Display Lockup */
+  .display-large {
+    font-family: var(--font-display);
+    font-size: var(--step-6);
+    line-height: 1.1;
+    font-weight: 700;
+    margin: 0;
+    color: var(--color-on-background);
+  }
+
+  .display-serif {
+    font-family: var(--font-serif);
+    font-size: var(--step-4);
+    line-height: 1.3;
+    font-style: italic;
+    margin: var(--space-s) 0 0 0;
+    color: var(--color-on-surface-variant);
+  }
+
+  /* Quote Lockup */
+  .quote-text {
+    font-family: var(--font-serif);
+    font-size: var(--step-3);
+    line-height: 1.5;
+    font-style: italic;
+    margin: 0 0 var(--space-s) 0;
+    color: var(--color-on-surface);
+  }
+
+  .quote-attribution {
+    font-family: var(--font-sans);
+    font-size: var(--step-0);
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-on-surface-variant);
+  }
+
+  /* Feature Lockup */
+  .feature-eyebrow {
+    font-family: var(--font-sans);
+    font-size: var(--step--1);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0 0 var(--space-xs) 0;
+    color: var(--color-primary);
+  }
+
+  .feature-title {
+    font-family: var(--font-display);
+    font-size: var(--step-4);
+    line-height: 1.2;
+    font-weight: 700;
+    margin: 0 0 var(--space-s) 0;
+    color: var(--color-on-background);
+  }
+
+  .feature-description {
+    font-family: var(--font-sans);
+    font-size: var(--step-0);
+    line-height: 1.6;
+    margin: 0;
+    color: var(--color-on-surface-variant);
+  }
+
+  /* Label for sections */
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: var(--step--2);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 var(--space-l) 0;
+    color: var(--color-on-surface-variant);
+    opacity: 0.7;
+  }
+</style>
+
+<div class="lockup-container">
+  <!-- Hero Lockup -->
+  <section class="lockup-section">
+    <p class="section-label">Display + Sans / Hero Lockup</p>
+    <div class="lockup-grid">
+      <div style="grid-column: span 12;">
+        <h1 class="hero-title">Design Systems for Modern Web</h1>
+        <p class="hero-subtitle">Building scalable, themeable component libraries with semantic design tokens and fluid typography.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Lockup -->
+  <section class="lockup-section">
+    <p class="section-label">Display + Sans + Serif / Article Layout</p>
+    <div class="lockup-grid">
+      <div style="grid-column: span 8;">
+        <h2 class="article-header">The Art of Typography in Modern Design</h2>
+        <p class="article-meta">Published March 15, 2024 · 8 min read</p>
+        <p class="article-body">Typography is the craft of arranging type to make written language legible, readable, and appealing when displayed. The arrangement of type involves selecting typefaces, point sizes, line lengths, line-spacing, and letter-spacing.</p>
+        <p class="article-body">In digital design, typography becomes even more critical as it must work across various screen sizes and resolutions. A well-crafted typographic system creates hierarchy, guides the reader's eye, and establishes the tone of your content.</p>
+      </div>
+      <div style="grid-column: span 4;">
+        <h3 class="ui-subheading">Key Concepts</h3>
+        <p class="ui-body">Understanding type scale, contrast, and spacing is essential for creating readable, accessible content that works across all devices.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Display + Serif Lockup -->
+  <section class="lockup-section">
+    <p class="section-label">Display + Serif / Editorial</p>
+    <div class="lockup-grid">
+      <div style="grid-column: 2 / span 10;">
+        <h2 class="display-large">Timeless Elegance</h2>
+        <p class="display-serif">Where classical beauty meets contemporary design</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Lockup -->
+  <section class="lockup-section">
+    <p class="section-label">Serif + Sans / Blockquote</p>
+    <div class="lockup-grid">
+      <div style="grid-column: 3 / span 8;">
+        <blockquote>
+          <p class="quote-text">"Typography is two-dimensional architecture, based on experience and imagination, and guided by rules and readability."</p>
+          <p class="quote-attribution">— Hermann Zapf</p>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Grid -->
+  <section class="lockup-section">
+    <p class="section-label">Sans + Display / Feature Grid</p>
+    <div class="lockup-grid">
+      <div style="grid-column: span 4;">
+        <p class="feature-eyebrow">Scalable</p>
+        <h3 class="feature-title">Fluid Typography</h3>
+        <p class="feature-description">Type scales that adapt seamlessly across all viewport sizes using modern CSS techniques.</p>
+      </div>
+      <div style="grid-column: span 4;">
+        <p class="feature-eyebrow">Themeable</p>
+        <h3 class="feature-title">Font Systems</h3>
+        <p class="feature-description">Swap entire font families with a single line change through semantic design tokens.</p>
+      </div>
+      <div style="grid-column: span 4;">
+        <p class="feature-eyebrow">Accessible</p>
+        <h3 class="feature-title">Readable First</h3>
+        <p class="feature-description">Optimized line lengths, spacing, and contrast for maximum readability.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Code Documentation Lockup -->
+  <section class="lockup-section">
+    <p class="section-label">Sans + Mono / Documentation</p>
+    <div class="lockup-grid">
+      <div style="grid-column: span 6;">
+        <h3 class="code-heading">Font Token Usage</h3>
+        <pre class="code-block">/* Display for headlines */
+h1 {
+  font-family: var(--font-display);
+  font-size: var(--step-6);
+}
+
+/* Serif for articles */
+.article-body {
+  font-family: var(--font-serif);
+  line-height: 1.7;
+}</pre>
+      </div>
+      <div style="grid-column: span 6;">
+        <h3 class="code-heading">Theming Configuration</h3>
+        <pre class="code-block">/* Change one line */
+@import "./font-themes/default.css";
+
+/* Cascades to all components */
+--font-sans: 'Inter', sans-serif;
+--font-display: 'Playfair', serif;</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- UI Component Lockup -->
+  <section class="lockup-section">
+    <p class="section-label">Sans Only / Interface</p>
+    <div class="lockup-grid">
+      <div style="grid-column: span 3;">
+        <h3 class="ui-heading">Dashboard</h3>
+        <p class="ui-body">Overview of your recent activity and key metrics.</p>
+      </div>
+      <div style="grid-column: span 3;">
+        <h3 class="ui-heading">Analytics</h3>
+        <p class="ui-body">Track performance with real-time data visualization.</p>
+      </div>
+      <div style="grid-column: span 3;">
+        <h3 class="ui-heading">Settings</h3>
+        <p class="ui-body">Customize your workspace and preferences.</p>
+      </div>
+      <div style="grid-column: span 3;">
+        <h3 class="ui-heading">Support</h3>
+        <p class="ui-body">Get help with documentation and resources.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mixed Hierarchy Lockup -->
+  <section class="lockup-section">
+    <p class="section-label">All Fonts / Type Specimen</p>
+    <div class="lockup-grid">
+      <div style="grid-column: span 12;">
+        <h1 class="hero-title" style="margin-bottom: var(--space-s);">Playfair Display</h1>
+        <p class="ui-body" style="margin-bottom: var(--space-xl);">The display font — elegant serif for headlines and hero sections</p>
+
+        <h2 class="article-header" style="font-family: var(--font-sans); margin-bottom: var(--space-s);">Inter Sans</h2>
+        <p class="ui-body" style="margin-bottom: var(--space-xl);">The workhorse font — clean, modern sans-serif for UI and body text</p>
+
+        <h3 class="ui-heading" style="font-family: var(--font-serif); margin-bottom: var(--space-s);">Source Serif 4</h3>
+        <p class="ui-body" style="margin-bottom: var(--space-xl);">The editorial font — classic serif for longform reading</p>
+
+        <h4 class="ui-subheading" style="font-family: var(--font-mono); margin-bottom: var(--space-s);">Source Code Pro</h4>
+        <p class="ui-body">The technical font — clear monospace for code and data</p>
+      </div>
+    </div>
+  </section>
+</div>

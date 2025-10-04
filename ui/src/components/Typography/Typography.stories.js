@@ -2,6 +2,7 @@ import './Typography.css';
 import AllLevelsHTML from './AllLevels.html?raw';
 import HeadingsHTML from './Headings.html?raw';
 import BodyTextHTML from './BodyText.html?raw';
+import TypographyLockupsHTML from './TypographyLockups.html?raw';
 
 function createHTMLElement(html) {
   const container = document.createElement('div');
@@ -24,4 +25,8 @@ export const Headings = {
 
 export const BodyText = {
   render: () => createHTMLElement(BodyTextHTML)
+};
+
+export const TypeLockups = {
+  render: () => createHTMLElement(TypographyLockupsHTML)
 };
