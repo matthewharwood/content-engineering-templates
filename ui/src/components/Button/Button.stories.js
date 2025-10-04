@@ -1,6 +1,7 @@
 import './Button.css';
 import ButtonPrimaryHTML from './ButtonPrimary.html?raw';
 import ButtonSecondaryHTML from './ButtonSecondary.html?raw';
+import ButtonTertiaryHTML from './ButtonTertiary.html?raw';
 import ButtonOutlineHTML from './ButtonOutline.html?raw';
 import ButtonSizesHTML from './ButtonSizes.html?raw';
 import ButtonDisabledHTML from './ButtonDisabled.html?raw';
@@ -23,6 +24,10 @@ export const Primary = {
 
 export const Secondary = {
   render: () => createHTMLElement(ButtonSecondaryHTML)
+};
+
+export const Tertiary = {
+  render: () => createHTMLElement(ButtonTertiaryHTML)
 };
 
 export const Outline = {
