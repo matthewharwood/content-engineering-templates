@@ -1,0 +1,134 @@
+<link rel="stylesheet" href="./Image.css">
+
+<div class="img-showcase">
+  <section class="img-section">
+    <h2 class="img-section__title">Object-Fit Modes</h2>
+    <p class="img-section__description">
+      The object-fit CSS property determines how an image should be resized to fit its container.
+      Each mode handles aspect ratio preservation and cropping differently.
+    </p>
+
+    <div class="img-grid">
+      <!-- Cover -->
+      <div class="object-fit-demo" style="grid-column: span 4;">
+        <p class="object-fit-demo__label">object-fit: cover</p>
+        <div class="object-fit-demo__container">
+          <img src="https://picsum.photos/400/300" alt="Cover mode" class="img--cover">
+        </div>
+        <p style="font-size: var(--step--2); color: var(--color-on-surface-variant); margin: var(--space-xs) 0 0 0; text-align: center;">
+          Fills container, may crop
+        </p>
+      </div>
+
+      <!-- Contain -->
+      <div class="object-fit-demo" style="grid-column: span 4;">
+        <p class="object-fit-demo__label">object-fit: contain</p>
+        <div class="object-fit-demo__container">
+          <img src="https://picsum.photos/400/300" alt="Contain mode" class="img--contain">
+        </div>
+        <p style="font-size: var(--step--2); color: var(--color-on-surface-variant); margin: var(--space-xs) 0 0 0; text-align: center;">
+          Entire image visible, letterbox
+        </p>
+      </div>
+
+      <!-- Fill -->
+      <div class="object-fit-demo" style="grid-column: span 4;">
+        <p class="object-fit-demo__label">object-fit: fill</p>
+        <div class="object-fit-demo__container">
+          <img src="https://picsum.photos/400/300" alt="Fill mode" class="img--fill">
+        </div>
+        <p style="font-size: var(--step--2); color: var(--color-on-surface-variant); margin: var(--space-xs) 0 0 0; text-align: center;">
+          Stretches to fill, may distort
+        </p>
+      </div>
+
+      <!-- None -->
+      <div class="object-fit-demo" style="grid-column: span 6;">
+        <p class="object-fit-demo__label">object-fit: none</p>
+        <div class="object-fit-demo__container">
+          <img src="https://picsum.photos/400/300" alt="None mode" class="img--none">
+        </div>
+        <p style="font-size: var(--step--2); color: var(--color-on-surface-variant); margin: var(--space-xs) 0 0 0; text-align: center;">
+          Original size, may overflow
+        </p>
+      </div>
+
+      <!-- Scale-Down -->
+      <div class="object-fit-demo" style="grid-column: span 6;">
+        <p class="object-fit-demo__label">object-fit: scale-down</p>
+        <div class="object-fit-demo__container">
+          <img src="https://picsum.photos/400/300" alt="Scale-down mode" class="img--scale-down">
+        </div>
+        <p style="font-size: var(--step--2); color: var(--color-on-surface-variant); margin: var(--space-xs) 0 0 0; text-align: center;">
+          Smaller of none or contain
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Different Aspect Ratios with Cover -->
+  <section class="img-section">
+    <h2 class="img-section__title">Aspect Ratios with Object-Fit: Cover</h2>
+    <p class="img-section__description">
+      Images constrained to specific aspect ratios using object-fit: cover for optimal presentation.
+    </p>
+
+    <div class="img-grid">
+      <!-- 1:1 Square -->
+      <div style="grid-column: span 3;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600" alt="1:1 aspect ratio" class="img--cover">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0 0 0; text-align: center;">1:1 Square</p>
+      </div>
+
+      <!-- 16:9 Landscape -->
+      <div style="grid-column: span 6;">
+        <div class="img-aspect img-aspect--16-9">
+          <img src="https://picsum.photos/1600/900" alt="16:9 aspect ratio" class="img--cover">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0 0 0; text-align: center;">16:9 Landscape</p>
+      </div>
+
+      <!-- 9:16 Portrait -->
+      <div style="grid-column: span 3;">
+        <div class="img-aspect img-aspect--9-16">
+          <img src="https://picsum.photos/900/1600" alt="9:16 aspect ratio" class="img--cover">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0 0 0; text-align: center;">9:16 Portrait</p>
+      </div>
+
+      <!-- 4:3 Classic -->
+      <div style="grid-column: span 4;">
+        <div class="img-aspect img-aspect--4-3">
+          <img src="https://picsum.photos/800/600" alt="4:3 aspect ratio" class="img--cover">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0 0 0; text-align: center;">4:3 Classic</p>
+      </div>
+
+      <!-- 3:2 Photo -->
+      <div style="grid-column: span 4;">
+        <div class="img-aspect img-aspect--3-2">
+          <img src="https://picsum.photos/900/600" alt="3:2 aspect ratio" class="img--cover">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0 0 0; text-align: center;">3:2 Photo</p>
+      </div>
+
+      <!-- 2:1 Panoramic -->
+      <div style="grid-column: span 4;">
+        <div class="img-aspect img-aspect--2-1">
+          <img src="https://picsum.photos/1000/500" alt="2:1 aspect ratio" class="img--cover">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0 0 0; text-align: center;">2:1 Panoramic</p>
+      </div>
+
+      <!-- 21:9 Ultrawide -->
+      <div style="grid-column: span 12;">
+        <div class="img-aspect img-aspect--21-9">
+          <img src="https://picsum.photos/2100/900" alt="21:9 aspect ratio" class="img--cover">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0 0 0; text-align: center;">21:9 Ultrawide</p>
+      </div>
+    </div>
+  </section>
+</div>

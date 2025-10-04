@@ -1,0 +1,218 @@
+<link rel="stylesheet" href="./Image.css">
+
+<!-- Hero Image -->
+<div class="img-hero" style="margin-bottom: var(--space-3xl);">
+  <img src="https://picsum.photos/2000/800?random=1" alt="Hero image" class="img-hero__image">
+  <div class="img-hero__content">
+    <h1 class="img-hero__title">Image Component</h1>
+    <p class="img-hero__subtitle">Flexible, responsive images with object-fit and grid integration</p>
+  </div>
+</div>
+
+<div class="img-showcase">
+  <!-- Featured Content -->
+  <section class="img-section">
+    <h2 class="img-section__title">Featured Content</h2>
+    <p class="img-section__description">
+      Hero layouts with prominent imagery and supporting content.
+    </p>
+
+    <div class="img-grid">
+      <div style="grid-column: span 7;">
+        <div class="img-aspect img-aspect--16-9">
+          <img src="https://picsum.photos/1600/900?random=2" alt="Featured article" class="img--cover">
+        </div>
+      </div>
+
+      <div style="grid-column: span 5; display: flex; flex-direction: column; justify-content: center; gap: var(--space-m);">
+        <h3 style="font-family: var(--font-display); font-size: var(--step-4); font-weight: 700; margin: 0; color: var(--color-on-background);">
+          Discover the World
+        </h3>
+        <p style="font-family: var(--font-serif); font-size: var(--step-0); line-height: 1.7; margin: 0; color: var(--color-on-surface);">
+          Explore breathtaking landscapes, vibrant cities, and hidden gems from around the globe. Our curated collection showcases the beauty of our planet through stunning photography.
+        </p>
+        <div style="display: flex; gap: var(--space-m);">
+          <button class="btn btn--primary btn--medium btn--with-end-icon">
+            Explore Gallery
+            <span class="icon">arrow_forward</span>
+          </button>
+          <button class="btn btn--secondary btn--medium">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Grid Gallery -->
+  <section class="img-section">
+    <h2 class="img-section__title">Portfolio Grid</h2>
+    <p class="img-section__description">
+      Masonry-style layout showcasing different image aspect ratios.
+    </p>
+
+    <div class="img-grid">
+      <!-- Row 1: 6 + 6 -->
+      <div style="grid-column: span 6;">
+        <div class="img-aspect img-aspect--4-3">
+          <img src="https://picsum.photos/800/600?random=3" alt="Portfolio image" class="img--cover">
+        </div>
+      </div>
+
+      <div style="grid-column: span 6;">
+        <div class="img-aspect img-aspect--4-3">
+          <img src="https://picsum.photos/800/600?random=4" alt="Portfolio image" class="img--cover">
+        </div>
+      </div>
+
+      <!-- Row 2: 4 + 4 + 4 -->
+      <div style="grid-column: span 4;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=5" alt="Portfolio image" class="img--cover">
+        </div>
+      </div>
+
+      <div style="grid-column: span 4;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=6" alt="Portfolio image" class="img--cover">
+        </div>
+      </div>
+
+      <div style="grid-column: span 4;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=7" alt="Portfolio image" class="img--cover">
+        </div>
+      </div>
+
+      <!-- Row 3: Full width panoramic -->
+      <div style="grid-column: span 12;">
+        <div class="img-aspect img-aspect--21-9">
+          <img src="https://picsum.photos/2100/900?random=8" alt="Panoramic image" class="img--cover">
+        </div>
+      </div>
+
+      <!-- Row 4: 3 + 3 + 3 + 3 -->
+      <div style="grid-column: span 3;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=9" alt="Portfolio image" class="img--cover">
+        </div>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=10" alt="Portfolio image" class="img--cover">
+        </div>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=11" alt="Portfolio image" class="img--cover">
+        </div>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=12" alt="Portfolio image" class="img--cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Layout -->
+  <section class="img-section">
+    <h2 class="img-section__title">Article Layout</h2>
+    <p class="img-section__description">
+      Editorial-style layout with images integrated into text content.
+    </p>
+
+    <div class="img-grid">
+      <div style="grid-column: span 8;">
+        <div class="img-aspect img-aspect--16-9" style="margin-bottom: var(--space-l);">
+          <img src="https://picsum.photos/1600/900?random=13" alt="Article header" class="img--cover">
+        </div>
+
+        <h3 style="font-family: var(--font-display); font-size: var(--step-3); font-weight: 700; margin: 0 0 var(--space-m) 0; color: var(--color-on-background);">
+          The Art of Photography
+        </h3>
+
+        <p style="font-family: var(--font-serif); font-size: var(--step-0); line-height: 1.7; margin: 0 0 var(--space-m) 0; color: var(--color-on-surface);">
+          Photography is more than just capturing moments—it's about telling stories, evoking emotions, and preserving memories. The interplay of light, composition, and timing creates images that resonate with viewers on a profound level.
+        </p>
+
+        <p style="font-family: var(--font-serif); font-size: var(--step-0); line-height: 1.7; margin: 0; color: var(--color-on-surface);">
+          From stunning landscapes to intimate portraits, each photograph carries the unique vision of its creator. Through careful attention to detail and technical mastery, photographers transform ordinary scenes into extraordinary works of art.
+        </p>
+      </div>
+
+      <div style="grid-column: span 4;">
+        <div style="background-color: var(--color-surface-variant); padding: var(--space-m); border-radius: 8px; border: 1px solid var(--color-outline-variant);">
+          <h4 style="font-family: var(--font-sans); font-size: var(--step-0); font-weight: 700; margin: 0 0 var(--space-s) 0; color: var(--color-on-surface);">
+            Related Images
+          </h4>
+
+          <div style="display: flex; flex-direction: column; gap: var(--space-s);">
+            <div class="img-aspect img-aspect--16-9">
+              <img src="https://picsum.photos/800/450?random=14" alt="Related image" class="img--cover">
+            </div>
+
+            <div class="img-aspect img-aspect--16-9">
+              <img src="https://picsum.photos/800/450?random=15" alt="Related image" class="img--cover">
+            </div>
+
+            <div class="img-aspect img-aspect--16-9">
+              <img src="https://picsum.photos/800/450?random=16" alt="Related image" class="img--cover">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Grid -->
+  <section class="img-section">
+    <h2 class="img-section__title">Product Showcase</h2>
+    <p class="img-section__description">
+      E-commerce style grid with uniform image cards.
+    </p>
+
+    <div class="img-grid">
+      <div class="img-card" style="grid-column: span 3;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=17" alt="Product 1" class="img-card__image img--cover">
+        </div>
+        <div class="img-card__content">
+          <h4 class="img-card__title">Mountain Peak</h4>
+          <p class="img-card__description">Premium landscape print</p>
+        </div>
+      </div>
+
+      <div class="img-card" style="grid-column: span 3;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=18" alt="Product 2" class="img-card__image img--cover">
+        </div>
+        <div class="img-card__content">
+          <h4 class="img-card__title">Ocean Sunset</h4>
+          <p class="img-card__description">Coastal photography</p>
+        </div>
+      </div>
+
+      <div class="img-card" style="grid-column: span 3;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=19" alt="Product 3" class="img-card__image img--cover">
+        </div>
+        <div class="img-card__content">
+          <h4 class="img-card__title">Urban Nights</h4>
+          <p class="img-card__description">City lights collection</p>
+        </div>
+      </div>
+
+      <div class="img-card" style="grid-column: span 3;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=20" alt="Product 4" class="img-card__image img--cover">
+        </div>
+        <div class="img-card__content">
+          <h4 class="img-card__title">Forest Path</h4>
+          <p class="img-card__description">Nature photography</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

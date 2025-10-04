@@ -1,0 +1,253 @@
+<link rel="stylesheet" href="./Image.css">
+
+<div class="img-showcase">
+  <!-- Basic Grid Spanning -->
+  <section class="img-section">
+    <h2 class="img-section__title">Images Spanning Grid Columns</h2>
+    <p class="img-section__description">
+      Images can span different numbers of grid columns to create flexible layouts.
+    </p>
+
+    <div class="img-grid">
+      <!-- 12 columns (full width) -->
+      <div style="grid-column: span 12;">
+        <div class="img-aspect img-aspect--21-9">
+          <img src="https://picsum.photos/2100/900?random=1" alt="Full width image" class="img--cover">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          12 columns (Full Width)
+        </p>
+      </div>
+
+      <!-- 6 columns each -->
+      <div style="grid-column: span 6;">
+        <div class="img-aspect img-aspect--16-9">
+          <img src="https://picsum.photos/1600/900?random=2" alt="Half width image" class="img--cover">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          6 columns (Half)
+        </p>
+      </div>
+
+      <div style="grid-column: span 6;">
+        <div class="img-aspect img-aspect--16-9">
+          <img src="https://picsum.photos/1600/900?random=3" alt="Half width image" class="img--cover">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          6 columns (Half)
+        </p>
+      </div>
+
+      <!-- 4 columns each -->
+      <div style="grid-column: span 4;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=4" alt="Third width image" class="img--cover">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          4 columns (Third)
+        </p>
+      </div>
+
+      <div style="grid-column: span 4;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=5" alt="Third width image" class="img--cover">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          4 columns (Third)
+        </p>
+      </div>
+
+      <div style="grid-column: span 4;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=6" alt="Third width image" class="img--cover">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          4 columns (Third)
+        </p>
+      </div>
+
+      <!-- 3 columns each (4 across) -->
+      <div style="grid-column: span 3;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=7" alt="Quarter width image" class="img--cover">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          3 columns
+        </p>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=8" alt="Quarter width image" class="img--cover">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          3 columns
+        </p>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=9" alt="Quarter width image" class="img--cover">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          3 columns
+        </p>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=10" alt="Quarter width image" class="img--cover">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          3 columns
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mixed Layout -->
+  <section class="img-section">
+    <h2 class="img-section__title">Mixed Grid Layout</h2>
+    <p class="img-section__description">
+      Combine different column spans to create editorial-style layouts.
+    </p>
+
+    <div class="img-grid">
+      <!-- Featured image (8 cols) + sidebar (4 cols) -->
+      <div style="grid-column: span 8;">
+        <div class="img-aspect img-aspect--16-9">
+          <img src="https://picsum.photos/1600/900?random=11" alt="Featured image" class="img--cover">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          8 columns (Featured)
+        </p>
+      </div>
+
+      <div style="grid-column: span 4;">
+        <div class="img-aspect img-aspect--4-3">
+          <img src="https://picsum.photos/800/600?random=12" alt="Sidebar image" class="img--cover">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          4 columns (Sidebar)
+        </p>
+      </div>
+
+      <!-- Asymmetric layout: 5 + 7 -->
+      <div style="grid-column: span 5;">
+        <div class="img-aspect img-aspect--3-2">
+          <img src="https://picsum.photos/900/600?random=13" alt="Asymmetric left" class="img--cover">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          5 columns
+        </p>
+      </div>
+
+      <div style="grid-column: span 7;">
+        <div class="img-aspect img-aspect--3-2">
+          <img src="https://picsum.photos/900/600?random=14" alt="Asymmetric right" class="img--cover">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          7 columns
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Cards with Captions -->
+  <section class="img-section">
+    <h2 class="img-section__title">Image Cards on Grid</h2>
+    <p class="img-section__description">
+      Image cards with titles and descriptions, perfectly aligned to the grid.
+    </p>
+
+    <div class="img-grid">
+      <div class="img-card" style="grid-column: span 4;">
+        <div class="img-aspect img-aspect--3-2">
+          <img src="https://picsum.photos/900/600?random=15" alt="Mountain landscape" class="img-card__image img--cover">
+        </div>
+        <div class="img-card__content">
+          <h3 class="img-card__title">Mountain Vista</h3>
+          <p class="img-card__description">Breathtaking views from the summit at sunrise.</p>
+        </div>
+      </div>
+
+      <div class="img-card" style="grid-column: span 4;">
+        <div class="img-aspect img-aspect--3-2">
+          <img src="https://picsum.photos/900/600?random=16" alt="Ocean waves" class="img-card__image img--cover">
+        </div>
+        <div class="img-card__content">
+          <h3 class="img-card__title">Coastal Waves</h3>
+          <p class="img-card__description">The rhythmic dance of ocean meeting shore.</p>
+        </div>
+      </div>
+
+      <div class="img-card" style="grid-column: span 4;">
+        <div class="img-aspect img-aspect--3-2">
+          <img src="https://picsum.photos/900/600?random=17" alt="Forest path" class="img-card__image img--cover">
+        </div>
+        <div class="img-card__content">
+          <h3 class="img-card__title">Forest Trail</h3>
+          <p class="img-card__description">A winding path through ancient woodlands.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section class="img-section">
+    <h2 class="img-section__title">Photo Gallery</h2>
+    <p class="img-section__description">
+      Uniform grid of square images for gallery displays.
+    </p>
+
+    <div class="img-grid">
+      <div style="grid-column: span 3;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=18" alt="Gallery image 1" class="img--cover">
+        </div>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=19" alt="Gallery image 2" class="img--cover">
+        </div>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=20" alt="Gallery image 3" class="img--cover">
+        </div>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=21" alt="Gallery image 4" class="img--cover">
+        </div>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=22" alt="Gallery image 5" class="img--cover">
+        </div>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=23" alt="Gallery image 6" class="img--cover">
+        </div>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=24" alt="Gallery image 7" class="img--cover">
+        </div>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=25" alt="Gallery image 8" class="img--cover">
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
