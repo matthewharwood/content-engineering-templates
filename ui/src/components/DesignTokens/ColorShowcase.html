@@ -1,0 +1,260 @@
+<link rel="stylesheet" href="./DesignTokens.css">
+
+<div class="design-tokens">
+  <h1 class="design-tokens__title">Color System</h1>
+  <p class="design-tokens__description">
+    Our color system is based on Material Design 3 principles. Each color has a semantic purpose and automatically adapts when you switch themes.
+  </p>
+
+  <!-- Primary Colors -->
+  <section class="design-tokens__section">
+    <h2 class="design-tokens__section-title">Primary</h2>
+    <p class="design-tokens__section-description">
+      Main brand color used for primary actions, key components, and active states.
+    </p>
+
+    <div class="color-grid">
+      <div class="color-pair">
+        <div class="color-pair__item" style="background-color: var(--color-primary); color: var(--color-on-primary);">
+          <p class="color-pair__name">Primary</p>
+          <p class="color-pair__token">--color-primary</p>
+        </div>
+        <div class="color-pair__item" style="background-color: var(--color-on-primary); color: var(--color-primary); border-left: 1px solid var(--color-outline-variant);">
+          <p class="color-pair__name">On Primary</p>
+          <p class="color-pair__token">--color-on-primary</p>
+        </div>
+      </div>
+
+      <div class="color-pair">
+        <div class="color-pair__item" style="background-color: var(--color-primary-container); color: var(--color-on-primary-container);">
+          <p class="color-pair__name">Primary Container</p>
+          <p class="color-pair__token">--color-primary-container</p>
+        </div>
+        <div class="color-pair__item" style="background-color: var(--color-on-primary-container); color: var(--color-primary-container); border-left: 1px solid var(--color-outline-variant);">
+          <p class="color-pair__name">On Primary Container</p>
+          <p class="color-pair__token">--color-on-primary-container</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Secondary Colors -->
+  <section class="design-tokens__section">
+    <h2 class="design-tokens__section-title">Secondary</h2>
+    <p class="design-tokens__section-description">
+      Complementary brand color for less prominent components and secondary actions.
+    </p>
+
+    <div class="color-grid">
+      <div class="color-pair">
+        <div class="color-pair__item" style="background-color: var(--color-secondary); color: var(--color-on-secondary);">
+          <p class="color-pair__name">Secondary</p>
+          <p class="color-pair__token">--color-secondary</p>
+        </div>
+        <div class="color-pair__item" style="background-color: var(--color-on-secondary); color: var(--color-secondary); border-left: 1px solid var(--color-outline-variant);">
+          <p class="color-pair__name">On Secondary</p>
+          <p class="color-pair__token">--color-on-secondary</p>
+        </div>
+      </div>
+
+      <div class="color-pair">
+        <div class="color-pair__item" style="background-color: var(--color-secondary-container); color: var(--color-on-secondary-container);">
+          <p class="color-pair__name">Secondary Container</p>
+          <p class="color-pair__token">--color-secondary-container</p>
+        </div>
+        <div class="color-pair__item" style="background-color: var(--color-on-secondary-container); color: var(--color-secondary-container); border-left: 1px solid var(--color-outline-variant);">
+          <p class="color-pair__name">On Secondary Container</p>
+          <p class="color-pair__token">--color-on-secondary-container</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tertiary Colors -->
+  <section class="design-tokens__section">
+    <h2 class="design-tokens__section-title">Tertiary</h2>
+    <p class="design-tokens__section-description">
+      Additional accent color for special emphasis and variety.
+    </p>
+
+    <div class="color-grid">
+      <div class="color-pair">
+        <div class="color-pair__item" style="background-color: var(--color-tertiary); color: var(--color-on-tertiary);">
+          <p class="color-pair__name">Tertiary</p>
+          <p class="color-pair__token">--color-tertiary</p>
+        </div>
+        <div class="color-pair__item" style="background-color: var(--color-on-tertiary); color: var(--color-tertiary); border-left: 1px solid var(--color-outline-variant);">
+          <p class="color-pair__name">On Tertiary</p>
+          <p class="color-pair__token">--color-on-tertiary</p>
+        </div>
+      </div>
+
+      <div class="color-pair">
+        <div class="color-pair__item" style="background-color: var(--color-tertiary-container); color: var(--color-on-tertiary-container);">
+          <p class="color-pair__name">Tertiary Container</p>
+          <p class="color-pair__token">--color-tertiary-container</p>
+        </div>
+        <div class="color-pair__item" style="background-color: var(--color-on-tertiary-container); color: var(--color-tertiary-container); border-left: 1px solid var(--color-outline-variant);">
+          <p class="color-pair__name">On Tertiary Container</p>
+          <p class="color-pair__token">--color-on-tertiary-container</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Error Colors -->
+  <section class="design-tokens__section">
+    <h2 class="design-tokens__section-title">Error</h2>
+    <p class="design-tokens__section-description">
+      Error states, destructive actions, and critical warnings.
+    </p>
+
+    <div class="color-grid">
+      <div class="color-pair">
+        <div class="color-pair__item" style="background-color: var(--color-error); color: var(--color-on-error);">
+          <p class="color-pair__name">Error</p>
+          <p class="color-pair__token">--color-error</p>
+        </div>
+        <div class="color-pair__item" style="background-color: var(--color-on-error); color: var(--color-error); border-left: 1px solid var(--color-outline-variant);">
+          <p class="color-pair__name">On Error</p>
+          <p class="color-pair__token">--color-on-error</p>
+        </div>
+      </div>
+
+      <div class="color-pair">
+        <div class="color-pair__item" style="background-color: var(--color-error-container); color: var(--color-on-error-container);">
+          <p class="color-pair__name">Error Container</p>
+          <p class="color-pair__token">--color-error-container</p>
+        </div>
+        <div class="color-pair__item" style="background-color: var(--color-on-error-container); color: var(--color-error-container); border-left: 1px solid var(--color-outline-variant);">
+          <p class="color-pair__name">On Error Container</p>
+          <p class="color-pair__token">--color-on-error-container</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Surface & Background -->
+  <section class="design-tokens__section">
+    <h2 class="design-tokens__section-title">Surface & Background</h2>
+    <p class="design-tokens__section-description">
+      Backgrounds for components, cards, and the main page.
+    </p>
+
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-card__swatch" style="background-color: var(--color-surface); color: var(--color-on-surface);">
+          <p class="color-card__name">Surface</p>
+          <p class="color-card__value">--color-surface</p>
+        </div>
+        <div class="color-card__info">
+          <p class="color-card__label">On Surface</p>
+          <p class="color-card__usage" style="color: var(--color-on-surface);">--color-on-surface</p>
+        </div>
+      </div>
+
+      <div class="color-card">
+        <div class="color-card__swatch" style="background-color: var(--color-surface-variant); color: var(--color-on-surface-variant);">
+          <p class="color-card__name">Surface Variant</p>
+          <p class="color-card__value">--color-surface-variant</p>
+        </div>
+        <div class="color-card__info">
+          <p class="color-card__label">On Surface Variant</p>
+          <p class="color-card__usage" style="color: var(--color-on-surface-variant);">--color-on-surface-variant</p>
+        </div>
+      </div>
+
+      <div class="color-card">
+        <div class="color-card__swatch" style="background-color: var(--color-background); color: var(--color-on-background);">
+          <p class="color-card__name">Background</p>
+          <p class="color-card__value">--color-background</p>
+        </div>
+        <div class="color-card__info">
+          <p class="color-card__label">On Background</p>
+          <p class="color-card__usage" style="color: var(--color-on-background);">--color-on-background</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Outline Colors -->
+  <section class="design-tokens__section">
+    <h2 class="design-tokens__section-title">Outline</h2>
+    <p class="design-tokens__section-description">
+      Borders, dividers, and subtle separators.
+    </p>
+
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-card__swatch" style="background-color: var(--color-surface); border: 3px solid var(--color-outline); color: var(--color-on-surface);">
+          <p class="color-card__name">Outline</p>
+          <p class="color-card__value">--color-outline</p>
+        </div>
+        <div class="color-card__info">
+          <p class="color-card__usage">Used for important borders and focus indicators</p>
+        </div>
+      </div>
+
+      <div class="color-card">
+        <div class="color-card__swatch" style="background-color: var(--color-surface); border: 3px solid var(--color-outline-variant); color: var(--color-on-surface);">
+          <p class="color-card__name">Outline Variant</p>
+          <p class="color-card__value">--color-outline-variant</p>
+        </div>
+        <div class="color-card__info">
+          <p class="color-card__usage">Used for subtle dividers and decorative borders</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inverse Colors -->
+  <section class="design-tokens__section">
+    <h2 class="design-tokens__section-title">Inverse</h2>
+    <p class="design-tokens__section-description">
+      High contrast colors for overlays, snackbars, and tooltips.
+    </p>
+
+    <div class="color-grid">
+      <div class="color-pair">
+        <div class="color-pair__item" style="background-color: var(--color-inverse-surface); color: var(--color-inverse-on-surface);">
+          <p class="color-pair__name">Inverse Surface</p>
+          <p class="color-pair__token">--color-inverse-surface</p>
+        </div>
+        <div class="color-pair__item" style="background-color: var(--color-inverse-on-surface); color: var(--color-inverse-surface); border-left: 1px solid var(--color-outline-variant);">
+          <p class="color-pair__name">Inverse On Surface</p>
+          <p class="color-pair__token">--color-inverse-on-surface</p>
+        </div>
+      </div>
+
+      <div class="color-card">
+        <div class="color-card__swatch" style="background-color: var(--color-inverse-surface); color: var(--color-inverse-primary);">
+          <p class="color-card__name">Inverse Primary</p>
+          <p class="color-card__value">--color-inverse-primary</p>
+        </div>
+        <div class="color-card__info">
+          <p class="color-card__usage">Primary color when displayed on inverse surface</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Examples -->
+  <section class="design-tokens__section">
+    <h2 class="design-tokens__section-title">Examples</h2>
+    <p class="design-tokens__section-description">
+      See how these colors work together in real components.
+    </p>
+
+    <div class="token-examples">
+      <button class="example-button example-button--primary">Primary Action</button>
+      <button class="example-button example-button--secondary">Secondary Action</button>
+      <button class="example-button example-button--tertiary">Tertiary Action</button>
+      <button class="example-button example-button--error">Delete</button>
+
+      <div class="example-card">
+        <h3 class="example-card__title">Surface Card</h3>
+        <p class="example-card__text">This card uses surface-variant with proper contrast text colors.</p>
+      </div>
+    </div>
+  </section>
+</div>

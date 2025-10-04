@@ -6,6 +6,10 @@
  * Actual color values are defined in theme files (themes/default.css, themes/blank.css)
  */
 
+/* Import active theme - CHANGE THIS to switch themes */
+@import "../themes/default.css";
+/* @import "../themes/blank.css"; */
+
 :root {
   /* Primary - Main brand color */
   --color-primary: var(--theme-primary);

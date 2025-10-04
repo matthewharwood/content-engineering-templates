@@ -1,24 +1,5 @@
-@import "../../../styles/space.css";
+@import "../../../styles/grid.css";
 @import "../../../styles/tokens/colors.css";
-
-/* @link https://utopia.fyi/grid/calculator?c=360,18,1.2,1240,20,1.25,8,4,1728&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
-
-:root {
-  --grid-max-width: 77.50rem;
-  --grid-gutter: var(--space-s-l, clamp(1.125rem, 0.5625rem + 2.5vw, 2.5rem));
-  --grid-columns: 12;
-}
-
-.u-container {
-  max-width: var(--grid-max-width);
-  padding-inline: var(--grid-gutter);
-  margin-inline: auto;
-}
-
-.u-grid {
-  display: grid;
-  gap: var(--grid-gutter);
-}
 
 /* Grid visualization styles */
 .grid-demo {
