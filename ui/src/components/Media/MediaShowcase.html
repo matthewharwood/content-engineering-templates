@@ -1,0 +1,579 @@
+<link rel="stylesheet" href="./Media.css">
+
+<div class="media-showcase">
+  <!-- Hero Media with Video Background ---->
+  <div class="media-hero" style="margin-bottom: var(--space-3xl);">
+    <video src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" autoplay muted loop playsinline class="media-hero__media"></video>
+    <div class="media-hero__content">
+      <h1 class="media-hero__title">Media Component</h1>
+      <p class="media-hero__subtitle">Images and videos with object-fit, aspect ratios, and layered compositions</p>
+    </div>
+  </div>
+
+  <!-- Object-Fit Modes with Video ---->
+  <section class="media-section">
+    <h2 class="media-section__title">Object-Fit Modes - Video</h2>
+    <p class="media-section__description">
+      Videos support all the same object-fit modes as images: cover, contain, fill, none, and scale-down.
+    </p>
+
+    <div class="media-grid">
+      <!-- Cover ---->
+      <div class="object-fit-demo" style="grid-column: span 4;">
+        <p class="object-fit-demo__label">object-fit: cover</p>
+        <div class="object-fit-demo__container">
+          <video src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" autoplay muted loop playsinline class="media--cover"></video>
+        </div>
+        <p style="font-size: var(--step--2); color: var(--color-on-surface-variant); margin: var(--space-xs) 0 0 0; text-align: center;">
+          Fills container, may crop
+        </p>
+      </div>
+
+      <!-- Contain ---->
+      <div class="object-fit-demo" style="grid-column: span 4;">
+        <p class="object-fit-demo__label">object-fit: contain</p>
+        <div class="object-fit-demo__container">
+          <video src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" autoplay muted loop playsinline class="media--contain"></video>
+        </div>
+        <p style="font-size: var(--step--2); color: var(--color-on-surface-variant); margin: var(--space-xs) 0 0 0; text-align: center;">
+          Entire video visible, letterbox
+        </p>
+      </div>
+
+      <!-- Fill ---->
+      <div class="object-fit-demo" style="grid-column: span 4;">
+        <p class="object-fit-demo__label">object-fit: fill</p>
+        <div class="object-fit-demo__container">
+          <video src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" autoplay muted loop playsinline class="media--fill"></video>
+        </div>
+        <p style="font-size: var(--step--2); color: var(--color-on-surface-variant); margin: var(--space-xs) 0 0 0; text-align: center;">
+          Stretches to fill, may distort
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aspect Ratios with Media ---->
+  <section class="media-section">
+    <h2 class="media-section__title">Aspect Ratios - Mixed Media</h2>
+    <p class="media-section__description">
+      Images and videos constrained to specific aspect ratios using object-fit: cover.
+    </p>
+
+    <div class="media-grid">
+      <!-- 16:9 Video ---->
+      <div style="grid-column: span 6;">
+        <div class="media-aspect media-aspect--16-9">
+          <video src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" autoplay muted loop playsinline class="media--cover"></video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0 0 0; text-align: center;">Video - 16:9 Landscape</p>
+      </div>
+
+      <!-- 16:9 Image ---->
+      <div style="grid-column: span 6;">
+        <div class="media-aspect media-aspect--16-9">
+          <img src="https://picsum.photos/1600/900?random=100" alt="16:9 aspect ratio" class="media--cover">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0 0 0; text-align: center;">Image - 16:9 Landscape</p>
+      </div>
+
+      <!-- 1:1 Video ---->
+      <div style="grid-column: span 3;">
+        <div class="media-aspect media-aspect--1-1">
+          <video src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" autoplay muted loop playsinline class="media--cover"></video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0 0 0; text-align: center;">Video - 1:1 Square</p>
+      </div>
+
+      <!-- 1:1 Image ---->
+      <div style="grid-column: span 3;">
+        <div class="media-aspect media-aspect--1-1">
+          <img src="https://picsum.photos/600/600?random=101" alt="1:1 aspect ratio" class="media--cover">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0 0 0; text-align: center;">Image - 1:1 Square</p>
+      </div>
+
+      <!-- 4:3 Video ---->
+      <div style="grid-column: span 3;">
+        <div class="media-aspect media-aspect--4-3">
+          <video src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" autoplay muted loop playsinline class="media--cover"></video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0 0 0; text-align: center;">Video - 4:3 Classic</p>
+      </div>
+
+      <!-- 4:3 Image ---->
+      <div style="grid-column: span 3;">
+        <div class="media-aspect media-aspect--4-3">
+          <img src="https://picsum.photos/800/600?random=102" alt="4:3 aspect ratio" class="media--cover">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0 0 0; text-align: center;">Image - 4:3 Classic</p>
+      </div>
+
+      <!-- 21:9 Video Ultrawide ---->
+      <div style="grid-column: span 12;">
+        <div class="media-aspect media-aspect--21-9">
+          <video src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" autoplay muted loop playsinline class="media--cover"></video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0 0 0; text-align: center;">Video - 21:9 Ultrawide</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Media Grid Gallery ---->
+  <section class="media-section">
+    <h2 class="media-section__title">Media Grid Gallery</h2>
+    <p class="media-section__description">
+      Mixed grid of images and videos spanning different column counts.
+    </p>
+
+    <div class="media-grid">
+      <!-- Row 1: Featured Video + Sidebar Images ---->
+      <div style="grid-column: span 7;">
+        <div class="media-aspect media-aspect--4-3">
+          <video src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" autoplay muted loop playsinline class="media--cover"></video>
+        </div>
+      </div>
+
+      <div style="grid-column: span 5; display: flex; flex-direction: column; gap: var(--grid-gutter);">
+        <div class="media-aspect media-aspect--16-9">
+          <img src="https://picsum.photos/1000/600?random=103" alt="Sidebar image" class="media--cover">
+        </div>
+        <div class="media-aspect media-aspect--16-9">
+          <img src="https://picsum.photos/1000/600?random=104" alt="Sidebar image" class="media--cover">
+        </div>
+      </div>
+
+      <!-- Row 2: 3 equal squares alternating ---->
+      <div style="grid-column: span 4;">
+        <div class="media-aspect media-aspect--1-1">
+          <img src="https://picsum.photos/800/800?random=105" alt="Gallery image" class="media--cover">
+        </div>
+      </div>
+
+      <div style="grid-column: span 4;">
+        <div class="media-aspect media-aspect--1-1">
+          <video src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" autoplay muted loop playsinline class="media--cover"></video>
+        </div>
+      </div>
+
+      <div style="grid-column: span 4;">
+        <div class="media-aspect media-aspect--1-1">
+          <img src="https://picsum.photos/800/800?random=106" alt="Gallery image" class="media--cover">
+        </div>
+      </div>
+
+      <!-- Row 3: Full width video ---->
+      <div style="grid-column: span 12;">
+        <div class="media-aspect media-aspect--21-9">
+          <video src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" autoplay muted loop playsinline class="media--cover"></video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Frames with Video ---->
+  <section class="media-section">
+    <h2 class="media-section__title">Product Frames - Video</h2>
+    <p class="media-section__description">
+      Apple-style product frames work with videos, perfect for product demos and UI animations.
+    </p>
+
+    <div class="media-grid">
+      <!-- Full width video frame ---->
+      <div style="grid-column: span 12;">
+        <div class="media-product-frame media-aspect media-aspect--16-9">
+          <video src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" autoplay muted loop playsinline class="media-product-frame__media media-product-frame__media--center media-product-frame__media--scale-130"></video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          Center + Scale 130%
+        </p>
+      </div>
+
+      <!-- Three video frames ---->
+      <div style="grid-column: span 4;">
+        <div class="media-product-frame media-aspect media-aspect--1-1">
+          <video src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" autoplay muted loop playsinline class="media-product-frame__media media-product-frame__media--center media-product-frame__media--scale-120"></video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          Scale 120%
+        </p>
+      </div>
+
+      <div style="grid-column: span 4;">
+        <div class="media-product-frame media-aspect media-aspect--1-1">
+          <video src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" autoplay muted loop playsinline class="media-product-frame__media media-product-frame__media--top media-product-frame__media--scale-140"></video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          Top + Scale 140%
+        </p>
+      </div>
+
+      <div style="grid-column: span 4;">
+        <div class="media-product-frame media-aspect media-aspect--1-1">
+          <video src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" autoplay muted loop playsinline class="media-product-frame__media media-product-frame__media--bottom media-product-frame__media--scale-140"></video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          Bottom + Scale 140%
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Layered Compositions: Video + Image ---->
+  <section class="media-section">
+    <h2 class="media-section__title">Layered Compositions - Video + Image</h2>
+    <p class="media-section__description">
+      Stack videos and images together. Videos make great backgrounds with image overlays for products, UI mockups, or compositional effects.
+    </p>
+
+    <div class="media-grid">
+      <!-- Example 1: Video background + Image overlay (top-left) ---->
+      <div style="grid-column: span 4;">
+        <div class="media-product-frame media-aspect media-aspect--1-1">
+          <!-- Video background (z-1) ---->
+          <video
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+            autoplay muted loop playsinline
+            class="media-product-frame__layer media-product-frame__layer--z-1 media-product-frame__layer--opacity-70"
+            style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 120%; height: auto;">
+          </video>
+          <!-- Image foreground (z-2) ---->
+          <img
+            src="https://picsum.photos/600/600?random=110"
+            alt="Image overlay"
+            class="media-product-frame__layer media-product-frame__layer--z-2"
+            style="top: 5%; left: 5%; width: 60%; height: auto;">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          Video BG + Image TL
+        </p>
+      </div>
+
+      <!-- Example 2: Image background + Video overlay (center) ---->
+      <div style="grid-column: span 4;">
+        <div class="media-product-frame media-aspect media-aspect--1-1">
+          <!-- Image background (z-1) ---->
+          <img
+            src="https://picsum.photos/800/800?random=111"
+            alt="Image background"
+            class="media-product-frame__layer media-product-frame__layer--z-1"
+            style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 110%; height: auto;">
+          <!-- Video foreground (z-2) ---->
+          <video
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+            autoplay muted loop playsinline
+            class="media-product-frame__layer media-product-frame__layer--z-2"
+            style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 70%; height: auto;">
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          Image BG + Video Center
+        </p>
+      </div>
+
+      <!-- Example 3: Video background + Image overlay (bottom-right) ---->
+      <div style="grid-column: span 4;">
+        <div class="media-product-frame media-aspect media-aspect--1-1">
+          <!-- Video background (z-1) ---->
+          <video
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+            autoplay muted loop playsinline
+            class="media-product-frame__layer media-product-frame__layer--z-1 media-product-frame__layer--opacity-60"
+            style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 130%; height: auto;">
+          </video>
+          <!-- Image overlay (z-2) ---->
+          <img
+            src="https://picsum.photos/500/500?random=112"
+            alt="Image overlay"
+            class="media-product-frame__layer media-product-frame__layer--z-2"
+            style="bottom: 8%; right: 8%; width: 55%; height: auto;">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          Video BG + Image BR
+        </p>
+      </div>
+
+      <!-- Example 4: Wide format - Video BG + Image overlays left & right ---->
+      <div style="grid-column: span 12;">
+        <div class="media-product-frame media-aspect media-aspect--21-9">
+          <!-- Video background (z-1) ---->
+          <video
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+            autoplay muted loop playsinline
+            class="media-product-frame__layer media-product-frame__layer--z-1 media-product-frame__layer--opacity-80"
+            style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 110%; height: auto;">
+          </video>
+          <!-- Left image overlay (z-2) ---->
+          <img
+            src="https://picsum.photos/600/800?random=113"
+            alt="Left image"
+            class="media-product-frame__layer media-product-frame__layer--z-2"
+            style="top: 50%; left: 5%; transform: translateY(-50%); height: 85%; width: auto;">
+          <!-- Right image overlay (z-2) ---->
+          <img
+            src="https://picsum.photos/600/800?random=114"
+            alt="Right image"
+            class="media-product-frame__layer media-product-frame__layer--z-2"
+            style="top: 50%; right: 5%; transform: translateY(-50%); height: 85%; width: auto;">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          Video Background + Image Overlays Left & Right
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Layered Compositions: Image + Video ---->
+  <section class="media-section">
+    <h2 class="media-section__title">Layered Compositions - Image + Video</h2>
+    <p class="media-section__description">
+      Images as backgrounds with video overlays create unique effects - perfect for showing UI in action on product shots.
+    </p>
+
+    <div class="media-grid">
+      <!-- Example 1: Image BG + Video TL ---->
+      <div style="grid-column: span 4;">
+        <div class="media-product-frame media-aspect media-aspect--1-1">
+          <!-- Image background (z-1) ---->
+          <img
+            src="https://picsum.photos/800/800?random=115"
+            alt="Image background"
+            class="media-product-frame__layer media-product-frame__layer--z-1 media-product-frame__layer--opacity-50"
+            style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 130%; height: auto;">
+          <!-- Video overlay (z-2) ---->
+          <video
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+            autoplay muted loop playsinline
+            class="media-product-frame__layer media-product-frame__layer--z-2"
+            style="top: 5%; left: 5%; width: 65%; height: auto;">
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          Image BG + Video TL
+        </p>
+      </div>
+
+      <!-- Example 2: Image BG + Video BR ---->
+      <div style="grid-column: span 4;">
+        <div class="media-product-frame media-aspect media-aspect--1-1">
+          <!-- Image background (z-1) ---->
+          <img
+            src="https://picsum.photos/800/800?random=116"
+            alt="Image background"
+            class="media-product-frame__layer media-product-frame__layer--z-1"
+            style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 120%; height: auto;">
+          <!-- Video overlay (z-2) ---->
+          <video
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+            autoplay muted loop playsinline
+            class="media-product-frame__layer media-product-frame__layer--z-2"
+            style="bottom: 5%; right: 5%; width: 60%; height: auto;">
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          Image BG + Video BR
+        </p>
+      </div>
+
+      <!-- Example 3: Image BG + Multiple Videos ---->
+      <div style="grid-column: span 4;">
+        <div class="media-product-frame media-aspect media-aspect--1-1">
+          <!-- Image background (z-1) ---->
+          <img
+            src="https://picsum.photos/800/800?random=117"
+            alt="Image background"
+            class="media-product-frame__layer media-product-frame__layer--z-1 media-product-frame__layer--opacity-60"
+            style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 140%; height: auto;">
+          <!-- Video 1 (z-2) ---->
+          <video
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+            autoplay muted loop playsinline
+            class="media-product-frame__layer media-product-frame__layer--z-2"
+            style="top: 10%; left: 10%; width: 40%; height: auto;">
+          </video>
+          <!-- Video 2 (z-3) ---->
+          <video
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+            autoplay muted loop playsinline
+            class="media-product-frame__layer media-product-frame__layer--z-3"
+            style="bottom: 10%; right: 10%; width: 40%; height: auto;">
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          Image + 2 Videos
+        </p>
+      </div>
+
+      <!-- Example 4: Wide - Image BG + Video overlays ---->
+      <div style="grid-column: span 12;">
+        <div class="media-product-frame media-aspect media-aspect--16-9">
+          <!-- Image background (z-1) ---->
+          <img
+            src="https://picsum.photos/1600/900?random=118"
+            alt="Image background"
+            class="media-product-frame__layer media-product-frame__layer--z-1 media-product-frame__layer--opacity-70"
+            style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 120%; height: auto;">
+          <!-- Center video (z-2) ---->
+          <video
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+            autoplay muted loop playsinline
+            class="media-product-frame__layer media-product-frame__layer--z-2"
+            style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60%; height: auto;">
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          Image Background + Centered Video Overlay
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complex Multi-Layer Compositions ---->
+  <section class="media-section">
+    <h2 class="media-section__title">Complex Multi-Layer Compositions</h2>
+    <p class="media-section__description">
+      Stack multiple images and videos together with varying opacity and z-index for advanced compositional effects.
+    </p>
+
+    <div class="media-grid">
+      <!-- Example 1: Video > Image > Video ---->
+      <div style="grid-column: span 6;">
+        <div class="media-product-frame media-aspect media-aspect--16-9">
+          <!-- Base video layer (z-1) ---->
+          <video
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+            autoplay muted loop playsinline
+            class="media-product-frame__layer media-product-frame__layer--z-1 media-product-frame__layer--opacity-50"
+            style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 130%; height: auto;">
+          </video>
+          <!-- Middle image layer (z-2) ---->
+          <img
+            src="https://picsum.photos/1000/600?random=119"
+            alt="Middle layer"
+            class="media-product-frame__layer media-product-frame__layer--z-2 media-product-frame__layer--opacity-80"
+            style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; height: auto;">
+          <!-- Top video layer (z-3) ---->
+          <video
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+            autoplay muted loop playsinline
+            class="media-product-frame__layer media-product-frame__layer--z-3"
+            style="bottom: 5%; right: 5%; width: 35%; height: auto;">
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          Video (z-1) → Image (z-2) → Video (z-3)
+        </p>
+      </div>
+
+      <!-- Example 2: Image > Video > Image ---->
+      <div style="grid-column: span 6;">
+        <div class="media-product-frame media-aspect media-aspect--16-9">
+          <!-- Base image layer (z-1) ---->
+          <img
+            src="https://picsum.photos/1600/900?random=120"
+            alt="Base layer"
+            class="media-product-frame__layer media-product-frame__layer--z-1"
+            style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 120%; height: auto;">
+          <!-- Middle video layer (z-2) ---->
+          <video
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+            autoplay muted loop playsinline
+            class="media-product-frame__layer media-product-frame__layer--z-2 media-product-frame__layer--opacity-70"
+            style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 70%; height: auto;">
+          </video>
+          <!-- Top image layer (z-3) ---->
+          <img
+            src="https://picsum.photos/400/400?random=121"
+            alt="Top layer"
+            class="media-product-frame__layer media-product-frame__layer--z-3"
+            style="top: 5%; left: 5%; width: 30%; height: auto;">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          Image (z-1) → Video (z-2) → Image (z-3)
+        </p>
+      </div>
+
+      <!-- Example 3: Five-layer composition ---->
+      <div style="grid-column: span 12;">
+        <div class="media-product-frame media-aspect media-aspect--21-9">
+          <!-- Base video (z-1) ---->
+          <video
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+            autoplay muted loop playsinline
+            class="media-product-frame__layer media-product-frame__layer--z-1 media-product-frame__layer--opacity-60"
+            style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 110%; height: auto;">
+          </video>
+          <!-- Layer 2: Image TL (z-2) ---->
+          <img
+            src="https://picsum.photos/600/600?random=122"
+            alt="Top-left"
+            class="media-product-frame__layer media-product-frame__layer--z-2"
+            style="top: 5%; left: 5%; width: 20%; height: auto;">
+          <!-- Layer 3: Video TR (z-3) ---->
+          <video
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+            autoplay muted loop playsinline
+            class="media-product-frame__layer media-product-frame__layer--z-3"
+            style="top: 5%; right: 5%; width: 20%; height: auto;">
+          </video>
+          <!-- Layer 4: Image BL (z-4) ---->
+          <img
+            src="https://picsum.photos/600/600?random=123"
+            alt="Bottom-left"
+            class="media-product-frame__layer media-product-frame__layer--z-4"
+            style="bottom: 5%; left: 5%; width: 20%; height: auto;">
+          <!-- Layer 5: Video BR (z-5) ---->
+          <video
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+            autoplay muted loop playsinline
+            class="media-product-frame__layer media-product-frame__layer--z-5"
+            style="bottom: 5%; right: 5%; width: 20%; height: auto;">
+          </video>
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          Five Layers: Video BG → Image TL → Video TR → Image BL → Video BR
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Media Cards ---->
+  <section class="media-section">
+    <h2 class="media-section__title">Media Cards</h2>
+    <p class="media-section__description">
+      Card components with media (images or videos) and content sections.
+    </p>
+
+    <div class="media-grid">
+      <div class="media-card" style="grid-column: span 4;">
+        <div class="media-aspect media-aspect--16-9">
+          <video src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" autoplay muted loop playsinline class="media-card__media media--cover"></video>
+        </div>
+        <div class="media-card__content">
+          <h3 class="media-card__title">Video Demo</h3>
+          <p class="media-card__description">Product demonstration showing features in action with smooth animations.</p>
+        </div>
+      </div>
+
+      <div class="media-card" style="grid-column: span 4;">
+        <div class="media-aspect media-aspect--16-9">
+          <img src="https://picsum.photos/1600/900?random=124" alt="Product image" class="media-card__media media--cover">
+        </div>
+        <div class="media-card__content">
+          <h3 class="media-card__title">Static Image</h3>
+          <p class="media-card__description">High-quality product photography with detailed composition.</p>
+        </div>
+      </div>
+
+      <div class="media-card" style="grid-column: span 4;">
+        <div class="media-aspect media-aspect--16-9">
+          <video src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" autoplay muted loop playsinline class="media-card__media media--cover"></video>
+        </div>
+        <div class="media-card__content">
+          <h3 class="media-card__title">Tutorial Video</h3>
+          <p class="media-card__description">Step-by-step guide showcasing usage and best practices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

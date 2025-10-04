@@ -1,0 +1,396 @@
+@import "../../../styles/grid.css";
+@import "../../../styles/space.css";
+@import "../../../styles/tokens/colors.css";
+@import "../../../styles/typography.css";
+@import "../../../styles/fonts.css";
+
+/* Base Media Styles - works for both img and video */
+.media {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.media video {
+  display: block;
+}
+
+/* Media Container */
+.media-container {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-surface-variant);
+}
+
+/* Object Fit Utilities - works for both img and video */
+.media--cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.media--contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.media--fill {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.media--none {
+  width: 100%;
+  height: 100%;
+  object-fit: none;
+}
+
+.media--scale-down {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+}
+
+/* Aspect Ratio Containers */
+.media-aspect {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-surface-variant);
+}
+
+.media-aspect--1-1 {
+  aspect-ratio: 1 / 1;
+}
+
+.media-aspect--16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+.media-aspect--9-16 {
+  aspect-ratio: 9 / 16;
+}
+
+.media-aspect--4-3 {
+  aspect-ratio: 4 / 3;
+}
+
+.media-aspect--3-2 {
+  aspect-ratio: 3 / 2;
+}
+
+.media-aspect--2-1 {
+  aspect-ratio: 2 / 1;
+}
+
+.media-aspect--21-9 {
+  aspect-ratio: 21 / 9;
+}
+
+/* Media Card */
+.media-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.media-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.media-card__media {
+  width: 100%;
+  display: block;
+}
+
+.media-card__content {
+  padding: var(--space-m);
+}
+
+.media-card__title {
+  font-family: var(--font-sans);
+  font-size: var(--step-1);
+  font-weight: 700;
+  margin: 0 0 var(--space-xs) 0;
+  color: var(--color-on-surface);
+}
+
+.media-card__description {
+  font-family: var(--font-sans);
+  font-size: var(--step--1);
+  line-height: 1.6;
+  margin: 0;
+  color: var(--color-on-surface-variant);
+}
+
+/* Media Grid Layouts */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--grid-gutter);
+  max-width: var(--grid-max-width);
+  margin-inline: auto;
+  padding-inline: var(--grid-gutter);
+}
+
+/* Demo Container */
+.media-showcase {
+  max-width: var(--grid-max-width);
+  margin-inline: auto;
+  padding-inline: var(--grid-gutter);
+}
+
+.media-section {
+  margin-bottom: var(--space-3xl);
+  padding-block: var(--space-xl);
+  border-bottom: 1px solid var(--color-outline-variant);
+}
+
+.media-section:last-child {
+  border-bottom: none;
+}
+
+.media-section__title {
+  font-family: var(--font-sans);
+  font-size: var(--step-3);
+  font-weight: 700;
+  margin: 0 0 var(--space-m) 0;
+  color: var(--color-on-background);
+}
+
+.media-section__description {
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  margin: 0 0 var(--space-l) 0;
+  color: var(--color-on-surface-variant);
+  max-width: 65ch;
+}
+
+/* Object Fit Demo Container */
+.object-fit-demo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-m);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 8px;
+}
+
+.object-fit-demo__label {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  font-weight: 600;
+  text-align: center;
+  color: var(--color-on-surface);
+}
+
+.object-fit-demo__container {
+  width: 100%;
+  height: 200px;
+  background-color: var(--color-surface-variant);
+  border: 2px dashed var(--color-outline);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Hero Media */
+.media-hero {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--color-surface-variant);
+}
+
+.media-hero__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.media-hero__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: var(--space-xl);
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.media-hero__title {
+  font-family: var(--font-display);
+  font-size: var(--step-6);
+  font-weight: 700;
+  margin: 0 0 var(--space-m) 0;
+}
+
+.media-hero__subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--step-2);
+  font-weight: 400;
+  margin: 0;
+}
+
+/* Product Frame - Apple-style masked product media */
+.media-product-frame {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-surface-variant);
+  border-radius: 8px;
+}
+
+.media-product-frame__media {
+  position: absolute;
+  width: auto;
+  height: auto;
+  max-width: none;
+}
+
+/* Positioning utilities for product media */
+.media-product-frame__media--center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.media-product-frame__media--top {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.media-product-frame__media--bottom {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.media-product-frame__media--left {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.media-product-frame__media--right {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+/* Scaling utilities */
+.media-product-frame__media--scale-110 {
+  width: 110%;
+  height: auto;
+}
+
+.media-product-frame__media--scale-120 {
+  width: 120%;
+  height: auto;
+}
+
+.media-product-frame__media--scale-130 {
+  width: 130%;
+  height: auto;
+}
+
+.media-product-frame__media--scale-140 {
+  width: 140%;
+  height: auto;
+}
+
+.media-product-frame__media--scale-150 {
+  width: 150%;
+  height: auto;
+}
+
+/* Offset utilities for fine-tuning position */
+.media-product-frame__media--offset-top {
+  top: -10%;
+}
+
+.media-product-frame__media--offset-bottom {
+  bottom: -10%;
+}
+
+.media-product-frame__media--offset-left {
+  left: -10%;
+}
+
+.media-product-frame__media--offset-right {
+  right: -10%;
+}
+
+/* Layering utilities for stacking multiple media (images and videos) */
+.media-product-frame__layer {
+  position: absolute;
+  width: auto;
+  height: auto;
+  max-width: none;
+}
+
+.media-product-frame__layer--z-1 {
+  z-index: 1;
+}
+
+.media-product-frame__layer--z-2 {
+  z-index: 2;
+}
+
+.media-product-frame__layer--z-3 {
+  z-index: 3;
+}
+
+.media-product-frame__layer--z-4 {
+  z-index: 4;
+}
+
+.media-product-frame__layer--z-5 {
+  z-index: 5;
+}
+
+/* Opacity utilities for layered effects */
+.media-product-frame__layer--opacity-90 {
+  opacity: 0.9;
+}
+
+.media-product-frame__layer--opacity-80 {
+  opacity: 0.8;
+}
+
+.media-product-frame__layer--opacity-70 {
+  opacity: 0.7;
+}
+
+.media-product-frame__layer--opacity-60 {
+  opacity: 0.6;
+}
+
+.media-product-frame__layer--opacity-50 {
+  opacity: 0.5;
+}
+
+/* Responsive Media */
+@media (max-width: 768px) {
+  .media-hero {
+    min-height: 300px;
+  }
+
+  .media-hero__title {
+    font-size: var(--step-4);
+  }
+
+  .media-hero__subtitle {
+    font-size: var(--step-0);
+  }
+}
