@@ -238,6 +238,95 @@
   margin: 0;
 }
 
+/* Product Frame - Apple-style masked product images */
+.img-product-frame {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-surface-variant);
+  border-radius: 8px;
+}
+
+.img-product-frame__image {
+  position: absolute;
+  width: auto;
+  height: auto;
+  max-width: none;
+}
+
+/* Positioning utilities for product images */
+.img-product-frame__image--center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.img-product-frame__image--top {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.img-product-frame__image--bottom {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.img-product-frame__image--left {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.img-product-frame__image--right {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+/* Scaling utilities */
+.img-product-frame__image--scale-110 {
+  width: 110%;
+  height: auto;
+}
+
+.img-product-frame__image--scale-120 {
+  width: 120%;
+  height: auto;
+}
+
+.img-product-frame__image--scale-130 {
+  width: 130%;
+  height: auto;
+}
+
+.img-product-frame__image--scale-140 {
+  width: 140%;
+  height: auto;
+}
+
+.img-product-frame__image--scale-150 {
+  width: 150%;
+  height: auto;
+}
+
+/* Offset utilities for fine-tuning position */
+.img-product-frame__image--offset-top {
+  top: -10%;
+}
+
+.img-product-frame__image--offset-bottom {
+  bottom: -10%;
+}
+
+.img-product-frame__image--offset-left {
+  left: -10%;
+}
+
+.img-product-frame__image--offset-right {
+  right: -10%;
+}
+
 /* Responsive Images */
 @media (max-width: 768px) {
   .img-hero {

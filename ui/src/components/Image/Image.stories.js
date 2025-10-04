@@ -2,6 +2,7 @@ import './Image.css';
 import ImageObjectFitHTML from './ImageObjectFit.html?raw';
 import ImageGridHTML from './ImageGrid.html?raw';
 import ImageShowcaseHTML from './ImageShowcase.html?raw';
+import ImageProductFrameHTML from './ImageProductFrame.html?raw';
 
 function createHTMLElement(html) {
   const container = document.createElement('div');
@@ -24,4 +25,8 @@ export const Grid = {
 
 export const Showcase = {
   render: () => createHTMLElement(ImageShowcaseHTML),
+};
+
+export const ProductFrame = {
+  render: () => createHTMLElement(ImageProductFrameHTML),
 };

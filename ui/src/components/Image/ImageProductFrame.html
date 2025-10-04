@@ -1,0 +1,332 @@
+<link rel="stylesheet" href="./Image.css">
+
+<div class="img-showcase">
+  <!-- Hero Product Frame ---->
+  <div class="img-product-frame img-aspect img-aspect--21-9" style="margin-bottom: var(--space-3xl);">
+    <img src="https://picsum.photos/2400/900?random=30" alt="Hero product" class="img-product-frame__image img-product-frame__image--center img-product-frame__image--scale-120">
+  </div>
+
+  <!-- Product Frame Basics ---->
+  <section class="img-section">
+    <h2 class="img-section__title">Product Frame Basics</h2>
+    <p class="img-section__description">
+      Apple-style product frames use aspect ratio containers with overflow hidden to mask and position images.
+      The image is absolutely positioned and scaled to create focused compositions.
+    </p>
+
+    <div class="img-grid">
+      <!-- Centered & Scaled ---->
+      <div style="grid-column: span 4;">
+        <div class="img-product-frame img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/800/800?random=31" alt="Centered product" class="img-product-frame__image img-product-frame__image--center img-product-frame__image--scale-130">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          Center + Scale 130%
+        </p>
+      </div>
+
+      <div style="grid-column: span 4;">
+        <div class="img-product-frame img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/800/800?random=32" alt="Top aligned" class="img-product-frame__image img-product-frame__image--top img-product-frame__image--scale-120">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          Top + Scale 120%
+        </p>
+      </div>
+
+      <div style="grid-column: span 4;">
+        <div class="img-product-frame img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/800/800?random=33" alt="Bottom aligned" class="img-product-frame__image img-product-frame__image--bottom img-product-frame__image--scale-120">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          Bottom + Scale 120%
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wide Product Frames ---->
+  <section class="img-section">
+    <h2 class="img-section__title">Wide Product Showcases</h2>
+    <p class="img-section__description">
+      Wide aspect ratios perfect for landscape product photography and hero sections.
+    </p>
+
+    <div class="img-grid">
+      <!-- 16:9 Frame ---->
+      <div style="grid-column: span 12;">
+        <div class="img-product-frame img-aspect img-aspect--16-9">
+          <img src="https://picsum.photos/2000/1000?random=34" alt="Wide product" class="img-product-frame__image img-product-frame__image--center img-product-frame__image--scale-140">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          16:9 Aspect Ratio - Center + Scale 140%
+        </p>
+      </div>
+
+      <!-- Split 16:9 ---->
+      <div style="grid-column: span 6;">
+        <div class="img-product-frame img-aspect img-aspect--16-9">
+          <img src="https://picsum.photos/1600/900?random=35" alt="Product left" class="img-product-frame__image img-product-frame__image--left img-product-frame__image--scale-120">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          Left Aligned + Scale 120%
+        </p>
+      </div>
+
+      <div style="grid-column: span 6;">
+        <div class="img-product-frame img-aspect img-aspect--16-9">
+          <img src="https://picsum.photos/1600/900?random=36" alt="Product right" class="img-product-frame__image img-product-frame__image--right img-product-frame__image--scale-120">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          Right Aligned + Scale 120%
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Grid Gallery ---->
+  <section class="img-section">
+    <h2 class="img-section__title">Product Grid Gallery</h2>
+    <p class="img-section__description">
+      Multiple products displayed in a masonry-style grid with varying aspect ratios.
+    </p>
+
+    <div class="img-grid">
+      <!-- Row 1: Large + 2 small ---->
+      <div style="grid-column: span 7;">
+        <div class="img-product-frame img-aspect img-aspect--4-3">
+          <img src="https://picsum.photos/1200/900?random=37" alt="Featured product" class="img-product-frame__image img-product-frame__image--center img-product-frame__image--scale-120">
+        </div>
+      </div>
+
+      <div style="grid-column: span 5; display: flex; flex-direction: column; gap: var(--grid-gutter);">
+        <div class="img-product-frame img-aspect img-aspect--16-9">
+          <img src="https://picsum.photos/1000/600?random=38" alt="Product detail" class="img-product-frame__image img-product-frame__image--top img-product-frame__image--scale-130">
+        </div>
+        <div class="img-product-frame img-aspect img-aspect--16-9">
+          <img src="https://picsum.photos/1000/600?random=39" alt="Product detail" class="img-product-frame__image img-product-frame__image--bottom img-product-frame__image--scale-130">
+        </div>
+      </div>
+
+      <!-- Row 2: 3 equal squares ---->
+      <div style="grid-column: span 4;">
+        <div class="img-product-frame img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/800/800?random=40" alt="Product 1" class="img-product-frame__image img-product-frame__image--center img-product-frame__image--scale-110">
+        </div>
+      </div>
+
+      <div style="grid-column: span 4;">
+        <div class="img-product-frame img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/800/800?random=41" alt="Product 2" class="img-product-frame__image img-product-frame__image--center img-product-frame__image--scale-110">
+        </div>
+      </div>
+
+      <div style="grid-column: span 4;">
+        <div class="img-product-frame img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/800/800?random=42" alt="Product 3" class="img-product-frame__image img-product-frame__image--center img-product-frame__image--scale-110">
+        </div>
+      </div>
+
+      <!-- Row 3: Full width panoramic ---->
+      <div style="grid-column: span 12;">
+        <div class="img-product-frame img-aspect img-aspect--21-9">
+          <img src="https://picsum.photos/2400/900?random=43" alt="Panoramic product" class="img-product-frame__image img-product-frame__image--center img-product-frame__image--scale-150">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scaling Variations ---->
+  <section class="img-section">
+    <h2 class="img-section__title">Scale Variations</h2>
+    <p class="img-section__description">
+      Different scale factors show varying levels of zoom and crop on the same aspect ratio.
+    </p>
+
+    <div class="img-grid">
+      <div style="grid-column: span 3;">
+        <div class="img-product-frame img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/800/800?random=44" alt="Scale 110" class="img-product-frame__image img-product-frame__image--center img-product-frame__image--scale-110">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          Scale 110%
+        </p>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="img-product-frame img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/800/800?random=44" alt="Scale 120" class="img-product-frame__image img-product-frame__image--center img-product-frame__image--scale-120">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          Scale 120%
+        </p>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="img-product-frame img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/800/800?random=44" alt="Scale 130" class="img-product-frame__image img-product-frame__image--center img-product-frame__image--scale-130">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          Scale 130%
+        </p>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="img-product-frame img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/800/800?random=44" alt="Scale 140" class="img-product-frame__image img-product-frame__image--center img-product-frame__image--scale-140">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          Scale 140%
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portrait Frames ---->
+  <section class="img-section">
+    <h2 class="img-section__title">Portrait Product Frames</h2>
+    <p class="img-section__description">
+      Vertical aspect ratios ideal for mobile devices, bottles, and tall products.
+    </p>
+
+    <div class="img-grid">
+      <div style="grid-column: span 3;">
+        <div class="img-product-frame img-aspect img-aspect--9-16">
+          <img src="https://picsum.photos/900/1600?random=45" alt="Portrait product" class="img-product-frame__image img-product-frame__image--center img-product-frame__image--scale-120">
+        </div>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="img-product-frame img-aspect img-aspect--9-16">
+          <img src="https://picsum.photos/900/1600?random=46" alt="Portrait product" class="img-product-frame__image img-product-frame__image--top img-product-frame__image--scale-130">
+        </div>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="img-product-frame img-aspect img-aspect--9-16">
+          <img src="https://picsum.photos/900/1600?random=47" alt="Portrait product" class="img-product-frame__image img-product-frame__image--bottom img-product-frame__image--scale-130">
+        </div>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="img-product-frame img-aspect img-aspect--9-16">
+          <img src="https://picsum.photos/900/1600?random=48" alt="Portrait product" class="img-product-frame__image img-product-frame__image--center img-product-frame__image--scale-140">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mixed Aspect Ratios ---->
+  <section class="img-section">
+    <h2 class="img-section__title">Mixed Aspect Ratios</h2>
+    <p class="img-section__description">
+      Combining different aspect ratios creates dynamic, editorial-style layouts.
+    </p>
+
+    <div class="img-grid">
+      <!-- 4:3 Classic ---->
+      <div style="grid-column: span 4;">
+        <div class="img-product-frame img-aspect img-aspect--4-3">
+          <img src="https://picsum.photos/1200/900?random=49" alt="4:3 product" class="img-product-frame__image img-product-frame__image--center img-product-frame__image--scale-120">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          4:3 Classic
+        </p>
+      </div>
+
+      <!-- 3:2 Photo ---->
+      <div style="grid-column: span 4;">
+        <div class="img-product-frame img-aspect img-aspect--3-2">
+          <img src="https://picsum.photos/1200/800?random=50" alt="3:2 product" class="img-product-frame__image img-product-frame__image--center img-product-frame__image--scale-120">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          3:2 Photo
+        </p>
+      </div>
+
+      <!-- 2:1 Panoramic ---->
+      <div style="grid-column: span 4;">
+        <div class="img-product-frame img-aspect img-aspect--2-1">
+          <img src="https://picsum.photos/1200/600?random=51" alt="2:1 product" class="img-product-frame__image img-product-frame__image--center img-product-frame__image--scale-130">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          2:1 Panoramic
+        </p>
+      </div>
+
+      <!-- Square Grid ---->
+      <div style="grid-column: span 3;">
+        <div class="img-product-frame img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/800/800?random=52" alt="Square product" class="img-product-frame__image img-product-frame__image--center img-product-frame__image--scale-110">
+        </div>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="img-product-frame img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/800/800?random=53" alt="Square product" class="img-product-frame__image img-product-frame__image--center img-product-frame__image--scale-110">
+        </div>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="img-product-frame img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/800/800?random=54" alt="Square product" class="img-product-frame__image img-product-frame__image--center img-product-frame__image--scale-110">
+        </div>
+      </div>
+
+      <div style="grid-column: span 3;">
+        <div class="img-product-frame img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/800/800?random=55" alt="Square product" class="img-product-frame__image img-product-frame__image--center img-product-frame__image--scale-110">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apple-Style Feature Section ---->
+  <section class="img-section">
+    <h2 class="img-section__title">Feature Presentation</h2>
+    <p class="img-section__description">
+      Large-scale product presentation with supporting detail images - Apple keynote style.
+    </p>
+
+    <div class="img-grid">
+      <!-- Hero Product ---->
+      <div style="grid-column: span 12;">
+        <div class="img-product-frame img-aspect img-aspect--16-9">
+          <img src="https://picsum.photos/2000/1200?random=56" alt="Hero product" class="img-product-frame__image img-product-frame__image--center img-product-frame__image--scale-130">
+        </div>
+      </div>
+
+      <!-- Detail Shots ---->
+      <div style="grid-column: span 6;">
+        <div class="img-product-frame img-aspect img-aspect--4-3">
+          <img src="https://picsum.photos/1200/900?random=57" alt="Product detail" class="img-product-frame__image img-product-frame__image--left img-product-frame__image--scale-140">
+        </div>
+      </div>
+
+      <div style="grid-column: span 6;">
+        <div class="img-product-frame img-aspect img-aspect--4-3">
+          <img src="https://picsum.photos/1200/900?random=58" alt="Product detail" class="img-product-frame__image img-product-frame__image--right img-product-frame__image--scale-140">
+        </div>
+      </div>
+
+      <!-- Close-ups ---->
+      <div style="grid-column: span 4;">
+        <div class="img-product-frame img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/800/800?random=59" alt="Close-up" class="img-product-frame__image img-product-frame__image--center img-product-frame__image--scale-150">
+        </div>
+      </div>
+
+      <div style="grid-column: span 4;">
+        <div class="img-product-frame img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/800/800?random=60" alt="Close-up" class="img-product-frame__image img-product-frame__image--center img-product-frame__image--scale-150">
+        </div>
+      </div>
+
+      <div style="grid-column: span 4;">
+        <div class="img-product-frame img-aspect img-aspect--1-1">
+          <img src="https://picsum.photos/800/800?random=61" alt="Close-up" class="img-product-frame__image img-product-frame__image--center img-product-frame__image--scale-150">
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
