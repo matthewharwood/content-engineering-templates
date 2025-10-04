@@ -1,0 +1,211 @@
+<link rel="stylesheet" href="./Navigation.css">
+<link rel="stylesheet" href="../Button/Button.css">
+<link rel="stylesheet" href="../Icon/Icon.css">
+
+<div style="background-color: var(--color-background); min-height: 100vh;">
+
+  <!-- Navigation -->
+  <nav class="navigation">
+    <div class="navigation__container">
+      <div class="navigation__left">
+        <button class="btn btn--tertiary btn--mini">shop</button>
+        <button class="btn btn--tertiary btn--mini">quality</button>
+        <button class="btn btn--tertiary btn--mini">snif society</button>
+      </div>
+      <div class="navigation__center">
+        <a href="/" class="navigation__logo-link">
+          <div class="navigation__logo-container">
+            <svg class="navigation__logo" width="123" height="56" viewBox="0 0 123 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M25.1231 29.1234C23.2352 28.1117 20.6114 27.4373 18.5217 27.4373C17.1047 27.4373 14.6828 28.0443 14.6828 29.802C14.6828 32.1668 18.5217 32.504 20.2036 32.8412C25.9262 33.9878 30.2402 36.6898 30.2402 43.1055C30.2402 52.2189 21.9569 56 13.9428 56C9.02748 56 4.17526 54.5837 0 52.0166L4.44436 43.4427C6.93775 45.1962 11.113 46.954 14.1446 46.954C15.6919 46.954 17.9835 46.2121 17.9835 44.3195C17.9835 41.6175 14.1446 41.4826 10.3057 40.4709C6.46682 39.4592 2.62794 37.5666 2.62794 31.3575C2.62794 22.851 10.3057 19.0699 17.8489 19.0699C21.7551 19.0699 25.6613 19.6769 29.2311 21.2998L25.1231 29.1234Z" fill="currentColor"></path>
+              <path d="M87.8277 6.90884C87.8277 10.69 84.7288 13.7966 80.9572 13.7966C77.1856 13.7966 74.0868 10.69 74.0868 6.90884C74.0868 3.12774 77.1856 0.0210764 80.9572 0.0210764C84.7288 0.0210764 87.8277 3.12774 87.8277 6.90884ZM87.0877 54.8492H74.831V20.3261H87.0877V54.8492Z" fill="currentColor"></path>
+              <path d="M35.7315 20.3177L35.6895 54.8492H48.1648V36.1039C48.1648 36.1039 47.9251 31.9771 51.9743 31.9265C55.317 31.8844 56.242 33.5705 56.5195 35.3704C56.57 35.7119 56.591 36.0575 56.5952 36.3989L56.7928 54.845H69.1252V32.0825L69.0664 28.0611C68.9865 22.3958 63.1798 18.1257 56.9905 19.2343C54.3583 19.7064 52.0962 21.4052 50.7675 23.732C50.0569 24.9713 49.3127 26.2907 48.9385 27.4246H48.4129L45.3182 20.3177H35.7315Z" fill="currentColor"></path>
+              <path d="M112.497 14.2561C112.497 11.6215 113.888 9.91856 116.512 9.91856C118.135 9.91856 119.447 10.5382 120.296 11.2379L123 1.86315C120.608 0.543771 117.828 0 114.813 0C105.698 0 99.8237 5.11313 99.8237 15.1076V20.3261H92.6421V30.9697H99.8237V54.845H112.497V30.9739H119.767V20.3261H112.497V14.2561Z" fill="currentColor"></path>
+            </svg>
+          </div>
+        </a>
+      </div>
+      <div class="navigation__right">
+        <button class="btn btn--tertiary btn--circle btn--small">
+          <span class="icon">search</span>
+        </button>
+        <button class="btn btn--tertiary btn--circle btn--small">
+          <span class="icon">shopping_bag</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div style="max-width: var(--grid-max-width); margin-inline: auto; padding-inline: var(--grid-gutter); padding-block: var(--space-2xl);">
+
+    <!-- Hero Section -->
+    <section style="text-align: center; padding-block: var(--space-3xl);">
+      <h1 style="font-size: var(--step-5); margin-bottom: var(--space-m); color: var(--color-on-background);">
+        Navigation Component
+      </h1>
+      <p style="font-size: var(--step-1); color: var(--color-on-surface-variant); max-width: 700px; margin-inline: auto;">
+        A responsive navigation bar with tertiary mini buttons, 16:9 aspect ratio logo container, and icon buttons.
+      </p>
+    </section>
+
+    <!-- Component Breakdown -->
+    <section style="display: grid; gap: var(--space-xl); margin-bottom: var(--space-3xl);">
+
+      <!-- Left Section -->
+      <div style="background-color: var(--color-surface); padding: var(--space-xl); border-radius: 8px; border: 1px solid var(--color-outline-variant);">
+        <h2 style="font-size: var(--step-2); margin-bottom: var(--space-s); color: var(--color-on-surface);">
+          Left Section
+        </h2>
+        <p style="font-size: var(--step-0); color: var(--color-on-surface-variant); margin-bottom: var(--space-m);">
+          Tertiary mini buttons for navigation links
+        </p>
+        <div style="display: flex; gap: var(--space-2xs); flex-wrap: wrap;">
+          <button class="btn btn--tertiary btn--mini">shop</button>
+          <button class="btn btn--tertiary btn--mini">quality</button>
+          <button class="btn btn--tertiary btn--mini">snif society</button>
+        </div>
+        <div style="margin-top: var(--space-m); padding: var(--space-s); background-color: var(--color-surface-variant); border-radius: 4px;">
+          <code style="font-family: var(--font-mono); font-size: var(--step--1); color: var(--color-on-surface);">
+            .btn.btn--tertiary.btn--mini
+          </code>
+        </div>
+      </div>
+
+      <!-- Center Section -->
+      <div style="background-color: var(--color-surface); padding: var(--space-xl); border-radius: 8px; border: 1px solid var(--color-outline-variant);">
+        <h2 style="font-size: var(--step-2); margin-bottom: var(--space-s); color: var(--color-on-surface);">
+          Center Section
+        </h2>
+        <p style="font-size: var(--step-0); color: var(--color-on-surface-variant); margin-bottom: var(--space-m);">
+          Logo container with 16:9 aspect ratio
+        </p>
+        <div style="max-width: 300px; margin-inline: auto;">
+          <a href="/" style="display: block; text-decoration: none; color: var(--color-on-surface);">
+            <div class="navigation__logo-container" style="border: 2px dashed var(--color-outline);">
+              <svg class="navigation__logo" width="123" height="56" viewBox="0 0 123 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M25.1231 29.1234C23.2352 28.1117 20.6114 27.4373 18.5217 27.4373C17.1047 27.4373 14.6828 28.0443 14.6828 29.802C14.6828 32.1668 18.5217 32.504 20.2036 32.8412C25.9262 33.9878 30.2402 36.6898 30.2402 43.1055C30.2402 52.2189 21.9569 56 13.9428 56C9.02748 56 4.17526 54.5837 0 52.0166L4.44436 43.4427C6.93775 45.1962 11.113 46.954 14.1446 46.954C15.6919 46.954 17.9835 46.2121 17.9835 44.3195C17.9835 41.6175 14.1446 41.4826 10.3057 40.4709C6.46682 39.4592 2.62794 37.5666 2.62794 31.3575C2.62794 22.851 10.3057 19.0699 17.8489 19.0699C21.7551 19.0699 25.6613 19.6769 29.2311 21.2998L25.1231 29.1234Z" fill="currentColor"></path>
+                <path d="M87.8277 6.90884C87.8277 10.69 84.7288 13.7966 80.9572 13.7966C77.1856 13.7966 74.0868 10.69 74.0868 6.90884C74.0868 3.12774 77.1856 0.0210764 80.9572 0.0210764C84.7288 0.0210764 87.8277 3.12774 87.8277 6.90884ZM87.0877 54.8492H74.831V20.3261H87.0877V54.8492Z" fill="currentColor"></path>
+                <path d="M35.7315 20.3177L35.6895 54.8492H48.1648V36.1039C48.1648 36.1039 47.9251 31.9771 51.9743 31.9265C55.317 31.8844 56.242 33.5705 56.5195 35.3704C56.57 35.7119 56.591 36.0575 56.5952 36.3989L56.7928 54.845H69.1252V32.0825L69.0664 28.0611C68.9865 22.3958 63.1798 18.1257 56.9905 19.2343C54.3583 19.7064 52.0962 21.4052 50.7675 23.732C50.0569 24.9713 49.3127 26.2907 48.9385 27.4246H48.4129L45.3182 20.3177H35.7315Z" fill="currentColor"></path>
+                <path d="M112.497 14.2561C112.497 11.6215 113.888 9.91856 116.512 9.91856C118.135 9.91856 119.447 10.5382 120.296 11.2379L123 1.86315C120.608 0.543771 117.828 0 114.813 0C105.698 0 99.8237 5.11313 99.8237 15.1076V20.3261H92.6421V30.9697H99.8237V54.845H112.497V30.9739H119.767V20.3261H112.497V14.2561Z" fill="currentColor"></path>
+              </svg>
+            </div>
+          </a>
+        </div>
+        <div style="margin-top: var(--space-m); padding: var(--space-s); background-color: var(--color-surface-variant); border-radius: 4px;">
+          <code style="font-family: var(--font-mono); font-size: var(--step--1); color: var(--color-on-surface);">
+            aspect-ratio: 16 / 9
+          </code>
+        </div>
+      </div>
+
+      <!-- Right Section -->
+      <div style="background-color: var(--color-surface); padding: var(--space-xl); border-radius: 8px; border: 1px solid var(--color-outline-variant);">
+        <h2 style="font-size: var(--step-2); margin-bottom: var(--space-s); color: var(--color-on-surface);">
+          Right Section
+        </h2>
+        <p style="font-size: var(--step-0); color: var(--color-on-surface-variant); margin-bottom: var(--space-m);">
+          Circle icon buttons for actions
+        </p>
+        <div style="display: flex; gap: var(--space-2xs); justify-content: center;">
+          <button class="btn btn--tertiary btn--circle btn--small">
+            <span class="icon">search</span>
+          </button>
+          <button class="btn btn--tertiary btn--circle btn--small">
+            <span class="icon">shopping_bag</span>
+          </button>
+        </div>
+        <div style="margin-top: var(--space-m); padding: var(--space-s); background-color: var(--color-surface-variant); border-radius: 4px;">
+          <code style="font-family: var(--font-mono); font-size: var(--step--1); color: var(--color-on-surface);">
+            .btn.btn--tertiary.btn--circle.btn--small
+          </code>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Design Tokens Used -->
+    <section style="background-color: var(--color-surface); padding: var(--space-xl); border-radius: 8px; border: 1px solid var(--color-outline-variant);">
+      <h2 style="font-size: var(--step-2); margin-bottom: var(--space-m); color: var(--color-on-surface);">
+        Design Tokens Used
+      </h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-m);">
+
+        <!-- Spacing -->
+        <div>
+          <h3 style="font-size: var(--step-0); font-weight: 600; margin-bottom: var(--space-xs); color: var(--color-on-surface);">
+            Spacing
+          </h3>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="font-family: var(--font-mono); font-size: var(--step--1); color: var(--color-on-surface-variant); padding: var(--space-3xs) 0;">
+              --space-3xs
+            </li>
+            <li style="font-family: var(--font-mono); font-size: var(--step--1); color: var(--color-on-surface-variant); padding: var(--space-3xs) 0;">
+              --space-2xs
+            </li>
+            <li style="font-family: var(--font-mono); font-size: var(--step--1); color: var(--color-on-surface-variant); padding: var(--space-3xs) 0;">
+              --space-xs
+            </li>
+            <li style="font-family: var(--font-mono); font-size: var(--step--1); color: var(--color-on-surface-variant); padding: var(--space-3xs) 0;">
+              --space-s
+            </li>
+            <li style="font-family: var(--font-mono); font-size: var(--step--1); color: var(--color-on-surface-variant); padding: var(--space-3xs) 0;">
+              --space-m
+            </li>
+          </ul>
+        </div>
+
+        <!-- Grid -->
+        <div>
+          <h3 style="font-size: var(--step-0); font-weight: 600; margin-bottom: var(--space-xs); color: var(--color-on-surface);">
+            Grid
+          </h3>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="font-family: var(--font-mono); font-size: var(--step--1); color: var(--color-on-surface-variant); padding: var(--space-3xs) 0;">
+              --grid-max-width
+            </li>
+            <li style="font-family: var(--font-mono); font-size: var(--step--1); color: var(--color-on-surface-variant); padding: var(--space-3xs) 0;">
+              --grid-gutter
+            </li>
+          </ul>
+        </div>
+
+        <!-- Colors -->
+        <div>
+          <h3 style="font-size: var(--step-0); font-weight: 600; margin-bottom: var(--space-xs); color: var(--color-on-surface);">
+            Colors
+          </h3>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="font-family: var(--font-mono); font-size: var(--step--1); color: var(--color-on-surface-variant); padding: var(--space-3xs) 0;">
+              --color-surface
+            </li>
+            <li style="font-family: var(--font-mono); font-size: var(--step--1); color: var(--color-on-surface-variant); padding: var(--space-3xs) 0;">
+              --color-on-surface
+            </li>
+            <li style="font-family: var(--font-mono); font-size: var(--step--1); color: var(--color-on-surface-variant); padding: var(--space-3xs) 0;">
+              --color-outline-variant
+            </li>
+          </ul>
+        </div>
+
+        <!-- Typography -->
+        <div>
+          <h3 style="font-size: var(--step-0); font-weight: 600; margin-bottom: var(--space-xs); color: var(--color-on-surface);">
+            Typography
+          </h3>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="font-family: var(--font-mono); font-size: var(--step--1); color: var(--color-on-surface-variant); padding: var(--space-3xs) 0;">
+              --font-sans
+            </li>
+            <li style="font-family: var(--font-mono); font-size: var(--step--1); color: var(--color-on-surface-variant); padding: var(--space-3xs) 0;">
+              --step-0
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+</div>

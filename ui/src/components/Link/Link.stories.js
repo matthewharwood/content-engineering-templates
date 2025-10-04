@@ -9,6 +9,7 @@ import LinkWithIconsHTML from './LinkWithIcons.html?raw';
 import LinkExternalHTML from './LinkExternal.html?raw';
 import LinkPseudoStatesHTML from './LinkPseudoStates.html?raw';
 import LinkShowcaseHTML from './LinkShowcase.html?raw';
+import LinkImageSvgHTML from './LinkImageSvg.html?raw';
 
 function createHTMLElement(html) {
   const container = document.createElement('div');
@@ -59,4 +60,15 @@ export const PseudoStates = {
 
 export const Showcase = {
   render: () => createHTMLElement(LinkShowcaseHTML)
+};
+
+export const ImageSvgLinks = {
+  render: () => createHTMLElement(LinkImageSvgHTML),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Examples of links wrapping images, SVG logos, and icons - commonly used for brand logos and navigation.',
+      },
+    },
+  },
 };
