@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="./Radio.css">
+
+<div class="radio-group radio-group--medium radio-group--error" style="max-width: 500px;">
+  <fieldset class="radio-group__fieldset">
+    <legend class="radio-group__legend radio-group__legend--required">
+      How did you hear about us?
+    </legend>
+
+    <div class="radio-group__options">
+
+      <label class="radio-option">
+        <input
+          type="radio"
+          name="source-error"
+          value="search"
+          class="radio-option__input"
+          required
+          aria-required="true"
+          aria-invalid="true"
+          aria-describedby="source-error-message"
+        />
+        <span class="radio-option__button"></span>
+        <span class="radio-option__content">
+          <span class="radio-option__label">Search Engine</span>
+        </span>
+      </label>
+
+      <label class="radio-option">
+        <input
+          type="radio"
+          name="source-error"
+          value="social"
+          class="radio-option__input"
+          required
+          aria-required="true"
+          aria-invalid="true"
+          aria-describedby="source-error-message"
+        />
+        <span class="radio-option__button"></span>
+        <span class="radio-option__content">
+          <span class="radio-option__label">Social Media</span>
+        </span>
+      </label>
+
+      <label class="radio-option">
+        <input
+          type="radio"
+          name="source-error"
+          value="friend"
+          class="radio-option__input"
+          required
+          aria-required="true"
+          aria-invalid="true"
+          aria-describedby="source-error-message"
+        />
+        <span class="radio-option__button"></span>
+        <span class="radio-option__content">
+          <span class="radio-option__label">Friend Referral</span>
+        </span>
+      </label>
+
+    </div>
+
+    <span id="source-error-message" class="radio-group__error" role="alert">
+      ⚠ Please select an option to continue
+    </span>
+  </fieldset>
+</div>

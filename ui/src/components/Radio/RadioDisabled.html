@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="./Radio.css">
+
+<div class="radio-group radio-group--medium" style="max-width: 500px;">
+  <fieldset class="radio-group__fieldset">
+    <legend class="radio-group__legend">Select your preference</legend>
+
+    <div class="radio-group__options">
+
+      <label class="radio-option">
+        <input
+          type="radio"
+          name="preference"
+          value="available1"
+          class="radio-option__input"
+          checked
+        />
+        <span class="radio-option__button"></span>
+        <span class="radio-option__content">
+          <span class="radio-option__label">Available Option 1</span>
+          <span class="radio-option__description">This option is selectable</span>
+        </span>
+      </label>
+
+      <label class="radio-option">
+        <input
+          type="radio"
+          name="preference"
+          value="disabled1"
+          class="radio-option__input"
+          disabled
+          aria-disabled="true"
+        />
+        <span class="radio-option__button"></span>
+        <span class="radio-option__content">
+          <span class="radio-option__label">Disabled Option</span>
+          <span class="radio-option__description">This option is not available</span>
+        </span>
+      </label>
+
+      <label class="radio-option">
+        <input
+          type="radio"
+          name="preference"
+          value="available2"
+          class="radio-option__input"
+        />
+        <span class="radio-option__button"></span>
+        <span class="radio-option__content">
+          <span class="radio-option__label">Available Option 2</span>
+          <span class="radio-option__description">This option is selectable</span>
+        </span>
+      </label>
+
+      <label class="radio-option">
+        <input
+          type="radio"
+          name="preference"
+          value="disabled2"
+          class="radio-option__input"
+          disabled
+          aria-disabled="true"
+          checked
+        />
+        <span class="radio-option__button"></span>
+        <span class="radio-option__content">
+          <span class="radio-option__label">Disabled Selected Option</span>
+          <span class="radio-option__description">This option is selected but disabled</span>
+        </span>
+      </label>
+
+    </div>
+  </fieldset>
+</div>

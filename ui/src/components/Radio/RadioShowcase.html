@@ -1,0 +1,255 @@
+<link rel="stylesheet" href="./Radio.css">
+
+<div style="display: flex; flex-direction: column; gap: var(--space-2xl); padding: var(--space-xl); background-color: var(--color-background); max-width: 1000px; margin-inline: auto;">
+
+  <!-- Header -->
+  <div>
+    <h1 style="font-size: var(--step-4); margin-bottom: var(--space-xs); color: var(--color-on-background);">Radio Button Showcase</h1>
+    <p style="font-size: var(--step-0); color: var(--color-on-surface-variant);">
+      Accessible radio buttons following WCAG 2.1 AA guidelines with semantic fieldset grouping
+    </p>
+  </div>
+
+  <!-- Survey Form Example -->
+  <section>
+    <h2 style="font-size: var(--step-2); margin-bottom: var(--space-m); color: var(--color-on-background);">Survey Form Example</h2>
+    <form style="background-color: var(--color-surface); padding: var(--space-xl); border-radius: 8px; border: 1px solid var(--color-outline-variant);">
+
+      <div style="display: flex; flex-direction: column; gap: var(--space-xl);">
+
+        <!-- Question 1 -->
+        <div class="radio-group radio-group--medium">
+          <fieldset class="radio-group__fieldset">
+            <legend class="radio-group__legend radio-group__legend--required">
+              How satisfied are you with our product?
+            </legend>
+            <div class="radio-group__options">
+              <label class="radio-option">
+                <input type="radio" name="satisfaction" value="very-satisfied" class="radio-option__input" required aria-required="true" />
+                <span class="radio-option__button"></span>
+                <span class="radio-option__content">
+                  <span class="radio-option__label">Very Satisfied</span>
+                </span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="satisfaction" value="satisfied" class="radio-option__input" required aria-required="true" />
+                <span class="radio-option__button"></span>
+                <span class="radio-option__content">
+                  <span class="radio-option__label">Satisfied</span>
+                </span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="satisfaction" value="neutral" class="radio-option__input" required aria-required="true" />
+                <span class="radio-option__button"></span>
+                <span class="radio-option__content">
+                  <span class="radio-option__label">Neutral</span>
+                </span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="satisfaction" value="dissatisfied" class="radio-option__input" required aria-required="true" />
+                <span class="radio-option__button"></span>
+                <span class="radio-option__content">
+                  <span class="radio-option__label">Dissatisfied</span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="radio-group radio-group--medium">
+          <fieldset class="radio-group__fieldset">
+            <legend class="radio-group__legend radio-group__legend--required">
+              How likely are you to recommend us?
+            </legend>
+            <div class="radio-group__options radio-group__options--horizontal">
+              <label class="radio-option">
+                <input type="radio" name="recommend" value="1" class="radio-option__input" required aria-required="true" />
+                <span class="radio-option__button"></span>
+                <span class="radio-option__content">
+                  <span class="radio-option__label">1</span>
+                </span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="recommend" value="2" class="radio-option__input" required aria-required="true" />
+                <span class="radio-option__button"></span>
+                <span class="radio-option__content">
+                  <span class="radio-option__label">2</span>
+                </span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="recommend" value="3" class="radio-option__input" required aria-required="true" />
+                <span class="radio-option__button"></span>
+                <span class="radio-option__content">
+                  <span class="radio-option__label">3</span>
+                </span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="recommend" value="4" class="radio-option__input" required aria-required="true" />
+                <span class="radio-option__button"></span>
+                <span class="radio-option__content">
+                  <span class="radio-option__label">4</span>
+                </span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="recommend" value="5" class="radio-option__input" required aria-required="true" />
+                <span class="radio-option__button"></span>
+                <span class="radio-option__content">
+                  <span class="radio-option__label">5</span>
+                </span>
+              </label>
+            </div>
+            <span class="radio-group__helper">1 = Not likely, 5 = Very likely</span>
+          </fieldset>
+        </div>
+
+        <!-- Question 3 with Cards -->
+        <div class="radio-group radio-group--medium">
+          <fieldset class="radio-group__fieldset">
+            <legend class="radio-group__legend radio-group__legend--required">
+              Which feature is most important to you?
+            </legend>
+            <div class="radio-group__options">
+              <label class="radio-option radio-option--card">
+                <input type="radio" name="feature" value="performance" class="radio-option__input" required aria-required="true" />
+                <span class="radio-option__button"></span>
+                <span class="radio-option__content">
+                  <span class="radio-option__label">Performance</span>
+                  <span class="radio-option__description">Fast load times and smooth interactions</span>
+                </span>
+              </label>
+              <label class="radio-option radio-option--card">
+                <input type="radio" name="feature" value="security" class="radio-option__input" required aria-required="true" />
+                <span class="radio-option__button"></span>
+                <span class="radio-option__content">
+                  <span class="radio-option__label">Security</span>
+                  <span class="radio-option__description">Data protection and privacy features</span>
+                </span>
+              </label>
+              <label class="radio-option radio-option--card">
+                <input type="radio" name="feature" value="usability" class="radio-option__input" required aria-required="true" />
+                <span class="radio-option__button"></span>
+                <span class="radio-option__content">
+                  <span class="radio-option__label">Usability</span>
+                  <span class="radio-option__description">Intuitive interface and ease of use</span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+      </div>
+
+    </form>
+  </section>
+
+  <!-- States Demo -->
+  <section>
+    <h2 style="font-size: var(--step-2); margin-bottom: var(--space-m); color: var(--color-on-background);">Radio States</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-l);">
+
+      <!-- Default -->
+      <div class="radio-group radio-group--medium">
+        <fieldset class="radio-group__fieldset">
+          <legend class="radio-group__legend">Default State</legend>
+          <div class="radio-group__options">
+            <label class="radio-option">
+              <input type="radio" name="default" value="1" class="radio-option__input" />
+              <span class="radio-option__button"></span>
+              <span class="radio-option__content">
+                <span class="radio-option__label">Unchecked</span>
+              </span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="default" value="2" class="radio-option__input" checked />
+              <span class="radio-option__button"></span>
+              <span class="radio-option__content">
+                <span class="radio-option__label">Checked</span>
+              </span>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+
+      <!-- Disabled -->
+      <div class="radio-group radio-group--medium">
+        <fieldset class="radio-group__fieldset">
+          <legend class="radio-group__legend">Disabled State</legend>
+          <div class="radio-group__options">
+            <label class="radio-option">
+              <input type="radio" name="disabled" value="1" class="radio-option__input" disabled aria-disabled="true" />
+              <span class="radio-option__button"></span>
+              <span class="radio-option__content">
+                <span class="radio-option__label">Disabled</span>
+              </span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="disabled" value="2" class="radio-option__input" disabled checked aria-disabled="true" />
+              <span class="radio-option__button"></span>
+              <span class="radio-option__content">
+                <span class="radio-option__label">Disabled Checked</span>
+              </span>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Accessibility Features -->
+  <section style="background-color: var(--color-surface); padding: var(--space-xl); border-radius: 8px; border: 1px solid var(--color-outline-variant);">
+    <h2 style="font-size: var(--step-2); margin-bottom: var(--space-m); color: var(--color-on-background);">Accessibility Features</h2>
+
+    <div style="display: grid; gap: var(--space-m);">
+      <div>
+        <h3 style="font-size: var(--step-0); font-weight: 600; margin-bottom: var(--space-xs); color: var(--color-on-surface);">
+          ✓ Semantic Fieldset/Legend
+        </h3>
+        <p style="font-size: var(--step--1); color: var(--color-on-surface-variant); line-height: 1.6;">
+          Uses <code style="font-family: var(--font-mono); background-color: var(--color-surface-variant); padding: 2px 6px; border-radius: 3px;">&lt;fieldset&gt;</code> and <code style="font-family: var(--font-mono); background-color: var(--color-surface-variant); padding: 2px 6px; border-radius: 3px;">&lt;legend&gt;</code> for proper grouping
+        </p>
+      </div>
+
+      <div>
+        <h3 style="font-size: var(--step-0); font-weight: 600; margin-bottom: var(--space-xs); color: var(--color-on-surface);">
+          ✓ ARIA Attributes
+        </h3>
+        <p style="font-size: var(--step--1); color: var(--color-on-surface-variant); line-height: 1.6;">
+          Uses <code style="font-family: var(--font-mono); background-color: var(--color-surface-variant); padding: 2px 6px; border-radius: 3px;">aria-required</code>,
+          <code style="font-family: var(--font-mono); background-color: var(--color-surface-variant); padding: 2px 6px; border-radius: 3px;">aria-invalid</code>,
+          <code style="font-family: var(--font-mono); background-color: var(--color-surface-variant); padding: 2px 6px; border-radius: 3px;">aria-describedby</code>,
+          <code style="font-family: var(--font-mono); background-color: var(--color-surface-variant); padding: 2px 6px; border-radius: 3px;">aria-disabled</code>
+        </p>
+      </div>
+
+      <div>
+        <h3 style="font-size: var(--step-0); font-weight: 600; margin-bottom: var(--space-xs); color: var(--color-on-surface);">
+          ✓ Focus Indicators
+        </h3>
+        <p style="font-size: var(--step--1); color: var(--color-on-surface-variant); line-height: 1.6;">
+          Clear focus states with visible outlines meeting WCAG 2.1 contrast requirements
+        </p>
+      </div>
+
+      <div>
+        <h3 style="font-size: var(--step-0); font-weight: 600; margin-bottom: var(--space-xs); color: var(--color-on-surface);">
+          ✓ Keyboard Navigation
+        </h3>
+        <p style="font-size: var(--step--1); color: var(--color-on-surface-variant); line-height: 1.6;">
+          Arrow keys navigate between options, Space selects, Tab moves to next field
+        </p>
+      </div>
+
+      <div>
+        <h3 style="font-size: var(--step-0); font-weight: 600; margin-bottom: var(--space-xs); color: var(--color-on-surface);">
+          ✓ Large Click Targets
+        </h3>
+        <p style="font-size: var(--step--1); color: var(--color-on-surface-variant); line-height: 1.6;">
+          Entire label area is clickable, exceeding WCAG 2.1 minimum target size of 24×24px
+        </p>
+      </div>
+    </div>
+  </section>
+
+</div>

@@ -1,0 +1,289 @@
+@import "../../../styles/tokens/colors.css";
+@import "../../../styles/typography.css";
+@import "../../../styles/space.css";
+@import "../../../styles/fonts.css";
+
+/* Radio Group Container */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  width: 100%;
+}
+
+/* Fieldset for semantic grouping */
+.radio-group__fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+/* Legend (Group Label) */
+.radio-group__legend {
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  font-weight: 600;
+  color: var(--color-on-surface);
+  margin-bottom: var(--space-xs);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3xs);
+}
+
+.radio-group__legend--required::after {
+  content: '*';
+  color: var(--color-error);
+  font-weight: 700;
+}
+
+/* Options Container */
+.radio-group__options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/* Horizontal Layout */
+.radio-group__options--horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--space-m);
+}
+
+/* Individual Radio Option */
+.radio-option {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  cursor: pointer;
+  position: relative;
+  padding: var(--space-2xs);
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.radio-option:hover {
+  background-color: var(--color-surface-variant);
+}
+
+/* Hide native radio button */
+.radio-option__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Custom Radio Button */
+.radio-option__button {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border: 2px solid var(--color-outline);
+  border-radius: 50%;
+  background-color: var(--color-surface);
+  position: relative;
+  transition: all 0.2s ease;
+  margin-top: 2px; /* Align with text */
+}
+
+/* Radio Button Inner Circle */
+.radio-option__button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  transition: transform 0.2s ease;
+}
+
+/* Checked State */
+.radio-option__input:checked + .radio-option__button {
+  border-color: var(--color-primary);
+  background-color: var(--color-surface);
+}
+
+.radio-option__input:checked + .radio-option__button::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Focus State */
+.radio-option__input:focus-visible + .radio-option__button {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-color: var(--color-primary);
+}
+
+/* Hover State */
+.radio-option:hover .radio-option__button {
+  border-color: var(--color-on-surface);
+}
+
+/* Disabled State */
+.radio-option__input:disabled + .radio-option__button {
+  background-color: var(--color-surface-variant);
+  border-color: var(--color-outline-variant);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.radio-option__input:disabled + .radio-option__button::after {
+  background-color: var(--color-on-surface-variant);
+}
+
+.radio-option__input:disabled ~ .radio-option__label {
+  color: var(--color-on-surface-variant);
+  cursor: not-allowed;
+}
+
+.radio-option:has(.radio-option__input:disabled) {
+  cursor: not-allowed;
+}
+
+.radio-option:has(.radio-option__input:disabled):hover {
+  background-color: transparent;
+}
+
+/* Label and Description */
+.radio-option__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+  flex: 1;
+}
+
+.radio-option__label {
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  font-weight: 500;
+  color: var(--color-on-surface);
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.radio-option__description {
+  font-family: var(--font-sans);
+  font-size: var(--step--1);
+  color: var(--color-on-surface-variant);
+  line-height: 1.4;
+}
+
+/* Helper Text */
+.radio-group__helper {
+  font-family: var(--font-sans);
+  font-size: var(--step--1);
+  color: var(--color-on-surface-variant);
+  line-height: 1.4;
+  margin-top: var(--space-3xs);
+}
+
+/* Error Message */
+.radio-group__error {
+  font-family: var(--font-sans);
+  font-size: var(--step--1);
+  color: var(--color-error);
+  line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3xs);
+  margin-top: var(--space-3xs);
+}
+
+/* Error State */
+.radio-group--error .radio-option__button {
+  border-color: var(--color-error);
+}
+
+.radio-group--error .radio-option__input:checked + .radio-option__button {
+  border-color: var(--color-error);
+}
+
+.radio-group--error .radio-option__input:checked + .radio-option__button::after {
+  background-color: var(--color-error);
+}
+
+/* Sizes */
+.radio-group--small .radio-option__button {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+}
+
+.radio-group--small .radio-option__button::after {
+  width: 8px;
+  height: 8px;
+}
+
+.radio-group--small .radio-option__label {
+  font-size: var(--step--1);
+}
+
+.radio-group--small .radio-option__description {
+  font-size: var(--step--2);
+}
+
+.radio-group--medium .radio-option__button {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+}
+
+.radio-group--medium .radio-option__button::after {
+  width: 10px;
+  height: 10px;
+}
+
+.radio-group--medium .radio-option__label {
+  font-size: var(--step-0);
+}
+
+.radio-group--medium .radio-option__description {
+  font-size: var(--step--1);
+}
+
+.radio-group--large .radio-option__button {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+}
+
+.radio-group--large .radio-option__button::after {
+  width: 12px;
+  height: 12px;
+}
+
+.radio-group--large .radio-option__label {
+  font-size: var(--step-1);
+}
+
+.radio-group--large .radio-option__description {
+  font-size: var(--step-0);
+}
+
+/* Card Style Variant */
+.radio-option--card {
+  border: 1px solid var(--color-outline-variant);
+  padding: var(--space-s);
+  border-radius: 8px;
+  background-color: var(--color-surface);
+}
+
+.radio-option--card:hover {
+  border-color: var(--color-outline);
+  background-color: var(--color-surface);
+}
+
+.radio-option--card:has(.radio-option__input:checked) {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-container);
+}
+
+.radio-option--card:has(.radio-option__input:disabled) {
+  border-color: var(--color-outline-variant);
+  background-color: var(--color-surface-variant);
+}

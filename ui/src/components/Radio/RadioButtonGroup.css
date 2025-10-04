@@ -1,0 +1,288 @@
+@import "../../../styles/tokens/colors.css";
+@import "../../../styles/typography.css";
+@import "../../../styles/space.css";
+@import "../../../styles/fonts.css";
+@import "../../../styles/icons.css";
+
+/* Button Group Container */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  width: 100%;
+}
+
+/* Fieldset for semantic grouping */
+.button-group__fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+/* Legend (Group Label) */
+.button-group__legend {
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  font-weight: 600;
+  color: var(--color-on-surface);
+  margin-bottom: var(--space-xs);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3xs);
+}
+
+.button-group__legend--required::after {
+  content: '*';
+  color: var(--color-error);
+  font-weight: 700;
+}
+
+/* Buttons Container */
+.button-group__buttons {
+  display: flex;
+  gap: var(--space-2xs);
+  flex-wrap: wrap;
+}
+
+/* Individual Button */
+.button-group__button {
+  position: relative;
+}
+
+/* Hide native radio input */
+.button-group__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Button Label (looks like a button) */
+.button-group__label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  gap: var(--space-3xs);
+}
+
+/* Primary Variant */
+.button-group__label--primary {
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  border: 1px solid var(--color-outline);
+}
+
+.button-group__label--primary:hover {
+  background-color: var(--color-surface-variant);
+}
+
+.button-group__input:checked + .button-group__label--primary {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border-color: var(--color-primary);
+}
+
+/* Secondary Variant */
+.button-group__label--secondary {
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  border: 1px solid var(--color-outline);
+}
+
+.button-group__label--secondary:hover {
+  background-color: var(--color-surface-variant);
+}
+
+.button-group__input:checked + .button-group__label--secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-on-secondary);
+  border-color: var(--color-secondary);
+}
+
+/* Tertiary Variant */
+.button-group__label--tertiary {
+  background-color: transparent;
+  color: var(--color-on-surface);
+  box-shadow: none;
+  border: 1px solid transparent;
+}
+
+.button-group__label--tertiary:hover {
+  background-color: var(--color-surface-variant);
+}
+
+.button-group__input:checked + .button-group__label--tertiary {
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  border-color: var(--color-primary);
+}
+
+/* Outline Variant */
+.button-group__label--outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-outline);
+}
+
+.button-group__label--outline:hover {
+  background-color: var(--color-surface-variant);
+}
+
+.button-group__input:checked + .button-group__label--outline {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border-color: var(--color-primary);
+}
+
+/* Sizes */
+.button-group__label--mini {
+  padding: var(--space-3xs) var(--space-xs);
+  font-size: var(--step--2);
+}
+
+.button-group__label--small {
+  padding: var(--space-2xs) var(--space-s);
+  font-size: var(--step--1);
+}
+
+.button-group__label--medium {
+  padding: var(--space-xs) var(--space-m);
+  font-size: var(--step-0);
+}
+
+.button-group__label--large {
+  padding: var(--space-s) var(--space-l);
+  font-size: var(--step-1);
+}
+
+/* Shapes */
+.button-group__label--pill {
+  border-radius: 9999px;
+}
+
+.button-group__label--square {
+  border-radius: 0;
+}
+
+.button-group__label--circle {
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  padding: var(--space-xs);
+  line-height: 1;
+}
+
+.button-group__label--circle.button-group__label--mini {
+  padding: var(--space-3xs);
+  min-width: 2rem;
+  min-height: 2rem;
+}
+
+.button-group__label--circle.button-group__label--small {
+  padding: var(--space-2xs);
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+}
+
+.button-group__label--circle.button-group__label--medium {
+  padding: var(--space-xs);
+  min-width: 3rem;
+  min-height: 3rem;
+}
+
+.button-group__label--circle.button-group__label--large {
+  padding: var(--space-s);
+  min-width: 4rem;
+  min-height: 4rem;
+}
+
+/* Focus State */
+.button-group__input:focus-visible + .button-group__label {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Disabled State */
+.button-group__input:disabled + .button-group__label {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Icon sizing */
+.button-group__label--mini .icon {
+  font-size: var(--icon-size-sm);
+  --icon-optical-size: 20;
+}
+
+.button-group__label--small .icon {
+  font-size: var(--icon-size-sm);
+  --icon-optical-size: 20;
+}
+
+.button-group__label--medium .icon {
+  font-size: var(--icon-size-md);
+  --icon-optical-size: 24;
+}
+
+.button-group__label--large .icon {
+  font-size: var(--icon-size-md);
+  --icon-optical-size: 24;
+}
+
+.button-group__label .icon {
+  color: currentColor;
+}
+
+/* Helper Text */
+.button-group__helper {
+  font-family: var(--font-sans);
+  font-size: var(--step--1);
+  color: var(--color-on-surface-variant);
+  line-height: 1.4;
+  margin-top: var(--space-3xs);
+}
+
+/* Error Message */
+.button-group__error {
+  font-family: var(--font-sans);
+  font-size: var(--step--1);
+  color: var(--color-error);
+  line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3xs);
+  margin-top: var(--space-3xs);
+}
+
+/* Segmented Control Variant (buttons joined together) */
+.button-group__buttons--segmented {
+  gap: 0;
+}
+
+.button-group__buttons--segmented .button-group__label {
+  border-radius: 0;
+  margin-left: -1px;
+}
+
+.button-group__buttons--segmented .button-group__button:first-child .button-group__label {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  margin-left: 0;
+}
+
+.button-group__buttons--segmented .button-group__button:last-child .button-group__label {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.button-group__buttons--segmented .button-group__input:checked + .button-group__label {
+  z-index: 1;
+  position: relative;
+}

@@ -1,0 +1,292 @@
+<link rel="stylesheet" href="./RadioButtonGroup.css">
+<link rel="stylesheet" href="../Icon/Icon.css">
+
+<div style="display: flex; flex-direction: column; gap: var(--space-2xl); padding: var(--space-xl); background-color: var(--color-background); max-width: 1000px; margin-inline: auto;">
+
+  <!-- Header -->
+  <div>
+    <h1 style="font-size: var(--step-4); margin-bottom: var(--space-xs); color: var(--color-on-background);">Button Group Showcase</h1>
+    <p style="font-size: var(--step-0); color: var(--color-on-surface-variant);">
+      Button groups that look like buttons but use radio buttons underneath for single selection
+    </p>
+  </div>
+
+  <!-- Dashboard Example -->
+  <section>
+    <h2 style="font-size: var(--step-2); margin-bottom: var(--space-m); color: var(--color-on-background);">Dashboard Example</h2>
+    <div style="background-color: var(--color-surface); padding: var(--space-xl); border-radius: 8px; border: 1px solid var(--color-outline-variant);">
+
+      <div style="display: flex; flex-direction: column; gap: var(--space-xl);">
+
+        <!-- View Switcher -->
+        <div class="button-group">
+          <fieldset class="button-group__fieldset">
+            <legend class="button-group__legend">View Type</legend>
+            <div class="button-group__buttons button-group__buttons--segmented">
+              <div class="button-group__button">
+                <input type="radio" name="view" id="view-list" value="list" class="button-group__input" />
+                <label for="view-list" class="button-group__label button-group__label--outline button-group__label--medium">
+                  <span class="icon">view_list</span>
+                  List
+                </label>
+              </div>
+              <div class="button-group__button">
+                <input type="radio" name="view" id="view-grid" value="grid" class="button-group__input" checked />
+                <label for="view-grid" class="button-group__label button-group__label--outline button-group__label--medium">
+                  <span class="icon">grid_view</span>
+                  Grid
+                </label>
+              </div>
+              <div class="button-group__button">
+                <input type="radio" name="view" id="view-cards" value="cards" class="button-group__input" />
+                <label for="view-cards" class="button-group__label button-group__label--outline button-group__label--medium">
+                  <span class="icon">view_module</span>
+                  Cards
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- Time Range -->
+        <div class="button-group">
+          <fieldset class="button-group__fieldset">
+            <legend class="button-group__legend">Time Range</legend>
+            <div class="button-group__buttons">
+              <div class="button-group__button">
+                <input type="radio" name="time" id="time-day" value="day" class="button-group__input" />
+                <label for="time-day" class="button-group__label button-group__label--primary button-group__label--small">
+                  Day
+                </label>
+              </div>
+              <div class="button-group__button">
+                <input type="radio" name="time" id="time-week" value="week" class="button-group__input" checked />
+                <label for="time-week" class="button-group__label button-group__label--primary button-group__label--small">
+                  Week
+                </label>
+              </div>
+              <div class="button-group__button">
+                <input type="radio" name="time" id="time-month" value="month" class="button-group__input" />
+                <label for="time-month" class="button-group__label button-group__label--primary button-group__label--small">
+                  Month
+                </label>
+              </div>
+              <div class="button-group__button">
+                <input type="radio" name="time" id="time-year" value="year" class="button-group__input" />
+                <label for="time-year" class="button-group__label button-group__label--primary button-group__label--small">
+                  Year
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- Status Filter -->
+        <div class="button-group">
+          <fieldset class="button-group__fieldset">
+            <legend class="button-group__legend">Status Filter</legend>
+            <div class="button-group__buttons">
+              <div class="button-group__button">
+                <input type="radio" name="status" id="status-all" value="all" class="button-group__input" checked />
+                <label for="status-all" class="button-group__label button-group__label--tertiary button-group__label--medium">
+                  All
+                </label>
+              </div>
+              <div class="button-group__button">
+                <input type="radio" name="status" id="status-active" value="active" class="button-group__input" />
+                <label for="status-active" class="button-group__label button-group__label--tertiary button-group__label--medium">
+                  Active
+                </label>
+              </div>
+              <div class="button-group__button">
+                <input type="radio" name="status" id="status-pending" value="pending" class="button-group__input" />
+                <label for="status-pending" class="button-group__label button-group__label--tertiary button-group__label--medium">
+                  Pending
+                </label>
+              </div>
+              <div class="button-group__button">
+                <input type="radio" name="status" id="status-completed" value="completed" class="button-group__input" />
+                <label for="status-completed" class="button-group__label button-group__label--tertiary button-group__label--medium">
+                  Completed
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Text Editor Example -->
+  <section>
+    <h2 style="font-size: var(--step-2); margin-bottom: var(--space-m); color: var(--color-on-background);">Text Editor Toolbar</h2>
+    <div style="background-color: var(--color-surface); padding: var(--space-l); border-radius: 8px; border: 1px solid var(--color-outline-variant);">
+
+      <div style="display: flex; flex-direction: column; gap: var(--space-l);">
+
+        <!-- Text Alignment -->
+        <div class="button-group">
+          <fieldset class="button-group__fieldset">
+            <legend class="button-group__legend">Text Alignment</legend>
+            <div class="button-group__buttons button-group__buttons--segmented">
+              <div class="button-group__button">
+                <input type="radio" name="align" id="align-left" value="left" class="button-group__input" checked />
+                <label for="align-left" class="button-group__label button-group__label--tertiary button-group__label--small">
+                  <span class="icon">format_align_left</span>
+                </label>
+              </div>
+              <div class="button-group__button">
+                <input type="radio" name="align" id="align-center" value="center" class="button-group__input" />
+                <label for="align-center" class="button-group__label button-group__label--tertiary button-group__label--small">
+                  <span class="icon">format_align_center</span>
+                </label>
+              </div>
+              <div class="button-group__button">
+                <input type="radio" name="align" id="align-right" value="right" class="button-group__input" />
+                <label for="align-right" class="button-group__label button-group__label--tertiary button-group__label--small">
+                  <span class="icon">format_align_right</span>
+                </label>
+              </div>
+              <div class="button-group__button">
+                <input type="radio" name="align" id="align-justify" value="justify" class="button-group__input" />
+                <label for="align-justify" class="button-group__label button-group__label--tertiary button-group__label--small">
+                  <span class="icon">format_align_justify</span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- Heading Level -->
+        <div class="button-group">
+          <fieldset class="button-group__fieldset">
+            <legend class="button-group__legend">Heading Level</legend>
+            <div class="button-group__buttons">
+              <div class="button-group__button">
+                <input type="radio" name="heading" id="heading-p" value="p" class="button-group__input" checked />
+                <label for="heading-p" class="button-group__label button-group__label--outline button-group__label--small button-group__label--pill">
+                  Paragraph
+                </label>
+              </div>
+              <div class="button-group__button">
+                <input type="radio" name="heading" id="heading-h1" value="h1" class="button-group__input" />
+                <label for="heading-h1" class="button-group__label button-group__label--outline button-group__label--small button-group__label--pill">
+                  H1
+                </label>
+              </div>
+              <div class="button-group__button">
+                <input type="radio" name="heading" id="heading-h2" value="h2" class="button-group__input" />
+                <label for="heading-h2" class="button-group__label button-group__label--outline button-group__label--small button-group__label--pill">
+                  H2
+                </label>
+              </div>
+              <div class="button-group__button">
+                <input type="radio" name="heading" id="heading-h3" value="h3" class="button-group__input" />
+                <label for="heading-h3" class="button-group__label button-group__label--outline button-group__label--small button-group__label--pill">
+                  H3
+                </label>
+              </div>
+              <div class="button-group__button">
+                <input type="radio" name="heading" id="heading-h4" value="h4" class="button-group__input" />
+                <label for="heading-h4" class="button-group__label button-group__label--outline button-group__label--small button-group__label--pill">
+                  H4
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- All Variants Grid -->
+  <section>
+    <h2 style="font-size: var(--step-2); margin-bottom: var(--space-m); color: var(--color-on-background);">All Variants</h2>
+    <div style="display: grid; gap: var(--space-xl);">
+
+      <!-- Kinds -->
+      <div style="background-color: var(--color-surface); padding: var(--space-l); border-radius: 8px; border: 1px solid var(--color-outline-variant);">
+        <h3 style="font-size: var(--step-1); margin-bottom: var(--space-m); color: var(--color-on-surface);">Button Kinds</h3>
+        <div style="display: grid; gap: var(--space-l);">
+          <div class="button-group">
+            <p style="font-size: var(--step--1); margin-bottom: var(--space-xs); color: var(--color-on-surface-variant);">Primary</p>
+            <div class="button-group__buttons">
+              <div class="button-group__button">
+                <input type="radio" name="kind-primary" id="kp-1" value="1" class="button-group__input" checked />
+                <label for="kp-1" class="button-group__label button-group__label--primary button-group__label--medium">Option 1</label>
+              </div>
+              <div class="button-group__button">
+                <input type="radio" name="kind-primary" id="kp-2" value="2" class="button-group__input" />
+                <label for="kp-2" class="button-group__label button-group__label--primary button-group__label--medium">Option 2</label>
+              </div>
+              <div class="button-group__button">
+                <input type="radio" name="kind-primary" id="kp-3" value="3" class="button-group__input" />
+                <label for="kp-3" class="button-group__label button-group__label--primary button-group__label--medium">Option 3</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="button-group">
+            <p style="font-size: var(--step--1); margin-bottom: var(--space-xs); color: var(--color-on-surface-variant);">Secondary</p>
+            <div class="button-group__buttons">
+              <div class="button-group__button">
+                <input type="radio" name="kind-secondary" id="ks-1" value="1" class="button-group__input" />
+                <label for="ks-1" class="button-group__label button-group__label--secondary button-group__label--medium">Option 1</label>
+              </div>
+              <div class="button-group__button">
+                <input type="radio" name="kind-secondary" id="ks-2" value="2" class="button-group__input" checked />
+                <label for="ks-2" class="button-group__label button-group__label--secondary button-group__label--medium">Option 2</label>
+              </div>
+              <div class="button-group__button">
+                <input type="radio" name="kind-secondary" id="ks-3" value="3" class="button-group__input" />
+                <label for="ks-3" class="button-group__label button-group__label--secondary button-group__label--medium">Option 3</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="button-group">
+            <p style="font-size: var(--step--1); margin-bottom: var(--space-xs); color: var(--color-on-surface-variant);">Tertiary</p>
+            <div class="button-group__buttons">
+              <div class="button-group__button">
+                <input type="radio" name="kind-tertiary" id="kt-1" value="1" class="button-group__input" />
+                <label for="kt-1" class="button-group__label button-group__label--tertiary button-group__label--medium">Option 1</label>
+              </div>
+              <div class="button-group__button">
+                <input type="radio" name="kind-tertiary" id="kt-2" value="2" class="button-group__input" />
+                <label for="kt-2" class="button-group__label button-group__label--tertiary button-group__label--medium">Option 2</label>
+              </div>
+              <div class="button-group__button">
+                <input type="radio" name="kind-tertiary" id="kt-3" value="3" class="button-group__input" checked />
+                <label for="kt-3" class="button-group__label button-group__label--tertiary button-group__label--medium">Option 3</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="button-group">
+            <p style="font-size: var(--step--1); margin-bottom: var(--space-xs); color: var(--color-on-surface-variant);">Outline</p>
+            <div class="button-group__buttons">
+              <div class="button-group__button">
+                <input type="radio" name="kind-outline" id="ko-1" value="1" class="button-group__input" checked />
+                <label for="ko-1" class="button-group__label button-group__label--outline button-group__label--medium">Option 1</label>
+              </div>
+              <div class="button-group__button">
+                <input type="radio" name="kind-outline" id="ko-2" value="2" class="button-group__input" />
+                <label for="ko-2" class="button-group__label button-group__label--outline button-group__label--medium">Option 2</label>
+              </div>
+              <div class="button-group__button">
+                <input type="radio" name="kind-outline" id="ko-3" value="3" class="button-group__input" />
+                <label for="ko-3" class="button-group__label button-group__label--outline button-group__label--medium">Option 3</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>

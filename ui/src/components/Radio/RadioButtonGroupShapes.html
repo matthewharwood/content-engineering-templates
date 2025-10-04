@@ -1,0 +1,114 @@
+<link rel="stylesheet" href="./RadioButtonGroup.css">
+<link rel="stylesheet" href="../Icon/Icon.css">
+
+<div style="display: flex; flex-direction: column; gap: var(--space-2xl); max-width: 800px;">
+
+  <!-- Default (Rounded Corners) -->
+  <div class="button-group">
+    <fieldset class="button-group__fieldset">
+      <legend class="button-group__legend">Default Shape (Rounded)</legend>
+      <div class="button-group__buttons">
+        <div class="button-group__button">
+          <input type="radio" name="shape-default" id="default-1" value="1" class="button-group__input" checked />
+          <label for="default-1" class="button-group__label button-group__label--primary button-group__label--medium">
+            Option 1
+          </label>
+        </div>
+        <div class="button-group__button">
+          <input type="radio" name="shape-default" id="default-2" value="2" class="button-group__input" />
+          <label for="default-2" class="button-group__label button-group__label--primary button-group__label--medium">
+            Option 2
+          </label>
+        </div>
+        <div class="button-group__button">
+          <input type="radio" name="shape-default" id="default-3" value="3" class="button-group__input" />
+          <label for="default-3" class="button-group__label button-group__label--primary button-group__label--medium">
+            Option 3
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+  <!-- Pill Shape -->
+  <div class="button-group">
+    <fieldset class="button-group__fieldset">
+      <legend class="button-group__legend">Pill Shape</legend>
+      <div class="button-group__buttons">
+        <div class="button-group__button">
+          <input type="radio" name="shape-pill" id="pill-1" value="1" class="button-group__input" />
+          <label for="pill-1" class="button-group__label button-group__label--primary button-group__label--medium button-group__label--pill">
+            Option 1
+          </label>
+        </div>
+        <div class="button-group__button">
+          <input type="radio" name="shape-pill" id="pill-2" value="2" class="button-group__input" checked />
+          <label for="pill-2" class="button-group__label button-group__label--primary button-group__label--medium button-group__label--pill">
+            Option 2
+          </label>
+        </div>
+        <div class="button-group__button">
+          <input type="radio" name="shape-pill" id="pill-3" value="3" class="button-group__input" />
+          <label for="pill-3" class="button-group__label button-group__label--primary button-group__label--medium button-group__label--pill">
+            Option 3
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+  <!-- Square Shape -->
+  <div class="button-group">
+    <fieldset class="button-group__fieldset">
+      <legend class="button-group__legend">Square Shape</legend>
+      <div class="button-group__buttons">
+        <div class="button-group__button">
+          <input type="radio" name="shape-square" id="square-1" value="1" class="button-group__input" />
+          <label for="square-1" class="button-group__label button-group__label--primary button-group__label--medium button-group__label--square">
+            Option 1
+          </label>
+        </div>
+        <div class="button-group__button">
+          <input type="radio" name="shape-square" id="square-2" value="2" class="button-group__input" />
+          <label for="square-2" class="button-group__label button-group__label--primary button-group__label--medium button-group__label--square">
+            Option 2
+          </label>
+        </div>
+        <div class="button-group__button">
+          <input type="radio" name="shape-square" id="square-3" value="3" class="button-group__input" checked />
+          <label for="square-3" class="button-group__label button-group__label--primary button-group__label--medium button-group__label--square">
+            Option 3
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+  <!-- Circle Shape (with icons) -->
+  <div class="button-group">
+    <fieldset class="button-group__fieldset">
+      <legend class="button-group__legend">Circle Shape (Icon Buttons)</legend>
+      <div class="button-group__buttons">
+        <div class="button-group__button">
+          <input type="radio" name="shape-circle" id="circle-1" value="left" class="button-group__input" />
+          <label for="circle-1" class="button-group__label button-group__label--primary button-group__label--medium button-group__label--circle">
+            <span class="icon">format_align_left</span>
+          </label>
+        </div>
+        <div class="button-group__button">
+          <input type="radio" name="shape-circle" id="circle-2" value="center" class="button-group__input" checked />
+          <label for="circle-2" class="button-group__label button-group__label--primary button-group__label--medium button-group__label--circle">
+            <span class="icon">format_align_center</span>
+          </label>
+        </div>
+        <div class="button-group__button">
+          <input type="radio" name="shape-circle" id="circle-3" value="right" class="button-group__input" />
+          <label for="circle-3" class="button-group__label button-group__label--primary button-group__label--medium button-group__label--circle">
+            <span class="icon">format_align_right</span>
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+</div>

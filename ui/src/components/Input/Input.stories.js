@@ -24,7 +24,7 @@ function createHTMLElement(html) {
 }
 
 export default {
-  title: 'Components/Input',
+  title: 'Forms/Input',
   tags: ['autodocs'],
   parameters: {
     docs: {

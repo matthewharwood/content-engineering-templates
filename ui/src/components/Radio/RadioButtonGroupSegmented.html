@@ -1,0 +1,135 @@
+<link rel="stylesheet" href="./RadioButtonGroup.css">
+<link rel="stylesheet" href="../Icon/Icon.css">
+
+<div style="display: flex; flex-direction: column; gap: var(--space-2xl); max-width: 800px;">
+
+  <!-- Segmented Control -->
+  <div class="button-group">
+    <fieldset class="button-group__fieldset">
+      <legend class="button-group__legend">Segmented Control (Joined Buttons)</legend>
+      <div class="button-group__buttons button-group__buttons--segmented">
+        <div class="button-group__button">
+          <input type="radio" name="segmented-1" id="seg-1" value="1" class="button-group__input" checked />
+          <label for="seg-1" class="button-group__label button-group__label--primary button-group__label--medium">
+            Day
+          </label>
+        </div>
+        <div class="button-group__button">
+          <input type="radio" name="segmented-1" id="seg-2" value="2" class="button-group__input" />
+          <label for="seg-2" class="button-group__label button-group__label--primary button-group__label--medium">
+            Week
+          </label>
+        </div>
+        <div class="button-group__button">
+          <input type="radio" name="segmented-1" id="seg-3" value="3" class="button-group__input" />
+          <label for="seg-3" class="button-group__label button-group__label--primary button-group__label--medium">
+            Month
+          </label>
+        </div>
+        <div class="button-group__button">
+          <input type="radio" name="segmented-1" id="seg-4" value="4" class="button-group__input" />
+          <label for="seg-4" class="button-group__label button-group__label--primary button-group__label--medium">
+            Year
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+  <!-- Segmented with Icons -->
+  <div class="button-group">
+    <fieldset class="button-group__fieldset">
+      <legend class="button-group__legend">Segmented with Icons</legend>
+      <div class="button-group__buttons button-group__buttons--segmented">
+        <div class="button-group__button">
+          <input type="radio" name="segmented-icons" id="seg-icon-1" value="list" class="button-group__input" />
+          <label for="seg-icon-1" class="button-group__label button-group__label--outline button-group__label--medium">
+            <span class="icon">view_list</span>
+            List
+          </label>
+        </div>
+        <div class="button-group__button">
+          <input type="radio" name="segmented-icons" id="seg-icon-2" value="grid" class="button-group__input" checked />
+          <label for="seg-icon-2" class="button-group__label button-group__label--outline button-group__label--medium">
+            <span class="icon">grid_view</span>
+            Grid
+          </label>
+        </div>
+        <div class="button-group__button">
+          <input type="radio" name="segmented-icons" id="seg-icon-3" value="gallery" class="button-group__input" />
+          <label for="seg-icon-3" class="button-group__label button-group__label--outline button-group__label--medium">
+            <span class="icon">view_module</span>
+            Gallery
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+  <!-- Segmented Tertiary -->
+  <div class="button-group">
+    <fieldset class="button-group__fieldset">
+      <legend class="button-group__legend">Segmented Tertiary Style</legend>
+      <div class="button-group__buttons button-group__buttons--segmented">
+        <div class="button-group__button">
+          <input type="radio" name="segmented-tertiary" id="seg-tert-1" value="1" class="button-group__input" />
+          <label for="seg-tert-1" class="button-group__label button-group__label--tertiary button-group__label--medium">
+            All
+          </label>
+        </div>
+        <div class="button-group__button">
+          <input type="radio" name="segmented-tertiary" id="seg-tert-2" value="2" class="button-group__input" checked />
+          <label for="seg-tert-2" class="button-group__label button-group__label--tertiary button-group__label--medium">
+            Active
+          </label>
+        </div>
+        <div class="button-group__button">
+          <input type="radio" name="segmented-tertiary" id="seg-tert-3" value="3" class="button-group__input" />
+          <label for="seg-tert-3" class="button-group__label button-group__label--tertiary button-group__label--medium">
+            Completed
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+  <!-- Segmented Small -->
+  <div class="button-group">
+    <fieldset class="button-group__fieldset">
+      <legend class="button-group__legend">Segmented Small Size</legend>
+      <div class="button-group__buttons button-group__buttons--segmented">
+        <div class="button-group__button">
+          <input type="radio" name="segmented-small" id="seg-small-1" value="1" class="button-group__input" checked />
+          <label for="seg-small-1" class="button-group__label button-group__label--primary button-group__label--small">
+            1D
+          </label>
+        </div>
+        <div class="button-group__button">
+          <input type="radio" name="segmented-small" id="seg-small-2" value="2" class="button-group__input" />
+          <label for="seg-small-2" class="button-group__label button-group__label--primary button-group__label--small">
+            1W
+          </label>
+        </div>
+        <div class="button-group__button">
+          <input type="radio" name="segmented-small" id="seg-small-3" value="3" class="button-group__input" />
+          <label for="seg-small-3" class="button-group__label button-group__label--primary button-group__label--small">
+            1M
+          </label>
+        </div>
+        <div class="button-group__button">
+          <input type="radio" name="segmented-small" id="seg-small-4" value="4" class="button-group__input" />
+          <label for="seg-small-4" class="button-group__label button-group__label--primary button-group__label--small">
+            1Y
+          </label>
+        </div>
+        <div class="button-group__button">
+          <input type="radio" name="segmented-small" id="seg-small-5" value="5" class="button-group__input" />
+          <label for="seg-small-5" class="button-group__label button-group__label--primary button-group__label--small">
+            All
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+</div>
