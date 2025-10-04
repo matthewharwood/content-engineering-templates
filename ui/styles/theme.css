@@ -6,10 +6,10 @@
  */
 
 /* Active Theme - Change this line to switch themes */
-@import "./themes/default.css";
+/*@import "./themes/default.css";*/
 
 /* Available Themes */
-/* @import "./themes/blank.css"; */
+ @import "./themes/blank.css";
 
 /* Add custom themes here */
 /* @import "./themes/your-brand.css"; */
