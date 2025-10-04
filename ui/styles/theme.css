@@ -1,0 +1,15 @@
+/**
+ * Theme Configuration
+ *
+ * Change the active import below to switch themes globally.
+ * Uncomment the theme you want to use and comment out the others.
+ */
+
+/* Active Theme - Change this line to switch themes */
+@import "./themes/default.css";
+
+/* Available Themes */
+/* @import "./themes/blank.css"; */
+
+/* Add custom themes here */
+/* @import "./themes/your-brand.css"; */

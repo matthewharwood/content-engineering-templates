@@ -4,11 +4,12 @@
  *
  * These tokens are semantic - they describe the PURPOSE of the color, not the color itself.
  * Actual color values are defined in theme files (themes/default.css, themes/blank.css)
+ *
+ * To switch themes, edit styles/theme.css
  */
 
-/* Import active theme - CHANGE THIS to switch themes */
-@import "../themes/default.css";
-/* @import "../themes/blank.css"; */
+/* Import theme configuration */
+@import "../theme.css";
 
 :root {
   /* Primary - Main brand color */

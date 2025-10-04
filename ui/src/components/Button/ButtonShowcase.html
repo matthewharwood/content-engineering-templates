@@ -1,9 +1,10 @@
 <link rel="stylesheet" href="./Button.css">
+<link rel="stylesheet" href="../../../styles/space.css">
 
-<div style="display: flex; flex-direction: column; gap: 1.5rem;">
+<div style="display: flex; flex-direction: column; gap: var(--space-l);">
   <div>
-    <h4 style="margin: 0 0 0.5rem 0;">Variants</h4>
-    <div style="display: flex; gap: 1rem;">
+    <h4 style="margin: 0 0 var(--space-xs) 0;">Variants</h4>
+    <div style="display: flex; gap: var(--space-m);">
       <button class="btn btn--primary btn--medium">Primary</button>
       <button class="btn btn--secondary btn--medium">Secondary</button>
       <button class="btn btn--outline btn--medium">Outline</button>
@@ -11,8 +12,9 @@
   </div>
 
   <div>
-    <h4 style="margin: 0 0 0.5rem 0;">Sizes</h4>
-    <div style="display: flex; gap: 1rem; align-items: center;">
+    <h4 style="margin: 0 0 var(--space-xs) 0;">Sizes</h4>
+    <div style="display: flex; gap: var(--space-m); align-items: center;">
+      <button class="btn btn--primary btn--mini">Mini</button>
       <button class="btn btn--primary btn--small">Small</button>
       <button class="btn btn--primary btn--medium">Medium</button>
       <button class="btn btn--primary btn--large">Large</button>
@@ -20,8 +22,8 @@
   </div>
 
   <div>
-    <h4 style="margin: 0 0 0.5rem 0;">States</h4>
-    <div style="display: flex; gap: 1rem;">
+    <h4 style="margin: 0 0 var(--space-xs) 0;">States</h4>
+    <div style="display: flex; gap: var(--space-m);">
       <button class="btn btn--primary btn--medium">Enabled</button>
       <button class="btn btn--primary btn--medium" disabled>Disabled</button>
     </div>

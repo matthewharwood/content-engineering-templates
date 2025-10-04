@@ -28,15 +28,17 @@ All components use color tokens (never hardcoded colors):
 
 ## Switching Themes
 
-Edit `styles/tokens/colors.css`:
+Edit `styles/theme.css` - change one line to switch themes globally:
 
 ```css
-/* Import active theme - CHANGE THIS to switch themes */
-@import "../themes/default.css";
-/* @import "../themes/blank.css"; */
+/* Active Theme - Change this line to switch themes */
+@import "./themes/default.css";
+
+/* Available Themes */
+/* @import "./themes/blank.css"; */
 ```
 
-Swap the imports to change themes globally.
+Simply uncomment the theme you want and comment out the current one.
 
 ## Creating a Custom Theme
 
@@ -56,8 +58,8 @@ Swap the imports to change themes globally.
 
 3. **Import your theme:**
    ```css
-   /* In styles/tokens/colors.css */
-   @import "../themes/my-brand.css";
+   /* In styles/theme.css */
+   @import "./themes/my-brand.css";
    ```
 
 ## Color Roles Reference
