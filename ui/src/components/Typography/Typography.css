@@ -1,0 +1,19 @@
+@import "../../../styles/typography.css";
+
+.typography {
+  margin: 0;
+}
+
+.typography--step-8 { font-size: var(--step-8); }
+.typography--step-7 { font-size: var(--step-7); }
+.typography--step-6 { font-size: var(--step-6); }
+.typography--step-5 { font-size: var(--step-5); }
+.typography--step-4 { font-size: var(--step-4); }
+.typography--step-3 { font-size: var(--step-3); }
+.typography--step-2 { font-size: var(--step-2); }
+.typography--step-1 { font-size: var(--step-1); }
+.typography--step-0 { font-size: var(--step-0); }
+.typography--step--1 { font-size: var(--step--1); }
+.typography--step--2 { font-size: var(--step--2); }
+.typography--step--3 { font-size: var(--step--3); }
+.typography--step--4 { font-size: var(--step--4); }

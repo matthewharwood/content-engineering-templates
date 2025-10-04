@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/html';
-import { Button, type ButtonProps } from '../src/components/Button';
+import { Button } from './Button.js';
+import './Button.css';
 
-const meta: Meta<ButtonProps> = {
+export default {
   title: 'Components/Button',
   tags: ['autodocs'],
   render: (args) => {
@@ -22,10 +22,7 @@ const meta: Meta<ButtonProps> = {
   },
 };
 
-export default meta;
-type Story = StoryObj<ButtonProps>;
-
-export const Primary: Story = {
+export const Primary = {
   args: {
     label: 'Primary Button',
     variant: 'primary',
@@ -34,7 +31,7 @@ export const Primary: Story = {
   }
 };
 
-export const Secondary: Story = {
+export const Secondary = {
   args: {
     label: 'Secondary Button',
     variant: 'secondary',
@@ -43,7 +40,7 @@ export const Secondary: Story = {
   }
 };
 
-export const Outline: Story = {
+export const Outline = {
   args: {
     label: 'Outline Button',
     variant: 'outline',
@@ -52,7 +49,7 @@ export const Outline: Story = {
   }
 };
 
-export const Small: Story = {
+export const Small = {
   args: {
     label: 'Small Button',
     variant: 'primary',
@@ -61,7 +58,7 @@ export const Small: Story = {
   }
 };
 
-export const Large: Story = {
+export const Large = {
   args: {
     label: 'Large Button',
     variant: 'primary',
@@ -70,7 +67,7 @@ export const Large: Story = {
   }
 };
 
-export const Disabled: Story = {
+export const Disabled = {
   args: {
     label: 'Disabled Button',
     variant: 'primary',
