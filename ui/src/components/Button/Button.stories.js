@@ -8,6 +8,7 @@ import ButtonDisabledHTML from './ButtonDisabled.html?raw';
 import ButtonPillHTML from './ButtonPill.html?raw';
 import ButtonCircleHTML from './ButtonCircle.html?raw';
 import ButtonShapesHTML from './ButtonShapes.html?raw';
+import ButtonWithIconsHTML from './ButtonWithIcons.html?raw';
 import ButtonShowcaseHTML from './ButtonShowcase.html?raw';
 
 function createHTMLElement(html) {
@@ -55,6 +56,10 @@ export const Circle = {
 
 export const Shapes = {
   render: () => createHTMLElement(ButtonShapesHTML)
+};
+
+export const WithIcons = {
+  render: () => createHTMLElement(ButtonWithIconsHTML)
 };
 
 export const Showcase = {

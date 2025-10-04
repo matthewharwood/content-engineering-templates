@@ -12,6 +12,9 @@
   font-weight: 600;
   border: none;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn:focus-visible {
@@ -123,4 +126,107 @@
   padding: var(--space-s);
   min-width: 4rem;
   min-height: 4rem;
+}
+
+/* Icon Enhancers */
+.btn--with-start-icon {
+  gap: var(--space-3xs);
+}
+
+.btn--with-end-icon {
+  gap: var(--space-3xs);
+}
+
+/* Mini size with icons - reduce horizontal padding */
+.btn--with-start-icon.btn--mini {
+  gap: var(--space-3xs);
+  padding-left: var(--space-3xs);
+}
+
+.btn--with-end-icon.btn--mini {
+  gap: var(--space-3xs);
+  padding-left: var(--space-2xs);
+  padding-right: var(--space-3xs);
+}
+
+.btn--with-start-icon.btn--with-end-icon.btn--mini {
+  padding-left: var(--space-3xs);
+  padding-right: var(--space-3xs);
+}
+
+/* Small size with icons - reduce horizontal padding */
+.btn--with-start-icon.btn--small {
+  gap: var(--space-2xs);
+  padding-left: var(--space-2xs);
+}
+
+.btn--with-end-icon.btn--small {
+  gap: var(--space-2xs);
+  padding-left: var(--space-xs);
+  padding-right: var(--space-2xs);
+}
+
+.btn--with-start-icon.btn--with-end-icon.btn--small {
+  padding-left: var(--space-2xs);
+  padding-right: var(--space-2xs);
+}
+
+/* Medium size with icons - reduce horizontal padding */
+.btn--with-start-icon.btn--medium {
+  gap: var(--space-xs);
+  padding-left: var(--space-xs);
+}
+
+.btn--with-end-icon.btn--medium {
+  gap: var(--space-xs);
+  padding-left: var(--space-s);
+  padding-right: var(--space-xs);
+}
+
+.btn--with-start-icon.btn--with-end-icon.btn--medium {
+  padding-left: var(--space-xs);
+  padding-right: var(--space-xs);
+}
+
+/* Large size with icons - reduce horizontal padding */
+.btn--with-start-icon.btn--large {
+  gap: var(--space-s);
+  padding-left: var(--space-2xs);
+}
+
+.btn--with-end-icon.btn--large {
+  gap: var(--space-s);
+  padding-left: var(--space-s);
+  padding-right: var(--space-2xs);
+}
+
+.btn--with-start-icon.btn--with-end-icon.btn--large {
+  padding-left: var(--space-2xs);
+  padding-right: var(--space-2xs);
+}
+
+/* Icon sizing within buttons */
+.btn--mini .icon {
+  font-size: var(--icon-size-sm);
+  --icon-optical-size: 20;
+}
+
+.btn--small .icon {
+  font-size: var(--icon-size-sm);
+  --icon-optical-size: 20;
+}
+
+.btn--medium .icon {
+  font-size: var(--icon-size-md);
+  --icon-optical-size: 24;
+}
+
+.btn--large .icon {
+  font-size: var(--icon-size-md);
+  --icon-optical-size: 24;
+}
+
+/* Icon color inheritance from button */
+.btn .icon {
+  color: currentColor;
 }
