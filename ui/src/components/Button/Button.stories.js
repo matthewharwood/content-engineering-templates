@@ -5,6 +5,9 @@ import ButtonTertiaryHTML from './ButtonTertiary.html?raw';
 import ButtonOutlineHTML from './ButtonOutline.html?raw';
 import ButtonSizesHTML from './ButtonSizes.html?raw';
 import ButtonDisabledHTML from './ButtonDisabled.html?raw';
+import ButtonPillHTML from './ButtonPill.html?raw';
+import ButtonCircleHTML from './ButtonCircle.html?raw';
+import ButtonShapesHTML from './ButtonShapes.html?raw';
 import ButtonShowcaseHTML from './ButtonShowcase.html?raw';
 
 function createHTMLElement(html) {
@@ -40,6 +43,18 @@ export const Sizes = {
 
 export const Disabled = {
   render: () => createHTMLElement(ButtonDisabledHTML)
+};
+
+export const Pill = {
+  render: () => createHTMLElement(ButtonPillHTML)
+};
+
+export const Circle = {
+  render: () => createHTMLElement(ButtonCircleHTML)
+};
+
+export const Shapes = {
+  render: () => createHTMLElement(ButtonShapesHTML)
 };
 
 export const Showcase = {

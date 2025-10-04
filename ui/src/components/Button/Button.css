@@ -84,3 +84,42 @@
   padding: var(--space-s) var(--space-l);
   font-size: var(--step-1);
 }
+
+/* Shapes */
+.btn--pill {
+  border-radius: 9999px;
+}
+
+.btn--circle {
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  padding: var(--space-xs);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.btn--circle.btn--mini {
+  padding: var(--space-3xs);
+  min-width: 2rem;
+  min-height: 2rem;
+}
+
+.btn--circle.btn--small {
+  padding: var(--space-2xs);
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+}
+
+.btn--circle.btn--medium {
+  padding: var(--space-xs);
+  min-width: 3rem;
+  min-height: 3rem;
+}
+
+.btn--circle.btn--large {
+  padding: var(--space-s);
+  min-width: 4rem;
+  min-height: 4rem;
+}
