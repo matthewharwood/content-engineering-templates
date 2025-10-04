@@ -281,6 +281,178 @@
     </div>
   </section>
 
+  <!-- Layered Images ---->
+  <section class="img-section">
+    <h2 class="img-section__title">Layered Compositions</h2>
+    <p class="img-section__description">
+      Stack multiple images within a single frame using z-index layers. Perfect for showing devices with UI overlays, multiple product angles, or compositional effects.
+    </p>
+
+    <div class="img-grid">
+      <!-- Example 1: Center background + Top-left overlay ---->
+      <div style="grid-column: span 4;">
+        <div class="img-product-frame img-aspect img-aspect--1-1">
+          <!-- Background layer (z-1) ---->
+          <img
+            src="https://picsum.photos/800/800?random=70"
+            alt="Background layer"
+            class="img-product-frame__layer img-product-frame__layer--z-1 img-product-frame__layer--opacity-60"
+            style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 120%; height: auto;">
+          <!-- Foreground layer (z-2) ---->
+          <img
+            src="https://picsum.photos/600/600?random=71"
+            alt="Foreground layer"
+            class="img-product-frame__layer img-product-frame__layer--z-2"
+            style="top: 5%; left: 5%; width: 70%; height: auto;">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          Background + Top-Left
+        </p>
+      </div>
+
+      <!-- Example 2: Center + Bottom-right overlay ---->
+      <div style="grid-column: span 4;">
+        <div class="img-product-frame img-aspect img-aspect--1-1">
+          <!-- Background layer ---->
+          <img
+            src="https://picsum.photos/800/800?random=72"
+            alt="Background layer"
+            class="img-product-frame__layer img-product-frame__layer--z-1"
+            style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 110%; height: auto;">
+          <!-- Overlay layer ---->
+          <img
+            src="https://picsum.photos/500/500?random=73"
+            alt="Overlay layer"
+            class="img-product-frame__layer img-product-frame__layer--z-2"
+            style="bottom: 8%; right: 8%; width: 55%; height: auto;">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          Center + Bottom-Right
+        </p>
+      </div>
+
+      <!-- Example 3: Three layers ---->
+      <div style="grid-column: span 4;">
+        <div class="img-product-frame img-aspect img-aspect--1-1">
+          <!-- Base layer (z-1) ---->
+          <img
+            src="https://picsum.photos/800/800?random=74"
+            alt="Base layer"
+            class="img-product-frame__layer img-product-frame__layer--z-1 img-product-frame__layer--opacity-70"
+            style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 130%; height: auto;">
+          <!-- Middle layer (z-2) ---->
+          <img
+            src="https://picsum.photos/600/600?random=75"
+            alt="Middle layer"
+            class="img-product-frame__layer img-product-frame__layer--z-2 img-product-frame__layer--opacity-80"
+            style="top: 10%; left: 10%; width: 60%; height: auto;">
+          <!-- Top layer (z-3) ---->
+          <img
+            src="https://picsum.photos/400/400?random=76"
+            alt="Top layer"
+            class="img-product-frame__layer img-product-frame__layer--z-3"
+            style="bottom: 10%; right: 10%; width: 45%; height: auto;">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; text-align: center; color: var(--color-on-surface-variant);">
+          Three Layers
+        </p>
+      </div>
+
+      <!-- Example 4: Wide format with split layers ---->
+      <div style="grid-column: span 6;">
+        <div class="img-product-frame img-aspect img-aspect--16-9">
+          <!-- Background ---->
+          <img
+            src="https://picsum.photos/1600/900?random=77"
+            alt="Background"
+            class="img-product-frame__layer img-product-frame__layer--z-1"
+            style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 130%; height: auto;">
+          <!-- Left overlay ---->
+          <img
+            src="https://picsum.photos/600/800?random=78"
+            alt="Left overlay"
+            class="img-product-frame__layer img-product-frame__layer--z-2"
+            style="top: 50%; left: 5%; transform: translateY(-50%); height: 90%; width: auto;">
+          <!-- Right overlay ---->
+          <img
+            src="https://picsum.photos/600/800?random=79"
+            alt="Right overlay"
+            class="img-product-frame__layer img-product-frame__layer--z-2"
+            style="top: 50%; right: 5%; transform: translateY(-50%); height: 90%; width: auto;">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          Background + Left & Right Overlays
+        </p>
+      </div>
+
+      <!-- Example 5: Vertical stack ---->
+      <div style="grid-column: span 6;">
+        <div class="img-product-frame img-aspect img-aspect--16-9">
+          <!-- Base layer ---->
+          <img
+            src="https://picsum.photos/1600/900?random=80"
+            alt="Base"
+            class="img-product-frame__layer img-product-frame__layer--z-1 img-product-frame__layer--opacity-50"
+            style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: auto;">
+          <!-- Top section ---->
+          <img
+            src="https://picsum.photos/1200/400?random=81"
+            alt="Top section"
+            class="img-product-frame__layer img-product-frame__layer--z-2"
+            style="top: 0; left: 50%; transform: translateX(-50%); width: 80%; height: auto;">
+          <!-- Bottom section ---->
+          <img
+            src="https://picsum.photos/1200/400?random=82"
+            alt="Bottom section"
+            class="img-product-frame__layer img-product-frame__layer--z-2"
+            style="bottom: 0; left: 50%; transform: translateX(-50%); width: 80%; height: auto;">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          Vertical Stack with Faded Background
+        </p>
+      </div>
+
+      <!-- Example 6: Corner overlays ---->
+      <div style="grid-column: span 12;">
+        <div class="img-product-frame img-aspect img-aspect--21-9">
+          <!-- Background layer ---->
+          <img
+            src="https://picsum.photos/2400/900?random=83"
+            alt="Background"
+            class="img-product-frame__layer img-product-frame__layer--z-1"
+            style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 120%; height: auto;">
+          <!-- Top-left corner ---->
+          <img
+            src="https://picsum.photos/600/600?random=84"
+            alt="Top-left"
+            class="img-product-frame__layer img-product-frame__layer--z-2"
+            style="top: 5%; left: 5%; width: 25%; height: auto;">
+          <!-- Top-right corner ---->
+          <img
+            src="https://picsum.photos/600/600?random=85"
+            alt="Top-right"
+            class="img-product-frame__layer img-product-frame__layer--z-2"
+            style="top: 5%; right: 5%; width: 25%; height: auto;">
+          <!-- Bottom-left corner ---->
+          <img
+            src="https://picsum.photos/600/600?random=86"
+            alt="Bottom-left"
+            class="img-product-frame__layer img-product-frame__layer--z-2"
+            style="bottom: 5%; left: 5%; width: 25%; height: auto;">
+          <!-- Bottom-right corner ---->
+          <img
+            src="https://picsum.photos/600/600?random=87"
+            alt="Bottom-right"
+            class="img-product-frame__layer img-product-frame__layer--z-2"
+            style="bottom: 5%; right: 5%; width: 25%; height: auto;">
+        </div>
+        <p style="font-family: var(--font-mono); font-size: var(--step--2); margin: var(--space-xs) 0; color: var(--color-on-surface-variant);">
+          Four Corner Overlays on Wide Background
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- Apple-Style Feature Section ---->
   <section class="img-section">
     <h2 class="img-section__title">Feature Presentation</h2>
