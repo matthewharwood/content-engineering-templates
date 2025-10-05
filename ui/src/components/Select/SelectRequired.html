@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="./Select.css">
+
+<div class="select-field select-field--medium">
+  <label for="select-required" class="select-field__label select-field__label--required">
+    Preferred Language
+  </label>
+  <div class="select-field__wrapper">
+    <select
+      id="select-required"
+      class="select-field__select"
+      required
+      aria-required="true"
+      aria-describedby="select-required-helper"
+    >
+      <option value="">Select a language</option>
+      <option value="en">English</option>
+      <option value="es">Spanish</option>
+      <option value="fr">French</option>
+      <option value="de">German</option>
+      <option value="zh">Chinese</option>
+      <option value="ja">Japanese</option>
+    </select>
+  </div>
+  <span id="select-required-helper" class="select-field__helper">
+    This field is required
+  </span>
+</div>

@@ -1,0 +1,243 @@
+@import "../../../styles/tokens/colors.css";
+@import "../../../styles/typography.css";
+@import "../../../styles/space.css";
+@import "../../../styles/fonts.css";
+
+/* Select Container */
+.select-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+  width: 100%;
+}
+
+/* Label */
+.select-field__label {
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  font-weight: 600;
+  color: var(--color-on-surface);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3xs);
+}
+
+.select-field__label--required::after {
+  content: '*';
+  color: var(--color-error);
+  font-weight: 700;
+}
+
+/* Select Wrapper */
+.select-field__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Custom dropdown arrow */
+.select-field__wrapper::after {
+  content: '';
+  position: absolute;
+  right: var(--space-s);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid var(--color-on-surface);
+  pointer-events: none;
+  transition: border-top-color 0.2s ease;
+}
+
+.select-field--error .select-field__wrapper::after {
+  border-top-color: var(--color-error);
+}
+
+.select-field__wrapper:has(.select-field__select:disabled)::after {
+  border-top-color: var(--color-on-surface-variant);
+  opacity: 0.6;
+}
+
+.select-field__wrapper:has(.select-field__select--multiple)::after {
+  display: none;
+}
+
+/* Select Element */
+.select-field__select {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  color: var(--color-on-surface);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-outline);
+  border-radius: 4px;
+  padding: var(--space-xs) var(--space-s);
+  padding-right: var(--space-xl);
+  transition: all 0.2s ease;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Remove default arrow for multiple select */
+.select-field__select--multiple {
+  padding-right: var(--space-s);
+  cursor: default;
+}
+
+/* Focus State */
+.select-field__select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary-container);
+}
+
+/* Hover State */
+.select-field__select:hover:not(:disabled):not(:focus) {
+  border-color: var(--color-on-surface);
+}
+
+/* Disabled State */
+.select-field__select:disabled {
+  background-color: var(--color-surface-variant);
+  color: var(--color-on-surface-variant);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Error State */
+.select-field--error .select-field__select {
+  border-color: var(--color-error);
+}
+
+.select-field--error .select-field__select:focus {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 2px var(--color-error-container);
+}
+
+/* Invalid State (HTML5 validation) */
+.select-field__select:invalid:not([multiple]) {
+  border-color: var(--color-error);
+}
+
+/* Option styling */
+.select-field__select option {
+  padding: var(--space-2xs);
+  font-family: var(--font-sans);
+  color: var(--color-on-surface);
+  background-color: var(--color-surface);
+}
+
+.select-field__select option:disabled {
+  color: var(--color-on-surface-variant);
+  opacity: 0.6;
+}
+
+/* Optgroup styling */
+.select-field__select optgroup {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--color-on-surface);
+}
+
+/* Multiple select specific styles */
+.select-field__select--multiple {
+  padding: var(--space-2xs);
+  min-height: 120px;
+}
+
+.select-field__select--multiple option {
+  padding: var(--space-2xs) var(--space-xs);
+  margin-bottom: 2px;
+  border-radius: 2px;
+}
+
+.select-field__select--multiple option:checked {
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+}
+
+/* Helper Text */
+.select-field__helper {
+  font-family: var(--font-sans);
+  font-size: var(--step--1);
+  color: var(--color-on-surface-variant);
+  line-height: 1.4;
+}
+
+/* Error Message */
+.select-field__error {
+  font-family: var(--font-sans);
+  font-size: var(--step--1);
+  color: var(--color-error);
+  line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3xs);
+}
+
+/* Sizes */
+.select-field--small .select-field__select {
+  padding: var(--space-2xs) var(--space-xs);
+  padding-right: var(--space-l);
+  font-size: var(--step--1);
+}
+
+.select-field--small .select-field__label {
+  font-size: var(--step--1);
+}
+
+.select-field--small .select-field__wrapper::after {
+  right: var(--space-xs);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid var(--color-on-surface);
+}
+
+.select-field--medium .select-field__select {
+  padding: var(--space-xs) var(--space-s);
+  padding-right: var(--space-xl);
+  font-size: var(--step-0);
+}
+
+.select-field--medium .select-field__label {
+  font-size: var(--step-0);
+}
+
+.select-field--large .select-field__select {
+  padding: var(--space-s) var(--space-m);
+  padding-right: var(--space-2xl);
+  font-size: var(--step-1);
+}
+
+.select-field--large .select-field__label {
+  font-size: var(--step-1);
+}
+
+.select-field--large .select-field__wrapper::after {
+  right: var(--space-m);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 7px solid var(--color-on-surface);
+}
+
+/* Multiple select size adjustments */
+.select-field--small .select-field__select--multiple {
+  padding: var(--space-2xs);
+}
+
+.select-field--medium .select-field__select--multiple {
+  padding: var(--space-2xs);
+}
+
+.select-field--large .select-field__select--multiple {
+  padding: var(--space-xs);
+}
+
+/* Full Width */
+.select-field--full-width {
+  width: 100%;
+}

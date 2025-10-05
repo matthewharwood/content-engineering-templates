@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="./Select.css">
+
+<div class="select-field select-field--medium">
+  <label for="select-multiple" class="select-field__label">
+    Select Skills
+  </label>
+  <div class="select-field__wrapper">
+    <select
+      id="select-multiple"
+      class="select-field__select select-field__select--multiple"
+      multiple
+      size="6"
+      aria-describedby="select-multiple-helper"
+    >
+      <option value="html">HTML</option>
+      <option value="css">CSS</option>
+      <option value="js">JavaScript</option>
+      <option value="react">React</option>
+      <option value="vue">Vue</option>
+      <option value="angular">Angular</option>
+      <option value="node">Node.js</option>
+      <option value="python">Python</option>
+      <option value="java">Java</option>
+      <option value="go">Go</option>
+    </select>
+  </div>
+  <span id="select-multiple-helper" class="select-field__helper">
+    Hold Ctrl (Cmd on Mac) to select multiple options
+  </span>
+</div>

@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="./Select.css">
+
+<div class="select-field select-field--medium">
+  <label for="select-disabled" class="select-field__label">
+    Shipping Region
+  </label>
+  <div class="select-field__wrapper">
+    <select
+      id="select-disabled"
+      class="select-field__select"
+      disabled
+      aria-disabled="true"
+      aria-describedby="select-disabled-helper"
+    >
+      <option value="na">North America</option>
+      <option value="eu">Europe</option>
+      <option value="asia">Asia</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+  <span id="select-disabled-helper" class="select-field__helper">
+    This field is currently unavailable
+  </span>
+</div>

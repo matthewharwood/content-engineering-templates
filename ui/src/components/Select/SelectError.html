@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="./Select.css">
+
+<div class="select-field select-field--medium select-field--error">
+  <label for="select-error" class="select-field__label select-field__label--required">
+    Payment Method
+  </label>
+  <div class="select-field__wrapper">
+    <select
+      id="select-error"
+      class="select-field__select"
+      required
+      aria-required="true"
+      aria-invalid="true"
+      aria-describedby="select-error-message"
+    >
+      <option value="">Select payment method</option>
+      <option value="credit">Credit Card</option>
+      <option value="debit">Debit Card</option>
+      <option value="paypal">PayPal</option>
+      <option value="bank">Bank Transfer</option>
+    </select>
+  </div>
+  <span id="select-error-message" class="select-field__error" role="alert">
+    Please select a payment method
+  </span>
+</div>

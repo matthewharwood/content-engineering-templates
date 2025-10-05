@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="./Select.css">
+
+<div class="select-field select-field--medium">
+  <label for="select-groups" class="select-field__label">
+    Favorite Food
+  </label>
+  <div class="select-field__wrapper">
+    <select
+      id="select-groups"
+      class="select-field__select"
+      aria-describedby="select-groups-helper"
+    >
+      <option value="">Select your favorite</option>
+      <optgroup label="Fruits">
+        <option value="apple">Apple</option>
+        <option value="banana">Banana</option>
+        <option value="orange">Orange</option>
+        <option value="grape">Grape</option>
+      </optgroup>
+      <optgroup label="Vegetables">
+        <option value="carrot">Carrot</option>
+        <option value="broccoli">Broccoli</option>
+        <option value="spinach">Spinach</option>
+        <option value="tomato">Tomato</option>
+      </optgroup>
+      <optgroup label="Proteins">
+        <option value="chicken">Chicken</option>
+        <option value="beef">Beef</option>
+        <option value="fish">Fish</option>
+        <option value="tofu">Tofu</option>
+      </optgroup>
+    </select>
+  </div>
+  <span id="select-groups-helper" class="select-field__helper">
+    Options are organized by food category
+  </span>
+</div>

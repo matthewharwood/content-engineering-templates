@@ -1,0 +1,167 @@
+<link rel="stylesheet" href="./Select.css">
+
+<div style="padding: var(--space-xl); max-width: 1200px; margin: 0 auto;">
+  <h1 style="font-size: var(--step-4); margin-bottom: var(--space-l); color: var(--color-on-surface);">
+    Select Component Showcase
+  </h1>
+
+  <!-- Example Form -->
+  <form style="display: flex; flex-direction: column; gap: var(--space-l); max-width: 600px; margin-bottom: var(--space-3xl);">
+    <h2 style="font-size: var(--step-2); color: var(--color-on-surface); margin-bottom: var(--space-s);">
+      Registration Form
+    </h2>
+
+    <div class="select-field select-field--medium">
+      <label for="showcase-country" class="select-field__label select-field__label--required">
+        Country
+      </label>
+      <div class="select-field__wrapper">
+        <select
+          id="showcase-country"
+          class="select-field__select"
+          required
+          aria-required="true"
+        >
+          <option value="">Select your country</option>
+          <option value="us">United States</option>
+          <option value="ca">Canada</option>
+          <option value="uk">United Kingdom</option>
+          <option value="au">Australia</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="select-field select-field--medium">
+      <label for="showcase-timezone" class="select-field__label select-field__label--required">
+        Time Zone
+      </label>
+      <div class="select-field__wrapper">
+        <select
+          id="showcase-timezone"
+          class="select-field__select"
+          required
+          aria-required="true"
+        >
+          <option value="">Select timezone</option>
+          <optgroup label="Americas">
+            <option value="est">Eastern Time (ET)</option>
+            <option value="cst">Central Time (CT)</option>
+            <option value="mst">Mountain Time (MT)</option>
+            <option value="pst">Pacific Time (PT)</option>
+          </optgroup>
+          <optgroup label="Europe">
+            <option value="gmt">Greenwich Mean Time (GMT)</option>
+            <option value="cet">Central European Time (CET)</option>
+            <option value="eet">Eastern European Time (EET)</option>
+          </optgroup>
+          <optgroup label="Asia">
+            <option value="ist">India Standard Time (IST)</option>
+            <option value="jst">Japan Standard Time (JST)</option>
+            <option value="cst-cn">China Standard Time (CST)</option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+
+    <div class="select-field select-field--medium">
+      <label for="showcase-interests" class="select-field__label">
+        Interests (Multiple)
+      </label>
+      <div class="select-field__wrapper">
+        <select
+          id="showcase-interests"
+          class="select-field__select select-field__select--multiple"
+          multiple
+          size="5"
+          aria-describedby="showcase-interests-helper"
+        >
+          <option value="tech">Technology</option>
+          <option value="design">Design</option>
+          <option value="business">Business</option>
+          <option value="science">Science</option>
+          <option value="arts">Arts & Culture</option>
+          <option value="sports">Sports</option>
+          <option value="travel">Travel</option>
+        </select>
+      </div>
+      <span id="showcase-interests-helper" class="select-field__helper">
+        Hold Ctrl (Cmd on Mac) to select multiple
+      </span>
+    </div>
+  </form>
+
+  <!-- States Documentation -->
+  <div style="margin-bottom: var(--space-3xl);">
+    <h2 style="font-size: var(--step-2); color: var(--color-on-surface); margin-bottom: var(--space-l);">
+      All States
+    </h2>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-l);">
+      <!-- Default -->
+      <div class="select-field select-field--medium">
+        <label for="state-default" class="select-field__label">Default</label>
+        <div class="select-field__wrapper">
+          <select id="state-default" class="select-field__select">
+            <option value="">Select option</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Required -->
+      <div class="select-field select-field--medium">
+        <label for="state-required" class="select-field__label select-field__label--required">
+          Required
+        </label>
+        <div class="select-field__wrapper">
+          <select id="state-required" class="select-field__select" required aria-required="true">
+            <option value="">Select option</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Error -->
+      <div class="select-field select-field--medium select-field--error">
+        <label for="state-error" class="select-field__label">Error</label>
+        <div class="select-field__wrapper">
+          <select id="state-error" class="select-field__select" aria-invalid="true" aria-describedby="state-error-msg">
+            <option value="">Select option</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+          </select>
+        </div>
+        <span id="state-error-msg" class="select-field__error" role="alert">This field has an error</span>
+      </div>
+
+      <!-- Disabled -->
+      <div class="select-field select-field--medium">
+        <label for="state-disabled" class="select-field__label">Disabled</label>
+        <div class="select-field__wrapper">
+          <select id="state-disabled" class="select-field__select" disabled aria-disabled="true">
+            <option value="1">Option 1</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accessibility Documentation -->
+  <div style="background-color: var(--color-surface-variant); padding: var(--space-l); border-radius: 8px;">
+    <h2 style="font-size: var(--step-2); color: var(--color-on-surface); margin-bottom: var(--space-m);">
+      Accessibility Features
+    </h2>
+    <ul style="color: var(--color-on-surface-variant); line-height: 1.8; padding-left: var(--space-l);">
+      <li><strong>Semantic HTML:</strong> Uses native &lt;select&gt; element for full keyboard support</li>
+      <li><strong>ARIA Labels:</strong> Proper aria-describedby, aria-required, and aria-invalid attributes</li>
+      <li><strong>Error Handling:</strong> Error messages with role="alert" for screen reader announcements</li>
+      <li><strong>Required Indicators:</strong> Visual asterisk and aria-required for required fields</li>
+      <li><strong>Option Groups:</strong> Semantic &lt;optgroup&gt; for organized options</li>
+      <li><strong>Multiple Selection:</strong> Native multiple attribute with helper text for keyboard usage</li>
+      <li><strong>Focus States:</strong> Clear visual focus indicators meeting WCAG 2.1 AA standards</li>
+      <li><strong>Color Contrast:</strong> All text and borders meet WCAG AA contrast requirements</li>
+    </ul>
+  </div>
+</div>
