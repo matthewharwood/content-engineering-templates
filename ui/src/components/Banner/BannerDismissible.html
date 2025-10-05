@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="./Banner.css">
+<link rel="stylesheet" href="../Icon/Icon.css">
+
+<div class="banner banner--secondary-container banner--medium banner--dismissible">
+  <p class="banner__text">
+    Subscribe & Save 15% on every order · Auto-delivery every 3 months
+  </p>
+  <button class="banner__close" aria-label="Close banner">
+    <span class="icon">close</span>
+  </button>
+</div>
+
+<script>
+  document.querySelector('.banner__close').addEventListener('click', function() {
+    this.closest('.banner').style.display = 'none';
+  });
+</script>

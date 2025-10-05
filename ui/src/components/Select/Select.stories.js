@@ -9,6 +9,7 @@ import SelectRequiredHTML from './SelectRequired.html?raw';
 import SelectErrorHTML from './SelectError.html?raw';
 import SelectDisabledHTML from './SelectDisabled.html?raw';
 import SelectSizesHTML from './SelectSizes.html?raw';
+import SelectShapesHTML from './SelectShapes.html?raw';
 import SelectGroupsHTML from './SelectGroups.html?raw';
 import SelectMultipleHTML from './SelectMultiple.html?raw';
 import SelectShowcaseHTML from './SelectShowcase.html?raw';
@@ -145,6 +146,17 @@ export const Sizes = {
     docs: {
       description: {
         story: 'Three size variants using semantic spacing and typography tokens: small (--step--1), medium/default (--step-0), and large (--step-1). Padding adjusts proportionally using --space-* tokens.',
+      },
+    },
+  },
+};
+
+export const Shapes = {
+  render: () => createHTMLElement(SelectShapesHTML),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shape variants for select components. Default uses standard border-radius (4px), while pill shape uses fully rounded corners (9999px). Works with all sizes.',
       },
     },
   },

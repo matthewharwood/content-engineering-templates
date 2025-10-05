@@ -2,6 +2,15 @@
 @import "./tokens/colors.css";
 @import "./fonts.css";
 @import "./icons.css";
+div {
+    box-sizing: border-box;
+}
+/* Pass down the box-sizing property */
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
 
 /* Foundational Tokens */
 @import "./typography.css";

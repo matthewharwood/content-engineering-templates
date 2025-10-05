@@ -1,0 +1,91 @@
+<link rel="stylesheet" href="./Select.css">
+
+<div style="display: flex; flex-direction: column; gap: var(--space-xl); max-width: 400px;">
+  <!-- Default Shape (rounded corners) -->
+  <div class="select-field select-field--medium select-field--secondary">
+    <label for="shape-default" class="select-field__label">
+      Default Shape
+    </label>
+    <div class="select-field__wrapper">
+      <select
+        id="shape-default"
+        class="select-field__select"
+        aria-describedby="shape-default-helper"
+      >
+        <option value="">Select an option</option>
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+      </select>
+    </div>
+    <span id="shape-default-helper" class="select-field__helper">
+      Standard border-radius: 4px
+    </span>
+  </div>
+
+  <!-- Pill Shape -->
+  <div class="select-field select-field--medium select-field--secondary select-field--pill">
+    <label for="shape-pill" class="select-field__label">
+      Pill Shape
+    </label>
+    <div class="select-field__wrapper">
+      <select
+        id="shape-pill"
+        class="select-field__select"
+        aria-describedby="shape-pill-helper"
+      >
+        <option value="">Select an option</option>
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+      </select>
+    </div>
+    <span id="shape-pill-helper" class="select-field__helper">
+      Fully rounded border-radius: 9999px
+    </span>
+  </div>
+
+  <!-- Pill Shape - Small -->
+  <div class="select-field select-field--small select-field--secondary select-field--pill">
+    <label for="shape-pill-small" class="select-field__label">
+      Pill Shape - Small
+    </label>
+    <div class="select-field__wrapper">
+      <select
+        id="shape-pill-small"
+        class="select-field__select"
+        aria-describedby="shape-pill-small-helper"
+      >
+        <option value="">Select an option</option>
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+      </select>
+    </div>
+    <span id="shape-pill-small-helper" class="select-field__helper">
+      Small size with pill shape
+    </span>
+  </div>
+
+  <!-- Pill Shape - Large -->
+  <div class="select-field select-field--large select-field--secondary select-field--pill">
+    <label for="shape-pill-large" class="select-field__label">
+      Pill Shape - Large
+    </label>
+    <div class="select-field__wrapper">
+      <select
+        id="shape-pill-large"
+        class="select-field__select"
+        aria-describedby="shape-pill-large-helper"
+      >
+        <option value="">Select an option</option>
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+      </select>
+    </div>
+    <span id="shape-pill-large-helper" class="select-field__helper">
+      Large size with pill shape
+    </span>
+  </div>
+</div>

@@ -1,0 +1,222 @@
+<link rel="stylesheet" href="./ButtonTags.css">
+<link rel="stylesheet" href="../Button/Button.css">
+
+<div style="max-width: var(--grid-max-width); margin-inline: auto; padding: var(--space-3xl) var(--grid-gutter); display: flex; flex-direction: column; gap: var(--space-3xl);">
+
+  <!-- Header -->
+  <div>
+    <h1 style="font-family: var(--font-sans); font-size: var(--step-4); font-weight: 700; margin: 0 0 var(--space-s) 0; color: var(--color-on-background);">
+      Button Tags Component
+    </h1>
+    <p style="font-family: var(--font-sans); font-size: var(--step-0); line-height: 1.6; margin: 0; color: var(--color-on-surface-variant); max-width: 65ch;">
+      A flexible component for displaying collections of tags, badges, or labels. Supports interactive (button) and non-interactive (span) variants with multiple sizes and color options.
+    </p>
+  </div>
+
+  <!-- Product Example: Fragrance Notes and Certifications -->
+  <section>
+    <h2 style="font-family: var(--font-sans); font-size: var(--step-2); font-weight: 700; margin: 0 0 var(--space-m) 0; color: var(--color-on-background);">
+      Product Example
+    </h2>
+    <div style="background-color: var(--color-tertiary-container); padding: var(--space-xl); border-radius: 12px; display: flex; flex-direction: column; gap: var(--space-m);">
+      <!-- Fragrance Notes -->
+      <div class="button-tags">
+        <span class="button-tag button-tag--secondary button-tag--small">orris</span>
+        <span class="button-tag button-tag--secondary button-tag--small">plum</span>
+        <span class="button-tag button-tag--secondary button-tag--small">peach skin</span>
+        <span class="button-tag button-tag--secondary button-tag--small">white moss</span>
+        <span class="button-tag button-tag--secondary button-tag--small">musks</span>
+        <span class="button-tag button-tag--secondary button-tag--small">sandalwood</span>
+      </div>
+
+      <!-- Quality Features -->
+      <div class="button-tags">
+        <span class="button-tag button-tag--tertiary-container button-tag--small">high-quality fragrance oil</span>
+        <span class="button-tag button-tag--tertiary-container button-tag--small">vegan</span>
+        <span class="button-tag button-tag--tertiary-container button-tag--small">cruelty-free</span>
+      </div>
+
+      <!-- Certifications -->
+      <div class="button-tags">
+        <span class="button-tag button-tag--tertiary-container button-tag--small">conscious beauty clean</span>
+        <span class="button-tag button-tag--tertiary-container button-tag--small">paraben-free</span>
+        <span class="button-tag button-tag--tertiary-container button-tag--small">phthalate-free</span>
+      </div>
+
+      <!-- Additional Features -->
+      <div class="button-tags">
+        <span class="button-tag button-tag--tertiary-container button-tag--small">no synthetic dyes</span>
+        <span class="button-tag button-tag--tertiary-container button-tag--small">preservative-free</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive vs Non-Interactive -->
+  <section>
+    <h2 style="font-family: var(--font-sans); font-size: var(--step-2); font-weight: 700; margin: 0 0 var(--space-m) 0; color: var(--color-on-background);">
+      Interactive vs Non-Interactive
+    </h2>
+    <div style="display: flex; flex-direction: column; gap: var(--space-l);">
+      <div>
+        <h3 style="font-family: var(--font-sans); font-size: var(--step-0); font-weight: 600; margin: 0 0 var(--space-s) 0; color: var(--color-on-surface);">Non-Interactive (spans)</h3>
+        <div class="button-tags">
+          <span class="button-tag button-tag--secondary button-tag--small">Tag 1</span>
+          <span class="button-tag button-tag--secondary button-tag--small">Tag 2</span>
+          <span class="button-tag button-tag--secondary button-tag--small">Tag 3</span>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-sans); font-size: var(--step-0); font-weight: 600; margin: 0 0 var(--space-s) 0; color: var(--color-on-surface);">Interactive (buttons with hover)</h3>
+        <div class="button-tags">
+          <button class="button-tag button-tag--secondary button-tag--small button-tag--interactive">Tag 1</button>
+          <button class="button-tag button-tag--secondary button-tag--small button-tag--interactive">Tag 2</button>
+          <button class="button-tag button-tag--secondary button-tag--small button-tag--interactive">Tag 3</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sizes -->
+  <section>
+    <h2 style="font-family: var(--font-sans); font-size: var(--step-2); font-weight: 700; margin: 0 0 var(--space-m) 0; color: var(--color-on-background);">
+      Sizes
+    </h2>
+    <div style="display: flex; flex-direction: column; gap: var(--space-l);">
+      <div>
+        <h3 style="font-family: var(--font-sans); font-size: var(--step--1); margin: 0 0 var(--space-s) 0; color: var(--color-on-surface-variant);">Mini</h3>
+        <div class="button-tags">
+          <span class="button-tag button-tag--secondary button-tag--mini">Mini Tag</span>
+          <span class="button-tag button-tag--secondary button-tag--mini">Another</span>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-sans); font-size: var(--step--1); margin: 0 0 var(--space-s) 0; color: var(--color-on-surface-variant);">Small (Default)</h3>
+        <div class="button-tags">
+          <span class="button-tag button-tag--secondary button-tag--small">Small Tag</span>
+          <span class="button-tag button-tag--secondary button-tag--small">Another</span>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-sans); font-size: var(--step--1); margin: 0 0 var(--space-s) 0; color: var(--color-on-surface-variant);">Medium</h3>
+        <div class="button-tags">
+          <span class="button-tag button-tag--secondary button-tag--medium">Medium Tag</span>
+          <span class="button-tag button-tag--secondary button-tag--medium">Another</span>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-sans); font-size: var(--step--1); margin: 0 0 var(--space-s) 0; color: var(--color-on-surface-variant);">Large</h3>
+        <div class="button-tags">
+          <span class="button-tag button-tag--secondary button-tag--large">Large Tag</span>
+          <span class="button-tag button-tag--secondary button-tag--large">Another</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- All Variants -->
+  <section>
+    <h2 style="font-family: var(--font-sans); font-size: var(--step-2); font-weight: 700; margin: 0 0 var(--space-m) 0; color: var(--color-on-background);">
+      Color Variants
+    </h2>
+    <div style="display: flex; flex-direction: column; gap: var(--space-l);">
+      <div>
+        <h3 style="font-family: var(--font-sans); font-size: var(--step--1); margin: 0 0 var(--space-s) 0; color: var(--color-on-surface-variant);">Primary</h3>
+        <div class="button-tags">
+          <span class="button-tag button-tag--primary button-tag--small">Primary</span>
+          <span class="button-tag button-tag--primary button-tag--small">Tag</span>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-sans); font-size: var(--step--1); margin: 0 0 var(--space-s) 0; color: var(--color-on-surface-variant);">Secondary</h3>
+        <div class="button-tags">
+          <span class="button-tag button-tag--secondary button-tag--small">Secondary</span>
+          <span class="button-tag button-tag--secondary button-tag--small">Tag</span>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-sans); font-size: var(--step--1); margin: 0 0 var(--space-s) 0; color: var(--color-on-surface-variant);">Tertiary</h3>
+        <div class="button-tags">
+          <span class="button-tag button-tag--tertiary button-tag--small">Tertiary</span>
+          <span class="button-tag button-tag--tertiary button-tag--small">Tag</span>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-sans); font-size: var(--step--1); margin: 0 0 var(--space-s) 0; color: var(--color-on-surface-variant);">Primary Container</h3>
+        <div class="button-tags">
+          <span class="button-tag button-tag--primary-container button-tag--small">Container</span>
+          <span class="button-tag button-tag--primary-container button-tag--small">Tag</span>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-sans); font-size: var(--step--1); margin: 0 0 var(--space-s) 0; color: var(--color-on-surface-variant);">Secondary Container</h3>
+        <div class="button-tags">
+          <span class="button-tag button-tag--secondary-container button-tag--small">Container</span>
+          <span class="button-tag button-tag--secondary-container button-tag--small">Tag</span>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-sans); font-size: var(--step--1); margin: 0 0 var(--space-s) 0; color: var(--color-on-surface-variant);">Tertiary Container</h3>
+        <div class="button-tags">
+          <span class="button-tag button-tag--tertiary-container button-tag--small">Container</span>
+          <span class="button-tag button-tag--tertiary-container button-tag--small">Tag</span>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-sans); font-size: var(--step--1); margin: 0 0 var(--space-s) 0; color: var(--color-on-surface-variant);">Surface</h3>
+        <div class="button-tags">
+          <span class="button-tag button-tag--surface button-tag--small">Surface</span>
+          <span class="button-tag button-tag--surface button-tag--small">Tag</span>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-sans); font-size: var(--step--1); margin: 0 0 var(--space-s) 0; color: var(--color-on-surface-variant);">Outline</h3>
+        <div class="button-tags">
+          <span class="button-tag button-tag--outline button-tag--small">Outline</span>
+          <span class="button-tag button-tag--outline button-tag--small">Tag</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gap Sizes -->
+  <section>
+    <h2 style="font-family: var(--font-sans); font-size: var(--step-2); font-weight: 700; margin: 0 0 var(--space-m) 0; color: var(--color-on-background);">
+      Gap Sizes
+    </h2>
+    <div style="display: flex; flex-direction: column; gap: var(--space-l);">
+      <div>
+        <h3 style="font-family: var(--font-sans); font-size: var(--step--1); margin: 0 0 var(--space-s) 0; color: var(--color-on-surface-variant);">2xs Gap</h3>
+        <div class="button-tags button-tags--gap-2xs">
+          <span class="button-tag button-tag--secondary button-tag--small">Tag 1</span>
+          <span class="button-tag button-tag--secondary button-tag--small">Tag 2</span>
+          <span class="button-tag button-tag--secondary button-tag--small">Tag 3</span>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-sans); font-size: var(--step--1); margin: 0 0 var(--space-s) 0; color: var(--color-on-surface-variant);">xs Gap (Default)</h3>
+        <div class="button-tags button-tags--gap-xs">
+          <span class="button-tag button-tag--secondary button-tag--small">Tag 1</span>
+          <span class="button-tag button-tag--secondary button-tag--small">Tag 2</span>
+          <span class="button-tag button-tag--secondary button-tag--small">Tag 3</span>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-sans); font-size: var(--step--1); margin: 0 0 var(--space-s) 0; color: var(--color-on-surface-variant);">s Gap</h3>
+        <div class="button-tags button-tags--gap-s">
+          <span class="button-tag button-tag--secondary button-tag--small">Tag 1</span>
+          <span class="button-tag button-tag--secondary button-tag--small">Tag 2</span>
+          <span class="button-tag button-tag--secondary button-tag--small">Tag 3</span>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-sans); font-size: var(--step--1); margin: 0 0 var(--space-s) 0; color: var(--color-on-surface-variant);">m Gap</h3>
+        <div class="button-tags button-tags--gap-m">
+          <span class="button-tag button-tag--secondary button-tag--small">Tag 1</span>
+          <span class="button-tag button-tag--secondary button-tag--small">Tag 2</span>
+          <span class="button-tag button-tag--secondary button-tag--small">Tag 3</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>

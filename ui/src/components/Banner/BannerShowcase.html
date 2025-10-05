@@ -1,0 +1,155 @@
+<link rel="stylesheet" href="./Banner.css">
+<link rel="stylesheet" href="../Icon/Icon.css">
+
+<div style="padding: var(--space-xl); max-width: 1200px; margin: 0 auto;">
+  <h1 style="font-size: var(--step-4); margin-bottom: var(--space-l); color: var(--color-on-surface);">
+    Banner Component Showcase
+  </h1>
+
+  <!-- Color Variants -->
+  <section style="margin-bottom: var(--space-3xl);">
+    <h2 style="font-size: var(--step-2); color: var(--color-on-surface); margin-bottom: var(--space-l);">
+      Color Variants
+    </h2>
+
+    <div style="display: flex; flex-direction: column; gap: var(--space-m);">
+      <div class="banner banner--primary banner--medium">
+        <p class="banner__text">
+          Primary · Vibrant orange for high-impact announcements
+        </p>
+      </div>
+
+      <div class="banner banner--secondary banner--medium">
+        <p class="banner__text">
+          Secondary · Coral pink for important updates
+        </p>
+      </div>
+
+      <div class="banner banner--tertiary banner--medium">
+        <p class="banner__text">
+          Tertiary · Soft peach for gentle notifications
+        </p>
+      </div>
+
+      <div class="banner banner--primary-container banner--medium">
+        <p class="banner__text">
+          Primary Container · Cream background with rich brown text
+        </p>
+      </div>
+
+      <div class="banner banner--secondary-container banner--medium">
+        <p class="banner__text">
+          Secondary Container · Soft pink background
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sizes -->
+  <section style="margin-bottom: var(--space-3xl);">
+    <h2 style="font-size: var(--step-2); color: var(--color-on-surface); margin-bottom: var(--space-l);">
+      Sizes
+    </h2>
+
+    <div style="display: flex; flex-direction: column; gap: var(--space-m);">
+      <div class="banner banner--primary banner--mini">
+        <p class="banner__text">
+          Mini size banner (~48px)
+        </p>
+      </div>
+
+      <div class="banner banner--primary banner--small">
+        <p class="banner__text">
+          Small size banner
+        </p>
+      </div>
+
+      <div class="banner banner--primary banner--medium">
+        <p class="banner__text">
+          Medium size banner (default)
+        </p>
+      </div>
+
+      <div class="banner banner--primary banner--large">
+        <p class="banner__text">
+          Large size banner
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- With Links -->
+  <section style="margin-bottom: var(--space-3xl);">
+    <h2 style="font-size: var(--step-2); color: var(--color-on-surface); margin-bottom: var(--space-l);">
+      Interactive Banners
+    </h2>
+
+    <div style="display: flex; flex-direction: column; gap: var(--space-m);">
+      <div class="banner banner--primary-container banner--medium">
+        <p class="banner__text">
+          15% off your first order · <a href="#" class="banner__link">Shop now</a>
+        </p>
+      </div>
+
+      <div class="banner banner--secondary-container banner--medium banner--dismissible">
+        <p class="banner__text">
+          This banner can be dismissed · Click the X button
+        </p>
+        <button class="banner__close" aria-label="Close banner">
+          <span class="icon">close</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section style="margin-bottom: var(--space-3xl);">
+    <h2 style="font-size: var(--step-2); color: var(--color-on-surface); margin-bottom: var(--space-l);">
+      Common Use Cases
+    </h2>
+
+    <div style="display: flex; flex-direction: column; gap: var(--space-m);">
+      <div class="banner banner--primary banner--medium">
+        <p class="banner__text">
+          Free shipping on all US orders $65+ · Limited time offer
+        </p>
+      </div>
+
+      <div class="banner banner--secondary-container banner--medium">
+        <p class="banner__text">
+          New fragrance collection launching soon · <a href="#" class="banner__link">Get early access</a>
+        </p>
+      </div>
+
+      <div class="banner banner--tertiary-container banner--medium">
+        <p class="banner__text">
+          Subscribe & Save 15% on every order · Auto-delivery available
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accessibility Documentation -->
+  <div style="background-color: var(--color-surface-variant); padding: var(--space-l); border-radius: 8px;">
+    <h2 style="font-size: var(--step-2); color: var(--color-on-surface); margin-bottom: var(--space-m);">
+      Accessibility Features
+    </h2>
+    <ul style="color: var(--color-on-surface-variant); line-height: 1.8; padding-left: var(--space-l);">
+      <li><strong>Full-bleed design:</strong> Edge-to-edge banners for maximum visibility</li>
+      <li><strong>Centered text:</strong> Easy to read and scan</li>
+      <li><strong>Theme integration:</strong> Uses semantic color tokens for consistency</li>
+      <li><strong>Dismissible option:</strong> Close button with aria-label for screen readers</li>
+      <li><strong>Link support:</strong> Underlined links with hover states</li>
+      <li><strong>Responsive text:</strong> Uses fluid typography tokens</li>
+      <li><strong>Keyboard accessible:</strong> Close button fully keyboard navigable</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.banner__close').forEach(button => {
+    button.addEventListener('click', function() {
+      this.closest('.banner').style.display = 'none';
+    });
+  });
+</script>

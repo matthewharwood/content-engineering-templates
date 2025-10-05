@@ -1,0 +1,132 @@
+@import "../../../styles/tokens/colors.css";
+@import "../../../styles/space.css";
+@import "../../../styles/fonts.css";
+
+/* Button Tags Container */
+.button-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  align-items: center;
+}
+
+/* Gap size variants */
+.button-tags--gap-2xs {
+  gap: var(--space-2xs);
+}
+
+.button-tags--gap-xs {
+  gap: var(--space-xs);
+}
+
+.button-tags--gap-s {
+  gap: var(--space-s);
+}
+
+.button-tags--gap-m {
+  gap: var(--space-m);
+}
+
+/* Non-interactive tag (span) */
+.button-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  border-radius: 9999px;
+  cursor: default;
+  user-select: none;
+  white-space: nowrap;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+/* Tag sizes */
+.button-tag--mini {
+  padding: var(--space-2xs) var(--space-s);
+  font-size: var(--step--2);
+  min-height: 28px;
+}
+
+.button-tag--small {
+  padding: var(--space-xs) var(--space-s);
+  font-size: var(--step--1);
+  min-height: 32px;
+}
+
+.button-tag--medium {
+  padding: var(--space-xs) var(--space-m);
+  font-size: var(--step-0);
+  min-height: 40px;
+}
+
+.button-tag--large {
+  padding: var(--space-s) var(--space-l);
+  font-size: var(--step-0);
+  min-height: 48px;
+}
+
+/* Tag variants (non-interactive) */
+.button-tag--primary {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.button-tag--secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-on-secondary);
+}
+
+.button-tag--tertiary {
+  background-color: var(--color-tertiary);
+  color: var(--color-on-tertiary);
+}
+
+.button-tag--primary-container {
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+}
+
+.button-tag--secondary-container {
+  background-color: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+}
+
+.button-tag--tertiary-container {
+  background-color: var(--color-tertiary-container);
+  color: var(--color-on-tertiary-container);
+}
+
+.button-tag--surface {
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  border: 1px solid var(--color-outline);
+}
+
+.button-tag--outline {
+  background-color: transparent;
+  color: var(--color-on-surface);
+  border: 1px solid var(--color-outline);
+}
+
+/* Interactive tag (button/anchor) - adds hover state */
+.button-tag--interactive {
+  cursor: pointer;
+}
+
+.button-tag--interactive:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.button-tag--interactive:active {
+  transform: translateY(0);
+}
+
+/* Disabled state */
+.button-tag--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}

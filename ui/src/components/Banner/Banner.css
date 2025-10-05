@@ -1,0 +1,136 @@
+@import "../../../styles/tokens/colors.css";
+@import "../../../styles/typography.css";
+@import "../../../styles/space.css";
+@import "../../../styles/fonts.css";
+
+/* Banner Container */
+.banner {
+  width: 100%;
+  padding: var(--space-l) var(--space-m);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Banner Text */
+.banner__text {
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 65ch;
+}
+
+/* Banner Variants */
+.banner--primary {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.banner--secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-on-secondary);
+}
+
+.banner--tertiary {
+  background-color: var(--color-tertiary);
+  color: var(--color-on-tertiary);
+}
+
+.banner--primary-container {
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+}
+
+.banner--secondary-container {
+  background-color: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+}
+
+.banner--tertiary-container {
+  background-color: var(--color-tertiary-container);
+  color: var(--color-on-tertiary-container);
+}
+
+.banner--surface-variant {
+  background-color: var(--color-surface-variant);
+  color: var(--color-on-surface-variant);
+}
+
+/* Banner Sizes */
+.banner--mini {
+  padding: var(--space-2xs) var(--space-m);
+  min-height: 48px;
+}
+
+.banner--mini .banner__text {
+  font-size: var(--step--1);
+}
+
+.banner--small {
+  padding: var(--space-xs) var(--space-m);
+}
+
+.banner--small .banner__text {
+  font-size: var(--step--1);
+}
+
+.banner--medium {
+  padding: var(--space-s) var(--space-m);
+}
+
+.banner--medium .banner__text {
+  font-size: var(--step-0);
+}
+
+.banner--large {
+  padding: var(--space-m) var(--space-l);
+}
+
+.banner--large .banner__text {
+  font-size: var(--step-1);
+}
+
+/* Banner with Link */
+.banner__link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.banner__link:hover {
+  opacity: 0.8;
+}
+
+/* Dismissible Banner */
+.banner--dismissible {
+  padding-right: var(--space-3xl);
+}
+
+.banner__close {
+  position: absolute;
+  right: var(--space-m);
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: currentColor;
+  cursor: pointer;
+  padding: var(--space-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.banner__close:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.banner__close .icon {
+  font-size: var(--icon-size-md);
+}

@@ -336,3 +336,32 @@
   border-color: var(--color-primary);
   box-shadow: 0 0 0 2px var(--color-primary-container);
 }
+
+/* Shape Variants */
+.select-field--pill .select-field__select {
+  border-radius: 9999px;
+  padding-left: var(--space-l);
+  padding-right: var(--space-2xl);
+}
+
+.select-field--pill.select-field--small .select-field__select {
+  padding-left: var(--space-m);
+  padding-right: var(--space-xl);
+}
+
+.select-field--pill.select-field--large .select-field__select {
+  padding-left: var(--space-xl);
+  padding-right: var(--space-3xl);
+}
+
+.select-field--pill .select-field__wrapper::after {
+  right: var(--space-l);
+}
+
+.select-field--pill.select-field--small .select-field__wrapper::after {
+  right: var(--space-m);
+}
+
+.select-field--pill.select-field--large .select-field__wrapper::after {
+  right: var(--space-xl);
+}

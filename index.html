@@ -16,8 +16,17 @@
   <link rel="stylesheet" href="./ui/src/components/Radio/RadioButtonGroup.css">
   <link rel="stylesheet" href="./ui/src/components/Switch/Switch.css">
   <link rel="stylesheet" href="./ui/src/components/Select/Select.css">
+  <link rel="stylesheet" href="./ui/src/components/Banner/Banner.css">
+  <link rel="stylesheet" href="./ui/src/components/ButtonTags/ButtonTags.css">
 </head>
 <body>
+  <!-- Banner - scrolls away naturally while nav stays sticky -->
+  <div class="banner banner--primary banner--mini">
+    <p class="banner__text">
+      Free shipping on all US orders $65+ · Limited time offer
+    </p>
+  </div>
+
   <nav class="navigation">
     <div class="navigation__container">
       <!-- Left: Navigation Links -->
@@ -53,17 +62,10 @@
     </div>
   </nav>
 
-  <!-- Full Bleed 16:9 Video - Autoplay, No Controls -->
-  <div class="video-full-bleed">
-    <div class="video-aspect video-aspect--16-9">
-      <video
-        class="video"
-        src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-        autoplay
-        muted
-        loop
-        playsinline>
-      </video>
+  <!-- Full Bleed 16:9 Hero Image -->
+  <div class="hero-image-full-bleed">
+    <div class="img-aspect img-aspect--16-9">
+      <img src="https://picsum.photos/1600/900?random=100" alt="Hero Image" class="img--cover">
     </div>
   </div>
 
@@ -72,10 +74,8 @@
     <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--grid-gutter);">
 
       <!-- Left: Product Image -->
-      <div style="grid-column: span 6;">
-        <div class="img-aspect img-aspect--1-1">
-          <img src="https://picsum.photos/800/800?random=1" alt="Product Image" class="img--cover">
-        </div>
+      <div style="grid-column: span 6; display: flex;">
+        <img src="https://snif.co/cdn/shop/files/Snif_Me_ProductImage_10m_casel_2.jpg?v=1738292292&width=1600" alt="Snif Me Fragrance Product" class="img--cover" style="width: 100%; height: auto;">
       </div>
 
       <!-- Right: Product Details -->
@@ -150,7 +150,7 @@
         </fieldset>
 
         <!-- Delivery Frequency -->
-        <div class="select-field select-field--medium select-field--secondary">
+        <div class="select-field select-field--medium select-field--secondary select-field--pill">
           <label for="frequency" class="select-field__label">
             Delivery Frequency
           </label>
@@ -171,14 +171,52 @@
         </div>
 
         <!-- Add to Cart Button -->
-        <button class="btn btn--primary btn--large" style="width: 100%;">
+        <button class="btn btn--primary btn--large btn--pill" style="width: 100%;">
           Add to Cart
         </button>
 
       </div>
     </div>
   </div>
+  <!-- Product Info Page Grid -->
+  <div style="max-width: var(--grid-max-width); margin-inline: auto;  ">
+      <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--grid-gutter);">
 
+          <!-- Left: Product Image -->
+          <div style="grid-column: span 6; display: flex;">
+              <img src="https://snif.co/cdn/shop/files/Snif_Me_ProductImage_10m_casel_2.jpg?v=1738292292&width=1600" alt="Snif Me Fragrance Product" class="img--cover" style="width: 100%; height: auto;">
+          </div>
+
+          <!-- Right: Product Info Details -->
+          <div style="grid-column: span 6; display: flex; flex-direction: column; gap: var(--space-l);">
+              <!-- Product info Writeup -->
+              <h2 class="typography typography--step-2" style="font-weight: 600; color: var(--color-on-surface); margin: 0;">at a first glance</h2>
+              <p class="typography typography--step-0" style="line-height: 1.6; color: var(--color-on-surface-variant); margin: 0;">This shape-shifting scent reflects your skin's unique chemistry. It starts with a hint of plum, peach skin, and white moss before settling into a musky blend of orris and sandalwood. It's not you, it's Me. <br/> NOTE: All 30 ml Me fragrance orders include a free 2 ml sample fragrance.</p>
+              <!-- Fragrance Notes -->
+              <div class="button-tags">
+                  <span class="button-tag button-tag--secondary button-tag--mini">orris</span>
+                  <span class="button-tag button-tag--secondary button-tag--mini">plum</span>
+                  <span class="button-tag button-tag--secondary button-tag--mini">peach skin</span>
+                  <span class="button-tag button-tag--secondary button-tag--mini">white moss</span>
+                  <span class="button-tag button-tag--secondary button-tag--mini">musks</span>
+                  <span class="button-tag button-tag--secondary button-tag--mini">sandalwood</span>
+              </div>
+
+              <!-- Quality & Certifications -->
+              <div class="button-tags">
+                  <span class="button-tag button-tag--tertiary-container button-tag--mini">high-quality fragrance oil</span>
+                  <span class="button-tag button-tag--tertiary-container button-tag--mini">vegan</span>
+                  <span class="button-tag button-tag--tertiary-container button-tag--mini">cruelty-free</span>
+                  <span class="button-tag button-tag--tertiary-container button-tag--mini">conscious beauty clean</span>
+                  <span class="button-tag button-tag--tertiary-container button-tag--mini">paraben-free</span>
+                  <span class="button-tag button-tag--tertiary-container button-tag--mini">phthalate-free</span>
+                  <span class="button-tag button-tag--tertiary-container button-tag--mini">no synthetic dyes</span>
+                  <span class="button-tag button-tag--tertiary-container button-tag--mini">preservative-free</span>
+              </div>
+
+          </div>
+      </div>
+  </div>
   <style>
     body {
       margin: 0;
@@ -186,16 +224,13 @@
       background-color: var(--color-background);
     }
 
-    .video-full-bleed {
-      width: 100vw;
-      position: relative;
-      left: 50%;
-      right: 50%;
-      margin-left: -50vw;
-      margin-right: -50vw;
+    /* Full-bleed wrapper - prevents horizontal scroll */
+    .hero-image-full-bleed {
+      width: 100%;
+      margin: 0;
     }
 
-    .video-full-bleed .video-aspect {
+    .hero-image-full-bleed .img-aspect {
       border-radius: 0;
     }
   </style>
