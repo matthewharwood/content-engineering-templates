@@ -1,0 +1,202 @@
+<link rel="stylesheet" href="./SwitchButtonGroup.css">
+<link rel="stylesheet" href="../Icon/Icon.css">
+
+<div style="display: flex; flex-direction: column; gap: var(--space-2xl); padding: var(--space-xl); background-color: var(--color-background); max-width: 1000px; margin-inline: auto;">
+
+  <!-- Header -->
+  <div>
+    <h1 style="font-size: var(--step-4); margin-bottom: var(--space-xs); color: var(--color-on-background);">Switch Button Group Showcase</h1>
+    <p style="font-size: var(--step-0); color: var(--color-on-surface-variant);">
+      Segmented control-style toggles with sliding thumb for binary on/off states
+    </p>
+  </div>
+
+  <!-- Settings Panel Example -->
+  <section>
+    <h2 style="font-size: var(--step-2); margin-bottom: var(--space-m); color: var(--color-on-background);">Settings Panel</h2>
+    <div style="background-color: var(--color-surface); padding: var(--space-xl); border-radius: 8px; border: 1px solid var(--color-outline-variant);">
+
+      <div style="display: flex; flex-direction: column; gap: var(--space-xl);">
+
+        <!-- Visibility Toggle -->
+        <div class="switch-button-group">
+          <fieldset class="switch-button-group__fieldset">
+            <legend class="switch-button-group__legend">Profile Visibility</legend>
+            <div class="switch-button-group__wrapper">
+              <input type="checkbox" id="showcase-visibility" class="switch-button-group__input" role="switch" aria-checked="true" checked />
+              <label for="showcase-visibility" class="switch-button-group__track switch-button-group__track--primary switch-button-group__track--medium">
+                <span class="switch-button-group__thumb"></span>
+                <span class="switch-button-group__option switch-button-group__option--left">Private</span>
+                <span class="switch-button-group__option switch-button-group__option--right">Public</span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- Auto-save -->
+        <div class="switch-button-group">
+          <fieldset class="switch-button-group__fieldset">
+            <legend class="switch-button-group__legend">Auto-save Documents</legend>
+            <div class="switch-button-group__wrapper">
+              <input type="checkbox" id="showcase-autosave" class="switch-button-group__input" role="switch" aria-checked="true" checked />
+              <label for="showcase-autosave" class="switch-button-group__track switch-button-group__track--tertiary switch-button-group__track--small">
+                <span class="switch-button-group__thumb"></span>
+                <span class="switch-button-group__option switch-button-group__option--left">Disabled</span>
+                <span class="switch-button-group__option switch-button-group__option--right">Enabled</span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- Notifications -->
+        <div class="switch-button-group">
+          <fieldset class="switch-button-group__fieldset">
+            <legend class="switch-button-group__legend">Email Notifications</legend>
+            <div class="switch-button-group__wrapper">
+              <input type="checkbox" id="showcase-notifications" class="switch-button-group__input" role="switch" aria-checked="false" />
+              <label for="showcase-notifications" class="switch-button-group__track switch-button-group__track--outline switch-button-group__track--medium">
+                <span class="switch-button-group__thumb"></span>
+                <span class="switch-button-group__option switch-button-group__option--left">Off</span>
+                <span class="switch-button-group__option switch-button-group__option--right">On</span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Content Editor Example -->
+  <section>
+    <h2 style="font-size: var(--step-2); margin-bottom: var(--space-m); color: var(--color-on-background);">Content Editor Controls</h2>
+    <div style="background-color: var(--color-surface); padding: var(--space-l); border-radius: 8px; border: 1px solid var(--color-outline-variant);">
+
+      <div style="display: flex; flex-direction: column; gap: var(--space-l);">
+
+        <!-- Publish Status -->
+        <div class="switch-button-group">
+          <fieldset class="switch-button-group__fieldset">
+            <legend class="switch-button-group__legend">Publication Status</legend>
+            <div class="switch-button-group__wrapper">
+              <input type="checkbox" id="showcase-publish" class="switch-button-group__input" role="switch" aria-checked="false" />
+              <label for="showcase-publish" class="switch-button-group__track switch-button-group__track--primary switch-button-group__track--medium">
+                <span class="switch-button-group__thumb"></span>
+                <span class="switch-button-group__option switch-button-group__option--left">Draft</span>
+                <span class="switch-button-group__option switch-button-group__option--right">Published</span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- Content Lock -->
+        <div class="switch-button-group">
+          <fieldset class="switch-button-group__fieldset">
+            <legend class="switch-button-group__legend">Edit Lock</legend>
+            <div class="switch-button-group__wrapper">
+              <input type="checkbox" id="showcase-lock" class="switch-button-group__input" role="switch" aria-checked="true" checked />
+              <label for="showcase-lock" class="switch-button-group__track switch-button-group__track--secondary switch-button-group__track--small switch-button-group__track--pill">
+                <span class="switch-button-group__thumb"></span>
+                <span class="switch-button-group__option switch-button-group__option--left">
+                  <span class="icon">lock_open</span>
+                  Unlocked
+                </span>
+                <span class="switch-button-group__option switch-button-group__option--right">
+                  <span class="icon">lock</span>
+                  Locked
+                </span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- Preview Mode -->
+        <div class="switch-button-group">
+          <fieldset class="switch-button-group__fieldset">
+            <legend class="switch-button-group__legend">View Mode</legend>
+            <div class="switch-button-group__wrapper">
+              <input type="checkbox" id="showcase-preview" class="switch-button-group__input" role="switch" aria-checked="false" />
+              <label for="showcase-preview" class="switch-button-group__track switch-button-group__track--outline switch-button-group__track--medium">
+                <span class="switch-button-group__thumb"></span>
+                <span class="switch-button-group__option switch-button-group__option--left">
+                  <span class="icon">edit</span>
+                  Edit
+                </span>
+                <span class="switch-button-group__option switch-button-group__option--right">
+                  <span class="icon">preview</span>
+                  Preview
+                </span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- All Variants Grid -->
+  <section>
+    <h2 style="font-size: var(--step-2); margin-bottom: var(--space-m); color: var(--color-on-background);">All Variants</h2>
+    <div style="display: grid; gap: var(--space-xl);">
+
+      <!-- Kinds -->
+      <div style="background-color: var(--color-surface); padding: var(--space-l); border-radius: 8px; border: 1px solid var(--color-outline-variant);">
+        <h3 style="font-size: var(--step-1); margin-bottom: var(--space-m); color: var(--color-on-surface);">Button Kinds</h3>
+        <div style="display: grid; gap: var(--space-l);">
+          <div class="switch-button-group">
+            <p style="font-size: var(--step--1); margin-bottom: var(--space-xs); color: var(--color-on-surface-variant);">Primary</p>
+            <div class="switch-button-group__wrapper">
+              <input type="checkbox" id="kind-primary" class="switch-button-group__input" role="switch" aria-checked="true" checked />
+              <label for="kind-primary" class="switch-button-group__track switch-button-group__track--primary switch-button-group__track--medium">
+                <span class="switch-button-group__thumb"></span>
+                <span class="switch-button-group__option switch-button-group__option--left">Off</span>
+                <span class="switch-button-group__option switch-button-group__option--right">On</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="switch-button-group">
+            <p style="font-size: var(--step--1); margin-bottom: var(--space-xs); color: var(--color-on-surface-variant);">Secondary</p>
+            <div class="switch-button-group__wrapper">
+              <input type="checkbox" id="kind-secondary" class="switch-button-group__input" role="switch" aria-checked="true" checked />
+              <label for="kind-secondary" class="switch-button-group__track switch-button-group__track--secondary switch-button-group__track--medium">
+                <span class="switch-button-group__thumb"></span>
+                <span class="switch-button-group__option switch-button-group__option--left">Off</span>
+                <span class="switch-button-group__option switch-button-group__option--right">On</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="switch-button-group">
+            <p style="font-size: var(--step--1); margin-bottom: var(--space-xs); color: var(--color-on-surface-variant);">Tertiary</p>
+            <div class="switch-button-group__wrapper">
+              <input type="checkbox" id="kind-tertiary" class="switch-button-group__input" role="switch" aria-checked="true" checked />
+              <label for="kind-tertiary" class="switch-button-group__track switch-button-group__track--tertiary switch-button-group__track--medium">
+                <span class="switch-button-group__thumb"></span>
+                <span class="switch-button-group__option switch-button-group__option--left">Off</span>
+                <span class="switch-button-group__option switch-button-group__option--right">On</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="switch-button-group">
+            <p style="font-size: var(--step--1); margin-bottom: var(--space-xs); color: var(--color-on-surface-variant);">Outline</p>
+            <div class="switch-button-group__wrapper">
+              <input type="checkbox" id="kind-outline" class="switch-button-group__input" role="switch" aria-checked="true" checked />
+              <label for="kind-outline" class="switch-button-group__track switch-button-group__track--outline switch-button-group__track--medium">
+                <span class="switch-button-group__thumb"></span>
+                <span class="switch-button-group__option switch-button-group__option--left">Off</span>
+                <span class="switch-button-group__option switch-button-group__option--right">On</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>

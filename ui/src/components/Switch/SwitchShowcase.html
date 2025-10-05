@@ -1,0 +1,267 @@
+<link rel="stylesheet" href="./Switch.css">
+
+<div style="display: flex; flex-direction: column; gap: var(--space-2xl); padding: var(--space-xl); background-color: var(--color-background); max-width: 800px; margin-inline: auto;">
+
+  <!-- Header -->
+  <div>
+    <h1 style="font-size: var(--step-4); margin-bottom: var(--space-xs); color: var(--color-on-background);">Switch Component Showcase</h1>
+    <p style="font-size: var(--step-0); color: var(--color-on-surface-variant);">
+      Accessible toggle switches following WCAG 2.1 AA guidelines with role="switch" and full keyboard support
+    </p>
+  </div>
+
+  <!-- Settings Panel Example -->
+  <section>
+    <h2 style="font-size: var(--step-2); margin-bottom: var(--space-m); color: var(--color-on-background);">Account Settings</h2>
+    <div style="background-color: var(--color-surface); padding: var(--space-xl); border-radius: 8px; border: 1px solid var(--color-outline-variant);">
+
+      <fieldset class="switch-group">
+        <legend class="switch-group__legend">Notifications</legend>
+        <div class="switch-group__switches">
+          <label class="switch">
+            <input
+              type="checkbox"
+              role="switch"
+              class="switch__input"
+              aria-checked="true"
+              aria-describedby="showcase-email-desc"
+              checked
+            />
+            <span class="switch__track switch__track--medium">
+              <span class="switch__thumb"></span>
+            </span>
+            <span class="switch__label-content">
+              <span class="switch__label-text">Email notifications</span>
+              <span class="switch__description" id="showcase-email-desc">
+                Receive email updates about your account
+              </span>
+            </span>
+          </label>
+
+          <label class="switch">
+            <input
+              type="checkbox"
+              role="switch"
+              class="switch__input"
+              aria-checked="true"
+              aria-describedby="showcase-push-desc"
+              checked
+            />
+            <span class="switch__track switch__track--medium">
+              <span class="switch__thumb"></span>
+            </span>
+            <span class="switch__label-content">
+              <span class="switch__label-text">Push notifications</span>
+              <span class="switch__description" id="showcase-push-desc">
+                Get notified on your devices
+              </span>
+            </span>
+          </label>
+
+          <label class="switch">
+            <input
+              type="checkbox"
+              role="switch"
+              class="switch__input"
+              aria-checked="false"
+              aria-describedby="showcase-marketing-desc"
+            />
+            <span class="switch__track switch__track--medium">
+              <span class="switch__thumb"></span>
+            </span>
+            <span class="switch__label-content">
+              <span class="switch__label-text">Marketing emails</span>
+              <span class="switch__description" id="showcase-marketing-desc">
+                Receive promotional offers and updates
+              </span>
+            </span>
+          </label>
+        </div>
+      </fieldset>
+
+    </div>
+  </section>
+
+  <!-- Mobile-style Settings -->
+  <section>
+    <h2 style="font-size: var(--step-2); margin-bottom: var(--space-m); color: var(--color-on-background);">System Settings</h2>
+    <div style="background-color: var(--color-surface); border-radius: 8px; border: 1px solid var(--color-outline-variant); overflow: hidden;">
+
+      <!-- Setting items with dividers -->
+      <div style="display: flex; flex-direction: column;">
+        <div style="padding: var(--space-m) var(--space-l); border-bottom: 1px solid var(--color-outline-variant);">
+          <label class="switch switch--label-left" style="width: 100%;">
+            <input
+              type="checkbox"
+              role="switch"
+              class="switch__input"
+              aria-checked="true"
+              checked
+            />
+            <span class="switch__track switch__track--medium">
+              <span class="switch__thumb"></span>
+            </span>
+            <span class="switch__label-content">
+              <span class="switch__label-text">Wi-Fi</span>
+              <span class="switch__description">Connected to Home Network</span>
+            </span>
+          </label>
+        </div>
+
+        <div style="padding: var(--space-m) var(--space-l); border-bottom: 1px solid var(--color-outline-variant);">
+          <label class="switch switch--label-left" style="width: 100%;">
+            <input
+              type="checkbox"
+              role="switch"
+              class="switch__input"
+              aria-checked="false"
+            />
+            <span class="switch__track switch__track--medium">
+              <span class="switch__thumb"></span>
+            </span>
+            <span class="switch__label-content">
+              <span class="switch__label-text">Bluetooth</span>
+              <span class="switch__description">Off</span>
+            </span>
+          </label>
+        </div>
+
+        <div style="padding: var(--space-m) var(--space-l); border-bottom: 1px solid var(--color-outline-variant);">
+          <label class="switch switch--label-left" style="width: 100%;">
+            <input
+              type="checkbox"
+              role="switch"
+              class="switch__input"
+              aria-checked="false"
+            />
+            <span class="switch__track switch__track--medium">
+              <span class="switch__thumb"></span>
+            </span>
+            <span class="switch__label-content">
+              <span class="switch__label-text">Airplane Mode</span>
+              <span class="switch__description">Disable all wireless connections</span>
+            </span>
+          </label>
+        </div>
+
+        <div style="padding: var(--space-m) var(--space-l);">
+          <label class="switch switch--label-left" style="width: 100%;">
+            <input
+              type="checkbox"
+              role="switch"
+              class="switch__input"
+              aria-checked="true"
+              checked
+            />
+            <span class="switch__track switch__track--medium">
+              <span class="switch__thumb"></span>
+            </span>
+            <span class="switch__label-content">
+              <span class="switch__label-text">Location Services</span>
+              <span class="switch__description">Allow apps to access your location</span>
+            </span>
+          </label>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- All States Grid -->
+  <section>
+    <h2 style="font-size: var(--step-2); margin-bottom: var(--space-m); color: var(--color-on-background);">All States & Sizes</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-l);">
+
+      <!-- Sizes card -->
+      <div style="background-color: var(--color-surface); padding: var(--space-l); border-radius: 8px; border: 1px solid var(--color-outline-variant);">
+        <h3 style="font-size: var(--step-1); margin-bottom: var(--space-m); color: var(--color-on-surface);">Sizes</h3>
+        <div style="display: flex; flex-direction: column; gap: var(--space-m);">
+          <label class="switch">
+            <input type="checkbox" role="switch" class="switch__input" aria-checked="true" checked />
+            <span class="switch__track switch__track--small">
+              <span class="switch__thumb"></span>
+            </span>
+            <span class="switch__label-content">
+              <span class="switch__label-text">Small</span>
+            </span>
+          </label>
+
+          <label class="switch">
+            <input type="checkbox" role="switch" class="switch__input" aria-checked="true" checked />
+            <span class="switch__track switch__track--medium">
+              <span class="switch__thumb"></span>
+            </span>
+            <span class="switch__label-content">
+              <span class="switch__label-text">Medium</span>
+            </span>
+          </label>
+
+          <label class="switch">
+            <input type="checkbox" role="switch" class="switch__input" aria-checked="true" checked />
+            <span class="switch__track switch__track--large">
+              <span class="switch__thumb"></span>
+            </span>
+            <span class="switch__label-content">
+              <span class="switch__label-text">Large</span>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <!-- States card -->
+      <div style="background-color: var(--color-surface); padding: var(--space-l); border-radius: 8px; border: 1px solid var(--color-outline-variant);">
+        <h3 style="font-size: var(--step-1); margin-bottom: var(--space-m); color: var(--color-on-surface);">States</h3>
+        <div style="display: flex; flex-direction: column; gap: var(--space-m);">
+          <label class="switch">
+            <input type="checkbox" role="switch" class="switch__input" aria-checked="false" />
+            <span class="switch__track switch__track--medium">
+              <span class="switch__thumb"></span>
+            </span>
+            <span class="switch__label-content">
+              <span class="switch__label-text">Unchecked</span>
+            </span>
+          </label>
+
+          <label class="switch">
+            <input type="checkbox" role="switch" class="switch__input" aria-checked="true" checked />
+            <span class="switch__track switch__track--medium">
+              <span class="switch__thumb"></span>
+            </span>
+            <span class="switch__label-content">
+              <span class="switch__label-text">Checked</span>
+            </span>
+          </label>
+
+          <label class="switch switch--disabled">
+            <input type="checkbox" role="switch" class="switch__input" aria-checked="false" disabled />
+            <span class="switch__track switch__track--medium">
+              <span class="switch__thumb"></span>
+            </span>
+            <span class="switch__label-content">
+              <span class="switch__label-text">Disabled</span>
+            </span>
+          </label>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Accessibility Documentation -->
+  <section>
+    <h2 style="font-size: var(--step-2); margin-bottom: var(--space-m); color: var(--color-on-background);">Accessibility Features</h2>
+    <div style="background-color: var(--color-surface-variant); padding: var(--space-l); border-radius: 8px;">
+      <ul style="list-style: disc; padding-left: var(--space-l); line-height: 1.6; color: var(--color-on-surface-variant);">
+        <li><strong>role="switch"</strong> - Properly identifies the control as a switch</li>
+        <li><strong>aria-checked</strong> - Indicates current state to screen readers</li>
+        <li><strong>aria-describedby</strong> - Links descriptions to switches</li>
+        <li><strong>aria-required</strong> - Marks required fields</li>
+        <li><strong>aria-invalid</strong> - Indicates validation errors</li>
+        <li><strong>Keyboard support</strong> - Space toggles, Tab navigates</li>
+        <li><strong>Focus indicators</strong> - Clear outline on keyboard focus</li>
+        <li><strong>Semantic HTML</strong> - Fieldset/legend for grouped switches</li>
+      </ul>
+    </div>
+  </section>
+
+</div>

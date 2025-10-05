@@ -1,0 +1,122 @@
+<link rel="stylesheet" href="./Switch.css">
+
+<div style="display: flex; flex-direction: column; gap: var(--space-2xl); max-width: 600px;">
+
+  <!-- Default (unchecked) -->
+  <div>
+    <p style="font-size: var(--step--1); margin-bottom: var(--space-m); color: var(--color-on-surface-variant);">Default (Unchecked)</p>
+    <label class="switch">
+      <input
+        type="checkbox"
+        role="switch"
+        class="switch__input"
+        id="switch-default"
+        aria-checked="false"
+      />
+      <span class="switch__track switch__track--medium">
+        <span class="switch__thumb"></span>
+      </span>
+      <span class="switch__label-content">
+        <span class="switch__label-text">Feature is off</span>
+      </span>
+    </label>
+  </div>
+
+  <!-- Checked -->
+  <div>
+    <p style="font-size: var(--step--1); margin-bottom: var(--space-m); color: var(--color-on-surface-variant);">Checked</p>
+    <label class="switch">
+      <input
+        type="checkbox"
+        role="switch"
+        class="switch__input"
+        id="switch-checked-state"
+        aria-checked="true"
+        checked
+      />
+      <span class="switch__track switch__track--medium">
+        <span class="switch__thumb"></span>
+      </span>
+      <span class="switch__label-content">
+        <span class="switch__label-text">Feature is on</span>
+      </span>
+    </label>
+  </div>
+
+  <!-- Disabled (unchecked) -->
+  <div>
+    <p style="font-size: var(--step--1); margin-bottom: var(--space-m); color: var(--color-on-surface-variant);">Disabled (Unchecked)</p>
+    <label class="switch switch--disabled">
+      <input
+        type="checkbox"
+        role="switch"
+        class="switch__input"
+        id="switch-disabled"
+        aria-checked="false"
+        disabled
+      />
+      <span class="switch__track switch__track--medium">
+        <span class="switch__thumb"></span>
+      </span>
+      <span class="switch__label-content">
+        <span class="switch__label-text">Feature unavailable</span>
+        <span class="switch__description">This feature is currently disabled</span>
+      </span>
+    </label>
+  </div>
+
+  <!-- Disabled (checked) -->
+  <div>
+    <p style="font-size: var(--step--1); margin-bottom: var(--space-m); color: var(--color-on-surface-variant);">Disabled (Checked)</p>
+    <label class="switch switch--disabled">
+      <input
+        type="checkbox"
+        role="switch"
+        class="switch__input"
+        id="switch-disabled-checked"
+        aria-checked="true"
+        checked
+        disabled
+      />
+      <span class="switch__track switch__track--medium">
+        <span class="switch__thumb"></span>
+      </span>
+      <span class="switch__label-content">
+        <span class="switch__label-text">Always enabled</span>
+        <span class="switch__description">This feature is always on</span>
+      </span>
+    </label>
+  </div>
+
+  <!-- Error -->
+  <div>
+    <p style="font-size: var(--step--1); margin-bottom: var(--space-m); color: var(--color-on-surface-variant);">Error State</p>
+    <div class="switch-field">
+      <label class="switch switch--error">
+        <input
+          type="checkbox"
+          role="switch"
+          class="switch__input"
+          id="switch-error"
+          aria-checked="false"
+          aria-required="true"
+          aria-invalid="true"
+          aria-describedby="switch-error-msg"
+        />
+        <span class="switch__track switch__track--medium">
+          <span class="switch__thumb"></span>
+        </span>
+        <span class="switch__label-content">
+          <span class="switch__label-text">
+            Accept privacy policy
+            <span class="switch__required" aria-label="required">*</span>
+          </span>
+        </span>
+      </label>
+      <span class="switch__error-message" id="switch-error-msg" role="alert">
+        You must accept the privacy policy to continue
+      </span>
+    </div>
+  </div>
+
+</div>

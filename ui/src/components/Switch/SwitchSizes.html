@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="./Switch.css">
+
+<div style="display: flex; flex-direction: column; gap: var(--space-2xl); max-width: 600px;">
+
+  <!-- Small -->
+  <div>
+    <p style="font-size: var(--step--1); margin-bottom: var(--space-m); color: var(--color-on-surface-variant);">Small</p>
+    <label class="switch">
+      <input
+        type="checkbox"
+        role="switch"
+        class="switch__input"
+        id="switch-small"
+        aria-checked="false"
+      />
+      <span class="switch__track switch__track--small">
+        <span class="switch__thumb"></span>
+      </span>
+      <span class="switch__label-content">
+        <span class="switch__label-text">Enable feature</span>
+      </span>
+    </label>
+  </div>
+
+  <!-- Medium (default) -->
+  <div>
+    <p style="font-size: var(--step--1); margin-bottom: var(--space-m); color: var(--color-on-surface-variant);">Medium (Default)</p>
+    <label class="switch">
+      <input
+        type="checkbox"
+        role="switch"
+        class="switch__input"
+        id="switch-medium"
+        aria-checked="true"
+        checked
+      />
+      <span class="switch__track switch__track--medium">
+        <span class="switch__thumb"></span>
+      </span>
+      <span class="switch__label-content">
+        <span class="switch__label-text">Enable feature</span>
+      </span>
+    </label>
+  </div>
+
+  <!-- Large -->
+  <div>
+    <p style="font-size: var(--step--1); margin-bottom: var(--space-m); color: var(--color-on-surface-variant);">Large</p>
+    <label class="switch">
+      <input
+        type="checkbox"
+        role="switch"
+        class="switch__input"
+        id="switch-large"
+        aria-checked="false"
+      />
+      <span class="switch__track switch__track--large">
+        <span class="switch__thumb"></span>
+      </span>
+      <span class="switch__label-content">
+        <span class="switch__label-text">Enable feature</span>
+      </span>
+    </label>
+  </div>
+
+</div>

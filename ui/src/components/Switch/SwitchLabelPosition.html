@@ -1,0 +1,101 @@
+<link rel="stylesheet" href="./Switch.css">
+
+<div style="display: flex; flex-direction: column; gap: var(--space-2xl); max-width: 600px;">
+
+  <!-- Label on right (default) -->
+  <div>
+    <p style="font-size: var(--step--1); margin-bottom: var(--space-m); color: var(--color-on-surface-variant);">Label on Right (Default)</p>
+    <label class="switch switch--label-right">
+      <input
+        type="checkbox"
+        role="switch"
+        class="switch__input"
+        id="switch-label-right"
+        aria-checked="true"
+        checked
+      />
+      <span class="switch__track switch__track--medium">
+        <span class="switch__thumb"></span>
+      </span>
+      <span class="switch__label-content">
+        <span class="switch__label-text">Push notifications</span>
+        <span class="switch__description">Receive push notifications on your device</span>
+      </span>
+    </label>
+  </div>
+
+  <!-- Label on left -->
+  <div>
+    <p style="font-size: var(--step--1); margin-bottom: var(--space-m); color: var(--color-on-surface-variant);">Label on Left</p>
+    <label class="switch switch--label-left">
+      <input
+        type="checkbox"
+        role="switch"
+        class="switch__input"
+        id="switch-label-left"
+        aria-checked="false"
+      />
+      <span class="switch__track switch__track--medium">
+        <span class="switch__thumb"></span>
+      </span>
+      <span class="switch__label-content">
+        <span class="switch__label-text">Dark mode</span>
+        <span class="switch__description">Use dark color scheme</span>
+      </span>
+    </label>
+  </div>
+
+  <!-- Multiple switches with left labels -->
+  <div>
+    <p style="font-size: var(--step--1); margin-bottom: var(--space-m); color: var(--color-on-surface-variant);">Multiple Left-Aligned</p>
+    <div style="display: flex; flex-direction: column; gap: var(--space-m);">
+      <label class="switch switch--label-left">
+        <input
+          type="checkbox"
+          role="switch"
+          class="switch__input"
+          aria-checked="true"
+          checked
+        />
+        <span class="switch__track switch__track--medium">
+          <span class="switch__thumb"></span>
+        </span>
+        <span class="switch__label-content">
+          <span class="switch__label-text">Wi-Fi</span>
+        </span>
+      </label>
+
+      <label class="switch switch--label-left">
+        <input
+          type="checkbox"
+          role="switch"
+          class="switch__input"
+          aria-checked="false"
+        />
+        <span class="switch__track switch__track--medium">
+          <span class="switch__thumb"></span>
+        </span>
+        <span class="switch__label-content">
+          <span class="switch__label-text">Bluetooth</span>
+        </span>
+      </label>
+
+      <label class="switch switch--label-left">
+        <input
+          type="checkbox"
+          role="switch"
+          class="switch__input"
+          aria-checked="true"
+          checked
+        />
+        <span class="switch__track switch__track--medium">
+          <span class="switch__thumb"></span>
+        </span>
+        <span class="switch__label-content">
+          <span class="switch__label-text">Airplane mode</span>
+        </span>
+      </label>
+    </div>
+  </div>
+
+</div>

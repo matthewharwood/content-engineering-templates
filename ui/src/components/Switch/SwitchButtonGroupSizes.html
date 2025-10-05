@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="./SwitchButtonGroup.css">
+
+<div style="display: flex; flex-direction: column; gap: var(--space-2xl); max-width: 800px;">
+
+  <!-- Mini -->
+  <div class="switch-button-group">
+    <fieldset class="switch-button-group__fieldset">
+      <legend class="switch-button-group__legend">Mini Size</legend>
+      <div class="switch-button-group__wrapper">
+        <input type="checkbox" id="size-mini" class="switch-button-group__input" role="switch" aria-checked="true" checked />
+        <label for="size-mini" class="switch-button-group__track switch-button-group__track--primary switch-button-group__track--mini">
+          <span class="switch-button-group__thumb"></span>
+          <span class="switch-button-group__option switch-button-group__option--left">Off</span>
+          <span class="switch-button-group__option switch-button-group__option--right">On</span>
+        </label>
+      </div>
+    </fieldset>
+  </div>
+
+  <!-- Small -->
+  <div class="switch-button-group">
+    <fieldset class="switch-button-group__fieldset">
+      <legend class="switch-button-group__legend">Small Size</legend>
+      <div class="switch-button-group__wrapper">
+        <input type="checkbox" id="size-small" class="switch-button-group__input" role="switch" aria-checked="false" />
+        <label for="size-small" class="switch-button-group__track switch-button-group__track--primary switch-button-group__track--small">
+          <span class="switch-button-group__thumb"></span>
+          <span class="switch-button-group__option switch-button-group__option--left">Off</span>
+          <span class="switch-button-group__option switch-button-group__option--right">On</span>
+        </label>
+      </div>
+    </fieldset>
+  </div>
+
+  <!-- Medium -->
+  <div class="switch-button-group">
+    <fieldset class="switch-button-group__fieldset">
+      <legend class="switch-button-group__legend">Medium Size (Default)</legend>
+      <div class="switch-button-group__wrapper">
+        <input type="checkbox" id="size-medium" class="switch-button-group__input" role="switch" aria-checked="true" checked />
+        <label for="size-medium" class="switch-button-group__track switch-button-group__track--primary switch-button-group__track--medium">
+          <span class="switch-button-group__thumb"></span>
+          <span class="switch-button-group__option switch-button-group__option--left">Off</span>
+          <span class="switch-button-group__option switch-button-group__option--right">On</span>
+        </label>
+      </div>
+    </fieldset>
+  </div>
+
+  <!-- Large -->
+  <div class="switch-button-group">
+    <fieldset class="switch-button-group__fieldset">
+      <legend class="switch-button-group__legend">Large Size</legend>
+      <div class="switch-button-group__wrapper">
+        <input type="checkbox" id="size-large" class="switch-button-group__input" role="switch" aria-checked="false" />
+        <label for="size-large" class="switch-button-group__track switch-button-group__track--primary switch-button-group__track--large">
+          <span class="switch-button-group__thumb"></span>
+          <span class="switch-button-group__option switch-button-group__option--left">Off</span>
+          <span class="switch-button-group__option switch-button-group__option--right">On</span>
+        </label>
+      </div>
+    </fieldset>
+  </div>
+
+</div>

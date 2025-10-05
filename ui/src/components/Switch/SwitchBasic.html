@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="./Switch.css">
+
+<div style="display: flex; flex-direction: column; gap: var(--space-xl); max-width: 600px;">
+
+  <!-- Basic Switch -->
+  <label class="switch">
+    <input
+      type="checkbox"
+      role="switch"
+      class="switch__input"
+      id="switch-basic"
+      aria-checked="false"
+    />
+    <span class="switch__track switch__track--medium">
+      <span class="switch__thumb"></span>
+    </span>
+    <span class="switch__label-content">
+      <span class="switch__label-text">Enable notifications</span>
+    </span>
+  </label>
+
+  <!-- Checked by default -->
+  <label class="switch">
+    <input
+      type="checkbox"
+      role="switch"
+      class="switch__input"
+      id="switch-checked"
+      aria-checked="true"
+      checked
+    />
+    <span class="switch__track switch__track--medium">
+      <span class="switch__thumb"></span>
+    </span>
+    <span class="switch__label-content">
+      <span class="switch__label-text">Dark mode</span>
+    </span>
+  </label>
+
+  <!-- Required -->
+  <label class="switch">
+    <input
+      type="checkbox"
+      role="switch"
+      class="switch__input"
+      id="switch-required"
+      aria-checked="false"
+      aria-required="true"
+      required
+    />
+    <span class="switch__track switch__track--medium">
+      <span class="switch__thumb"></span>
+    </span>
+    <span class="switch__label-content">
+      <span class="switch__label-text">
+        Accept terms and conditions
+        <span class="switch__required" aria-label="required">*</span>
+      </span>
+    </span>
+  </label>
+
+</div>

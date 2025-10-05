@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="./SwitchButtonGroup.css">
+<link rel="stylesheet" href="../Icon/Icon.css">
+
+<div style="display: flex; flex-direction: column; gap: var(--space-2xl); max-width: 800px;">
+
+  <!-- Default (Rounded) -->
+  <div class="switch-button-group">
+    <fieldset class="switch-button-group__fieldset">
+      <legend class="switch-button-group__legend">Default Shape (Rounded)</legend>
+      <div class="switch-button-group__wrapper">
+        <input type="checkbox" id="shape-default" class="switch-button-group__input" role="switch" aria-checked="true" checked />
+        <label for="shape-default" class="switch-button-group__track switch-button-group__track--primary switch-button-group__track--medium">
+          <span class="switch-button-group__thumb"></span>
+          <span class="switch-button-group__option switch-button-group__option--left">Off</span>
+          <span class="switch-button-group__option switch-button-group__option--right">On</span>
+        </label>
+      </div>
+    </fieldset>
+  </div>
+
+  <!-- Pill -->
+  <div class="switch-button-group">
+    <fieldset class="switch-button-group__fieldset">
+      <legend class="switch-button-group__legend">Pill Shape</legend>
+      <div class="switch-button-group__wrapper">
+        <input type="checkbox" id="shape-pill" class="switch-button-group__input" role="switch" aria-checked="false" />
+        <label for="shape-pill" class="switch-button-group__track switch-button-group__track--primary switch-button-group__track--medium switch-button-group__track--pill">
+          <span class="switch-button-group__thumb"></span>
+          <span class="switch-button-group__option switch-button-group__option--left">Disabled</span>
+          <span class="switch-button-group__option switch-button-group__option--right">Enabled</span>
+        </label>
+      </div>
+    </fieldset>
+  </div>
+
+  <!-- Square -->
+  <div class="switch-button-group">
+    <fieldset class="switch-button-group__fieldset">
+      <legend class="switch-button-group__legend">Square Shape</legend>
+      <div class="switch-button-group__wrapper">
+        <input type="checkbox" id="shape-square" class="switch-button-group__input" role="switch" aria-checked="true" checked />
+        <label for="shape-square" class="switch-button-group__track switch-button-group__track--primary switch-button-group__track--medium switch-button-group__track--square">
+          <span class="switch-button-group__thumb"></span>
+          <span class="switch-button-group__option switch-button-group__option--left">Hide</span>
+          <span class="switch-button-group__option switch-button-group__option--right">Show</span>
+        </label>
+      </div>
+    </fieldset>
+  </div>
+
+  <!-- With Icons -->
+  <div class="switch-button-group">
+    <fieldset class="switch-button-group__fieldset">
+      <legend class="switch-button-group__legend">With Icons</legend>
+      <div class="switch-button-group__wrapper">
+        <input type="checkbox" id="shape-icons" class="switch-button-group__input" role="switch" aria-checked="false" />
+        <label for="shape-icons" class="switch-button-group__track switch-button-group__track--outline switch-button-group__track--medium">
+          <span class="switch-button-group__thumb"></span>
+          <span class="switch-button-group__option switch-button-group__option--left">
+            <span class="icon">visibility_off</span>
+            Hidden
+          </span>
+          <span class="switch-button-group__option switch-button-group__option--right">
+            <span class="icon">visibility</span>
+            Visible
+          </span>
+        </label>
+      </div>
+    </fieldset>
+  </div>
+
+</div>

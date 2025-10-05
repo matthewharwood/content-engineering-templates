@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="./Switch.css">
+
+<div style="display: flex; flex-direction: column; gap: var(--space-xl); max-width: 600px;">
+
+  <!-- With description -->
+  <label class="switch">
+    <input
+      type="checkbox"
+      role="switch"
+      class="switch__input"
+      id="switch-desc-1"
+      aria-checked="false"
+      aria-describedby="switch-desc-1-text"
+    />
+    <span class="switch__track switch__track--medium">
+      <span class="switch__thumb"></span>
+    </span>
+    <span class="switch__label-content">
+      <span class="switch__label-text">Email notifications</span>
+      <span class="switch__description" id="switch-desc-1-text">
+        Receive email updates about your account activity
+      </span>
+    </span>
+  </label>
+
+  <!-- With description checked -->
+  <label class="switch">
+    <input
+      type="checkbox"
+      role="switch"
+      class="switch__input"
+      id="switch-desc-2"
+      aria-checked="true"
+      aria-describedby="switch-desc-2-text"
+      checked
+    />
+    <span class="switch__track switch__track--medium">
+      <span class="switch__thumb"></span>
+    </span>
+    <span class="switch__label-content">
+      <span class="switch__label-text">Auto-save</span>
+      <span class="switch__description" id="switch-desc-2-text">
+        Automatically save your work every 2 minutes
+      </span>
+    </span>
+  </label>
+
+  <!-- With longer description -->
+  <label class="switch">
+    <input
+      type="checkbox"
+      role="switch"
+      class="switch__input"
+      id="switch-desc-3"
+      aria-checked="false"
+      aria-describedby="switch-desc-3-text"
+    />
+    <span class="switch__track switch__track--medium">
+      <span class="switch__thumb"></span>
+    </span>
+    <span class="switch__label-content">
+      <span class="switch__label-text">Two-factor authentication</span>
+      <span class="switch__description" id="switch-desc-3-text">
+        Add an extra layer of security to your account by requiring a verification code in addition to your password
+      </span>
+    </span>
+  </label>
+
+</div>

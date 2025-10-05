@@ -1,0 +1,292 @@
+/* Switch Button Group - Toggle switches with sliding thumb */
+
+/* Container */
+.switch-button-group {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/* Fieldset reset */
+.switch-button-group__fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+/* Legend */
+.switch-button-group__legend {
+  font-size: var(--step--1);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-on-surface-variant);
+  margin-bottom: var(--space-xs);
+  padding: 0;
+}
+
+/* Wrapper for input + track */
+.switch-button-group__wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Hidden checkbox */
+.switch-button-group__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Track container (label) */
+.switch-button-group__track {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+  user-select: none;
+  border: 2px solid;
+  transition: all 0.2s ease;
+}
+
+/* Sliding thumb */
+.switch-button-group__thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Labels (left and right options) */
+.switch-button-group__option {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-medium);
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Focus state */
+.switch-button-group__input:focus-visible + .switch-button-group__track {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Disabled state */
+.switch-button-group__input:disabled + .switch-button-group__track {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   BUTTON KINDS (VARIANTS)
+   ============================================ */
+
+/* Primary */
+.switch-button-group__track--primary {
+  background-color: var(--color-primary-container);
+  border-color: var(--color-primary-container);
+}
+
+.switch-button-group__track--primary .switch-button-group__option {
+  color: var(--color-on-primary-container);
+}
+
+.switch-button-group__track--primary .switch-button-group__thumb {
+  background-color: var(--color-primary);
+}
+
+.switch-button-group__input:checked + .switch-button-group__track--primary .switch-button-group__thumb {
+  left: 50%;
+}
+
+.switch-button-group__track--primary .switch-button-group__option--left {
+  color: var(--color-on-primary-container);
+}
+
+.switch-button-group__input:checked + .switch-button-group__track--primary .switch-button-group__option--left {
+  color: var(--color-on-primary-container);
+}
+
+.switch-button-group__track--primary .switch-button-group__option--right {
+  color: var(--color-on-primary-container);
+}
+
+.switch-button-group__input:checked + .switch-button-group__track--primary .switch-button-group__option--right {
+  color: var(--color-on-primary);
+}
+
+.switch-button-group__input:not(:checked) + .switch-button-group__track--primary .switch-button-group__option--left {
+  color: var(--color-on-primary);
+}
+
+/* Secondary */
+.switch-button-group__track--secondary {
+  background-color: var(--color-secondary-container);
+  border-color: var(--color-secondary-container);
+}
+
+.switch-button-group__track--secondary .switch-button-group__option {
+  color: var(--color-on-secondary-container);
+}
+
+.switch-button-group__track--secondary .switch-button-group__thumb {
+  background-color: var(--color-secondary);
+}
+
+.switch-button-group__input:checked + .switch-button-group__track--secondary .switch-button-group__thumb {
+  left: 50%;
+}
+
+.switch-button-group__input:not(:checked) + .switch-button-group__track--secondary .switch-button-group__option--left {
+  color: var(--color-on-secondary);
+}
+
+.switch-button-group__input:checked + .switch-button-group__track--secondary .switch-button-group__option--right {
+  color: var(--color-on-secondary);
+}
+
+/* Tertiary */
+.switch-button-group__track--tertiary {
+  background-color: var(--color-tertiary-container);
+  border-color: var(--color-tertiary-container);
+}
+
+.switch-button-group__track--tertiary .switch-button-group__option {
+  color: var(--color-on-tertiary-container);
+}
+
+.switch-button-group__track--tertiary .switch-button-group__thumb {
+  background-color: var(--color-tertiary);
+}
+
+.switch-button-group__input:checked + .switch-button-group__track--tertiary .switch-button-group__thumb {
+  left: 50%;
+}
+
+.switch-button-group__input:not(:checked) + .switch-button-group__track--tertiary .switch-button-group__option--left {
+  color: var(--color-on-tertiary);
+}
+
+.switch-button-group__input:checked + .switch-button-group__track--tertiary .switch-button-group__option--right {
+  color: var(--color-on-tertiary);
+}
+
+/* Outline */
+.switch-button-group__track--outline {
+  background-color: transparent;
+  border-color: var(--color-outline);
+}
+
+.switch-button-group__track--outline .switch-button-group__option {
+  color: var(--color-on-surface);
+}
+
+.switch-button-group__track--outline .switch-button-group__thumb {
+  background-color: var(--color-primary-container);
+  border: 1px solid var(--color-primary);
+}
+
+.switch-button-group__input:checked + .switch-button-group__track--outline .switch-button-group__thumb {
+  left: 50%;
+}
+
+.switch-button-group__input:not(:checked) + .switch-button-group__track--outline .switch-button-group__option--left {
+  color: var(--color-primary);
+}
+
+.switch-button-group__input:checked + .switch-button-group__track--outline .switch-button-group__option--right {
+  color: var(--color-primary);
+}
+
+/* ============================================
+   SIZES
+   ============================================ */
+
+/* Mini */
+.switch-button-group__track--mini {
+  border-radius: 4px;
+}
+
+.switch-button-group__track--mini .switch-button-group__option {
+  padding: var(--space-2xs) var(--space-xs);
+  font-size: var(--step--2);
+}
+
+.switch-button-group__track--mini .switch-button-group__thumb {
+  border-radius: 3px;
+}
+
+/* Small */
+.switch-button-group__track--small {
+  border-radius: 6px;
+}
+
+.switch-button-group__track--small .switch-button-group__option {
+  padding: var(--space-xs) var(--space-s);
+  font-size: var(--step--1);
+}
+
+.switch-button-group__track--small .switch-button-group__thumb {
+  border-radius: 5px;
+}
+
+/* Medium (default) */
+.switch-button-group__track--medium {
+  border-radius: 8px;
+}
+
+.switch-button-group__track--medium .switch-button-group__option {
+  padding: var(--space-s) var(--space-m);
+  font-size: var(--step-0);
+}
+
+.switch-button-group__track--medium .switch-button-group__thumb {
+  border-radius: 7px;
+}
+
+/* Large */
+.switch-button-group__track--large {
+  border-radius: 10px;
+}
+
+.switch-button-group__track--large .switch-button-group__option {
+  padding: var(--space-m) var(--space-l);
+  font-size: var(--step-1);
+}
+
+.switch-button-group__track--large .switch-button-group__thumb {
+  border-radius: 9px;
+}
+
+/* ============================================
+   SHAPES
+   ============================================ */
+
+/* Pill */
+.switch-button-group__track--pill {
+  border-radius: 100px;
+}
+
+.switch-button-group__track--pill .switch-button-group__thumb {
+  border-radius: 100px;
+}
+
+/* Square */
+.switch-button-group__track--square {
+  border-radius: 0;
+}
+
+.switch-button-group__track--square .switch-button-group__thumb {
+  border-radius: 0;
+}

@@ -1,0 +1,212 @@
+/* Switch Component - Accessible toggle switch for forms */
+
+/* Container */
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-s);
+  cursor: pointer;
+  user-select: none;
+}
+
+.switch--disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Hidden native checkbox */
+.switch__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Track (background slider) */
+.switch__track {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  background-color: var(--color-surface-variant);
+  border: 2px solid var(--color-outline);
+  border-radius: 100px;
+  transition: all 0.2s ease;
+}
+
+/* Thumb (circle that moves) */
+.switch__thumb {
+  position: absolute;
+  background-color: var(--color-outline);
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Sizes - Medium (default) */
+.switch__track--medium {
+  width: 52px;
+  height: 32px;
+}
+
+.switch__track--medium .switch__thumb {
+  width: 20px;
+  height: 20px;
+  top: 6px;
+  left: 6px;
+}
+
+/* Sizes - Small */
+.switch__track--small {
+  width: 44px;
+  height: 24px;
+}
+
+.switch__track--small .switch__thumb {
+  width: 16px;
+  height: 16px;
+  top: 4px;
+  left: 4px;
+}
+
+/* Sizes - Large */
+.switch__track--large {
+  width: 60px;
+  height: 36px;
+}
+
+.switch__track--large .switch__thumb {
+  width: 24px;
+  height: 24px;
+  top: 6px;
+  left: 6px;
+}
+
+/* Label content wrapper */
+.switch__label-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+/* Label text */
+.switch__label-text {
+  font-size: var(--step-0);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-on-surface);
+}
+
+/* Description text */
+.switch__description {
+  font-size: var(--step--1);
+  color: var(--color-on-surface-variant);
+  line-height: 1.4;
+}
+
+/* Required indicator */
+.switch__required {
+  color: var(--color-error);
+  margin-left: var(--space-3xs);
+}
+
+/* Checked state */
+.switch__input:checked + .switch__track {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.switch__input:checked + .switch__track .switch__thumb {
+  background-color: var(--color-on-primary);
+}
+
+/* Checked thumb position - Medium */
+.switch__input:checked + .switch__track--medium .switch__thumb {
+  left: 26px;
+}
+
+/* Checked thumb position - Small */
+.switch__input:checked + .switch__track--small .switch__thumb {
+  left: 24px;
+}
+
+/* Checked thumb position - Large */
+.switch__input:checked + .switch__track--large .switch__thumb {
+  left: 30px;
+}
+
+/* Focus state */
+.switch__input:focus + .switch__track {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Hover state (not disabled) */
+.switch:not(.switch--disabled):hover .switch__track {
+  border-color: var(--color-on-surface);
+}
+
+.switch:not(.switch--disabled):hover .switch__input:checked + .switch__track {
+  border-color: var(--color-primary);
+  opacity: 0.9;
+}
+
+/* Disabled state */
+.switch__input:disabled + .switch__track {
+  cursor: not-allowed;
+}
+
+/* Error state */
+.switch--error .switch__track {
+  border-color: var(--color-error);
+}
+
+.switch--error .switch__label-text {
+  color: var(--color-error);
+}
+
+/* Error message */
+.switch__error-message {
+  font-size: var(--step--1);
+  color: var(--color-error);
+  margin-top: var(--space-xs);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+}
+
+/* Label position - Right (default) */
+.switch--label-right {
+  flex-direction: row;
+}
+
+/* Label position - Left */
+.switch--label-left {
+  flex-direction: row-reverse;
+}
+
+/* Field wrapper for form integration */
+.switch-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/* Fieldset for grouped switches */
+.switch-group {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.switch-group__legend {
+  font-size: var(--step-0);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-on-surface);
+  margin-bottom: var(--space-m);
+  padding: 0;
+}
+
+.switch-group__switches {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+}

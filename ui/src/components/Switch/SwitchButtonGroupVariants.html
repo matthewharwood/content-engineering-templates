@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="./SwitchButtonGroup.css">
+
+<div style="display: flex; flex-direction: column; gap: var(--space-2xl); max-width: 800px;">
+
+  <!-- Primary -->
+  <div class="switch-button-group">
+    <fieldset class="switch-button-group__fieldset">
+      <legend class="switch-button-group__legend">Primary</legend>
+      <div class="switch-button-group__wrapper">
+        <input type="checkbox" id="variant-primary" class="switch-button-group__input" role="switch" aria-checked="true" checked />
+        <label for="variant-primary" class="switch-button-group__track switch-button-group__track--primary switch-button-group__track--medium">
+          <span class="switch-button-group__thumb"></span>
+          <span class="switch-button-group__option switch-button-group__option--left">Off</span>
+          <span class="switch-button-group__option switch-button-group__option--right">On</span>
+        </label>
+      </div>
+    </fieldset>
+  </div>
+
+  <!-- Secondary -->
+  <div class="switch-button-group">
+    <fieldset class="switch-button-group__fieldset">
+      <legend class="switch-button-group__legend">Secondary</legend>
+      <div class="switch-button-group__wrapper">
+        <input type="checkbox" id="variant-secondary" class="switch-button-group__input" role="switch" aria-checked="false" />
+        <label for="variant-secondary" class="switch-button-group__track switch-button-group__track--secondary switch-button-group__track--medium">
+          <span class="switch-button-group__thumb"></span>
+          <span class="switch-button-group__option switch-button-group__option--left">Off</span>
+          <span class="switch-button-group__option switch-button-group__option--right">On</span>
+        </label>
+      </div>
+    </fieldset>
+  </div>
+
+  <!-- Tertiary -->
+  <div class="switch-button-group">
+    <fieldset class="switch-button-group__fieldset">
+      <legend class="switch-button-group__legend">Tertiary</legend>
+      <div class="switch-button-group__wrapper">
+        <input type="checkbox" id="variant-tertiary" class="switch-button-group__input" role="switch" aria-checked="true" checked />
+        <label for="variant-tertiary" class="switch-button-group__track switch-button-group__track--tertiary switch-button-group__track--medium">
+          <span class="switch-button-group__thumb"></span>
+          <span class="switch-button-group__option switch-button-group__option--left">Off</span>
+          <span class="switch-button-group__option switch-button-group__option--right">On</span>
+        </label>
+      </div>
+    </fieldset>
+  </div>
+
+  <!-- Outline -->
+  <div class="switch-button-group">
+    <fieldset class="switch-button-group__fieldset">
+      <legend class="switch-button-group__legend">Outline</legend>
+      <div class="switch-button-group__wrapper">
+        <input type="checkbox" id="variant-outline" class="switch-button-group__input" role="switch" aria-checked="false" />
+        <label for="variant-outline" class="switch-button-group__track switch-button-group__track--outline switch-button-group__track--medium">
+          <span class="switch-button-group__thumb"></span>
+          <span class="switch-button-group__option switch-button-group__option--left">Off</span>
+          <span class="switch-button-group__option switch-button-group__option--right">On</span>
+        </label>
+      </div>
+    </fieldset>
+  </div>
+
+</div>

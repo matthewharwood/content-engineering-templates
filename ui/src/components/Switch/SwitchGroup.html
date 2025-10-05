@@ -1,0 +1,141 @@
+<link rel="stylesheet" href="./Switch.css">
+
+<div style="display: flex; flex-direction: column; gap: var(--space-2xl); max-width: 600px;">
+
+  <!-- Grouped switches with fieldset -->
+  <fieldset class="switch-group">
+    <legend class="switch-group__legend">Notification Preferences</legend>
+    <div class="switch-group__switches">
+      <label class="switch">
+        <input
+          type="checkbox"
+          role="switch"
+          class="switch__input"
+          id="notif-email"
+          name="notifications"
+          value="email"
+          aria-checked="true"
+          aria-describedby="notif-email-desc"
+          checked
+        />
+        <span class="switch__track switch__track--medium">
+          <span class="switch__thumb"></span>
+        </span>
+        <span class="switch__label-content">
+          <span class="switch__label-text">Email notifications</span>
+          <span class="switch__description" id="notif-email-desc">
+            Receive notifications via email
+          </span>
+        </span>
+      </label>
+
+      <label class="switch">
+        <input
+          type="checkbox"
+          role="switch"
+          class="switch__input"
+          id="notif-push"
+          name="notifications"
+          value="push"
+          aria-checked="true"
+          aria-describedby="notif-push-desc"
+          checked
+        />
+        <span class="switch__track switch__track--medium">
+          <span class="switch__thumb"></span>
+        </span>
+        <span class="switch__label-content">
+          <span class="switch__label-text">Push notifications</span>
+          <span class="switch__description" id="notif-push-desc">
+            Receive push notifications on your device
+          </span>
+        </span>
+      </label>
+
+      <label class="switch">
+        <input
+          type="checkbox"
+          role="switch"
+          class="switch__input"
+          id="notif-sms"
+          name="notifications"
+          value="sms"
+          aria-checked="false"
+          aria-describedby="notif-sms-desc"
+        />
+        <span class="switch__track switch__track--medium">
+          <span class="switch__thumb"></span>
+        </span>
+        <span class="switch__label-content">
+          <span class="switch__label-text">SMS notifications</span>
+          <span class="switch__description" id="notif-sms-desc">
+            Receive notifications via text message
+          </span>
+        </span>
+      </label>
+    </div>
+  </fieldset>
+
+  <!-- Privacy settings group -->
+  <fieldset class="switch-group">
+    <legend class="switch-group__legend">Privacy Settings</legend>
+    <div class="switch-group__switches">
+      <label class="switch">
+        <input
+          type="checkbox"
+          role="switch"
+          class="switch__input"
+          id="privacy-profile"
+          name="privacy"
+          value="profile"
+          aria-checked="true"
+          checked
+        />
+        <span class="switch__track switch__track--medium">
+          <span class="switch__thumb"></span>
+        </span>
+        <span class="switch__label-content">
+          <span class="switch__label-text">Public profile</span>
+        </span>
+      </label>
+
+      <label class="switch">
+        <input
+          type="checkbox"
+          role="switch"
+          class="switch__input"
+          id="privacy-activity"
+          name="privacy"
+          value="activity"
+          aria-checked="false"
+        />
+        <span class="switch__track switch__track--medium">
+          <span class="switch__thumb"></span>
+        </span>
+        <span class="switch__label-content">
+          <span class="switch__label-text">Show activity status</span>
+        </span>
+      </label>
+
+      <label class="switch">
+        <input
+          type="checkbox"
+          role="switch"
+          class="switch__input"
+          id="privacy-search"
+          name="privacy"
+          value="search"
+          aria-checked="true"
+          checked
+        />
+        <span class="switch__track switch__track--medium">
+          <span class="switch__thumb"></span>
+        </span>
+        <span class="switch__label-content">
+          <span class="switch__label-text">Appear in search results</span>
+        </span>
+      </label>
+    </div>
+  </fieldset>
+
+</div>

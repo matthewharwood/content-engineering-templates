@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="./SwitchButtonGroup.css">
+<link rel="stylesheet" href="../Icon/Icon.css">
+
+<div style="display: flex; flex-direction: column; gap: var(--space-2xl); max-width: 800px;">
+
+  <!-- Segmented Primary -->
+  <div class="switch-button-group">
+    <fieldset class="switch-button-group__fieldset">
+      <legend class="switch-button-group__legend">Privacy Setting</legend>
+      <div class="switch-button-group__wrapper">
+        <input type="checkbox" id="seg-1" class="switch-button-group__input" role="switch" aria-checked="true" checked />
+        <label for="seg-1" class="switch-button-group__track switch-button-group__track--primary switch-button-group__track--medium">
+          <span class="switch-button-group__thumb"></span>
+          <span class="switch-button-group__option switch-button-group__option--left">Private</span>
+          <span class="switch-button-group__option switch-button-group__option--right">Public</span>
+        </label>
+      </div>
+    </fieldset>
+  </div>
+
+  <!-- Segmented Outline -->
+  <div class="switch-button-group">
+    <fieldset class="switch-button-group__fieldset">
+      <legend class="switch-button-group__legend">Publication Status</legend>
+      <div class="switch-button-group__wrapper">
+        <input type="checkbox" id="seg-2" class="switch-button-group__input" role="switch" aria-checked="false" />
+        <label for="seg-2" class="switch-button-group__track switch-button-group__track--outline switch-button-group__track--medium">
+          <span class="switch-button-group__thumb"></span>
+          <span class="switch-button-group__option switch-button-group__option--left">Draft</span>
+          <span class="switch-button-group__option switch-button-group__option--right">Published</span>
+        </label>
+      </div>
+    </fieldset>
+  </div>
+
+  <!-- Segmented with Icons -->
+  <div class="switch-button-group">
+    <fieldset class="switch-button-group__fieldset">
+      <legend class="switch-button-group__legend">Lock Status</legend>
+      <div class="switch-button-group__wrapper">
+        <input type="checkbox" id="seg-3" class="switch-button-group__input" role="switch" aria-checked="true" checked />
+        <label for="seg-3" class="switch-button-group__track switch-button-group__track--tertiary switch-button-group__track--small">
+          <span class="switch-button-group__thumb"></span>
+          <span class="switch-button-group__option switch-button-group__option--left">
+            <span class="icon">lock_open</span>
+            Unlocked
+          </span>
+          <span class="switch-button-group__option switch-button-group__option--right">
+            <span class="icon">lock</span>
+            Locked
+          </span>
+        </label>
+      </div>
+    </fieldset>
+  </div>
+
+  <!-- Segmented Pill -->
+  <div class="switch-button-group">
+    <fieldset class="switch-button-group__fieldset">
+      <legend class="switch-button-group__legend">Activity Status</legend>
+      <div class="switch-button-group__wrapper">
+        <input type="checkbox" id="seg-4" class="switch-button-group__input" role="switch" aria-checked="false" />
+        <label for="seg-4" class="switch-button-group__track switch-button-group__track--secondary switch-button-group__track--small switch-button-group__track--pill">
+          <span class="switch-button-group__thumb"></span>
+          <span class="switch-button-group__option switch-button-group__option--left">Inactive</span>
+          <span class="switch-button-group__option switch-button-group__option--right">Active</span>
+        </label>
+      </div>
+    </fieldset>
+  </div>
+
+</div>
