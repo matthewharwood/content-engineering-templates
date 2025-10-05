@@ -1,0 +1,255 @@
+<link rel="stylesheet" href="./FAQ.css">
+
+<div style="max-width: var(--grid-max-width); margin-inline: auto; padding: var(--space-3xl) var(--grid-gutter); display: flex; flex-direction: column; gap: var(--space-3xl);">
+
+  <!-- Header -->
+  <div>
+    <h1 style="font-family: var(--font-sans); font-size: var(--step-4); font-weight: 700; margin: 0 0 var(--space-s) 0; color: var(--color-on-background);">
+      FAQ Component
+    </h1>
+    <p style="font-family: var(--font-sans); font-size: var(--step-0); line-height: 1.6; margin: 0; color: var(--color-on-surface-variant); max-width: 65ch;">
+      Accessible accordion component using native HTML <code style="font-family: var(--font-mono); background-color: var(--color-surface-variant); padding: 2px 6px; border-radius: 4px;">&lt;details&gt;</code> and <code style="font-family: var(--font-mono); background-color: var(--color-surface-variant); padding: 2px 6px; border-radius: 4px;">&lt;summary&gt;</code> elements. Supports keyboard navigation, screen readers, and follows WCAG 2.1 AA guidelines. Features multiple sizes, colors, shapes, and interactive states.
+    </p>
+  </div>
+
+  <!-- Default Example -->
+  <section>
+    <h2 style="font-family: var(--font-sans); font-size: var(--step-2); font-weight: 700; margin: 0 0 var(--space-m) 0; color: var(--color-on-background);">
+      Default Example
+    </h2>
+    <p style="font-family: var(--font-sans); font-size: var(--step-0); line-height: 1.6; margin: 0 0 var(--space-m) 0; color: var(--color-on-surface-variant); max-width: 65ch;">
+      Standard FAQ with medium size and surface variant. Click or press Enter/Space to expand answers.
+    </p>
+    <div class="faq faq--medium faq--surface">
+      <details class="faq__item">
+        <summary class="faq__question">
+          <span class="faq__question-text">What is your return policy?</span>
+          <span class="icon faq__icon">expand_more</span>
+        </summary>
+        <div class="faq__answer">
+          <p>We offer a 30-day return policy on all unused products. Items must be in their original packaging with all tags attached. Refunds will be processed within 5-7 business days of receiving your return.</p>
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__question">
+          <span class="faq__question-text">How long does shipping take?</span>
+          <span class="icon faq__icon">expand_more</span>
+        </summary>
+        <div class="faq__answer">
+          <p>Standard shipping typically takes 3-5 business days. Express shipping is available and takes 1-2 business days. Free shipping is offered on orders over $65.</p>
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__question">
+          <span class="faq__question-text">Do you ship internationally?</span>
+          <span class="icon faq__icon">expand_more</span>
+        </summary>
+        <div class="faq__answer">
+          <p>Yes! We ship to over 50 countries worldwide. International shipping times vary by location but typically range from 7-14 business days. Customs fees may apply depending on your country.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Sizes -->
+  <section>
+    <h2 style="font-family: var(--font-sans); font-size: var(--step-2); font-weight: 700; margin: 0 0 var(--space-m) 0; color: var(--color-on-background);">
+      Size Variants
+    </h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl);">
+      <!-- Small -->
+      <div>
+        <h3 style="font-family: var(--font-sans); font-size: var(--step--1); font-weight: 600; margin: 0 0 var(--space-s) 0; color: var(--color-on-surface-variant);">Small</h3>
+        <div class="faq faq--small faq--surface">
+          <details class="faq__item">
+            <summary class="faq__question">
+              <span class="faq__question-text">Question?</span>
+              <span class="icon faq__icon">expand_more</span>
+            </summary>
+            <div class="faq__answer">
+              <p>Compact size for tight spaces.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <!-- Medium -->
+      <div>
+        <h3 style="font-family: var(--font-sans); font-size: var(--step--1); font-weight: 600; margin: 0 0 var(--space-s) 0; color: var(--color-on-surface-variant);">Medium</h3>
+        <div class="faq faq--medium faq--surface">
+          <details class="faq__item">
+            <summary class="faq__question">
+              <span class="faq__question-text">Question?</span>
+              <span class="icon faq__icon">expand_more</span>
+            </summary>
+            <div class="faq__answer">
+              <p>Default size for most use cases.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <!-- Large -->
+      <div>
+        <h3 style="font-family: var(--font-sans); font-size: var(--step--1); font-weight: 600; margin: 0 0 var(--space-s) 0; color: var(--color-on-surface-variant);">Large</h3>
+        <div class="faq faq--large faq--surface">
+          <details class="faq__item">
+            <summary class="faq__question">
+              <span class="faq__question-text">Question?</span>
+              <span class="icon faq__icon">expand_more</span>
+            </summary>
+            <div class="faq__answer">
+              <p>Prominent size for emphasis.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Color Variants -->
+  <section>
+    <h2 style="font-family: var(--font-sans); font-size: var(--step-2); font-weight: 700; margin: 0 0 var(--space-m) 0; color: var(--color-on-background);">
+      Color Variants
+    </h2>
+    <div style="display: flex; flex-direction: column; gap: var(--space-l);">
+      <!-- Primary -->
+      <div class="faq faq--medium faq--primary">
+        <details class="faq__item">
+          <summary class="faq__question">
+            <span class="faq__question-text">Primary Variant</span>
+            <span class="icon faq__icon">expand_more</span>
+          </summary>
+          <div class="faq__answer">
+            <p>Uses primary color tokens for prominent sections.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Secondary -->
+      <div class="faq faq--medium faq--secondary">
+        <details class="faq__item">
+          <summary class="faq__question">
+            <span class="faq__question-text">Secondary Variant</span>
+            <span class="icon faq__icon">expand_more</span>
+          </summary>
+          <div class="faq__answer">
+            <p>Uses secondary color tokens for supporting sections.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Tertiary -->
+      <div class="faq faq--medium faq--tertiary">
+        <details class="faq__item">
+          <summary class="faq__question">
+            <span class="faq__question-text">Tertiary Variant</span>
+            <span class="icon faq__icon">expand_more</span>
+          </summary>
+          <div class="faq__answer">
+            <p>Uses tertiary color tokens for accent sections.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shape Variants -->
+  <section>
+    <h2 style="font-family: var(--font-sans); font-size: var(--step-2); font-weight: 700; margin: 0 0 var(--space-m) 0; color: var(--color-on-background);">
+      Shape & Style Variants
+    </h2>
+    <div style="display: flex; flex-direction: column; gap: var(--space-xl);">
+      <!-- Pill -->
+      <div>
+        <h3 style="font-family: var(--font-sans); font-size: var(--step-0); font-weight: 600; margin: 0 0 var(--space-s) 0; color: var(--color-on-surface);">Pill Shape</h3>
+        <div class="faq faq--medium faq--surface faq--pill">
+          <details class="faq__item">
+            <summary class="faq__question">
+              <span class="faq__question-text">What is the pill shape?</span>
+              <span class="icon faq__icon">expand_more</span>
+            </summary>
+            <div class="faq__answer">
+              <p>Fully rounded corners (9999px) for a softer appearance.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <!-- Borderless -->
+      <div>
+        <h3 style="font-family: var(--font-sans); font-size: var(--step-0); font-weight: 600; margin: 0 0 var(--space-s) 0; color: var(--color-on-surface);">Borderless Style</h3>
+        <div class="faq faq--medium faq--surface faq--borderless faq--compact">
+          <details class="faq__item">
+            <summary class="faq__question">
+              <span class="faq__question-text">What is the borderless style?</span>
+              <span class="icon faq__icon">expand_more</span>
+            </summary>
+            <div class="faq__answer">
+              <p>Minimal styling with only bottom borders for a clean, list-like appearance.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">
+              <span class="faq__question-text">When should I use this?</span>
+              <span class="icon faq__icon">expand_more</span>
+            </summary>
+            <div class="faq__answer">
+              <p>Great for simple, text-heavy FAQ sections that need minimal visual weight.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accessibility Features -->
+  <section>
+    <h2 style="font-family: var(--font-sans); font-size: var(--step-2); font-weight: 700; margin: 0 0 var(--space-m) 0; color: var(--color-on-background);">
+      Accessibility Features
+    </h2>
+    <div style="background-color: var(--color-tertiary-container); padding: var(--space-l); border-radius: 8px; border-left: 4px solid var(--color-tertiary);">
+      <ul style="margin: 0; padding-left: var(--space-l); font-family: var(--font-sans); font-size: var(--step-0); line-height: 1.8; color: var(--color-on-tertiary-container);">
+        <li><strong>Native HTML:</strong> Uses <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> elements for built-in accessibility</li>
+        <li><strong>Keyboard Navigation:</strong> Tab to navigate, Enter or Space to toggle</li>
+        <li><strong>Screen Reader Support:</strong> Automatic state announcements (expanded/collapsed)</li>
+        <li><strong>Focus Indicators:</strong> Clear focus outlines for keyboard users</li>
+        <li><strong>Color Contrast:</strong> All variants meet WCAG 2.1 AA standards</li>
+        <li><strong>Animation:</strong> Smooth transitions with <code>prefers-reduced-motion</code> support</li>
+        <li><strong>Semantic HTML:</strong> Proper heading hierarchy and content structure</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Usage Examples -->
+  <section>
+    <h2 style="font-family: var(--font-sans); font-size: var(--step-2); font-weight: 700; margin: 0 0 var(--space-m) 0; color: var(--color-on-background);">
+      Rich Content Support
+    </h2>
+    <p style="font-family: var(--font-sans); font-size: var(--step-0); line-height: 1.6; margin: 0 0 var(--space-m) 0; color: var(--color-on-surface-variant); max-width: 65ch;">
+      FAQ answers can include formatted text, lists, links, and inline code.
+    </p>
+    <div class="faq faq--medium faq--surface">
+      <details class="faq__item" open>
+        <summary class="faq__question">
+          <span class="faq__question-text">What content can I include in answers?</span>
+          <span class="icon faq__icon">expand_more</span>
+        </summary>
+        <div class="faq__answer">
+          <p>Answers support rich content including:</p>
+          <ul>
+            <li><strong>Bold text</strong> for emphasis</li>
+            <li><a href="#">Links to related content</a></li>
+            <li><code>Inline code snippets</code></li>
+            <li>Multiple paragraphs</li>
+            <li>Ordered and unordered lists</li>
+          </ul>
+          <p>All styled with semantic theme tokens for consistency across your design system.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+</div>

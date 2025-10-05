@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="./ui/src/components/Select/Select.css">
   <link rel="stylesheet" href="./ui/src/components/Banner/Banner.css">
   <link rel="stylesheet" href="./ui/src/components/ButtonTags/ButtonTags.css">
+  <link rel="stylesheet" href="./ui/src/components/FAQ/FAQ.css">
 </head>
 <body>
   <!-- Banner - scrolls away naturally while nav stays sticky -->
@@ -217,6 +218,67 @@
           </div>
       </div>
   </div>
+
+  <!-- Product Info FAQ Grid -->
+  <div style="max-width: var(--grid-max-width); margin-inline: auto; padding: var(--space-3xl) 0;">
+      <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--grid-gutter);">
+
+          <!-- Left: Product Image -->
+          <div style="grid-column: span 6; display: flex;">
+              <img src="https://snif.co/cdn/shop/files/Snif_Me_ProductImage_10ml_2.jpg?v=1736378361&width=1600" alt="Snif Me 10ml Fragrance Product" class="img--cover" style="width: 100%; height: auto;">
+          </div>
+
+          <!-- Right: FAQ Component -->
+          <div style="grid-column: span 6; display: flex; align-items: center;">
+              <div class="faq faq--medium faq--surface" style="width: 100%;">
+                  <details class="faq__item">
+                      <summary class="faq__question">
+                          <span class="faq__question-text">Clean Formula</span>
+                          <span class="icon faq__icon">expand_more</span>
+                      </summary>
+                      <div class="faq__answer">
+                          <p>All our fragrances are vegan, cruelty-free, and formulated with industry clean standards. They are made without parabens, preservatives, phthalates, or synthetic dyes inside.</p>
+                      </div>
+                  </details>
+
+                  <details class="faq__item">
+                      <summary class="faq__question">
+                          <span class="faq__question-text">Lasting Power</span>
+                          <span class="icon faq__icon">expand_more</span>
+                      </summary>
+                      <div class="faq__answer">
+                          <p>Our fragrances are eau de toilettes that are formulated for optimal performance and long-lasting, daily wear without being overwhelming.</p>
+                      </div>
+                  </details>
+
+                  <details class="faq__item">
+                      <summary class="faq__question">
+                          <span class="faq__question-text">Ingredients</span>
+                          <span class="icon faq__icon">expand_more</span>
+                      </summary>
+                      <div class="faq__answer">
+                          <p><strong>Alcohol, Fragrance*, Water.</strong></p>
+                          <p>*Our scents are made with a high-end blend of natural ingredients and safe synthetics. While our formulas are nut-free, if you're concerned about potential allergens, please email us at hello@snif.co</p>
+                      </div>
+                  </details>
+
+                  <details class="faq__item">
+                      <summary class="faq__question">
+                          <span class="faq__question-text">Return Policy</span>
+                          <span class="icon faq__icon">expand_more</span>
+                      </summary>
+                      <div class="faq__answer">
+                          <p>30 ml fragrances include a free 2 ml sample fragrance. Please use this sample as a tester to ensure that you enjoy the scent before opening the full-size bottle.</p>
+                          <p>30 ml fragrances may be returned as long as they are in their original seal and packaging, unused, and are in "good as new" condition.</p>
+                          <p><strong>Note:</strong> 10 ml fragrances do not come with a sample and cannot be returned if opened.</p>
+                      </div>
+                  </details>
+              </div>
+          </div>
+
+      </div>
+  </div>
+
   <style>
     body {
       margin: 0;
