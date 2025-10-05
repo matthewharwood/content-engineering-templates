@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="./Select.css">
+
+<div class="select-field select-field--medium select-field--outline">
+  <label for="select-outline" class="select-field__label">
+    Sort By
+  </label>
+  <div class="select-field__wrapper">
+    <select
+      id="select-outline"
+      class="select-field__select"
+      aria-describedby="select-outline-helper"
+    >
+      <option value="">Choose sort order</option>
+      <option value="newest">Newest First</option>
+      <option value="oldest">Oldest First</option>
+      <option value="name-asc">Name (A-Z)</option>
+      <option value="name-desc">Name (Z-A)</option>
+      <option value="popular">Most Popular</option>
+    </select>
+  </div>
+  <span id="select-outline-helper" class="select-field__helper">
+    Outline variant with primary color accent
+  </span>
+</div>

@@ -1,5 +1,10 @@
 import './Select.css';
 import SelectDefaultHTML from './SelectDefault.html?raw';
+import SelectPrimaryHTML from './SelectPrimary.html?raw';
+import SelectSecondaryHTML from './SelectSecondary.html?raw';
+import SelectTertiaryHTML from './SelectTertiary.html?raw';
+import SelectOutlineHTML from './SelectOutline.html?raw';
+import SelectVariantsHTML from './SelectVariants.html?raw';
 import SelectRequiredHTML from './SelectRequired.html?raw';
 import SelectErrorHTML from './SelectError.html?raw';
 import SelectDisabledHTML from './SelectDisabled.html?raw';
@@ -40,7 +45,62 @@ export const Default = {
   parameters: {
     docs: {
       description: {
-        story: 'Basic select dropdown with label and helper text. Uses aria-describedby to associate helper text with the select element.',
+        story: 'Basic select dropdown with label and helper text. Uses aria-describedby to associate helper text with the select element. Default variant uses surface background with outline border.',
+      },
+    },
+  },
+};
+
+export const Primary = {
+  render: () => createHTMLElement(SelectPrimaryHTML),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Primary variant with brand color background and on-primary text color. Draws maximum attention and indicates primary actions or selections.',
+      },
+    },
+  },
+};
+
+export const Secondary = {
+  render: () => createHTMLElement(SelectSecondaryHTML),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Secondary variant with surface background and outlined border. Provides visual hierarchy below primary variant while maintaining clarity.',
+      },
+    },
+  },
+};
+
+export const Tertiary = {
+  render: () => createHTMLElement(SelectTertiaryHTML),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Tertiary variant with transparent background and minimal styling. Ideal for subtle filters and controls that should not dominate the interface.',
+      },
+    },
+  },
+};
+
+export const Outline = {
+  render: () => createHTMLElement(SelectOutlineHTML),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Outline variant with transparent background and primary color accent. Uses primary color for text and dropdown arrow to create visual emphasis.',
+      },
+    },
+  },
+};
+
+export const AllVariants = {
+  render: () => createHTMLElement(SelectVariantsHTML),
+  parameters: {
+    docs: {
+      description: {
+        story: 'All four visual variants displayed together: Primary, Secondary, Tertiary, and Outline. Each variant uses semantic design tokens for theme compatibility.',
       },
     },
   },
