@@ -1,11 +1,35 @@
+// MIME type mappings
+const MIME_TYPES: Record<string, string> = {
+  ".html": "text/html",
+  ".css": "text/css",
+  ".js": "application/javascript",
+  ".json": "application/json",
+  ".png": "image/png",
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
+  ".gif": "image/gif",
+  ".svg": "image/svg+xml",
+  ".woff": "font/woff",
+  ".woff2": "font/woff2",
+  ".ttf": "font/ttf",
+};
+
+function getMimeType(pathname: string): string {
+  const ext = pathname.substring(pathname.lastIndexOf("."));
+  return MIME_TYPES[ext] || "application/octet-stream";
+}
+
 Deno.serve(async (req) => {
   const url = new URL(req.url);
+  const pathname = url.pathname;
 
-  if (url.pathname === "/api/hello") {
+  // API routes
+  if (pathname === "/api/hello") {
     return new Response("Hello, world!");
   }
 
-  if (url.pathname === "/") {
+  // Serve index.html for root
+  if (pathname === "/") {
     try {
       const html = await Deno.readTextFile("./index.html");
       return new Response(html, {
@@ -16,5 +40,18 @@ Deno.serve(async (req) => {
     }
   }
 
-  return new Response("Not found", { status: 404 });
+  // Serve static files
+  try {
+    // Remove leading slash and construct file path
+    const filePath = `.${pathname}`;
+    const file = await Deno.readFile(filePath);
+    const mimeType = getMimeType(pathname);
+
+    return new Response(file, {
+      headers: { "Content-Type": mimeType }
+    });
+  } catch (error) {
+    // File not found
+    return new Response("Not found", { status: 404 });
+  }
 });

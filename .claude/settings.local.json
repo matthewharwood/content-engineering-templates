@@ -16,7 +16,8 @@
       "Bash(npm run build-storybook:*)",
       "WebFetch(domain:matthewjamestaylor.com)",
       "WebFetch(domain:m3.material.io)",
-      "WebFetch(domain:fonts.google.com)"
+      "WebFetch(domain:fonts.google.com)",
+      "WebFetch(domain:snif.co)"
     ],
     "deny": [],
     "ask": []

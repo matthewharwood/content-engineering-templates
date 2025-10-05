@@ -1,0 +1,66 @@
+/**
+ * Snif Theme
+ * Inspired by snif.co - A warm, sophisticated design system
+ *
+ * Design Philosophy:
+ * - Warm, inviting, and playful aesthetic
+ * - Muted pinks, peaches, oranges, and creamy yellows
+ * - Sophisticated yet approachable
+ * - Feminine and soft with quality focus
+ * - Modern elegance with warm tones
+ *
+ * Brand Characteristics:
+ * - Playful sophistication
+ * - Warm and welcoming
+ * - Curated and intentional
+ * - Premium feel with soft color palette
+ */
+
+:root {
+  /* Primary - Vibrant Orange */
+  --theme-primary: #fe7a2c;
+  --theme-on-primary: #ffffff;
+  --theme-primary-container: #fed7b3;
+  --theme-on-primary-container: #523228;
+
+  /* Secondary - Coral Pink */
+  --theme-secondary: #f47375;
+  --theme-on-secondary: #ffffff;
+  --theme-secondary-container: #f6ccc2;
+  --theme-on-secondary-container: #523228;
+
+  /* Tertiary - Soft Peach */
+  --theme-tertiary: #f6968e;
+  --theme-on-tertiary: #ffffff;
+  --theme-tertiary-container: #fde8e6;
+  --theme-on-tertiary-container: #5a3028;
+
+  /* Error - Muted Red */
+  --theme-error: #d94f4f;
+  --theme-on-error: #ffffff;
+  --theme-error-container: #ffeaed;
+  --theme-on-error-container: #5a0011;
+
+  /* Surface - Warm Cream */
+  --theme-surface: #FDF1E8;
+  --theme-on-surface: #523228;
+  --theme-surface-variant: #F8F0E9;
+  --theme-on-surface-variant: #6b4a3d;
+
+  /* Background - Light Cream */
+  --theme-background: #F6EEE5;
+  --theme-on-background: #523228;
+
+  /* Outline - Soft Peach Border */
+  --theme-outline: #f6ccc2;
+  --theme-outline-variant: #fed7b3;
+
+  /* Inverse - Dark Brown */
+  --theme-inverse-surface: #523228;
+  --theme-inverse-on-surface: #F6EEE5;
+  --theme-inverse-primary: #fed7b3;
+
+  /* Shadow & Scrim - Warm Depth */
+  --theme-shadow: rgba(82, 50, 40, 0.1);
+  --theme-scrim: rgba(82, 50, 40, 0.5);
+}

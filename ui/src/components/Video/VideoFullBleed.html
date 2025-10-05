@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="./Video.css">
+
+<!-- Full Bleed 16:9 Video - Autoplay, No Controls -->
+<div class="video-full-bleed">
+  <div class="video-aspect video-aspect--16-9">
+    <video
+      class="video"
+      src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+      autoplay
+      muted
+      loop
+      playsinline>
+    </video>
+  </div>
+</div>
+
+<style>
+  .video-full-bleed {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+
+  .video-full-bleed .video-aspect {
+    border-radius: 0;
+  }
+</style>
