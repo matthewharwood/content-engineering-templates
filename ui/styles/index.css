@@ -1,7 +1,15 @@
+/* ALL @import statements must come first in CSS */
+
 /* Design Tokens */
 @import "./tokens/colors.css";
 @import "./fonts.css";
 @import "./icons.css";
+
+/* Foundational Tokens */
+@import "./typography.css";
+@import "./space.css";
+@import "./grid.css";
+@import "./layouts.css";
 
 /* Box Model Reset - Border Box Everything */
 html {
@@ -13,9 +21,3 @@ html {
 *::after {
   box-sizing: inherit;
 }
-
-/* Foundational Tokens */
-@import "./typography.css";
-@import "./space.css";
-@import "./grid.css";
-@import "./layouts.css";
