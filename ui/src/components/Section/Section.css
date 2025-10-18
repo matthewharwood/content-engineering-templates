@@ -1,0 +1,238 @@
+/**
+ * Section Component
+ * Flexible container with support for various layouts, backgrounds, and heights
+ * Uses Utopia container and grid system with semantic design tokens
+ */
+
+/* Import grid system for containers and grids */
+@import "../../../styles/grid.css";
+
+/* Base Section Styles */
+.section {
+  /* Box model */
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+
+  /* Default spacing */
+  padding-block: var(--space-l-xl);
+
+  /* Default background */
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+
+  /* Ensure proper stacking context */
+  isolation: isolate;
+}
+
+/* Overflow Modifier - Use when section contains overlay patterns or needs containment */
+.section--overflow-hidden {
+  overflow: hidden;
+}
+
+/* Section Content (for layering over backgrounds) */
+.section__content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Full Bleed - No container */
+.section--full-bleed {
+  padding-inline: var(--space-m);
+}
+
+/* Height Modifiers */
+.section--height-20 {
+  min-height: 20vh;
+  display: flex;
+  align-items: center;
+}
+
+.section--height-33 {
+  min-height: 33vh;
+  display: flex;
+  align-items: center;
+}
+
+.section--height-50 {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+}
+
+.section--height-100 {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.section--height-auto {
+  min-height: auto;
+}
+
+/* Background Color Modifiers for Sections */
+.section--bg-primary {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.section--bg-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-on-secondary);
+}
+
+.section--bg-tertiary {
+  background-color: var(--color-tertiary);
+  color: var(--color-on-tertiary);
+}
+
+.section--bg-surface {
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+}
+
+.section--bg-surface-variant {
+  background-color: var(--color-surface-variant);
+  color: var(--color-on-surface-variant);
+}
+
+.section--bg-primary-container {
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+}
+
+.section--bg-secondary-container {
+  background-color: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+}
+
+.section--bg-tertiary-container {
+  background-color: var(--color-tertiary-container);
+  color: var(--color-on-tertiary-container);
+}
+
+/* Image Background */
+.section--bg-image {
+  background-image: var(--section-bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.section--bg-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-scrim);
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.section--bg-image > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Video Background */
+.section--bg-video {
+  position: relative;
+  overflow: hidden;
+}
+
+.section__bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.section__video-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-scrim);
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.section--bg-video > .section__content,
+.section--bg-video > .u-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Container Background Modifiers */
+.container--bg-primary {
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  padding-block: var(--space-m-l);
+  border-radius: var(--space-xs);
+}
+
+.container--bg-secondary {
+  background-color: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+  padding-block: var(--space-m-l);
+  border-radius: var(--space-xs);
+}
+
+.container--bg-tertiary {
+  background-color: var(--color-tertiary-container);
+  color: var(--color-on-tertiary-container);
+  padding-block: var(--space-m-l);
+  border-radius: var(--space-xs);
+}
+
+.container--bg-surface {
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  padding-block: var(--space-m-l);
+  border-radius: var(--space-xs);
+}
+
+/* Grid Background Modifiers */
+.grid--bg-primary {
+  background-color: var(--color-primary-container);
+  padding: var(--space-m);
+  border-radius: var(--space-xs);
+}
+
+.grid--bg-secondary {
+  background-color: var(--color-secondary-container);
+  padding: var(--space-m);
+  border-radius: var(--space-xs);
+}
+
+.grid--bg-tertiary {
+  background-color: var(--color-tertiary-container);
+  padding: var(--space-m);
+  border-radius: var(--space-xs);
+}
+
+.grid--bg-surface {
+  background-color: var(--color-surface);
+  padding: var(--space-m);
+  border-radius: var(--space-xs);
+}
+
+/* Grid Item Styling (for demo purposes) */
+.section__grid-item {
+  box-sizing: border-box;
+  padding: var(--space-m);
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  border-radius: var(--space-xs);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section {
+    padding-block: var(--space-m-l);
+  }
+
+  .section--full-bleed {
+    padding-inline: var(--space-s);
+  }
+}

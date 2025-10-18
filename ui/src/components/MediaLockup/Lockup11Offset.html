@@ -1,16 +1,19 @@
 <link rel="stylesheet" href="./MediaLockup.css">
 
 <!-- Lockup 11: Offset Overlap -->
-<div class="media-lockup media-lockup--offset">
-  <div class="media-lockup__image">
-    <img src="https://picsum.photos/1000/700?random=11" alt="Offset overlap layout">
+<!-- Uses Section + l-container + l-offset layout tokens -->
+<section class="section">
+  <div class="media-lockup media-lockup--offset l-container l-offset">
+    <div class="media-lockup__image">
+      <img src="https://picsum.photos/1000/700?random=11" alt="Offset overlap layout">
+    </div>
+    <div class="media-lockup__content">
+      <h2 class="media-lockup__heading">Offset Overlap</h2>
+      <p class="media-lockup__subheading">Layered design</p>
+      <p class="media-lockup__body">
+        Content box overlaps the image on desktop creating depth. Mobile stacks with spacing.
+        Great for creating visual interest and hierarchy. Built with Section + offset layout tokens.
+      </p>
+    </div>
   </div>
-  <div class="media-lockup__content">
-    <h2 class="media-lockup__heading">Offset Overlap</h2>
-    <p class="media-lockup__subheading">Layered design</p>
-    <p class="media-lockup__body">
-      Content box overlaps the image on desktop creating depth. Mobile stacks with spacing.
-      Great for creating visual interest and hierarchy.
-    </p>
-  </div>
-</div>
+</section>

@@ -1,16 +1,19 @@
 <link rel="stylesheet" href="./MediaLockup.css">
 
 <!-- Lockup 01: Split 50/50 - Image Left -->
-<div class="media-lockup media-lockup--split-left">
-  <div class="media-lockup__image">
-    <img src="https://picsum.photos/800/600?random=1" alt="Split layout with image on left">
+<!-- Uses Section + l-container + l-split-half layout tokens -->
+<section class="section">
+  <div class="media-lockup media-lockup--split-left l-container l-split-half">
+    <div class="media-lockup__image">
+      <img src="https://picsum.photos/800/600?random=1" alt="Split layout with image on left">
+    </div>
+    <div class="media-lockup__content">
+      <h2 class="media-lockup__heading">Split 50/50 Left</h2>
+      <p class="media-lockup__subheading">Image left, content right</p>
+      <p class="media-lockup__body">
+        Classic split layout with image on the left and content on the right. On mobile, stacks with image first.
+        Perfect for feature sections and product highlights. Now built on Section component with layout tokens.
+      </p>
+    </div>
   </div>
-  <div class="media-lockup__content">
-    <h2 class="media-lockup__heading">Split 50/50 Left</h2>
-    <p class="media-lockup__subheading">Image left, content right</p>
-    <p class="media-lockup__body">
-      Classic split layout with image on the left and content on the right. On mobile, stacks with image first.
-      Perfect for feature sections and product highlights.
-    </p>
-  </div>
-</div>
+</section>

@@ -1,41 +1,59 @@
+/**
+ * MediaLockup Component
+ *
+ * Responsive media-text layout patterns built on Section component
+ * and layout token system. Provides 20 pre-built lockup patterns
+ * for combining images with typography.
+ *
+ * Usage: Wrap in a <section class="section"> and use .media-lockup
+ * with .l-container for responsive grid-based layouts.
+ */
+
 @import "../../../styles/tokens/colors.css";
 @import "../../../styles/typography.css";
 @import "../../../styles/space.css";
 @import "../../../styles/fonts.css";
 @import "../../../styles/grid.css";
+@import "../../../styles/layouts.css";
 
-/* Base MediaLockup Container */
+/* Base MediaLockup - Uses layout container */
 .media-lockup {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: var(--grid-gutter);
-  max-width: var(--grid-max-width);
-  margin-inline: auto;
-  padding-inline: var(--grid-gutter);
-  width: 100%;
+  /* Inherits from .l-container in layouts.css */
+  /* No need to duplicate grid setup */
 }
 
-/* Image Container */
+/* Image Container - Media Containment Convention
+ *
+ * CRITICAL: All media elements MUST be contained to prevent overflow
+ * Strategy:
+ * 1. Container has overflow:hidden for protection
+ * 2. Images use width:100% + height:auto for natural sizing
+ * 3. object-fit:cover only when aspect-ratio is set (provides bounds)
+ * 4. min-width:0 prevents grid blowout
+ */
 .media-lockup__image {
   position: relative;
   overflow: hidden;
   background-color: var(--color-surface-variant);
+  min-width: 0; /* Prevent grid item from expanding beyond bounds */
 }
 
 .media-lockup__image img {
   width: 100%;
-  height: 100%;
+  height: auto; /* Maintain aspect ratio, prevent overflow */
   object-fit: cover;
   display: block;
+  max-width: 100%; /* Additional protection */
 }
 
-/* Content Container */
+/* Content Container - Protected from overflow */
 .media-lockup__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: var(--space-m);
   padding: var(--space-l);
+  min-width: 0; /* Prevent grid item from expanding beyond bounds */
 }
 
 .media-lockup__heading {
@@ -66,84 +84,47 @@
 }
 
 /* === LOCKUP PATTERNS === */
+/* Refactored to use layout tokens from layouts.css */
 
 /* 01: Split 50/50 - Image Left */
-.media-lockup--split-left .media-lockup__image {
-  grid-column: span 12;
-}
-.media-lockup--split-left .media-lockup__content {
-  grid-column: span 12;
-}
-@media (min-width: 768px) {
-  .media-lockup--split-left .media-lockup__image {
-    grid-column: span 6;
-  }
-  .media-lockup--split-left .media-lockup__content {
-    grid-column: span 6;
-  }
+.media-lockup--split-left {
+  /* Uses .l-split-half from layouts.css */
 }
 
 /* 02: Split 50/50 - Image Right */
-.media-lockup--split-right .media-lockup__content {
-  grid-column: span 12;
-  order: 1;
-}
-.media-lockup--split-right .media-lockup__image {
-  grid-column: span 12;
-  order: 2;
-}
-@media (min-width: 768px) {
-  .media-lockup--split-right .media-lockup__content {
-    grid-column: span 6;
-    order: 1;
-  }
-  .media-lockup--split-right .media-lockup__image {
-    grid-column: span 6;
-    order: 2;
-  }
+.media-lockup--split-right {
+  /* Uses .l-split-half + .l-reverse-desktop from layouts.css */
 }
 
 /* 03: Stacked - Image Top */
 .media-lockup--stacked-top {
-  grid-template-columns: 1fr;
-  gap: var(--space-m);
-}
-.media-lockup--stacked-top .media-lockup__image {
-  grid-column: 1;
-}
-.media-lockup--stacked-top .media-lockup__content {
-  grid-column: 1;
+  /* Uses .l-stack + .l-stack--gap-m from layouts.css */
 }
 
 /* 04: Stacked - Image Bottom */
 .media-lockup--stacked-bottom {
-  grid-template-columns: 1fr;
-  gap: var(--space-m);
+  /* Uses .l-stack + .l-stack--gap-m from layouts.css */
 }
 .media-lockup--stacked-bottom .media-lockup__content {
-  grid-column: 1;
   order: 1;
 }
 .media-lockup--stacked-bottom .media-lockup__image {
-  grid-column: 1;
   order: 2;
 }
 
 /* 05: Hero Overlay */
 .media-lockup--hero-overlay {
-  grid-template-columns: 1fr;
-  position: relative;
+  /* Uses .l-overlay from layouts.css */
   min-height: 400px;
 }
 .media-lockup--hero-overlay .media-lockup__image {
-  grid-column: 1;
-  grid-row: 1;
   min-height: 400px;
 }
+/* Overlay pattern needs height:100% to fill container */
+.media-lockup--hero-overlay .media-lockup__image img {
+  height: 100%;
+}
 .media-lockup--hero-overlay .media-lockup__content {
-  grid-column: 1;
-  grid-row: 1;
-  z-index: 1;
   background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
   color: white;
   align-items: center;
@@ -165,98 +146,73 @@
 }
 
 /* 06: Circle Badge */
+.media-lockup--circle-badge {
+  /* Uses .l-split-30-70 from layouts.css */
+}
 .media-lockup--circle-badge .media-lockup__image {
-  grid-column: span 12;
   aspect-ratio: 1;
   border-radius: 50%;
   max-width: 200px;
   margin-inline: auto;
 }
+/* Aspect ratio set, safe to use height:100% */
+.media-lockup--circle-badge .media-lockup__image img {
+  height: 100%;
+}
 .media-lockup--circle-badge .media-lockup__content {
-  grid-column: span 12;
   text-align: center;
   align-items: center;
 }
 @media (min-width: 768px) {
   .media-lockup--circle-badge .media-lockup__image {
-    grid-column: span 4;
     margin-inline: 0;
   }
   .media-lockup--circle-badge .media-lockup__content {
-    grid-column: span 8;
     text-align: left;
     align-items: flex-start;
   }
 }
 
 /* 07: Wide Image, Narrow Text (8/4) */
-.media-lockup--wide-image .media-lockup__image {
-  grid-column: span 12;
-}
-.media-lockup--wide-image .media-lockup__content {
-  grid-column: span 12;
-}
-@media (min-width: 768px) {
-  .media-lockup--wide-image .media-lockup__image {
-    grid-column: span 8;
-  }
-  .media-lockup--wide-image .media-lockup__content {
-    grid-column: span 4;
-  }
+.media-lockup--wide-image {
+  /* Uses .l-split-70-30 from layouts.css */
 }
 
 /* 08: Narrow Image, Wide Text (4/8) */
-.media-lockup--wide-text .media-lockup__image {
-  grid-column: span 12;
-}
-.media-lockup--wide-text .media-lockup__content {
-  grid-column: span 12;
-}
-@media (min-width: 768px) {
-  .media-lockup--wide-text .media-lockup__image {
-    grid-column: span 4;
-  }
-  .media-lockup--wide-text .media-lockup__content {
-    grid-column: span 8;
-  }
+.media-lockup--wide-text {
+  /* Uses .l-split-30-70 from layouts.css */
 }
 
 /* 09: Card Style */
 .media-lockup--card {
-  grid-template-columns: 1fr;
-  gap: 0;
+  /* Uses .l-stack + .l-stack--gap-none + .l-card from layouts.css */
   background-color: var(--color-surface);
-  border-radius: 12px;
-  overflow: hidden;
   border: 1px solid var(--color-outline);
-  max-width: 400px;
 }
 .media-lockup--card .media-lockup__image {
-  grid-column: 1;
   aspect-ratio: 16 / 9;
 }
+/* Aspect ratio set, safe to use height:100% */
+.media-lockup--card .media-lockup__image img {
+  height: 100%;
+}
 .media-lockup--card .media-lockup__content {
-  grid-column: 1;
   padding: var(--space-l);
 }
 
 /* 10: Full Bleed Hero */
 .media-lockup--full-bleed {
-  max-width: 100%;
-  padding-inline: 0;
-  grid-template-columns: 1fr;
-  position: relative;
+  /* Uses .l-overlay + .l-full-bleed from layouts.css */
   min-height: 500px;
 }
 .media-lockup--full-bleed .media-lockup__image {
-  grid-column: 1;
-  grid-row: 1;
   min-height: 500px;
 }
+/* Overlay with min-height, safe to use height:100% */
+.media-lockup--full-bleed .media-lockup__image img {
+  height: 100%;
+}
 .media-lockup--full-bleed .media-lockup__content {
-  grid-column: 1;
-  grid-row: 1;
-  z-index: 1;
   background: rgba(0,0,0,0.5);
   color: white;
   align-items: center;
@@ -280,150 +236,96 @@
 
 /* 11: Offset Overlap */
 .media-lockup--offset {
-  position: relative;
-}
-.media-lockup--offset .media-lockup__image {
-  grid-column: span 12;
+  /* Uses .l-offset from layouts.css */
 }
 .media-lockup--offset .media-lockup__content {
-  grid-column: span 12;
   background-color: var(--color-surface);
   border: 1px solid var(--color-outline);
   border-radius: 8px;
-  margin-top: var(--space-l);
-}
-@media (min-width: 768px) {
-  .media-lockup--offset .media-lockup__image {
-    grid-column: 1 / span 8;
-  }
-  .media-lockup--offset .media-lockup__content {
-    grid-column: 6 / span 7;
-    grid-row: 1;
-    align-self: center;
-    margin-top: 0;
-  }
 }
 
 /* 12: Magazine Two Column */
 .media-lockup--magazine {
-  grid-template-columns: 1fr;
+  /* Uses .l-stack + .l-stack--gap-l on mobile, switches to 2-column on desktop */
   gap: var(--space-l);
 }
 .media-lockup--magazine .media-lockup__image {
-  grid-column: 1;
   aspect-ratio: 4 / 3;
 }
+/* Aspect ratio set, safe to use height:100% */
+.media-lockup--magazine .media-lockup__image img {
+  height: 100%;
+}
 .media-lockup--magazine .media-lockup__content {
-  grid-column: 1;
   padding: 0;
 }
 @media (min-width: 768px) {
   .media-lockup--magazine {
     grid-template-columns: repeat(2, 1fr);
   }
-  .media-lockup--magazine .media-lockup__image {
-    grid-column: 1;
-  }
-  .media-lockup--magazine .media-lockup__content {
-    grid-column: 2;
-  }
 }
 
 /* 13: Asymmetric Left Heavy (7/5) */
-.media-lockup--asymmetric-left .media-lockup__image {
-  grid-column: span 12;
-}
-.media-lockup--asymmetric-left .media-lockup__content {
-  grid-column: span 12;
-}
-@media (min-width: 768px) {
-  .media-lockup--asymmetric-left .media-lockup__image {
-    grid-column: span 7;
-  }
-  .media-lockup--asymmetric-left .media-lockup__content {
-    grid-column: span 5;
-  }
+.media-lockup--asymmetric-left {
+  /* Uses .l-split-60-40 from layouts.css */
 }
 
 /* 14: Asymmetric Right Heavy (5/7) */
-.media-lockup--asymmetric-right .media-lockup__content {
-  grid-column: span 12;
-  order: 1;
-}
-.media-lockup--asymmetric-right .media-lockup__image {
-  grid-column: span 12;
-  order: 2;
-}
-@media (min-width: 768px) {
-  .media-lockup--asymmetric-right .media-lockup__content {
-    grid-column: span 5;
-    order: 1;
-  }
-  .media-lockup--asymmetric-right .media-lockup__image {
-    grid-column: span 7;
-    order: 2;
-  }
+.media-lockup--asymmetric-right {
+  /* Uses .l-split-40-60 from layouts.css */
 }
 
 /* 15: Polaroid Style */
 .media-lockup--polaroid {
-  grid-template-columns: 1fr;
-  gap: 0;
+  /* Uses .l-stack + .l-stack--gap-none + .l-card from layouts.css */
   background-color: white;
   padding: var(--space-m);
-  border-radius: 4px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.06);
-  max-width: 400px;
-  margin-inline: auto;
 }
 .media-lockup--polaroid .media-lockup__image {
-  grid-column: 1;
   aspect-ratio: 1;
   border: 1px solid var(--color-outline-variant);
 }
+/* Aspect ratio set, safe to use height:100% */
+.media-lockup--polaroid .media-lockup__image img {
+  height: 100%;
+}
 .media-lockup--polaroid .media-lockup__content {
-  grid-column: 1;
   padding: var(--space-m) 0 0 0;
   text-align: center;
   align-items: center;
 }
 
 /* 16: Small Circle Avatar */
+.media-lockup--avatar {
+  /* Uses .l-split-20-80 from layouts.css */
+}
 .media-lockup--avatar .media-lockup__image {
-  grid-column: span 12;
   aspect-ratio: 1;
   border-radius: 50%;
   max-width: 80px;
   border: 2px solid var(--color-outline);
 }
-.media-lockup--avatar .media-lockup__content {
-  grid-column: span 12;
-  padding: 0 0 0 var(--space-m);
+/* Aspect ratio set, safe to use height:100% */
+.media-lockup--avatar .media-lockup__image img {
+  height: 100%;
 }
-@media (min-width: 768px) {
-  .media-lockup--avatar .media-lockup__image {
-    grid-column: span 2;
-  }
-  .media-lockup--avatar .media-lockup__content {
-    grid-column: span 10;
-  }
+.media-lockup--avatar .media-lockup__content {
+  padding: 0 0 0 var(--space-m);
 }
 
 /* 17: Feature Block */
 .media-lockup--feature {
-  grid-template-columns: 1fr;
-  position: relative;
-  gap: 0;
+  /* Uses .l-overlay + .l-stack--gap-none from layouts.css */
 }
 .media-lockup--feature .media-lockup__image {
-  grid-column: 1;
-  grid-row: 1;
   aspect-ratio: 16 / 9;
 }
+/* Aspect ratio set, safe to use height:100% */
+.media-lockup--feature .media-lockup__image img {
+  height: 100%;
+}
 .media-lockup--feature .media-lockup__content {
-  grid-column: 1;
-  grid-row: 1;
-  z-index: 1;
   align-self: flex-end;
   background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
   color: white;
@@ -436,41 +338,38 @@
 }
 
 /* 18: Testimonial Style */
+.media-lockup--testimonial {
+  /* Uses .l-split-30-70 on desktop from layouts.css */
+}
 .media-lockup--testimonial .media-lockup__image {
-  grid-column: span 12;
   aspect-ratio: 1;
   border-radius: 50%;
   max-width: 120px;
   border: 3px solid var(--color-primary);
 }
+/* Aspect ratio set, safe to use height:100% */
+.media-lockup--testimonial .media-lockup__image img {
+  height: 100%;
+}
 .media-lockup--testimonial .media-lockup__content {
-  grid-column: span 12;
   background-color: var(--color-surface-variant);
   border-left: 4px solid var(--color-primary);
   border-radius: 8px;
 }
-@media (min-width: 768px) {
-  .media-lockup--testimonial .media-lockup__image {
-    grid-column: span 3;
-  }
-  .media-lockup--testimonial .media-lockup__content {
-    grid-column: span 9;
-  }
-}
 
 /* 19: Product Showcase */
 .media-lockup--product {
-  grid-template-columns: 1fr;
-  gap: var(--space-s);
-  position: relative;
+  /* Uses .l-stack + .l-stack--gap-s from layouts.css */
 }
 .media-lockup--product .media-lockup__image {
-  grid-column: 1;
   aspect-ratio: 3 / 4;
   border-radius: 12px;
 }
+/* Aspect ratio set, safe to use height:100% */
+.media-lockup--product .media-lockup__image img {
+  height: 100%;
+}
 .media-lockup--product .media-lockup__content {
-  grid-column: 1;
   padding: var(--space-m) 0;
   text-align: center;
   align-items: center;
@@ -484,16 +383,17 @@
 
 /* 20: Article Header */
 .media-lockup--article {
-  grid-template-columns: 1fr;
-  gap: var(--space-xl);
+  /* Uses .l-stack + .l-stack--gap-xl from layouts.css */
 }
 .media-lockup--article .media-lockup__image {
-  grid-column: 1;
   aspect-ratio: 21 / 9;
   border-radius: 12px;
 }
+/* Aspect ratio set, safe to use height:100% */
+.media-lockup--article .media-lockup__image img {
+  height: 100%;
+}
 .media-lockup--article .media-lockup__content {
-  grid-column: 1;
   max-width: 65ch;
   margin-inline: auto;
   padding: 0;

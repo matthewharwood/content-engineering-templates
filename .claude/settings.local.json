@@ -17,7 +17,9 @@
       "WebFetch(domain:matthewjamestaylor.com)",
       "WebFetch(domain:m3.material.io)",
       "WebFetch(domain:fonts.google.com)",
-      "WebFetch(domain:snif.co)"
+      "WebFetch(domain:snif.co)",
+      "Bash(lsof:*)",
+      "Bash(xargs kill:*)"
     ],
     "deny": [],
     "ask": []

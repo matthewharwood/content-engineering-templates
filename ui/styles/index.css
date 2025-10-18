@@ -2,17 +2,20 @@
 @import "./tokens/colors.css";
 @import "./fonts.css";
 @import "./icons.css";
-div {
-    box-sizing: border-box;
+
+/* Box Model Reset - Border Box Everything */
+html {
+  box-sizing: border-box;
 }
-/* Pass down the box-sizing property */
+
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 /* Foundational Tokens */
 @import "./typography.css";
 @import "./space.css";
 @import "./grid.css";
+@import "./layouts.css";
