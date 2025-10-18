@@ -15,131 +15,40 @@
 /* Tablet: >= 768px */
 /* Desktop: >= 1024px */
 
-/* === BASE LAYOUT CONTAINER === */
-/* For layouts that need the grid system but aren't in a Section */
-.l-container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: var(--grid-gutter);
-  max-width: var(--grid-max-width);
-  margin-inline: auto;
-  padding-inline: var(--grid-gutter);
-  width: 100%;
-}
-
-/* === GRID COLUMN SPAN UTILITIES === */
-/* Responsive column spanning for 12-column grid */
-
-/* Equal Splits */
-.l-split-half > * {
-  grid-column: span 12;
-}
-@media (min-width: 768px) {
-  .l-split-half > * {
-    grid-column: span 6; /* 50/50 split */
-  }
-}
-
-/* Asymmetric Splits - 60/40 */
-.l-split-60-40 > *:first-child {
-  grid-column: span 12;
-}
-.l-split-60-40 > *:last-child {
-  grid-column: span 12;
-}
-@media (min-width: 768px) {
-  .l-split-60-40 > *:first-child {
-    grid-column: span 7; /* ~58% */
-  }
-  .l-split-60-40 > *:last-child {
-    grid-column: span 5; /* ~42% */
-  }
-}
-
-/* Asymmetric Splits - 40/60 (reverse) */
-.l-split-40-60 > *:first-child {
-  grid-column: span 12;
-}
-.l-split-40-60 > *:last-child {
-  grid-column: span 12;
-}
-@media (min-width: 768px) {
-  .l-split-40-60 > *:first-child {
-    grid-column: span 5; /* ~42% */
-  }
-  .l-split-40-60 > *:last-child {
-    grid-column: span 7; /* ~58% */
-  }
-}
-
-/* Asymmetric Splits - 70/30 */
-.l-split-70-30 > *:first-child {
-  grid-column: span 12;
-}
-.l-split-70-30 > *:last-child {
-  grid-column: span 12;
-}
-@media (min-width: 768px) {
-  .l-split-70-30 > *:first-child {
-    grid-column: span 8; /* ~67% */
-  }
-  .l-split-70-30 > *:last-child {
-    grid-column: span 4; /* ~33% */
-  }
-}
-
-/* Asymmetric Splits - 30/70 (reverse) */
-.l-split-30-70 > *:first-child {
-  grid-column: span 12;
-}
-.l-split-30-70 > *:last-child {
-  grid-column: span 12;
-}
-@media (min-width: 768px) {
-  .l-split-30-70 > *:first-child {
-    grid-column: span 4; /* ~33% */
-  }
-  .l-split-30-70 > *:last-child {
-    grid-column: span 8; /* ~67% */
-  }
-}
-
-/* Asymmetric Splits - 80/20 */
-.l-split-80-20 > *:first-child {
-  grid-column: span 12;
-}
-.l-split-80-20 > *:last-child {
-  grid-column: span 12;
-}
-@media (min-width: 768px) {
-  .l-split-80-20 > *:first-child {
-    grid-column: span 10; /* ~83% */
-  }
-  .l-split-80-20 > *:last-child {
-    grid-column: span 2; /* ~17% */
-  }
-}
-
-/* Asymmetric Splits - 20/80 (reverse) */
-.l-split-20-80 > *:first-child {
-  grid-column: span 12;
-}
-.l-split-20-80 > *:last-child {
-  grid-column: span 12;
-}
-@media (min-width: 768px) {
-  .l-split-20-80 > *:first-child {
-    grid-column: span 2; /* ~17% */
-  }
-  .l-split-20-80 > *:last-child {
-    grid-column: span 10; /* ~83% */
-  }
-}
+/* ===  REMOVED: DO NOT OVERRIDE UTOPIA GRID === */
+/*
+ * IMPORTANT: This file previously duplicated the Utopia grid system
+ * by creating .l-container, .l-grid, and .l-split-* classes.
+ *
+ * These have been REMOVED to prevent overriding the base Utopia grid.
+ *
+ * Instead, use:
+ * - .u-container (from grid.css) - for container max-width and padding
+ * - .u-grid (from grid.css) - for display:grid and gap
+ * - .col-span-* (from Grid.css) - for column spanning
+ * - Inline grid-template-columns styles for custom layouts
+ *
+ * Example responsive 50/50 split:
+ * <div class="u-container">
+ *   <div class="u-grid" style="grid-template-columns: 1fr;">
+ *     <div class="col-span-12">Mobile: Full width</div>
+ *     <div class="col-span-12">Mobile: Full width</div>
+ *   </div>
+ * </div>
+ *
+ * On desktop, use media query utility classes or inline styles:
+ * <div class="u-grid" style="grid-template-columns: repeat(12, 1fr);">
+ *   <div class="col-span-6">Desktop: Half width</div>
+ *   <div class="col-span-6">Desktop: Half width</div>
+ * </div>
+ */
 
 /* === STACKED LAYOUTS === */
-/* Force single column (stacked) layout at all breakpoints */
+/* Single column vertical stack - creates grid with 1 column */
 .l-stack {
+  display: grid;
   grid-template-columns: 1fr;
+  gap: var(--grid-gutter);
 }
 
 .l-stack > * {
@@ -174,6 +83,7 @@
 /* === OVERLAY LAYOUTS === */
 /* Layered content where items overlap in the same grid cell */
 .l-overlay {
+  display: grid;
   grid-template-columns: 1fr;
   position: relative;
 }
@@ -193,38 +103,22 @@
 }
 
 /* === OFFSET/OVERLAP LAYOUTS === */
-/* Content overlaps image creating depth */
-.l-offset {
-  position: relative;
-}
-
-.l-offset > *:first-child {
-  grid-column: span 12;
-}
-
-.l-offset > *:last-child {
-  grid-column: span 12;
-  margin-top: var(--space-l);
-}
-
-@media (min-width: 768px) {
-  .l-offset > *:first-child {
-    grid-column: 1 / span 8;
-  }
-  .l-offset > *:last-child {
-    grid-column: 6 / span 7;
-    grid-row: 1;
-    align-self: center;
-    margin-top: 0;
-  }
-}
+/*
+ * REMOVED: .l-offset was creating its own 12-column grid, overriding Utopia
+ *
+ * For offset/overlap layouts, use .u-grid with grid-template-columns
+ * and position children manually:
+ *
+ * <div class="u-container">
+ *   <div class="u-grid" style="grid-template-columns: repeat(12, 1fr); position: relative;">
+ *     <div class="col-span-8">Image</div>
+ *     <div class="col-span-7" style="grid-column: 6 / span 7; grid-row: 1;">Overlapping content</div>
+ *   </div>
+ * </div>
+ */
 
 /* === RESPONSIVE ORDERING === */
-/* Swap order on desktop */
-.l-reverse-desktop {
-  display: contents;
-}
-
+/* Swap order on desktop - uses CSS Grid order property */
 @media (min-width: 768px) {
   .l-reverse-desktop > *:first-child {
     order: 2;
@@ -385,3 +279,66 @@
 .l-card--center {
   margin-inline: auto;
 }
+
+/* === GAP UTILITIES === */
+/* Quick gap spacing for flex/grid containers */
+.l-gap-3xs { gap: var(--space-3xs); }
+.l-gap-2xs { gap: var(--space-2xs); }
+.l-gap-xs { gap: var(--space-xs); }
+.l-gap-s { gap: var(--space-s); }
+.l-gap-m { gap: var(--space-m); }
+.l-gap-l { gap: var(--space-l); }
+.l-gap-xl { gap: var(--space-xl); }
+.l-gap-2xl { gap: var(--space-2xl); }
+.l-gap-3xl { gap: var(--space-3xl); }
+
+/* Fluid gap utilities (responsive spacing) */
+.l-gap-s-m { gap: var(--space-s-m); }
+.l-gap-m-l { gap: var(--space-m-l); }
+.l-gap-l-xl { gap: var(--space-l-xl); }
+
+/* === PADDING UTILITIES === */
+/* Quick padding for prototyping and common patterns */
+.l-pad-3xs { padding: var(--space-3xs); }
+.l-pad-2xs { padding: var(--space-2xs); }
+.l-pad-xs { padding: var(--space-xs); }
+.l-pad-s { padding: var(--space-s); }
+.l-pad-m { padding: var(--space-m); }
+.l-pad-l { padding: var(--space-l); }
+.l-pad-xl { padding: var(--space-xl); }
+.l-pad-2xl { padding: var(--space-2xl); }
+.l-pad-3xl { padding: var(--space-3xl); }
+
+/* Directional padding */
+.l-pad-block-3xs { padding-block: var(--space-3xs); }
+.l-pad-block-2xs { padding-block: var(--space-2xs); }
+.l-pad-block-xs { padding-block: var(--space-xs); }
+.l-pad-block-s { padding-block: var(--space-s); }
+.l-pad-block-m { padding-block: var(--space-m); }
+.l-pad-block-l { padding-block: var(--space-l); }
+.l-pad-block-xl { padding-block: var(--space-xl); }
+
+.l-pad-inline-3xs { padding-inline: var(--space-3xs); }
+.l-pad-inline-2xs { padding-inline: var(--space-2xs); }
+.l-pad-inline-xs { padding-inline: var(--space-xs); }
+.l-pad-inline-s { padding-inline: var(--space-s); }
+.l-pad-inline-m { padding-inline: var(--space-m); }
+.l-pad-inline-l { padding-inline: var(--space-l); }
+.l-pad-inline-xl { padding-inline: var(--space-xl); }
+
+/* Fluid padding utilities (responsive spacing) */
+.l-pad-s-m { padding: var(--space-s-m); }
+.l-pad-m-l { padding: var(--space-m-l); }
+.l-pad-l-xl { padding: var(--space-l-xl); }
+
+/* === MARGIN UTILITIES === */
+/* Common margin patterns */
+.l-mar-block-3xs { margin-block: var(--space-3xs); }
+.l-mar-block-2xs { margin-block: var(--space-2xs); }
+.l-mar-block-xs { margin-block: var(--space-xs); }
+.l-mar-block-s { margin-block: var(--space-s); }
+.l-mar-block-m { margin-block: var(--space-m); }
+.l-mar-block-l { margin-block: var(--space-l); }
+.l-mar-block-xl { margin-block: var(--space-xl); }
+
+.l-mar-inline-auto { margin-inline: auto; } /* Center horizontally */

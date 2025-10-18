@@ -1,19 +1,21 @@
 <link rel="stylesheet" href="./MediaLockup.css">
 
 <!-- Lockup 02: Split 50/50 - Image Right -->
-<!-- Uses Section + l-container + l-split-half + l-reverse-desktop layout tokens -->
+<!-- Uses Utopia grid + media-lockup--image-right modifier for desktop reordering -->
 <section class="section">
-  <div class="media-lockup media-lockup--split-right l-container l-split-half l-reverse-desktop">
-    <div class="media-lockup__content">
-      <h2 class="media-lockup__heading">Split 50/50 Right</h2>
-      <p class="media-lockup__subheading">Content left, image right</p>
-      <p class="media-lockup__body">
-        Reverse split layout with content on the left and image on the right. Mobile stacks content first, then image.
-        Great for alternating sections on a page. Built with Section + layout tokens.
-      </p>
-    </div>
-    <div class="media-lockup__image">
-      <img src="https://picsum.photos/800/600?random=2" alt="Split layout with image on right">
+  <div class="u-container">
+    <div class="media-lockup media-lockup--split-right media-lockup--image-right u-grid" style="grid-template-columns: repeat(12, 1fr);">
+      <div class="media-lockup__image col-span-12 col-span-md-6">
+        <img src="https://picsum.photos/800/600?random=2" alt="Split layout with image on right">
+      </div>
+      <div class="media-lockup__content col-span-12 col-span-md-6">
+        <h2 class="media-lockup__heading">Split 50/50 Right</h2>
+        <p class="media-lockup__subheading">Content left, image right</p>
+        <p class="media-lockup__body">
+          Reverse split layout with content on the left and image on the right. Mobile stacks image first, tablet+ splits 50/50 with CSS order swap.
+          Built on Utopia grid system. Great for alternating sections on a page.
+        </p>
+      </div>
     </div>
   </div>
 </section>

@@ -1,16 +1,21 @@
 <link rel="stylesheet" href="./MediaLockup.css">
 
 <!-- Lockup 07: Wide Image (8/4) -->
-<div class="media-lockup media-lockup--wide-image">
-  <div class="media-lockup__image">
-    <img src="https://picsum.photos/1000/700?random=7" alt="Wide image taking 8 columns">
+<!-- Uses Utopia grid: .u-container + .u-grid + responsive .col-span-* utilities (70/30 split: 8/4 columns) -->
+<section class="section">
+  <div class="u-container">
+    <div class="media-lockup media-lockup--wide-image u-grid" style="grid-template-columns: repeat(12, 1fr);">
+      <div class="media-lockup__image col-span-12 col-span-md-8">
+        <img src="https://picsum.photos/1000/700?random=7" alt="Wide image taking 8 columns">
+      </div>
+      <div class="media-lockup__content col-span-12 col-span-md-4">
+        <h2 class="media-lockup__heading">Wide Image 8/4</h2>
+        <p class="media-lockup__subheading">Image emphasizes the layout</p>
+        <p class="media-lockup__body">
+          Asymmetric layout with image taking 8 columns (70%) and text taking 4 columns (30%) on desktop.
+          Mobile stacks image first. Perfect when the image is the star. Built on Utopia grid system.
+        </p>
+      </div>
+    </div>
   </div>
-  <div class="media-lockup__content">
-    <h2 class="media-lockup__heading">Wide Image 8/4</h2>
-    <p class="media-lockup__subheading">Image emphasizes the layout</p>
-    <p class="media-lockup__body">
-      Asymmetric layout with image taking 8 columns and text taking 4 columns on desktop.
-      Mobile stacks vertically. Perfect when the image is the star.
-    </p>
-  </div>
-</div>
+</section>

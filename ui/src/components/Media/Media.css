@@ -1,8 +1,5 @@
-@import "../../../styles/grid.css";
-@import "../../../styles/space.css";
-@import "../../../styles/tokens/colors.css";
-@import "../../../styles/typography.css";
-@import "../../../styles/fonts.css";
+/* Import all design system tokens */
+@import "../../../styles/index.css";
 
 /* Base Media Styles - works for both img and video */
 .media {

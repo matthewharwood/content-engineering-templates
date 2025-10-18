@@ -1,16 +1,21 @@
 <link rel="stylesheet" href="./MediaLockup.css">
 
 <!-- Lockup 20: Article Header -->
-<div class="media-lockup media-lockup--article">
-  <div class="media-lockup__image">
-    <img src="https://picsum.photos/1400/600?random=20" alt="Wide article header image">
+<!-- Uses Section + u-container + l-stack + l-stack--gap-xl layout tokens -->
+<section class="section">
+  <div class="u-container">
+    <div class="media-lockup media-lockup--article l-stack l-stack--gap-xl">
+      <div class="media-lockup__image">
+        <img src="https://picsum.photos/1400/600?random=20" alt="Wide article header image">
+      </div>
+      <div class="media-lockup__content">
+        <h2 class="media-lockup__heading">Article Header</h2>
+        <p class="media-lockup__subheading">By Author Name · March 15, 2024</p>
+        <p class="media-lockup__body">
+          Wide 21:9 aspect ratio hero image with article content below. Content max-width 65ch and centered.
+          Large gap between image and text. Ideal for blog posts and long-form content with rounded corners. Built with Section + stack layout tokens.
+        </p>
+      </div>
+    </div>
   </div>
-  <div class="media-lockup__content">
-    <h2 class="media-lockup__heading">Article Header</h2>
-    <p class="media-lockup__subheading">By Author Name · March 15, 2024</p>
-    <p class="media-lockup__body">
-      Wide 21:9 aspect ratio hero image with article content below. Content max-width 65ch and centered.
-      Large gap between image and text. Ideal for blog posts and long-form content with rounded corners.
-    </p>
-  </div>
-</div>
+</section>

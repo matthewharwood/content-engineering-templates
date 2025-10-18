@@ -2,24 +2,19 @@
  * MediaLockup Component
  *
  * Responsive media-text layout patterns built on Section component
- * and layout token system. Provides 20 pre-built lockup patterns
+ * and Utopia grid system. Provides 20 pre-built lockup patterns
  * for combining images with typography.
  *
- * Usage: Wrap in a <section class="section"> and use .media-lockup
- * with .l-container for responsive grid-based layouts.
+ * Usage: Wrap in <section class="section">, use .u-container for max-width,
+ * and either .u-grid + .col-span-* for split layouts or .l-stack for stacked layouts.
  */
 
-@import "../../../styles/tokens/colors.css";
-@import "../../../styles/typography.css";
-@import "../../../styles/space.css";
-@import "../../../styles/fonts.css";
-@import "../../../styles/grid.css";
-@import "../../../styles/layouts.css";
+/* Import all design system tokens */
+@import "../../../styles/index.css";
 
-/* Base MediaLockup - Uses layout container */
+/* Base MediaLockup - No layout assumptions */
 .media-lockup {
-  /* Inherits from .l-container in layouts.css */
-  /* No need to duplicate grid setup */
+  /* Layout provided by parent: either .u-grid or .l-stack */
 }
 
 /* Image Container - Media Containment Convention
@@ -84,16 +79,41 @@
 }
 
 /* === LOCKUP PATTERNS === */
-/* Refactored to use layout tokens from layouts.css */
+/* Built on Utopia grid system (.u-grid + .col-span-*) and stack layouts (.l-stack) */
+
+/* === IMAGE PLACEMENT MODIFIERS === */
+/* Control whether image appears on left or right on desktop via CSS order */
+
+/* Default: Image on left, content on right */
+.media-lockup--image-left {
+  /* No order change needed - default HTML order: image, content */
+}
+
+/* Image on right, content on left */
+.media-lockup--image-right {
+  /* Swap visual order on desktop only via CSS order property */
+}
+
+@media (min-width: 768px) {
+  .media-lockup--image-right > .media-lockup__image {
+    order: 2; /* Move image to right */
+  }
+
+  .media-lockup--image-right > .media-lockup__content {
+    order: 1; /* Move content to left */
+  }
+}
 
 /* 01: Split 50/50 - Image Left */
 .media-lockup--split-left {
-  /* Uses .l-split-half from layouts.css */
+  /* Uses Utopia grid: .u-grid + col-span-md-6 + col-span-md-6 */
+  /* Inherits default image-left behavior */
 }
 
 /* 02: Split 50/50 - Image Right */
 .media-lockup--split-right {
-  /* Uses .l-split-half + .l-reverse-desktop from layouts.css */
+  /* Uses Utopia grid: .u-grid + col-span-md-6 + col-span-md-6 + .media-lockup--image-right */
+  /* Image placement controlled by modifier class via CSS order */
 }
 
 /* 03: Stacked - Image Top */
@@ -147,7 +167,7 @@
 
 /* 06: Circle Badge */
 .media-lockup--circle-badge {
-  /* Uses .l-split-30-70 from layouts.css */
+  /* Uses Utopia grid: .u-grid + col-span-md-4 + col-span-md-8 (30/70 split) */
 }
 .media-lockup--circle-badge .media-lockup__image {
   aspect-ratio: 1;
@@ -175,12 +195,12 @@
 
 /* 07: Wide Image, Narrow Text (8/4) */
 .media-lockup--wide-image {
-  /* Uses .l-split-70-30 from layouts.css */
+  /* Uses Utopia grid: .u-grid + col-span-md-8 + col-span-md-4 (70/30 split) */
 }
 
 /* 08: Narrow Image, Wide Text (4/8) */
 .media-lockup--wide-text {
-  /* Uses .l-split-30-70 from layouts.css */
+  /* Uses Utopia grid: .u-grid + col-span-md-4 + col-span-md-8 (30/70 split) */
 }
 
 /* 09: Card Style */
@@ -236,7 +256,7 @@
 
 /* 11: Offset Overlap */
 .media-lockup--offset {
-  /* Uses .l-offset from layouts.css */
+  /* Uses Utopia grid with manual positioning: grid-column: 6 / span 7; grid-row: 1 */
 }
 .media-lockup--offset .media-lockup__content {
   background-color: var(--color-surface);
@@ -267,12 +287,12 @@
 
 /* 13: Asymmetric Left Heavy (7/5) */
 .media-lockup--asymmetric-left {
-  /* Uses .l-split-60-40 from layouts.css */
+  /* Uses Utopia grid: .u-grid + col-span-md-7 + col-span-md-5 (60/40 split) */
 }
 
 /* 14: Asymmetric Right Heavy (5/7) */
 .media-lockup--asymmetric-right {
-  /* Uses .l-split-40-60 from layouts.css */
+  /* Uses Utopia grid: .u-grid + col-span-md-5 + col-span-md-7 (40/60 split) + .media-lockup--image-right */
 }
 
 /* 15: Polaroid Style */
@@ -298,7 +318,7 @@
 
 /* 16: Small Circle Avatar */
 .media-lockup--avatar {
-  /* Uses .l-split-20-80 from layouts.css */
+  /* Uses Utopia grid: .u-grid + col-span-md-2 + col-span-md-10 (20/80 split) */
 }
 .media-lockup--avatar .media-lockup__image {
   aspect-ratio: 1;
@@ -339,7 +359,7 @@
 
 /* 18: Testimonial Style */
 .media-lockup--testimonial {
-  /* Uses .l-split-30-70 on desktop from layouts.css */
+  /* Uses Utopia grid: .u-grid + col-span-md-4 + col-span-md-8 (30/70 split) */
 }
 .media-lockup--testimonial .media-lockup__image {
   aspect-ratio: 1;

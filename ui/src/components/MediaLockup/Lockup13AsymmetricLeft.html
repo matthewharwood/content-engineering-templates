@@ -1,16 +1,21 @@
 <link rel="stylesheet" href="./MediaLockup.css">
 
 <!-- Lockup 13: Asymmetric Left Heavy (7/5) -->
-<div class="media-lockup media-lockup--asymmetric-left">
-  <div class="media-lockup__image">
-    <img src="https://picsum.photos/900/700?random=13" alt="Asymmetric left heavy layout">
+<!-- Uses Utopia grid: .u-container + .u-grid + responsive .col-span-* utilities (60/40 split: 7/5 columns) -->
+<section class="section">
+  <div class="u-container">
+    <div class="media-lockup media-lockup--asymmetric-left u-grid" style="grid-template-columns: repeat(12, 1fr);">
+      <div class="media-lockup__image col-span-12 col-span-md-7">
+        <img src="https://picsum.photos/900/700?random=13" alt="Asymmetric left heavy layout">
+      </div>
+      <div class="media-lockup__content col-span-12 col-span-md-5">
+        <h2 class="media-lockup__heading">Asymmetric Left 7/5</h2>
+        <p class="media-lockup__subheading">Left-weighted layout</p>
+        <p class="media-lockup__body">
+          Asymmetric split with image taking 7 columns (60%), text taking 5 columns (40%) on desktop.
+          Mobile stacks image first. Creates visual interest through unequal proportions. Built on Utopia grid system.
+        </p>
+      </div>
+    </div>
   </div>
-  <div class="media-lockup__content">
-    <h2 class="media-lockup__heading">Asymmetric Left 7/5</h2>
-    <p class="media-lockup__subheading">Left-weighted layout</p>
-    <p class="media-lockup__body">
-      Asymmetric split with image taking 7 columns, text taking 5 columns.
-      Creates visual interest through unequal proportions.
-    </p>
-  </div>
-</div>
+</section>

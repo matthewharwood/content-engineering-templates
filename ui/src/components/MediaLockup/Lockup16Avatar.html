@@ -1,16 +1,21 @@
 <link rel="stylesheet" href="./MediaLockup.css">
 
 <!-- Lockup 16: Small Circle Avatar -->
-<div class="media-lockup media-lockup--avatar">
-  <div class="media-lockup__image">
-    <img src="https://picsum.photos/200/200?random=16" alt="Small avatar image">
+<!-- Uses Utopia grid: .u-container + .u-grid + responsive .col-span-* utilities (20/80 split: 2/10 columns) -->
+<section class="section">
+  <div class="u-container">
+    <div class="media-lockup media-lockup--avatar u-grid" style="grid-template-columns: repeat(12, 1fr);">
+      <div class="media-lockup__image col-span-12 col-span-md-2">
+        <img src="https://picsum.photos/200/200?random=16" alt="Small avatar image">
+      </div>
+      <div class="media-lockup__content col-span-12 col-span-md-10">
+        <h2 class="media-lockup__heading">Avatar Badge</h2>
+        <p class="media-lockup__subheading">Small circular profile</p>
+        <p class="media-lockup__body">
+          Compact layout with small circular avatar (80px max) and text content.
+          On desktop, avatar takes 2 columns, text takes 10. Perfect for author bios or team profiles. Built on Utopia grid system.
+        </p>
+      </div>
+    </div>
   </div>
-  <div class="media-lockup__content">
-    <h2 class="media-lockup__heading">Avatar Badge</h2>
-    <p class="media-lockup__subheading">Small circular profile</p>
-    <p class="media-lockup__body">
-      Compact layout with small circular avatar (80px max) and text content.
-      On desktop, avatar takes 2 columns, text takes 10. Perfect for author bios or team profiles.
-    </p>
-  </div>
-</div>
+</section>

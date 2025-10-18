@@ -1,7 +1,5 @@
-@import "../../../styles/tokens/colors.css";
-@import "../../../styles/typography.css";
-@import "../../../styles/space.css";
-@import "../../../styles/fonts.css";
+/* Import all design system tokens */
+@import "../../../styles/index.css";
 
 /* Select Container */
 .select-field {

@@ -4,6 +4,111 @@
 
 This document details the architectural refactoring performed on the MediaLockup component to eliminate duplication, improve maintainability, and establish reusable responsive layout patterns across the design system.
 
+## CRITICAL: Utopia Grid System Architecture
+
+**DO NOT OVERRIDE THE UTOPIA GRID SYSTEM**
+
+The design system uses Utopia's fluid grid system defined in `ui/styles/grid.css` as the foundational layout primitive. This system MUST NOT be duplicated or overridden.
+
+### Utopia Grid Foundation
+
+```css
+/* From ui/styles/grid.css */
+.u-container {
+  max-width: var(--grid-max-width);  /* 77.5rem */
+  padding-inline: var(--grid-gutter); /* Fluid spacing */
+  margin-inline: auto;
+}
+
+.u-grid {
+  display: grid;
+  gap: var(--grid-gutter); /* Fluid gap, DO NOT set grid-template-columns here */
+}
+```
+
+### Responsive Column Span Utilities
+
+```css
+/* From ui/src/components/Grid/Grid.css */
+.col-span-1 through .col-span-12   /* Base column spans */
+.col-span-md-1 through .col-span-md-12  /* Tablet+ (768px) */
+.col-span-lg-1 through .col-span-lg-12  /* Desktop+ (1024px) */
+```
+
+### Correct Usage Pattern
+
+```html
+<!-- CORRECT: Utopia grid with responsive column spans -->
+<div class="u-container">
+  <div class="u-grid" style="grid-template-columns: repeat(12, 1fr);">
+    <div class="col-span-12 col-span-md-6">Mobile full-width, tablet+ half-width</div>
+    <div class="col-span-12 col-span-md-6">Mobile full-width, tablet+ half-width</div>
+  </div>
+</div>
+```
+
+### ANTI-PATTERNS - NEVER DO THIS
+
+```css
+/* WRONG: Creating classes that override Utopia grid */
+.l-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* Duplicates Utopia */
+}
+
+.l-split-half {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* Overrides .u-grid */
+}
+```
+
+**Why This is Wrong:**
+- Creates duplicate 12-column grid systems
+- Overrides `.u-grid` when both are applied
+- Breaks fluid spacing from Utopia
+- Duplicates responsive breakpoint logic
+
+### Layout Tokens That Are SAFE
+
+The following layout tokens in `layouts.css` are **safe** because they don't create 12-column grids:
+
+```css
+.l-stack        /* Creates 1-column grid (grid-template-columns: 1fr) */
+.l-overlay      /* Layers items in same grid cell */
+.l-card         /* Max-width container, no grid */
+.l-gap-*        /* Gap utilities */
+.l-pad-*        /* Padding utilities */
+.l-aspect-*     /* Aspect ratio utilities */
+```
+
+### Migration Rules
+
+If you need grid-based responsive layouts:
+
+1. **Use `.u-container`** for max-width container
+2. **Use `.u-grid`** for display: grid
+3. **Add inline `grid-template-columns: repeat(12, 1fr)`** to `.u-grid`
+4. **Use `.col-span-*` utilities** for column spanning
+5. **Use `.col-span-md-*`** for tablet+ responsive columns
+
+If you need non-grid layouts:
+
+1. **Use `.l-stack`** for single-column vertical stacking
+2. **Use `.l-overlay`** for layered content
+3. **Use `.l-card`** for constrained-width content blocks
+
+### Common Column Span Patterns
+
+```
+50/50 split:     col-span-12 col-span-md-6 + col-span-12 col-span-md-6
+60/40 split:     col-span-12 col-span-md-7 + col-span-12 col-span-md-5
+70/30 split:     col-span-12 col-span-md-8 + col-span-12 col-span-md-4
+30/70 split:     col-span-12 col-span-md-4 + col-span-12 col-span-md-8
+20/80 split:     col-span-12 col-span-md-2 + col-span-12 col-span-md-10
+```
+
+All patterns default to full-width (col-span-12) on mobile, split at 768px+ breakpoint.
+
 ## Problem Statement
 
 ### Before Refactoring
@@ -25,31 +130,29 @@ The MediaLockup component had several architectural issues:
 
 ## Solution Architecture
 
-### New Token System: `layouts.css`
+### Updated Architecture: Utopia Grid + Layout Utilities
 
-Created a comprehensive responsive layout token system providing reusable primitives:
+The refactoring now uses **Utopia's grid system** as the foundation, with layout utilities in `layouts.css` for non-grid patterns.
 
-#### Layout Container
-```css
-.l-container
-```
-Grid-based container with 12 columns, responsive gutters, and max-width constraint. Alternative to Section when you need grid layouts without semantic sections.
+#### Grid-Based Layouts: Use Utopia
 
-#### Responsive Grid Splits
+For responsive column-based layouts (splits, asymmetric layouts):
 
-Equal and asymmetric column distributions with mobile-first responsive behavior:
-
-```css
-.l-split-half       /* 50/50 split (6/6 columns) */
-.l-split-60-40      /* 60/40 split (7/5 columns) */
-.l-split-40-60      /* 40/60 split (5/7 columns) */
-.l-split-70-30      /* 70/30 split (8/4 columns) */
-.l-split-30-70      /* 30/70 split (4/8 columns) */
-.l-split-80-20      /* 80/20 split (10/2 columns) */
-.l-split-20-80      /* 20/80 split (2/10 columns) */
+```html
+<div class="u-container">
+  <div class="u-grid" style="grid-template-columns: repeat(12, 1fr);">
+    <div class="col-span-12 col-span-md-6">Column 1</div>
+    <div class="col-span-12 col-span-md-6">Column 2</div>
+  </div>
+</div>
 ```
 
-**Mobile Behavior**: All splits stack to full-width (12 columns) on mobile, split at tablet breakpoint (768px+)
+**Removed (were duplicating Utopia):**
+- `.l-container` → Use `.u-container`
+- `.l-split-*` → Use `.u-grid` + `.col-span-md-*`
+- `.l-offset` → Use manual grid positioning with `grid-column` and `grid-row`
+
+#### Non-Grid Layouts: Use Layout Utilities
 
 #### Stack Layouts
 
@@ -75,15 +178,20 @@ Layered content where elements occupy the same grid cell:
 
 Perfect for hero images with text overlays, feature blocks, and background media.
 
-#### Offset Layouts
+#### Offset/Overlap Layouts
 
-Content overlapping media creating depth:
+For content overlapping media, use Utopia grid with manual positioning:
 
-```css
-.l-offset           /* Content overlaps image on desktop, stacks on mobile */
+```html
+<div class="u-grid" style="grid-template-columns: repeat(12, 1fr); position: relative;">
+  <div class="col-span-12 col-span-md-8">Image</div>
+  <div class="col-span-12" style="grid-column: 6 / span 7; grid-row: 1; z-index: 1;">
+    Overlapping content
+  </div>
+</div>
 ```
 
-Image takes 8 columns, content takes 7 columns positioned to overlap at column 6.
+**Removed:** `.l-offset` (was creating duplicate 12-column grid)
 
 #### Ordering Utilities
 
@@ -180,53 +288,67 @@ MediaLockup now **composes** Section and layout tokens instead of duplicating fu
 
 ### MediaLockup Patterns Mapping
 
-Each of the 20 lockup patterns now maps to layout tokens:
+Each of the 20 lockup patterns now uses Utopia grid or layout utilities:
 
-| Lockup Pattern | Layout Tokens | Description |
-|---|---|---|
-| `--split-left` | `.l-container .l-split-half` | 50/50 image left, content right |
-| `--split-right` | `.l-container .l-split-half .l-reverse-desktop` | 50/50 content left, image right |
-| `--stacked-top` | `.l-container .l-stack .l-stack--gap-m` | Vertical stack, image top |
-| `--stacked-bottom` | `.l-container .l-stack .l-stack--gap-m` + order | Vertical stack, image bottom |
-| `--hero-overlay` | `.l-container .l-overlay` | Text overlaid on image |
-| `--circle-badge` | `.l-container .l-split-30-70` | Small circular image with text |
-| `--wide-image` | `.l-container .l-split-70-30` | Large image, narrow text |
-| `--wide-text` | `.l-container .l-split-30-70` | Narrow image, wide text |
-| `--card` | `.l-container .l-stack .l-card` | Self-contained card |
-| `--full-bleed` | `.l-container .l-overlay .l-full-bleed` | Edge-to-edge hero |
-| `--offset` | `.l-container .l-offset` | Overlapping content box |
-| `--magazine` | Custom 2-column on desktop | Editorial layout |
-| `--asymmetric-left` | `.l-container .l-split-60-40` | 7/5 column split |
-| `--asymmetric-right` | `.l-container .l-split-40-60` | 5/7 column split |
-| `--polaroid` | `.l-container .l-stack .l-card` | Photo with caption |
-| `--avatar` | `.l-container .l-split-20-80` | Small avatar with bio |
-| `--feature` | `.l-container .l-overlay` | Bottom-aligned overlay |
-| `--testimonial` | `.l-container .l-split-30-70` | Quote with image |
-| `--product` | `.l-container .l-stack` | Product image + details |
-| `--article` | `.l-container .l-stack .l-stack--gap-xl` | Article hero + content |
+| Lockup Pattern | Layout Implementation | Column Spans | Description |
+|---|---|---|---|
+| `--split-left` | `.u-grid` + Utopia | `col-span-md-6` + `col-span-md-6` | 50/50 image left, content right |
+| `--split-right` | `.u-grid` + Utopia + `--image-right` | `col-span-md-6` + `col-span-md-6` | 50/50 content left, image right |
+| `--stacked-top` | `.l-stack .l-stack--gap-m` | N/A (1-column) | Vertical stack, image top |
+| `--stacked-bottom` | `.l-stack .l-stack--gap-m` + order | N/A (1-column) | Vertical stack, image bottom |
+| `--hero-overlay` | `.l-overlay` | N/A (layered) | Text overlaid on image |
+| `--circle-badge` | `.u-grid` + Utopia | `col-span-md-4` + `col-span-md-8` | Small circular image (30/70) |
+| `--wide-image` | `.u-grid` + Utopia | `col-span-md-8` + `col-span-md-4` | Large image (70/30) |
+| `--wide-text` | `.u-grid` + Utopia | `col-span-md-4` + `col-span-md-8` | Narrow image (30/70) |
+| `--card` | `.l-stack .l-card` | N/A (1-column) | Self-contained card |
+| `--full-bleed` | `.l-overlay .l-full-bleed` | N/A (layered) | Edge-to-edge hero |
+| `--offset` | `.u-grid` + manual positioning | `grid-column: 6 / span 7` | Overlapping content box |
+| `--magazine` | `.l-stack` + custom 2-col desktop | N/A (custom) | Editorial layout |
+| `--asymmetric-left` | `.u-grid` + Utopia | `col-span-md-7` + `col-span-md-5` | 7/5 column split (60/40) |
+| `--asymmetric-right` | `.u-grid` + Utopia + `--image-right` | `col-span-md-7` + `col-span-md-5` | 5/7 column split (40/60) |
+| `--polaroid` | `.l-stack .l-card` | N/A (1-column) | Photo with caption |
+| `--avatar` | `.u-grid` + Utopia | `col-span-md-2` + `col-span-md-10` | Small avatar (20/80) |
+| `--feature` | `.l-overlay` | N/A (layered) | Bottom-aligned overlay |
+| `--testimonial` | `.u-grid` + Utopia | `col-span-md-4` + `col-span-md-8` | Quote with image (30/70) |
+| `--product` | `.l-stack .l-stack--gap-s` | N/A (1-column) | Product image + details |
+| `--article` | `.l-stack .l-stack--gap-xl` | N/A (1-column) | Article hero + content |
 
 ### Migration Guide
 
-To update remaining MediaLockup HTML files:
+To implement MediaLockup patterns with Utopia grid:
 
 1. **Wrap in Section**
    ```html
    <section class="section">
-     <!-- MediaLockup content -->
+     <div class="u-container">
+       <!-- MediaLockup content -->
+     </div>
    </section>
    ```
 
-2. **Add Layout Container**
+2. **For Grid-Based Layouts (Splits)**
    ```html
-   <div class="media-lockup media-lockup--[variant] l-container [layout-tokens]">
+   <div class="media-lockup media-lockup--split-left u-grid" style="grid-template-columns: repeat(12, 1fr);">
+     <div class="media-lockup__image col-span-12 col-span-md-6">...</div>
+     <div class="media-lockup__content col-span-12 col-span-md-6">...</div>
+   </div>
    ```
 
-3. **Add Appropriate Layout Tokens**
-   - Splits: `.l-split-half`, `.l-split-60-40`, etc.
-   - Stacks: `.l-stack .l-stack--gap-[size]`
-   - Overlays: `.l-overlay`
-   - Offsets: `.l-offset`
-   - Cards: `.l-card`
+3. **For Stack Layouts**
+   ```html
+   <div class="media-lockup media-lockup--stacked-top l-stack l-stack--gap-m">
+     <div class="media-lockup__image">...</div>
+     <div class="media-lockup__content">...</div>
+   </div>
+   ```
+
+4. **For Overlay Layouts**
+   ```html
+   <div class="media-lockup media-lockup--hero-overlay l-overlay">
+     <div class="media-lockup__image">...</div>
+     <div class="media-lockup__content">...</div>
+   </div>
+   ```
 
 4. **Optional: Add Section Modifiers**
    ```html

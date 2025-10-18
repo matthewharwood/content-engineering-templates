@@ -1,16 +1,21 @@
 <link rel="stylesheet" href="./MediaLockup.css">
 
 <!-- Lockup 06: Circle Badge -->
-<div class="media-lockup media-lockup--circle-badge">
-  <div class="media-lockup__image">
-    <img src="https://picsum.photos/400/400?random=6" alt="Circular badge image">
+<!-- Uses Utopia grid: .u-container + .u-grid + responsive .col-span-* utilities (30/70 split: 4/8 columns) -->
+<section class="section">
+  <div class="u-container">
+    <div class="media-lockup media-lockup--circle-badge u-grid" style="grid-template-columns: repeat(12, 1fr);">
+      <div class="media-lockup__image col-span-12 col-span-md-4">
+        <img src="https://picsum.photos/400/400?random=6" alt="Circular badge image">
+      </div>
+      <div class="media-lockup__content col-span-12 col-span-md-8">
+        <h2 class="media-lockup__heading">Circle Badge</h2>
+        <p class="media-lockup__subheading">Circular image with aligned text</p>
+        <p class="media-lockup__body">
+          Circular image badge with text content. On mobile, centers both elements vertically.
+          On desktop, places circle on left (4 cols / 30%) with text on right (8 cols / 70%). Built on Utopia grid system.
+        </p>
+      </div>
+    </div>
   </div>
-  <div class="media-lockup__content">
-    <h2 class="media-lockup__heading">Circle Badge</h2>
-    <p class="media-lockup__subheading">Circular image with aligned text</p>
-    <p class="media-lockup__body">
-      Circular image badge with text content. On mobile, centers both elements vertically.
-      On desktop, places circle on left (4 cols) with text on right (8 cols).
-    </p>
-  </div>
-</div>
+</section>

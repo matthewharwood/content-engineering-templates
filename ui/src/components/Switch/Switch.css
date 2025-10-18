@@ -1,3 +1,6 @@
+/* Import all design system tokens */
+@import "../../../styles/index.css";
+
 /* Switch Component - Accessible toggle switch for forms */
 
 /* Container */

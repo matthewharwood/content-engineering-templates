@@ -1,3 +1,6 @@
+/* Import all design system tokens */
+@import "../../../styles/index.css";
+
 /* Switch Button Group - Toggle switches with sliding thumb */
 
 /* Container */

@@ -1,10 +1,11 @@
 <link rel="stylesheet" href="./MediaLockup.css">
 
 <!-- Lockup 10: Full Bleed Hero -->
-<!-- Uses Section + l-container + l-overlay + l-full-bleed layout tokens -->
+<!-- Uses Section + u-container + l-overlay + l-full-bleed layout tokens -->
 <!-- section--overflow-hidden prevents image overflow in overlay pattern -->
 <section class="section section--height-auto section--overflow-hidden">
-  <div class="media-lockup media-lockup--full-bleed l-container l-overlay l-full-bleed">
+  <div class="u-container">
+    <div class="media-lockup media-lockup--full-bleed l-overlay l-full-bleed">
     <div class="media-lockup__image">
       <img src="https://picsum.photos/1920/1080?random=10" alt="Full bleed hero image">
     </div>
@@ -15,6 +16,7 @@
         Full-width hero that breaks out of the grid container. Dark overlay ensures text readability.
         Scales from 500px mobile to 700px desktop height. Built with Section + overlay layout tokens.
       </p>
+    </div>
     </div>
   </div>
 </section>

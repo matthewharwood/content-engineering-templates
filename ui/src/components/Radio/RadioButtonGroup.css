@@ -1,8 +1,5 @@
-@import "../../../styles/tokens/colors.css";
-@import "../../../styles/typography.css";
-@import "../../../styles/space.css";
-@import "../../../styles/fonts.css";
-@import "../../../styles/icons.css";
+/* Import all design system tokens */
+@import "../../../styles/index.css";
 
 /* Button Group Container */
 .button-group {

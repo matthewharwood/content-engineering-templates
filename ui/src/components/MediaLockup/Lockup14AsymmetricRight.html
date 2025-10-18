@@ -1,16 +1,21 @@
 <link rel="stylesheet" href="./MediaLockup.css">
 
 <!-- Lockup 14: Asymmetric Right Heavy (5/7) -->
-<div class="media-lockup media-lockup--asymmetric-right">
-  <div class="media-lockup__content">
-    <h2 class="media-lockup__heading">Asymmetric Right 5/7</h2>
-    <p class="media-lockup__subheading">Right-weighted layout</p>
-    <p class="media-lockup__body">
-      Inverse asymmetric split with text taking 5 columns, image taking 7 columns.
-      Ideal for alternating with the left-heavy version.
-    </p>
+<!-- Uses Utopia grid: .u-container + .u-grid + responsive .col-span-* utilities (40/60 split: 5/7 columns) + media-lockup--image-right for visual order -->
+<section class="section">
+  <div class="u-container">
+    <div class="media-lockup media-lockup--asymmetric-right media-lockup--image-right u-grid" style="grid-template-columns: repeat(12, 1fr);">
+      <div class="media-lockup__image col-span-12 col-span-md-7">
+        <img src="https://picsum.photos/900/700?random=14" alt="Asymmetric right heavy layout">
+      </div>
+      <div class="media-lockup__content col-span-12 col-span-md-5">
+        <h2 class="media-lockup__heading">Asymmetric Right 5/7</h2>
+        <p class="media-lockup__subheading">Right-weighted layout</p>
+        <p class="media-lockup__body">
+          Inverse asymmetric split with content taking 5 columns (40%), image taking 7 columns (60%) on desktop.
+          Mobile stacks image first. Ideal for alternating with the left-heavy version. Built on Utopia grid system.
+        </p>
+      </div>
+    </div>
   </div>
-  <div class="media-lockup__image">
-    <img src="https://picsum.photos/900/700?random=14" alt="Asymmetric right heavy layout">
-  </div>
-</div>
+</section>

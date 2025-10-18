@@ -4,8 +4,8 @@
  * Uses Utopia container and grid system with semantic design tokens
  */
 
-/* Import grid system for containers and grids */
-@import "../../../styles/grid.css";
+/* Import all design system tokens */
+@import "../../../styles/index.css";
 
 /* Base Section Styles */
 .section {

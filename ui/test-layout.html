@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Simulate .l-container */
+    .l-container {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 2px solid blue;
+    }
+    
+    /* Simulate .l-split-half */
+    .l-split-half > * {
+      grid-column: span 12;
+      background: lightpink;
+      padding: 20px;
+    }
+    @media (min-width: 768px) {
+      .l-split-half > * {
+        grid-column: span 6;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Test Layout</h1>
+  <div class="l-container l-split-half">
+    <div>Column 1 (should be 50% on desktop)</div>
+    <div>Column 2 (should be 50% on desktop)</div>
+  </div>
+</body>
+</html>

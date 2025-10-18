@@ -115,24 +115,179 @@ All design tokens are imported via `ui/styles/index.css`:
 @import "./typography.css";      /* Type scale */
 @import "./space.css";           /* Spacing scale */
 @import "./grid.css";            /* Grid system */
+@import "./layouts.css";         /* Layout utilities */
 ```
 
 This file is imported into `.storybook/preview.js` to make all tokens available globally in Storybook.
+
+### Component CSS Standards
+
+**Import Pattern:**
+All component CSS files should import the complete design system via a single import:
+
+```css
+/* Import all design system tokens */
+@import "../../../styles/index.css";
+```
+
+**Why Single Import?**
+- ✅ Single source of truth - one import provides all tokens
+- ✅ Automatic access to new token systems (no need to update imports)
+- ✅ Configuration over convention - full design system available for creative use
+- ✅ Copy-paste friendly - same pattern works everywhere
+- ✅ Future-proof - new layout utilities automatically available
+
+**What This Provides:**
+- Semantic color tokens (`--color-primary`, `--color-surface`, etc.)
+- Typography scale (`--step--4` through `--step-8`)
+- Spacing scale (`--space-3xs` through `--space-3xl`, plus fluid pairs)
+- Grid system (`.u-container`, `.u-grid`, `--grid-max-width`, `--grid-gutter`)
+- Layout utilities (`.l-container`, `.l-split-*`, `.l-stack`, `.l-overlay`, etc.)
+- Font tokens (`--font-sans`, `--font-serif`, `--font-mono`, `--font-display`)
+- Icon system (`--icon-size-*`, Material Design icons)
+
+**Layout Utilities Reference:**
+
+Layout utilities (`ui/styles/layouts.css`) provide reusable responsive patterns:
+
+**Containers:**
+- `.l-container` - Container with max-width and padding (NO grid - use with layout utilities below)
+- `.l-grid` - Creates 12-column grid (use when you need custom grid layouts)
+
+**IMPORTANT:** Layout utilities like `.l-split-*`, `.l-stack`, `.l-overlay` automatically CREATE the grid. You DON'T need `.l-grid` when using these - just use `.l-container` for max-width constraint.
+
+**Responsive Splits:**
+- `.l-split-half` - 50/50 split (mobile: stacked, tablet+: 6/6 columns)
+- `.l-split-60-40`, `.l-split-40-60` - 60/40 splits (7/5 columns)
+- `.l-split-70-30`, `.l-split-30-70` - 70/30 splits (8/4 columns)
+- `.l-split-80-20`, `.l-split-20-80` - 80/20 splits (10/2 columns)
+
+**Stack Layouts:**
+- `.l-stack` - Vertical stacking
+- `.l-stack--gap-[xs|s|m|l|xl]` - Stacking with configured gaps
+
+**Overlay & Positioning:**
+- `.l-overlay` - Layered content (hero images, overlays)
+- `.l-offset` - Content overlapping media
+
+**Spacing Utilities:**
+- `.l-gap-[3xs|2xs|xs|s|m|l|xl|2xl|3xl]` - Quick gap spacing
+- `.l-pad-[3xs|2xs|xs|s|m|l|xl|2xl|3xl]` - Quick padding
+- `.l-pad-block-*`, `.l-pad-inline-*` - Directional padding
+- `.l-mar-block-*` - Block margins
+- `.l-mar-inline-auto` - Center horizontally
+
+**Content Width:**
+- `.l-content--narrow` (45ch), `.l-content--readable` (65ch), `.l-content--wide` (80ch)
+- `.l-content--center` - Center content
+
+**Responsive Utilities:**
+- `.l-hide-mobile`, `.l-hide-desktop` - Responsive visibility
+- `.l-text-center-mobile`, `.l-text-center-desktop` - Responsive text alignment
+- `.l-reverse-desktop` - Swap child order on desktop
+
+**Aspect Ratios:**
+- `.l-aspect-1-1`, `.l-aspect-16-9`, `.l-aspect-21-9`, `.l-aspect-4-3`, `.l-aspect-3-4`, `.l-aspect-3-2`, `.l-aspect-2-3`
+
+**Cards:**
+- `.l-card` (400px), `.l-card--sm` (320px), `.l-card--md` (400px), `.l-card--lg` (520px)
+- `.l-card--center` - Center card
+
+**Other:**
+- `.l-full-bleed` - Break out to full viewport width
+- `.l-align-*`, `.l-justify-*` - Alignment utilities
+
+See `ui/styles/layouts.css` for complete reference and responsive breakpoints.
 
 ## Working with Components
 
 ### Adding a New Component
 1. Create directory: `ui/src/components/MyComponent/`
 2. Create variant HTML files: `MyComponentDefault.html`, `MyComponentVariant.html`
-3. Create CSS file: `MyComponent.css` (use semantic tokens only)
+3. Create CSS file: `MyComponent.css` starting with:
+   ```css
+   /* Import all design system tokens */
+   @import "../../../styles/index.css";
+   ```
 4. Create stories file: `MyComponent.stories.js` importing HTML with `?raw`
 
 ### Styling Guidelines
+- **Import tokens** - Always start CSS files with `@import "../../../styles/index.css";`
 - **Never use hardcoded colors** - use `var(--color-*)` tokens
 - **Never use hardcoded fonts** - use `var(--font-*)` tokens
 - **Use spacing tokens** - `var(--space-*)` for margins, padding, gaps
-- **Use typography tokens** - `var(--type-*)` for text styling
+- **Use typography tokens** - `var(--step-*)` for font sizes
+- **Leverage layout utilities** - Use `.l-*` classes for common responsive patterns
+- **Configuration over convention** - Reach for any token/utility as needed
 - Follow existing component patterns for consistency
+
+### Layout Utility Examples
+
+**Two-column responsive layout:**
+```html
+<!-- .l-container provides max-width/padding, .l-split-half creates the grid -->
+<div class="l-container l-split-half">
+  <div>Column 1 (full width mobile, 50% desktop)</div>
+  <div>Column 2 (full width mobile, 50% desktop)</div>
+</div>
+```
+
+**Control column order (MediaLockup pattern):**
+```html
+<!-- Image LEFT (default) - HTML order: image, content -->
+<div class="media-lockup l-container l-split-half">
+  <div class="media-lockup__image">...</div>
+  <div class="media-lockup__content">...</div>
+</div>
+
+<!-- Image RIGHT - Same HTML order + modifier class -->
+<div class="media-lockup media-lockup--image-right l-container l-split-half">
+  <div class="media-lockup__image">...</div>
+  <div class="media-lockup__content">...</div>
+</div>
+```
+
+**Without container (full-width grid):**
+```html
+<!-- Just .l-split-half creates grid without max-width constraint -->
+<div class="l-split-half">
+  <div>Column 1</div>
+  <div>Column 2</div>
+</div>
+```
+
+**Stacked content with spacing:**
+```html
+<!-- .l-stack creates single-column grid, .l-stack--gap-m sets gap size -->
+<div class="l-container l-stack l-stack--gap-m">
+  <h1>Title</h1>
+  <p>Content</p>
+  <button>Action</button>
+</div>
+```
+
+**Hero overlay:**
+```html
+<section class="section section--height-100">
+  <!-- .l-overlay creates grid where children overlap in same cell -->
+  <div class="l-container l-overlay">
+    <img src="hero.jpg" alt="Hero">
+    <div class="l-content--center">
+      <h1>Hero Title</h1>
+      <p>Hero content</p>
+    </div>
+  </div>
+</section>
+```
+
+**Common Mistake to Avoid:**
+```html
+<!-- ❌ WRONG - Don't use .l-grid with layout utilities -->
+<div class="l-container l-grid l-split-half">
+
+<!-- ✅ CORRECT - Layout utilities create their own grid -->
+<div class="l-container l-split-half">
+```
 
 ### Testing Theme Changes
 After modifying theme files, check components in Storybook to ensure they adapt correctly. All components should work with any theme without modification.

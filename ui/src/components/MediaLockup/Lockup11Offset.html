@@ -1,19 +1,21 @@
 <link rel="stylesheet" href="./MediaLockup.css">
 
 <!-- Lockup 11: Offset Overlap -->
-<!-- Uses Section + l-container + l-offset layout tokens -->
+<!-- Uses Utopia grid with manual positioning: image spans 8 cols, content spans 7 cols starting at col 6 (overlapping) -->
 <section class="section">
-  <div class="media-lockup media-lockup--offset l-container l-offset">
-    <div class="media-lockup__image">
-      <img src="https://picsum.photos/1000/700?random=11" alt="Offset overlap layout">
-    </div>
-    <div class="media-lockup__content">
-      <h2 class="media-lockup__heading">Offset Overlap</h2>
-      <p class="media-lockup__subheading">Layered design</p>
-      <p class="media-lockup__body">
-        Content box overlaps the image on desktop creating depth. Mobile stacks with spacing.
-        Great for creating visual interest and hierarchy. Built with Section + offset layout tokens.
-      </p>
+  <div class="u-container">
+    <div class="media-lockup media-lockup--offset u-grid" style="grid-template-columns: repeat(12, 1fr); position: relative;">
+      <div class="media-lockup__image col-span-12 col-span-md-8">
+        <img src="https://picsum.photos/1000/700?random=11" alt="Offset overlap layout">
+      </div>
+      <div class="media-lockup__content col-span-12" style="grid-column: 6 / span 7; grid-row: 1; z-index: 1;">
+        <h2 class="media-lockup__heading">Offset Overlap</h2>
+        <p class="media-lockup__subheading">Layered design</p>
+        <p class="media-lockup__body">
+          Content box overlaps the image on desktop creating depth. Mobile stacks with spacing.
+          Great for creating visual interest and hierarchy. Built with Utopia grid + manual positioning.
+        </p>
+      </div>
     </div>
   </div>
 </section>

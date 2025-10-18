@@ -1,16 +1,21 @@
 <link rel="stylesheet" href="./MediaLockup.css">
 
 <!-- Lockup 04: Stacked - Image Bottom -->
-<div class="media-lockup media-lockup--stacked-bottom">
-  <div class="media-lockup__content">
-    <h2 class="media-lockup__heading">Stacked Image Bottom</h2>
-    <p class="media-lockup__subheading">Content above, image below</p>
-    <p class="media-lockup__body">
-      Inverted vertical stack with content first, image second. Emphasizes the text content before the visual.
-      Useful when the copy is the primary focus.
-    </p>
+<!-- Uses Section + u-container + l-stack + l-stack--gap-m layout tokens -->
+<section class="section">
+  <div class="u-container">
+    <div class="media-lockup media-lockup--stacked-bottom l-stack l-stack--gap-m">
+      <div class="media-lockup__image">
+        <img src="https://picsum.photos/1200/600?random=4" alt="Stacked layout with image on bottom">
+      </div>
+      <div class="media-lockup__content">
+        <h2 class="media-lockup__heading">Stacked Image Bottom</h2>
+        <p class="media-lockup__subheading">Content above, image below</p>
+        <p class="media-lockup__body">
+          Vertical stack with content above, image below. CSS order property swaps the visual order.
+          Emphasizes the text content before the visual. Useful when the copy is the primary focus.
+        </p>
+      </div>
+    </div>
   </div>
-  <div class="media-lockup__image">
-    <img src="https://picsum.photos/1200/600?random=4" alt="Stacked layout with image on bottom">
-  </div>
-</div>
+</section>

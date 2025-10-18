@@ -1,16 +1,21 @@
 <link rel="stylesheet" href="./MediaLockup.css">
 
 <!-- Lockup 08: Wide Text (4/8) -->
-<div class="media-lockup media-lockup--wide-text">
-  <div class="media-lockup__image">
-    <img src="https://picsum.photos/600/800?random=8" alt="Narrow image taking 4 columns">
+<!-- Uses Utopia grid: .u-container + .u-grid + responsive .col-span-* utilities (30/70 split: 4/8 columns) -->
+<section class="section">
+  <div class="u-container">
+    <div class="media-lockup media-lockup--wide-text u-grid" style="grid-template-columns: repeat(12, 1fr);">
+      <div class="media-lockup__image col-span-12 col-span-md-4">
+        <img src="https://picsum.photos/600/800?random=8" alt="Narrow image taking 4 columns">
+      </div>
+      <div class="media-lockup__content col-span-12 col-span-md-8">
+        <h2 class="media-lockup__heading">Wide Text 4/8</h2>
+        <p class="media-lockup__subheading">Content emphasizes the layout</p>
+        <p class="media-lockup__body">
+          Inverted asymmetric layout with image taking 4 columns (30%) and text taking 8 columns (70%) on desktop.
+          Mobile stacks image first. Ideal for text-heavy content with supporting visuals. Built on Utopia grid system.
+        </p>
+      </div>
+    </div>
   </div>
-  <div class="media-lockup__content">
-    <h2 class="media-lockup__heading">Wide Text 4/8</h2>
-    <p class="media-lockup__subheading">Content emphasizes the layout</p>
-    <p class="media-lockup__body">
-      Inverted asymmetric layout with image taking 4 columns and text taking 8 columns on desktop.
-      Mobile stacks vertically. Ideal for text-heavy content with supporting visuals.
-    </p>
-  </div>
-</div>
+</section>

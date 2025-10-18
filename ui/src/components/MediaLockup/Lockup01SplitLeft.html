@@ -1,19 +1,21 @@
 <link rel="stylesheet" href="./MediaLockup.css">
 
 <!-- Lockup 01: Split 50/50 - Image Left -->
-<!-- Uses Section + l-container + l-split-half layout tokens -->
+<!-- Uses Utopia grid: .u-container + .u-grid + responsive .col-span-* utilities -->
 <section class="section">
-  <div class="media-lockup media-lockup--split-left l-container l-split-half">
-    <div class="media-lockup__image">
-      <img src="https://picsum.photos/800/600?random=1" alt="Split layout with image on left">
-    </div>
-    <div class="media-lockup__content">
-      <h2 class="media-lockup__heading">Split 50/50 Left</h2>
-      <p class="media-lockup__subheading">Image left, content right</p>
-      <p class="media-lockup__body">
-        Classic split layout with image on the left and content on the right. On mobile, stacks with image first.
-        Perfect for feature sections and product highlights. Now built on Section component with layout tokens.
-      </p>
+  <div class="u-container">
+    <div class="media-lockup media-lockup--split-left u-grid" style="grid-template-columns: repeat(12, 1fr);">
+      <div class="media-lockup__image col-span-12 col-span-md-6">
+        <img src="https://picsum.photos/800/600?random=1" alt="Split layout with image on left">
+      </div>
+      <div class="media-lockup__content col-span-12 col-span-md-6">
+        <h2 class="media-lockup__heading">Split 50/50 Left</h2>
+        <p class="media-lockup__subheading">Image left, content right</p>
+        <p class="media-lockup__body">
+          Classic split layout with image on the left and content on the right. Mobile stacks full-width, tablet+ splits 50/50.
+          Built on Utopia grid system with responsive column spans. Perfect for feature sections and product highlights.
+        </p>
+      </div>
     </div>
   </div>
 </section>

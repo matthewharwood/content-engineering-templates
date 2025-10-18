@@ -1,5 +1,5 @@
-@import "../../../styles/grid.css";
-@import "../../../styles/tokens/colors.css";
+/* Import all design system tokens */
+@import "../../../styles/index.css";
 
 /* Grid visualization styles */
 .grid-demo {
@@ -57,6 +57,39 @@
 .col-span-10 { grid-column: span 10; }
 .col-span-11 { grid-column: span 11; }
 .col-span-12 { grid-column: span 12; }
+
+/* Responsive column span utilities - Mobile-first approach */
+/* Tablet breakpoint (>= 768px) */
+@media (min-width: 768px) {
+  .col-span-md-1 { grid-column: span 1; }
+  .col-span-md-2 { grid-column: span 2; }
+  .col-span-md-3 { grid-column: span 3; }
+  .col-span-md-4 { grid-column: span 4; }
+  .col-span-md-5 { grid-column: span 5; }
+  .col-span-md-6 { grid-column: span 6; }
+  .col-span-md-7 { grid-column: span 7; }
+  .col-span-md-8 { grid-column: span 8; }
+  .col-span-md-9 { grid-column: span 9; }
+  .col-span-md-10 { grid-column: span 10; }
+  .col-span-md-11 { grid-column: span 11; }
+  .col-span-md-12 { grid-column: span 12; }
+}
+
+/* Desktop breakpoint (>= 1024px) */
+@media (min-width: 1024px) {
+  .col-span-lg-1 { grid-column: span 1; }
+  .col-span-lg-2 { grid-column: span 2; }
+  .col-span-lg-3 { grid-column: span 3; }
+  .col-span-lg-4 { grid-column: span 4; }
+  .col-span-lg-5 { grid-column: span 5; }
+  .col-span-lg-6 { grid-column: span 6; }
+  .col-span-lg-7 { grid-column: span 7; }
+  .col-span-lg-8 { grid-column: span 8; }
+  .col-span-lg-9 { grid-column: span 9; }
+  .col-span-lg-10 { grid-column: span 10; }
+  .col-span-lg-11 { grid-column: span 11; }
+  .col-span-lg-12 { grid-column: span 12; }
+}
 
 /* Visual helper for gutters */
 .gutter-visual {

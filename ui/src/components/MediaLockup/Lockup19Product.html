@@ -1,16 +1,21 @@
 <link rel="stylesheet" href="./MediaLockup.css">
 
 <!-- Lockup 19: Product Showcase -->
-<div class="media-lockup media-lockup--product">
-  <div class="media-lockup__image">
-    <img src="https://picsum.photos/600/800?random=19" alt="Product image in 3:4 aspect ratio">
+<!-- Uses Section + u-container + l-stack + l-stack--gap-s layout tokens -->
+<section class="section">
+  <div class="u-container">
+    <div class="media-lockup media-lockup--product l-stack l-stack--gap-s">
+      <div class="media-lockup__image">
+        <img src="https://picsum.photos/600/800?random=19" alt="Product image in 3:4 aspect ratio">
+      </div>
+      <div class="media-lockup__content">
+        <h2 class="media-lockup__heading">Product Showcase</h2>
+        <p class="media-lockup__subheading">$99.00</p>
+        <p class="media-lockup__body">
+          Vertical 3:4 aspect ratio image with minimal text below. Centered on mobile, left-aligned on desktop.
+          Perfect for e-commerce product displays with rounded corners. Built with Section + stack layout tokens.
+        </p>
+      </div>
+    </div>
   </div>
-  <div class="media-lockup__content">
-    <h2 class="media-lockup__heading">Product Showcase</h2>
-    <p class="media-lockup__subheading">$99.00</p>
-    <p class="media-lockup__body">
-      Vertical 3:4 aspect ratio image with minimal text below. Centered on mobile, left-aligned on desktop.
-      Perfect for e-commerce product displays with rounded corners.
-    </p>
-  </div>
-</div>
+</section>

@@ -1,16 +1,21 @@
 <link rel="stylesheet" href="./MediaLockup.css">
 
 <!-- Lockup 09: Card Style -->
-<div class="media-lockup media-lockup--card">
-  <div class="media-lockup__image">
-    <img src="https://picsum.photos/600/400?random=9" alt="Card style with 16:9 image">
+<!-- Uses Section + u-container + l-stack + l-stack--gap-none + l-card layout tokens -->
+<section class="section">
+  <div class="u-container">
+    <div class="media-lockup media-lockup--card l-stack l-stack--gap-none l-card l-card--center">
+      <div class="media-lockup__image">
+        <img src="https://picsum.photos/600/400?random=9" alt="Card style with 16:9 image">
+      </div>
+      <div class="media-lockup__content">
+        <h2 class="media-lockup__heading">Card Style</h2>
+        <p class="media-lockup__subheading">Contained card design</p>
+        <p class="media-lockup__body">
+          Self-contained card with image on top (16:9) and text below. Max-width 400px with border and rounded corners.
+          Perfect for blog cards or product listings. Built with Section + card layout tokens.
+        </p>
+      </div>
+    </div>
   </div>
-  <div class="media-lockup__content">
-    <h2 class="media-lockup__heading">Card Style</h2>
-    <p class="media-lockup__subheading">Contained card design</p>
-    <p class="media-lockup__body">
-      Self-contained card with image on top (16:9) and text below. Max-width 400px with border and rounded corners.
-      Perfect for blog cards or product listings.
-    </p>
-  </div>
-</div>
+</section>
