@@ -1,5 +1,3 @@
-/* Import all design system tokens */
-@import "../../../styles/index.css";
 
 .link {
   text-decoration: underline;

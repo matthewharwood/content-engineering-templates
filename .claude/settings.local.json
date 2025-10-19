@@ -19,7 +19,9 @@
       "WebFetch(domain:fonts.google.com)",
       "WebFetch(domain:snif.co)",
       "Bash(lsof:*)",
-      "Bash(xargs kill:*)"
+      "Bash(xargs kill:*)",
+      "Bash(find src/components -name \"*.css\" -type f -exec grep -l '@import \"\"\"\"../../../styles/index.css\"\"\"\"' {})",
+      "Bash(find src/components -name \"*.css\" -type f -exec sed -i '' '/^\\/\\* Import all design system tokens \\*\\/$/d; /^@import \"\"\\.\\.\\/\\.\\.\\/\\.\\.\\/styles\\/index\\.css\"\";$/d' {} ;)"
     ],
     "deny": [],
     "ask": []

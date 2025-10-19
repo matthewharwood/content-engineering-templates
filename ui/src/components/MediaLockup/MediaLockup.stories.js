@@ -19,6 +19,7 @@ import Lockup17FeatureHTML from './Lockup17Feature.html?raw';
 import Lockup18TestimonialHTML from './Lockup18Testimonial.html?raw';
 import Lockup19ProductHTML from './Lockup19Product.html?raw';
 import Lockup20ArticleHTML from './Lockup20Article.html?raw';
+import Lockup21FullBleedHeroHTML from './Lockup21FullBleedHero.html?raw';
 
 function createHTMLElement(html) {
   const container = document.createElement('div');
@@ -283,6 +284,19 @@ export const Lockup20Article = {
     docs: {
       description: {
         story: '**Article Header**: Wide 21:9 hero image with article content below. Content max-width 65ch, centered. Large gap. Blog posts and long-form content. Reference: `media-lockup--article`',
+      },
+    },
+  },
+};
+
+// Lockup 21: Full Bleed Hero - Right Aligned
+export const Lockup21FullBleedHero = {
+  render: () => createHTMLElement(Lockup21FullBleedHeroHTML),
+  parameters: {
+    layout: 'fullscreen',
+    docs: {
+      description: {
+        story: '**Full Bleed Hero - Right Aligned**: Full viewport height hero with edge-to-edge image. Text is right-aligned and vertically centered with gradient overlay from right to left. Perfect for impactful landing pages. Reference: `media-lockup--full-bleed-hero`',
       },
     },
   },

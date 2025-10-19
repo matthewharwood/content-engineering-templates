@@ -9,8 +9,6 @@
  * and either .u-grid + .col-span-* for split layouts or .l-stack for stacked layouts.
  */
 
-/* Import all design system tokens */
-@import "../../../styles/index.css";
 
 /* Base MediaLockup - No layout assumptions */
 .media-lockup {
@@ -47,7 +45,8 @@
   flex-direction: column;
   justify-content: center;
   gap: var(--space-m);
-  padding: var(--space-l);
+  /* No default padding - split layouts don't need it */
+  /* Specific patterns add padding as needed */
   min-width: 0; /* Prevent grid item from expanding beyond bounds */
 }
 
@@ -109,11 +108,17 @@
   /* Uses Utopia grid: .u-grid + col-span-md-6 + col-span-md-6 */
   /* Inherits default image-left behavior */
 }
+.media-lockup--split-left .media-lockup__content {
+  padding-inline: var(--space-l); /* Add horizontal spacing between image and text */
+}
 
 /* 02: Split 50/50 - Image Right */
 .media-lockup--split-right {
   /* Uses Utopia grid: .u-grid + col-span-md-6 + col-span-md-6 + .media-lockup--image-right */
   /* Image placement controlled by modifier class via CSS order */
+}
+.media-lockup--split-right .media-lockup__content {
+  padding-inline: var(--space-l); /* Add horizontal spacing between image and text */
 }
 
 /* 03: Stacked - Image Top */
@@ -182,6 +187,7 @@
 .media-lockup--circle-badge .media-lockup__content {
   text-align: center;
   align-items: center;
+  padding-inline: var(--space-l); /* Add horizontal spacing */
 }
 @media (min-width: 768px) {
   .media-lockup--circle-badge .media-lockup__image {
@@ -197,10 +203,16 @@
 .media-lockup--wide-image {
   /* Uses Utopia grid: .u-grid + col-span-md-8 + col-span-md-4 (70/30 split) */
 }
+.media-lockup--wide-image .media-lockup__content {
+  padding-inline: var(--space-l); /* Add horizontal spacing */
+}
 
 /* 08: Narrow Image, Wide Text (4/8) */
 .media-lockup--wide-text {
   /* Uses Utopia grid: .u-grid + col-span-md-4 + col-span-md-8 (30/70 split) */
+}
+.media-lockup--wide-text .media-lockup__content {
+  padding-inline: var(--space-l); /* Add horizontal spacing */
 }
 
 /* 09: Card Style */
@@ -289,10 +301,16 @@
 .media-lockup--asymmetric-left {
   /* Uses Utopia grid: .u-grid + col-span-md-7 + col-span-md-5 (60/40 split) */
 }
+.media-lockup--asymmetric-left .media-lockup__content {
+  padding-inline: var(--space-l); /* Add horizontal spacing */
+}
 
 /* 14: Asymmetric Right Heavy (5/7) */
 .media-lockup--asymmetric-right {
   /* Uses Utopia grid: .u-grid + col-span-md-5 + col-span-md-7 (40/60 split) + .media-lockup--image-right */
+}
+.media-lockup--asymmetric-right .media-lockup__content {
+  padding-inline: var(--space-l); /* Add horizontal spacing */
 }
 
 /* 15: Polaroid Style */
@@ -331,7 +349,7 @@
   height: 100%;
 }
 .media-lockup--avatar .media-lockup__content {
-  padding: 0 0 0 var(--space-m);
+  padding-inline: var(--space-l); /* Add horizontal spacing */
 }
 
 /* 17: Feature Block */
@@ -375,6 +393,7 @@
   background-color: var(--color-surface-variant);
   border-left: 4px solid var(--color-primary);
   border-radius: 8px;
+  padding: var(--space-l); /* Add padding inside the styled box */
 }
 
 /* 19: Product Showcase */
@@ -417,4 +436,43 @@
   max-width: 65ch;
   margin-inline: auto;
   padding: 0;
+}
+
+/* 21: Full Bleed Hero - Right Aligned */
+.media-lockup--full-bleed-hero {
+  /* Uses .l-overlay + .l-full-bleed from layouts.css */
+  /* Section provides min-height: 100vh via section--height-100 */
+  min-height: 100vh;
+}
+.media-lockup--full-bleed-hero .media-lockup__image {
+  min-height: 100vh;
+}
+/* Overlay with min-height, safe to use height:100% */
+.media-lockup--full-bleed-hero .media-lockup__image img {
+  height: 100%;
+  object-fit: cover;
+}
+.media-lockup--full-bleed-hero .media-lockup__content {
+  /* Right-aligned content with vertical centering */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align to right horizontally */
+  justify-content: center; /* Center vertically */
+  text-align: right;
+  padding: var(--space-2xl);
+  background: linear-gradient(to left, rgba(0,0,0,0.7), transparent);
+  color: white;
+  max-width: 600px;
+  margin-left: auto; /* Push content to right side */
+}
+.media-lockup--full-bleed-hero .media-lockup__heading,
+.media-lockup--full-bleed-hero .media-lockup__subheading,
+.media-lockup--full-bleed-hero .media-lockup__body {
+  color: white;
+}
+@media (min-width: 768px) {
+  .media-lockup--full-bleed-hero .media-lockup__content {
+    padding: var(--space-3xl);
+    max-width: 700px;
+  }
 }
