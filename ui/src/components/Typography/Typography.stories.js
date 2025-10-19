@@ -3,6 +3,7 @@ import AllLevelsHTML from './AllLevels.html?raw';
 import HeadingsHTML from './Headings.html?raw';
 import BodyTextHTML from './BodyText.html?raw';
 import TypographyLockupsHTML from './TypographyLockups.html?raw';
+import SemanticTypographyHTML from './SemanticTypography.html?raw';
 
 function createHTMLElement(html) {
   const container = document.createElement('div');
@@ -13,6 +14,10 @@ function createHTMLElement(html) {
 export default {
   title: 'Components/Typography',
   tags: ['autodocs'],
+};
+
+export const SemanticTypography = {
+  render: () => createHTMLElement(SemanticTypographyHTML)
 };
 
 export const AllLevels = {

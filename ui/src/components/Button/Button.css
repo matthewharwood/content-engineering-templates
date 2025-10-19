@@ -225,3 +225,8 @@
 .btn .icon {
   color: currentColor;
 }
+
+/* Width Modifiers */
+.btn--full-width {
+  width: 100%;
+}

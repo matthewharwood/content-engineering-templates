@@ -1,0 +1,55 @@
+/* /index.css - Page-specific styles for index.html */
+
+/* Import all design system tokens and utilities */
+@import "./ui/styles/index.css";
+
+/* Base page styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background);
+}
+
+/* Full-bleed hero image */
+.hero-image-full-bleed {
+  width: 100%;
+  margin: 0;
+}
+
+.hero-image-full-bleed .img-aspect {
+  border-radius: 0;
+}
+
+/* Product section spacing */
+.product-section {
+  padding-block: var(--space-3xl);
+}
+
+/* First product section gets top padding from grid gutter */
+.product-section:first-of-type {
+  padding-block-start: var(--space-3xl);
+  padding-block-end: 0;
+}
+
+/* Content spacing within product sections */
+.product-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+}
+
+/* Product info group spacing */
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  margin: 0;
+}
+
+/* Responsive image container */
+.product-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}

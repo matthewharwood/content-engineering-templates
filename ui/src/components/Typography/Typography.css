@@ -1,4 +1,14 @@
+/**
+ * Typography Component
+ * Semantic typography utilities using Utopia fluid type scale
+ * Provides both raw font-size utilities and semantic type classes
+ */
 
+/* Import design system tokens */
+@import "../../../styles/index.css";
+
+/* === RAW FONT SIZE UTILITIES === */
+/* Use when you need just font-size control */
 .typography {
   margin: 0;
 }
@@ -16,3 +26,185 @@
 .typography--step--2 { font-size: var(--step--2); }
 .typography--step--3 { font-size: var(--step--3); }
 .typography--step--4 { font-size: var(--step--4); }
+
+/* === SEMANTIC TYPE CLASSES === */
+/* Complete text styles with font-size, line-height, color, and weight */
+
+/* Heading Variants */
+.type-heading-1 {
+  font-family: var(--font-sans);
+  font-size: var(--step-4);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--color-on-surface);
+}
+
+.type-heading-2 {
+  font-family: var(--font-sans);
+  font-size: var(--step-3);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--color-on-surface);
+}
+
+.type-heading-3 {
+  font-family: var(--font-sans);
+  font-size: var(--step-2);
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0;
+  color: var(--color-on-surface);
+}
+
+.type-heading-4 {
+  font-family: var(--font-sans);
+  font-size: var(--step-1);
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  color: var(--color-on-surface);
+}
+
+.type-heading-5 {
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  color: var(--color-on-surface);
+}
+
+.type-heading-6 {
+  font-family: var(--font-sans);
+  font-size: var(--step--1);
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+  color: var(--color-on-surface);
+}
+
+/* Body Text Variants */
+.type-body {
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  margin: 0;
+  color: var(--color-on-surface-variant);
+}
+
+.type-body-large {
+  font-family: var(--font-sans);
+  font-size: var(--step-1);
+  line-height: 1.6;
+  margin: 0;
+  color: var(--color-on-surface-variant);
+}
+
+.type-body-small {
+  font-family: var(--font-sans);
+  font-size: var(--step--1);
+  line-height: 1.5;
+  margin: 0;
+  color: var(--color-on-surface-variant);
+}
+
+/* Specialized Typography */
+.type-label {
+  font-family: var(--font-sans);
+  font-size: var(--step--1);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+  margin: 0;
+  color: var(--color-on-surface-variant);
+}
+
+.type-price {
+  font-family: var(--font-sans);
+  font-size: var(--step-2);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--color-primary);
+}
+
+.type-caption {
+  font-family: var(--font-sans);
+  font-size: var(--step--2);
+  line-height: 1.4;
+  margin: 0;
+  color: var(--color-on-surface-variant);
+}
+
+.type-overline {
+  font-family: var(--font-sans);
+  font-size: var(--step--2);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.3;
+  margin: 0;
+  color: var(--color-on-surface-variant);
+}
+
+/* Color Modifiers */
+.type--muted {
+  color: var(--color-on-surface-variant);
+}
+
+.type--primary {
+  color: var(--color-primary);
+}
+
+.type--secondary {
+  color: var(--color-secondary);
+}
+
+.type--on-surface {
+  color: var(--color-on-surface);
+}
+
+.type--on-background {
+  color: var(--color-on-background);
+}
+
+/* Weight Modifiers */
+.type--light {
+  font-weight: 300;
+}
+
+.type--regular {
+  font-weight: 400;
+}
+
+.type--medium {
+  font-weight: 500;
+}
+
+.type--semibold {
+  font-weight: 600;
+}
+
+.type--bold {
+  font-weight: 700;
+}
+
+/* Alignment Utilities */
+.type--left {
+  text-align: left;
+}
+
+.type--center {
+  text-align: center;
+}
+
+.type--right {
+  text-align: right;
+}
+
+.type--justify {
+  text-align: justify;
+}
