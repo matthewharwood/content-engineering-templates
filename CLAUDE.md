@@ -122,22 +122,11 @@ This file is imported into `.storybook/preview.js` to make all tokens available 
 
 ### Component CSS Standards
 
-**Import Pattern:**
-All component CSS files should import the complete design system via a single import:
+**Global Design System Access:**
+All component CSS files have **automatic access** to the complete design system via Storybook's global configuration. Design tokens are loaded globally in `.storybook/preview.js`, so **DO NOT** include `@import` statements in individual component CSS files.
 
-```css
-/* Import all design system tokens */
-@import "../../../styles/index.css";
-```
-
-**Why Single Import?**
-- ✅ Single source of truth - one import provides all tokens
-- ✅ Automatic access to new token systems (no need to update imports)
-- ✅ Configuration over convention - full design system available for creative use
-- ✅ Copy-paste friendly - same pattern works everywhere
-- ✅ Future-proof - new layout utilities automatically available
-
-**What This Provides:**
+**Available Design System Tokens:**
+All components can use these tokens without any imports:
 - Semantic color tokens (`--color-primary`, `--color-surface`, etc.)
 - Typography scale (`--step--4` through `--step-8`)
 - Spacing scale (`--space-3xs` through `--space-3xl`, plus fluid pairs)
@@ -145,6 +134,13 @@ All component CSS files should import the complete design system via a single im
 - Layout utilities (`.l-container`, `.l-split-*`, `.l-stack`, `.l-overlay`, etc.)
 - Font tokens (`--font-sans`, `--font-serif`, `--font-mono`, `--font-display`)
 - Icon system (`--icon-size-*`, Material Design icons)
+
+**Why Global Loading?**
+- ✅ Single source of truth - design system loaded once in Storybook
+- ✅ Zero duplication - no import statements across 50+ component files
+- ✅ Faster development - no import paths to remember
+- ✅ Cleaner components - only component-specific styles in CSS files
+- ✅ Better performance - stylesheet loaded once, cached globally
 
 **Layout Utilities Reference:**
 
@@ -204,15 +200,11 @@ See `ui/styles/layouts.css` for complete reference and responsive breakpoints.
 ### Adding a New Component
 1. Create directory: `ui/src/components/MyComponent/`
 2. Create variant HTML files: `MyComponentDefault.html`, `MyComponentVariant.html`
-3. Create CSS file: `MyComponent.css` starting with:
-   ```css
-   /* Import all design system tokens */
-   @import "../../../styles/index.css";
-   ```
+3. Create CSS file: `MyComponent.css` - **no imports needed**, design tokens are globally available
 4. Create stories file: `MyComponent.stories.js` importing HTML with `?raw`
 
 ### Styling Guidelines
-- **Import tokens** - Always start CSS files with `@import "../../../styles/index.css";`
+- **NO CSS imports needed** - Design tokens are globally available via Storybook configuration
 - **Never use hardcoded colors** - use `var(--color-*)` tokens
 - **Never use hardcoded fonts** - use `var(--font-*)` tokens
 - **Use spacing tokens** - `var(--space-*)` for margins, padding, gaps

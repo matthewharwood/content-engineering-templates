@@ -186,12 +186,19 @@ Why it happens (if known)
 
 ## Current Project Status
 
-**Last Updated:** 2025-10-18
+**Last Updated:** 2025-10-19
 
 ### Active Work
+- Storefront web components revised to declarative HTML architecture (see ADR-007)
+- All documentation updated to reflect new web component standards
 - Index.html refactor planning complete (see `refactor-plan.md`)
 - Design system gap analysis complete (see `gaps.md`)
-- Awaiting approval to begin Phase 1 implementation
+
+### Recent Achievements
+1. **Web Components Architecture:** Established declarative HTML pattern as project standard
+2. **JavaScript Reduction:** 70% reduction in web component code (335 lines → 100 lines)
+3. **Documentation:** Added ADR-007, updated web-components.md, components.md, progress.md
+4. **Performance:** Eliminated runtime DOM creation and style injection
 
 ### Critical Items
 1. **BUG-001:** Mobile responsiveness broken (CRITICAL)
@@ -199,8 +206,8 @@ Why it happens (if known)
 3. **GAP-002:** Mobile-first grid documentation unclear (CRITICAL)
 
 ### Next Milestones
-- **Week 1:** Typography utilities + mobile responsive fixes
-- **Week 2:** E-commerce component library (PriceDisplay, ProductCard)
+- **Week 1:** Test Storefront integration in index.html, Typography utilities + mobile responsive fixes
+- **Week 2:** E-commerce component library following declarative HTML pattern
 - **Week 3:** Final optimization and validation
 
 ---
@@ -230,7 +237,9 @@ _docs/
 ├── gaps.md            (missing components/utilities)
 ├── decisions.md       (architecture decision records)
 ├── bugs.md            (bug tracker)
-└── refactor-plan.md   (detailed refactor plan)
+├── refactor-plan.md   (detailed refactor plan)
+├── web-components.md  (web component development guide)
+└── components.md      (component catalog)
 ```
 
 ---
@@ -243,8 +252,17 @@ _docs/
 - `/CLAUDE.md` - Project overview and commands
 
 **Components:**
+- `components.md` - Complete component catalog (CSS + web components)
+- `web-components.md` - Web component development guide
 - `/ui/src/components/` - Component source code
 - Storybook - Component documentation (run `npm run storybook` in `/ui`)
+
+**Web Components:**
+- `web-components.md` - Complete development guide (file organization, design system integration, naming, testing)
+- `decisions.md` ADR-005 - Web Components File Organization
+- `decisions.md` ADR-006 - Web Component Shadow DOM Strategy
+- `decisions.md` ADR-007 - Web Component Declarative HTML Architecture
+- `/ui/src/components/Storefront/` - Reference implementation (declarative HTML pattern)
 
 ---
 

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Storefront Web Component - Integration Example</title>
+
+  <!-- Step 1: Import design system tokens (REQUIRED) -->
+  <!-- This provides all --color-*, --space-*, --font-*, --step-* tokens -->
+  <link rel="stylesheet" href="./index.css">
+
+  <!-- Step 2: Import component CSS -->
+  <link rel="stylesheet" href="./ui/src/components/Storefront/Storefront.css">
+
+  <!-- Step 3: Import Material Design icons (for placeholder icons in components) -->
+  <link rel="stylesheet" href="./ui/styles/icons.css">
+
+  <style>
+    /* Page-specific styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-sans);
+      background: var(--color-surface);
+      color: var(--color-on-surface);
+    }
+
+    .page-header {
+      padding: var(--space-l);
+      text-align: center;
+      background: var(--color-surface-variant);
+      margin-block-end: var(--space-xl);
+    }
+
+    .page-header h1 {
+      font-size: var(--step-3);
+      margin: 0;
+      margin-block-end: var(--space-s);
+    }
+
+    .page-header p {
+      font-size: var(--step-0);
+      color: var(--color-on-surface-variant);
+      margin: 0;
+      max-width: 65ch;
+      margin-inline: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Storefront Web Component Demo</h1>
+    <p>
+      This page demonstrates the Storefront web components in action.
+      The layout is responsive (stacks on mobile, splits 50/50 on desktop at 768px).
+    </p>
+  </header>
+
+  <!-- Storefront Web Component Usage -->
+  <storefront-component>
+    <storefront-assets slot="left"></storefront-assets>
+    <storefront-form slot="right"></storefront-form>
+  </storefront-component>
+
+  <!-- Step 4: Import web component JavaScript (ES Modules) -->
+  <!-- Place at end of body or use defer attribute -->
+  <script type="module" src="./ui/src/components/Storefront/Storefront.js"></script>
+  <script type="module" src="./ui/src/components/Storefront/StorefrontAssets.js"></script>
+  <script type="module" src="./ui/src/components/Storefront/StorefrontForm.js"></script>
+
+  <!-- Debug: Log when components are registered -->
+  <script type="module">
+    console.log('Web components loaded and registered:');
+    console.log('- storefront-component:', customElements.get('storefront-component'));
+    console.log('- storefront-assets:', customElements.get('storefront-assets'));
+    console.log('- storefront-form:', customElements.get('storefront-form'));
+  </script>
+
+</body>
+</html>

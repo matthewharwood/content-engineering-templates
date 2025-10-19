@@ -1,0 +1,214 @@
+/**
+ * Storefront Component Styles
+ *
+ * Semantic styling for product presentation layouts.
+ * Uses Light DOM pattern - all styles can be themed globally.
+ *
+ * Architecture:
+ * - @layer organization for clear cascade control
+ * - Uses design system layout utilities (.l-split-*, .l-container)
+ * - Modern CSS features (:has, :is, :where) for low specificity
+ * - Data attributes for state-based styling
+ * - Custom properties for component-level theming
+ *
+ * The parent component (.storefront) leverages existing layout utilities,
+ * so most layout styles are inherited from styles/layouts.css
+ */
+
+/* ========================================
+   Component Layer Organization
+   ======================================== */
+
+/**
+ * Base Layer: Structural styles and defaults
+ * Lowest priority - easily overridden
+ */
+@layer storefront.base {
+  /* Parent component: mostly uses layout utilities, minimal custom styles */
+  .storefront {
+    display: block;
+    /* Layout classes (.l-container, .l-split-*) applied via JavaScript */
+  }
+
+  /* Child components: semantic containers with display context */
+  .storefront-assets,
+  .storefront-form {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    min-height: 400px;
+  }
+
+  /* Responsive height adjustments */
+  @media (min-width: 768px) {
+    .storefront-assets,
+    .storefront-form {
+      min-height: 500px;
+    }
+  }
+}
+
+/**
+ * Component Layer: Variant-specific styles
+ * Mid priority - defines visual identity
+ */
+@layer storefront.components {
+  /* ========================================
+     Storefront Assets Variants
+     ======================================== */
+
+  .storefront-assets--primary {
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+  }
+
+  .storefront-assets--secondary {
+    background: var(--color-secondary);
+    color: var(--color-on-secondary);
+  }
+
+  .storefront-assets--tertiary {
+    background: var(--color-tertiary);
+    color: var(--color-on-tertiary);
+  }
+
+  .storefront-assets--surface {
+    background: var(--color-surface);
+    color: var(--color-on-surface);
+  }
+
+  /* ========================================
+     Storefront Form Variants
+     ======================================== */
+
+  .storefront-form--surface {
+    background: var(--color-surface);
+    color: var(--color-on-surface);
+  }
+
+  .storefront-form--surface-variant {
+    background: var(--color-surface-variant);
+    color: var(--color-on-surface-variant);
+  }
+
+  .storefront-form--primary {
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+  }
+
+  .storefront-form--secondary {
+    background: var(--color-secondary);
+    color: var(--color-on-secondary);
+  }
+}
+
+/**
+ * State Layer: Data-attribute based state styling
+ * Uses modern :has() and data attributes for flexibility
+ */
+@layer storefront.state {
+  /* ========================================
+     Alignment States (via data-align)
+     ======================================== */
+
+  .storefront-assets[data-align="start"],
+  .storefront-form[data-align="start"] {
+    justify-content: flex-start;
+  }
+
+  .storefront-assets[data-align="center"],
+  .storefront-form[data-align="center"] {
+    justify-content: center;
+  }
+
+  .storefront-assets[data-align="end"],
+  .storefront-form[data-align="end"] {
+    justify-content: flex-end;
+  }
+
+  .storefront-assets[data-align="stretch"],
+  .storefront-form[data-align="stretch"] {
+    justify-content: stretch;
+  }
+
+  /* ========================================
+     Aspect Ratio States (via data-aspect)
+     ======================================== */
+
+  .storefront-assets[data-aspect="1-1"] {
+    aspect-ratio: 1 / 1;
+    min-height: unset;
+  }
+
+  .storefront-assets[data-aspect="16-9"] {
+    aspect-ratio: 16 / 9;
+    min-height: unset;
+  }
+
+  .storefront-assets[data-aspect="4-3"] {
+    aspect-ratio: 4 / 3;
+    min-height: unset;
+  }
+
+  .storefront-assets[data-aspect="3-2"] {
+    aspect-ratio: 3 / 2;
+    min-height: unset;
+  }
+
+  /* ========================================
+     Padding States (via data-padding)
+     ======================================== */
+
+  .storefront-form[data-padding="s"] {
+    padding: var(--space-s);
+  }
+
+  .storefront-form[data-padding="m"] {
+    padding: var(--space-m);
+  }
+
+  .storefront-form[data-padding="l"] {
+    padding: var(--space-l);
+  }
+
+  .storefront-form[data-padding="xl"] {
+    padding: var(--space-xl);
+  }
+
+  /* Default padding for assets (if not using aspect ratio) */
+  .storefront-assets:not([data-aspect="1-1"]):not([data-aspect="16-9"]):not([data-aspect="4-3"]):not([data-aspect="3-2"]) {
+    padding: var(--space-l);
+  }
+}
+
+/**
+ * Utilities Layer: Helper styles for common patterns
+ * Highest priority - can override component styles
+ */
+@layer storefront.utilities {
+  /* Center content within containers */
+  .storefront-assets > *,
+  .storefront-form > * {
+    max-width: 100%;
+  }
+
+  /* Image handling within assets */
+  .storefront-assets img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Modern :has() selector - style parent based on child content */
+  @supports selector(:has(*)) {
+    /* If assets contain only an image, remove padding for full-bleed */
+    .storefront-assets:has(> img:only-child) {
+      padding: 0;
+    }
+
+    /* If form contains buttons, ensure proper spacing */
+    .storefront-form:has(button) {
+      gap: var(--space-m);
+    }
+  }
+}

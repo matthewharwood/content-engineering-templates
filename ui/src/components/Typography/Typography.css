@@ -4,9 +4,6 @@
  * Provides both raw font-size utilities and semantic type classes
  */
 
-/* Import design system tokens */
-@import "../../../styles/index.css";
-
 /* === RAW FONT SIZE UTILITIES === */
 /* Use when you need just font-size control */
 .typography {
