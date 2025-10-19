@@ -68,7 +68,10 @@
 
 .navigation__logo-container {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  /* Aspect ratio matches original SVG: 123/56 = ~2.2 */
+  aspect-ratio: 2.2 / 1;
+  /* Mobile: max-width 120px means max-height ~55px (matches original 56px) */
+  max-height: 55px;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -81,6 +84,7 @@
   max-height: 100%;
   object-fit: contain;
   color: currentColor;
+    transform: scale(2.5);
 }
 
 /* Right section - icon buttons */
@@ -112,6 +116,11 @@
 
   .navigation__center {
     max-width: 200px; /* Desktop logo size */
+  }
+
+  .navigation__logo-container {
+    /* Desktop: max-width 200px means max-height ~91px, but constrain to original size */
+    max-height: 56px;
   }
 
   .navigation__right {

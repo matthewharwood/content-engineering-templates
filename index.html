@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="./ui/src/components/Video/Video.css">
   <link rel="stylesheet" href="./ui/src/components/Grid/Grid.css">
   <link rel="stylesheet" href="./ui/src/components/Image/Image.css">
+  <link rel="stylesheet" href="./ui/src/components/Media/Media.css">
   <link rel="stylesheet" href="./ui/src/components/Typography/Typography.css">
   <link rel="stylesheet" href="./ui/src/components/Radio/Radio.css">
   <link rel="stylesheet" href="./ui/src/components/Radio/RadioButtonGroup.css">
@@ -76,9 +77,18 @@
     <div class="u-container">
       <div class="u-grid" style="grid-template-columns: repeat(12, 1fr);">
 
-        <!-- Left: Product Image -->
+        <!-- Left: Product Video -->
         <div class="col-span-12 col-span-md-6">
-          <img src="https://snif.co/cdn/shop/files/Snif_Me_ProductImage_10m_casel_2.jpg?v=1738292292&width=1600" alt="Snif Me Fragrance Product" class="product-image">
+          <video
+            src="/assets/FullApplicator.mp4"
+            poster="/assets/nail-lockup-1.png"
+            autoplay
+            muted
+            loop
+            playsinline
+            class="media media--cover"
+            style="width: 100%; height: auto;">
+          </video>
         </div>
 
         <!-- Right: Product Details -->
