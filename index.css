@@ -10,14 +10,43 @@ body {
   background-color: var(--color-background);
 }
 
-/* Full-bleed hero image */
+/* Navigation styling */
+.navigation {
+  border-radius: 0 0 var(--step-4) var(--step-4);
+}
+
+/* Full-bleed hero video */
 .hero-image-full-bleed {
   width: 100%;
   margin: 0;
 }
 
-.hero-image-full-bleed .img-aspect {
+.hero-image-full-bleed .video-aspect {
   border-radius: 0;
+  overflow: hidden;
+  position: relative;
+  /* Mobile: Full viewport height with width clipped */
+  width: 100%;
+  height: 100vh; /* Fallback for browsers without dvh support */
+  height: 100dvh; /* Modern dynamic viewport height (accounts for mobile UI) */
+}
+
+@media (min-width: 768px) {
+  .hero-image-full-bleed .video-aspect {
+    /* Desktop: Cap height at 75% of viewport */
+    height: 75vh; /* Fallback for browsers without dvh support */
+    height: 75dvh; /* Modern dynamic viewport height (accounts for mobile UI) */
+  }
+}
+
+/* Video fills container and clips overflow as needed */
+.hero-image-full-bleed .video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Fill container, crop excess */
+  /* Mobile: center horizontally, clip sides if needed */
+  /* Desktop: center and clip from top/bottom if needed */
+  object-position: center center;
 }
 
 /* Product section spacing */

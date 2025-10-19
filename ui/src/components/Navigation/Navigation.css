@@ -1,4 +1,12 @@
 
+/* Navigation uses CSS Grid with 3-column pattern instead of Utopia's 12-column grid because:
+ * - Requires 3-section alignment (left nav | centered logo | right actions)
+ * - 1fr auto 1fr semantically represents "flexible sides with centered content"
+ * - Utopia grid is designed for multi-column content layouts, not header navigation
+ * - This approach is more semantic and maintainable for navigation patterns
+ * - We still reuse Utopia's container values (--grid-max-width, --grid-gutter) for consistency
+ */
+
 .navigation {
   width: 100%;
   background-color: var(--color-surface);
@@ -8,26 +16,27 @@
   z-index: 100;
 }
 
+/* Mobile-first base styles */
 .navigation__container {
   /* Container dimensions match .u-container for consistency */
   max-width: var(--grid-max-width);
   margin-inline: auto;
-  padding-inline: var(--grid-gutter);
   padding-block: var(--space-s);
 
-  /* Navigation-specific 3-column grid layout */
+  /* Mobile: horizontal padding present */
+  padding-inline: var(--grid-gutter);
+
+  /* Navigation-specific grid layout */
   display: grid;
-  grid-template-columns: 1fr auto 1fr; /* Left nav | Logo | Right actions */
+  grid-template-columns: auto 1fr auto; /* Mobile: logo left | center space | right actions */
   align-items: center;
-  gap: var(--space-m);
+  gap: var(--space-xs);
 }
 
 /* Left section - navigation links */
 .navigation__left {
-  display: flex;
-  gap: var(--space-2xs);
-  align-items: center;
-  justify-self: start;
+  /* Mobile: hide navigation links (hamburger menu will be added later) */
+  display: none;
 }
 
 /* Center section - logo */
@@ -35,8 +44,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 200px;
   width: 100%;
+  max-width: 120px; /* Mobile logo size */
 }
 
 .navigation__logo-link {
@@ -77,44 +86,35 @@
 /* Right section - icon buttons */
 .navigation__right {
   display: flex;
-  gap: var(--space-2xs);
+  gap: var(--space-3xs);
   align-items: center;
   justify-self: end;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
+/* Desktop responsive enhancements (>= 768px) */
+@media (min-width: 768px) {
   .navigation__container {
-    grid-template-columns: auto 1fr auto;
-    gap: var(--space-xs);
+    /* Desktop: remove horizontal padding (full bleed to edges) */
+    padding-inline: 0;
+
+    /* Desktop: 3-column layout with centered logo */
+    grid-template-columns: 1fr auto 1fr; /* Left nav | Centered logo | Right actions */
+    gap: var(--space-m);
   }
 
+  /* Desktop: show navigation links */
   .navigation__left {
-    gap: var(--space-3xs);
+    display: flex;
+    gap: var(--space-2xs);
+    align-items: center;
+    justify-self: start;
   }
 
   .navigation__center {
-    max-width: 120px;
+    max-width: 200px; /* Desktop logo size */
   }
 
   .navigation__right {
-    gap: var(--space-3xs);
-  }
-
-  /* Hide text labels on small screens, keep only icons */
-  .navigation__left .btn {
-    padding-inline: var(--space-2xs);
-  }
-}
-
-@media (max-width: 480px) {
-  .navigation__left {
-    flex-direction: column;
-    gap: var(--space-3xs);
-    align-items: flex-start;
-  }
-
-  .navigation__center {
-    max-width: 80px;
+    gap: var(--space-2xs);
   }
 }
