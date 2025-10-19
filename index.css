@@ -81,4 +81,13 @@ body {
   height: auto;
   display: block;
   object-fit: cover;
+  border: 1px solid var(--color-outline);
+  border-radius: 10px;
+}
+
+/* Product section videos and media (exclude hero) */
+.product-section .media,
+.product-section video {
+  border: 1px solid var(--color-outline);
+  border-radius: 10px;
 }
