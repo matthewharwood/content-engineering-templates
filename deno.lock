@@ -4,6 +4,8 @@
     "npm:@storybook/addon-docs@^9.1.8": "9.1.10_storybook@9.1.10__esbuild@0.25.10__@types+node@24.6.2_react@19.2.0_react-dom@19.2.0__react@19.2.0_@types+node@24.6.2",
     "npm:@storybook/html-vite@^9.1.8": "9.1.10_storybook@9.1.10__esbuild@0.25.10__@types+node@24.6.2_@types+node@24.6.2",
     "npm:@types/node@^24.5.2": "24.6.2",
+    "npm:idb@*": "8.0.3",
+    "npm:idb@8": "8.0.3",
     "npm:storybook@^9.1.8": "9.1.10_esbuild@0.25.10_@types+node@24.6.2",
     "npm:typescript@^5.9.2": "5.9.3"
   },
@@ -586,6 +588,9 @@
       "os": ["darwin"],
       "scripts": true
     },
+    "idb@8.0.3": {
+      "integrity": "sha512-LtwtVyVYO5BqRvcsKuB2iUMnHwPVByPCXFXOpuU96IZPPoPN6xjOGxZQ74pgSVVLQWtUOYgyeL4GE98BY5D3wg=="
+    },
     "indent-string@4.0.0": {
       "integrity": "sha512-EdDDZu4A2OyIK7Lr/2zG+w5jmbuk1DVBnEwREQvBzspBJkCEbRa8GxU1lghYcaGJCnRWibjDXlq779X1/y5xwg=="
     },
@@ -885,6 +890,9 @@
     "https://deno.land/std@0.224.0/version.ts": "f6a28c9704d82d1c095988777e30e6172eb674a6570974a0d27a653be769bbbe"
   },
   "workspace": {
+    "dependencies": [
+      "npm:idb@8"
+    ],
     "members": {
       "ui": {
         "packageJson": {

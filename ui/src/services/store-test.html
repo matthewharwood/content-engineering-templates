@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store Service Test</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .test-section {
+      margin: 2rem 0;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .state-display {
+      background: #f5f5f5;
+      padding: 1rem;
+      border-radius: 4px;
+      font-family: monospace;
+      margin: 1rem 0;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      margin: 0.25rem;
+      cursor: pointer;
+    }
+    .log {
+      background: #000;
+      color: #0f0;
+      padding: 1rem;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 12px;
+      max-height: 300px;
+      overflow-y: auto;
+      margin: 1rem 0;
+    }
+    .log-entry {
+      margin: 0.25rem 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Store Service Test</h1>
+
+  <div class="test-section">
+    <h2>Current State</h2>
+    <div class="state-display" id="stateDisplay">
+      Loading...
+    </div>
+  </div>
+
+  <div class="test-section">
+    <h2>Manual State Updates</h2>
+    <button onclick="updateState('cherry-pop')">Set Cherry Pop</button>
+    <button onclick="updateState('vanilla-vanity')">Set Vanilla Vanity</button>
+    <button onclick="updateState('money-honey')">Set Money Honey</button>
+    <button onclick="updateState('')">Clear Selection</button>
+  </div>
+
+  <div class="test-section">
+    <h2>Event Log</h2>
+    <div class="log" id="eventLog"></div>
+  </div>
+
+  <script type="module">
+    import { getState, setSelectedItem, subscribe } from './store.js';
+
+    // Display state
+    function displayState() {
+      const state = getState();
+      const display = document.getElementById('stateDisplay');
+      display.textContent = JSON.stringify(state, null, 2);
+    }
+
+    // Log events
+    const logContainer = document.getElementById('eventLog');
+    function log(message) {
+      const entry = document.createElement('div');
+      entry.className = 'log-entry';
+      const timestamp = new Date().toLocaleTimeString();
+      entry.textContent = `[${timestamp}] ${message}`;
+      logContainer.insertBefore(entry, logContainer.firstChild);
+    }
+
+    // Subscribe to state changes
+    const unsubscribe = subscribe(({ selectedItem }) => {
+      log(`State changed: selectedItem = "${selectedItem}"`);
+      displayState();
+    });
+
+    // Make update function global for button onclick
+    window.updateState = (value) => {
+      log(`Setting selectedItem to "${value}"`);
+      setSelectedItem(value);
+    };
+
+    // Initial display
+    displayState();
+    log('Store test initialized');
+  </script>
+</body>
+</html>

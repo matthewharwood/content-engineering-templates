@@ -25,7 +25,10 @@
       "Bash(grep -r \"storefront-component\\|StorefrontComponent\\|Storefront.js\" /Users/matthewharwood/Documents/GitHub/content-engineering-templates --include=\"*.html\" --include=\"*.md\" ! -path \"*/node_modules/*\" ! -path \"*/storybook-static/*\")",
       "Bash(deno check ui/src/components/Storefront/Storefront.js ui/src/components/Storefront/StorefrontAssets.js ui/src/components/Storefront/StorefrontForm.js)",
       "Bash(deno check ui/src/components/Storefront/Storefront.js ui/src/components/Storefront/StorefrontAssets.js ui/src/components/Storefront/StorefrontForm.js ui/src/components/Storefront/StorefrontAssetFrame.js)",
-      "Bash(deno check ui/src/components/Storefront/Storefront.js ui/src/components/Storefront/StorefrontAssets.js ui/src/components/Storefront/StorefrontForm.js ui/src/components/Storefront/StorefrontAssetFrame.js ui/src/components/Storefront/StorefrontButtonGroup.js ui/src/components/Storefront/StorefrontButtonGroupButton.js)"
+      "Bash(deno check ui/src/components/Storefront/Storefront.js ui/src/components/Storefront/StorefrontAssets.js ui/src/components/Storefront/StorefrontForm.js ui/src/components/Storefront/StorefrontAssetFrame.js ui/src/components/Storefront/StorefrontButtonGroup.js ui/src/components/Storefront/StorefrontButtonGroupButton.js)",
+      "WebFetch(domain:jsr.io)",
+      "Bash(deno info npm:idb)",
+      "Bash(deno run examples/verify-import.js)"
     ],
     "deny": [],
     "ask": []

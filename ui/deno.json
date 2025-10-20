@@ -1,6 +1,7 @@
 {
   "name": "@content-engineering/ui",
   "version": "1.0.0",
+  "exports": "./src/index.js",
   "tasks": {
     "storybook": "npx storybook dev -p 6006",
     "build": "npm run build-storybook",

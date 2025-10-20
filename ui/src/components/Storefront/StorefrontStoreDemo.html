@@ -1,0 +1,161 @@
+<!-- Import component styles -->
+<link rel="stylesheet" href="./Storefront.css">
+
+<!-- Import global store service -->
+<script type="module" src="../../services/store.js"></script>
+
+<!-- Import Web Components (ES Modules) -->
+<script type="module" src="./Storefront.js"></script>
+<script type="module" src="./StorefrontAssets.js"></script>
+<script type="module" src="./StorefrontForm.js"></script>
+<script type="module" src="./StorefrontAssetFrame.js"></script>
+<script type="module" src="./StorefrontButtonGroup.js"></script>
+<script type="module" src="./StorefrontButtonGroupButton.js"></script>
+
+<style>
+  .state-monitor {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    color: #0f0;
+    padding: 1rem;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 14px;
+    min-width: 250px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  }
+
+  .state-monitor__title {
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #333;
+  }
+
+  .state-monitor__value {
+    word-break: break-all;
+  }
+
+  .state-monitor__log {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #333;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+
+  .state-monitor__log-entry {
+    font-size: 11px;
+    opacity: 0.8;
+    margin: 0.25rem 0;
+  }
+</style>
+
+<!-- State Monitor - Shows real-time state updates -->
+<div class="state-monitor">
+  <div class="state-monitor__title">Global Store</div>
+  <div>selectedItem:</div>
+  <div class="state-monitor__value" id="selectedItemDisplay">(none)</div>
+  <div class="state-monitor__log" id="stateLog"></div>
+</div>
+
+<!-- Storefront Component -->
+<storefront-component layout="half" gap="l">
+  <storefront-assets variant="primary" align="center">
+    <storefront-asset-frame aspect="1-1" fit="cover">
+      <video
+        src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        data-autoplay>
+      </video>
+    </storefront-asset-frame>
+
+    <storefront-asset-frame aspect="1-1" fit="cover">
+      <img
+        src="https://snif.co/cdn/shop/files/Snif_Me_ProductImage_10ml_2.jpg?v=1736378361&width=1600"
+        alt="Snif Me 10ml Fragrance Product">
+    </storefront-asset-frame>
+
+    <storefront-asset-frame aspect="1-1" fit="cover">
+      <img
+        src="https://snif.co/cdn/shop/files/Snif_Me_ProductImage_10m_casel_2.jpg?v=1738292292&width=1600"
+        alt="Snif Me Product with Case">
+    </storefront-asset-frame>
+  </storefront-assets>
+
+  <storefront-form variant="surface-variant" align="start" padding="l">
+    <!-- Product Info -->
+    <div class="product-info">
+      <h2 class="type-heading-2">Liqit Topcoat</h2>
+      <p class="type-body">Flavored top coat that looks top-shelf, and is totally safe to taste. Each flavor is crafted to dry smooth, shine strong, and linger sweet.</p>
+      <p class="type-price">$19</p>
+    </div>
+
+    <!-- Flavor Selection - Using Web Components with Store Integration -->
+    <storefront-button-group name="flavor" variant="secondary" size="medium" shape="pill">
+      <legend class="button-group__legend">Add the flavor</legend>
+      <div class="button-group__buttons">
+        <storefront-button-group-button value="cherry-pop" label="Cherry Pop"></storefront-button-group-button>
+        <storefront-button-group-button value="vanilla-vanity" label="Vanilla Vanity"></storefront-button-group-button>
+        <storefront-button-group-button value="money-honey" label="Money Honey"></storefront-button-group-button>
+      </div>
+    </storefront-button-group>
+
+    <!-- Add to Cart Button -->
+    <button class="btn btn--primary btn--large btn--pill btn--full-width" id="addToCartBtn">
+      Add to Cart
+    </button>
+  </storefront-form>
+</storefront-component>
+
+<!-- Demo Script - Shows store integration -->
+<script type="module">
+  import { getState, subscribe } from '../../services/store.js';
+
+  const selectedItemDisplay = document.getElementById('selectedItemDisplay');
+  const stateLog = document.getElementById('stateLog');
+  const addToCartBtn = document.getElementById('addToCartBtn');
+
+  // Log function
+  function log(message) {
+    const entry = document.createElement('div');
+    entry.className = 'state-monitor__log-entry';
+    const timestamp = new Date().toLocaleTimeString();
+    entry.textContent = `${timestamp}: ${message}`;
+    stateLog.insertBefore(entry, stateLog.firstChild);
+
+    // Keep only last 10 entries
+    while (stateLog.children.length > 10) {
+      stateLog.removeChild(stateLog.lastChild);
+    }
+  }
+
+  // Update display when state changes
+  subscribe(({ selectedItem }) => {
+    selectedItemDisplay.textContent = selectedItem || '(none)';
+    log(`Selected: ${selectedItem}`);
+  });
+
+  // Add to Cart click handler - demonstrates reading from store
+  addToCartBtn.addEventListener('click', () => {
+    const state = getState();
+    if (state.selectedItem) {
+      alert(`Adding "${state.selectedItem}" to cart!`);
+      log(`Add to cart: ${state.selectedItem}`);
+    } else {
+      alert('Please select a flavor first');
+      log('Add to cart failed: no selection');
+    }
+  });
+
+  // Initial log
+  log('Store monitor initialized');
+</script>

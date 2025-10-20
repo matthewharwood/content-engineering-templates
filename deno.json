@@ -4,6 +4,9 @@
     "dev": "deno run --allow-net --allow-read --allow-env --watch api/main.ts",
     "start": "deno run --allow-net --allow-read --allow-env api/main.ts"
   },
+  "imports": {
+    "idb": "npm:idb@^8.0.0"
+  },
   "compilerOptions": {
     "lib": ["deno.window", "dom"]
   }

@@ -11,6 +11,7 @@
  * - Attribute-based state management with reflection
  * - Automatically generates unique IDs for input/label association
  * - Inherits variant/size/shape from parent StorefrontButtonGroup
+ * - Integrates with global store for state management
  *
  * Usage:
  * ```html
@@ -39,7 +40,11 @@
  * 2. Creates the input and label elements
  * 3. Applies appropriate BEM classes based on variant/size/shape
  * 4. Manages checked and disabled states
+ * 5. Updates global store when selection changes
  */
+
+// Import store functions for state management
+import { setSelectedItem } from '../../services/store.js';
 
 class StorefrontButtonGroupButton extends HTMLElement {
   /**
@@ -125,8 +130,9 @@ class StorefrontButtonGroupButton extends HTMLElement {
    * disconnectedCallback - cleanup when element is removed from DOM
    */
   disconnectedCallback() {
-    // Clean up event listeners if any were added
-    // (None in this simple implementation, but good practice)
+    // Clean up event listeners to prevent memory leaks
+    // The input element will be garbage collected along with its listeners
+    // when the component is removed from the DOM
   }
 
   /**
@@ -165,6 +171,16 @@ class StorefrontButtonGroupButton extends HTMLElement {
     // Append to component
     this.appendChild(this._input);
     this.appendChild(this._label);
+
+    // Add event listener for state management
+    // When radio button is checked, update global store
+    this._input.addEventListener('change', () => {
+      if (this._input.checked) {
+        const value = this._input.value;
+        // Update global store with selected value
+        setSelectedItem(value);
+      }
+    });
   }
 
   /**
