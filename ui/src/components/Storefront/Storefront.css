@@ -6,14 +6,24 @@
  *
  * Architecture:
  * - @layer organization for clear cascade control
- * - Uses design system layout utilities (.l-split-*, .l-container)
+ * - Uses CSS Grid for responsive 50/50 split layout
+ * - Respects .l-gap-* utilities from layouts.css for gap spacing
  * - Modern CSS features (:has, :is, :where) for low specificity
  * - Data attributes for state-based styling
  * - Custom properties for component-level theming
+ * - Imports Media.css for reusable media utilities
  *
- * The parent component (.storefront) leverages existing layout utilities,
- * so most layout styles are inherited from styles/layouts.css
+ * Layout Pattern:
+ * - Mobile (<768px): Single column stack
+ * - Desktop (≥768px): 2-column 50/50 split
+ * - Gap controlled by .l-gap-* utility classes applied via JavaScript
  */
+
+/* Import Media component utilities for video/image handling */
+@import "../Media/Media.css";
+
+/* Import Radio Button Group styles for flavor selection */
+@import "../Radio/RadioButtonGroup.css";
 
 /* ========================================
    Component Layer Organization
@@ -24,10 +34,23 @@
  * Lowest priority - easily overridden
  */
 @layer storefront.base {
-  /* Parent component: mostly uses layout utilities, minimal custom styles */
+  /**
+   * Parent component: uses Utopia grid system for responsive layouts
+   *
+   * Note: This creates a simplified 2-column grid for the storefront pattern.
+   * The gap is controlled by .l-gap-* utilities applied via JavaScript.
+   * For more complex layouts, use the full Utopia grid with .col-span-* utilities.
+   */
   .storefront {
-    display: block;
-    /* Layout classes (.l-container, .l-split-*) applied via JavaScript */
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile: single column (stack) */
+  }
+
+  /* Responsive 50/50 split at tablet breakpoint */
+  @media (min-width: 768px) {
+    .storefront {
+      grid-template-columns: repeat(2, 1fr); /* Desktop: 2 equal columns */
+    }
   }
 
   /* Child components: semantic containers with display context */
@@ -37,6 +60,7 @@
     flex-direction: column;
     border-radius: 8px;
     min-height: 400px;
+    min-width: 0; /* Prevent grid blowout with images/long content */
   }
 
   /* Responsive height adjustments */
@@ -45,6 +69,23 @@
     .storefront-form {
       min-height: 500px;
     }
+  }
+
+  /* ========================================
+     Storefront Asset Frame Component
+     ======================================== */
+
+  /**
+   * Asset frame: 1:1 aspect ratio media container
+   * Provides controlled aspect ratio and object-fit for child media
+   * Supports both <img> and <video> elements
+   */
+  .storefront-asset-frame {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1; /* Default 1:1 (square) */
+    border-radius: 8px;
   }
 }
 
@@ -179,6 +220,68 @@
   .storefront-assets:not([data-aspect="1-1"]):not([data-aspect="16-9"]):not([data-aspect="4-3"]):not([data-aspect="3-2"]) {
     padding: var(--space-l);
   }
+
+  /* ========================================
+     Asset Frame: Aspect Ratio States
+     ======================================== */
+
+  .storefront-asset-frame[data-aspect="1-1"] {
+    aspect-ratio: 1 / 1;
+  }
+
+  .storefront-asset-frame[data-aspect="16-9"] {
+    aspect-ratio: 16 / 9;
+  }
+
+  .storefront-asset-frame[data-aspect="4-3"] {
+    aspect-ratio: 4 / 3;
+  }
+
+  .storefront-asset-frame[data-aspect="3-2"] {
+    aspect-ratio: 3 / 2;
+  }
+
+  .storefront-asset-frame[data-aspect="none"] {
+    aspect-ratio: unset;
+  }
+
+  /* ========================================
+     Asset Frame: Object Fit States
+     ======================================== */
+
+  .storefront-asset-frame[data-fit="cover"] img,
+  .storefront-asset-frame[data-fit="cover"] video {
+    object-fit: cover;
+  }
+
+  .storefront-asset-frame[data-fit="contain"] img,
+  .storefront-asset-frame[data-fit="contain"] video {
+    object-fit: contain;
+  }
+
+  .storefront-asset-frame[data-fit="fill"] img,
+  .storefront-asset-frame[data-fit="fill"] video {
+    object-fit: fill;
+  }
+
+  .storefront-asset-frame[data-fit="none"] img,
+  .storefront-asset-frame[data-fit="none"] video {
+    object-fit: none;
+  }
+
+  /* ========================================
+     Asset Frame: Overflow Protection
+     ======================================== */
+
+  /**
+   * Enforce overflow: hidden on all asset frames
+   * Prevents improperly sized assets from breaking layout
+   * Higher specificity to prevent overrides from imported styles
+   */
+  .storefront-asset-frame,
+  .storefront-asset-frame[data-aspect] {
+    overflow: hidden;
+  }
 }
 
 /**
@@ -199,6 +302,23 @@
     display: block;
   }
 
+  /* ========================================
+     Asset Frame: Child Media Handling
+     ======================================== */
+
+  /**
+   * Child media (img, video) fills container
+   * Uses width/height 100% + object-fit for controlled sizing
+   * Default object-fit: cover ensures media fills frame without distortion
+   */
+  .storefront-asset-frame img,
+  .storefront-asset-frame video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; /* Default: fill container while maintaining aspect ratio */
+  }
+
   /* Modern :has() selector - style parent based on child content */
   @supports selector(:has(*)) {
     /* If assets contain only an image, remove padding for full-bleed */
@@ -208,6 +328,17 @@
 
     /* If form contains buttons, ensure proper spacing */
     .storefront-form:has(button) {
+      gap: var(--space-m);
+    }
+
+    /**
+     * Asset Frame: Vertical Stacking
+     * When multiple asset frames exist inside storefront-assets,
+     * stack them vertically with gap spacing
+     */
+    .storefront-assets:has(storefront-asset-frame) {
+      display: flex;
+      flex-direction: column;
       gap: var(--space-m);
     }
   }

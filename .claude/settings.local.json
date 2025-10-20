@@ -23,7 +23,9 @@
       "Bash(find src/components -name \"*.css\" -type f -exec grep -l '@import \"\"\"\"../../../styles/index.css\"\"\"\"' {})",
       "Bash(find src/components -name \"*.css\" -type f -exec sed -i '' '/^\\/\\* Import all design system tokens \\*\\/$/d; /^@import \"\"\\.\\.\\/\\.\\.\\/\\.\\.\\/styles\\/index\\.css\"\";$/d' {} ;)",
       "Bash(grep -r \"storefront-component\\|StorefrontComponent\\|Storefront.js\" /Users/matthewharwood/Documents/GitHub/content-engineering-templates --include=\"*.html\" --include=\"*.md\" ! -path \"*/node_modules/*\" ! -path \"*/storybook-static/*\")",
-      "Bash(deno check ui/src/components/Storefront/Storefront.js ui/src/components/Storefront/StorefrontAssets.js ui/src/components/Storefront/StorefrontForm.js)"
+      "Bash(deno check ui/src/components/Storefront/Storefront.js ui/src/components/Storefront/StorefrontAssets.js ui/src/components/Storefront/StorefrontForm.js)",
+      "Bash(deno check ui/src/components/Storefront/Storefront.js ui/src/components/Storefront/StorefrontAssets.js ui/src/components/Storefront/StorefrontForm.js ui/src/components/Storefront/StorefrontAssetFrame.js)",
+      "Bash(deno check ui/src/components/Storefront/Storefront.js ui/src/components/Storefront/StorefrontAssets.js ui/src/components/Storefront/StorefrontForm.js ui/src/components/Storefront/StorefrontAssetFrame.js ui/src/components/Storefront/StorefrontButtonGroup.js ui/src/components/Storefront/StorefrontButtonGroupButton.js)"
     ],
     "deny": [],
     "ask": []

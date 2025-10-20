@@ -4,6 +4,9 @@ import './Storefront.css';
 import './Storefront.js';
 import './StorefrontAssets.js';
 import './StorefrontForm.js';
+import './StorefrontAssetFrame.js';
+import './StorefrontButtonGroup.js';
+import './StorefrontButtonGroupButton.js';
 
 import StorefrontDefaultHTML from './StorefrontDefault.html?raw';
 

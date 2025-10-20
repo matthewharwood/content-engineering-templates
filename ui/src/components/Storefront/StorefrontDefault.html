@@ -5,6 +5,9 @@
 <script type="module" src="./Storefront.js"></script>
 <script type="module" src="./StorefrontAssets.js"></script>
 <script type="module" src="./StorefrontForm.js"></script>
+<script type="module" src="./StorefrontAssetFrame.js"></script>
+<script type="module" src="./StorefrontButtonGroup.js"></script>
+<script type="module" src="./StorefrontButtonGroupButton.js"></script>
 
 <!--
   Storefront Component - Attribute-Based Usage
@@ -16,65 +19,55 @@
   - Components manage their own classes
 -->
 
-<!-- Example 1: Default 50/50 split with primary variant -->
+<!-- Example 1: Default 50/50 split with asset frames -->
 <storefront-component layout="half" gap="l">
   <storefront-assets variant="primary" align="center">
-    <h2>Premium Nail Polish</h2>
-    <p>Professional-grade formula with lasting shine</p>
+    <storefront-asset-frame aspect="1-1" fit="cover">
+      <video
+        src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        data-autoplay>
+      </video>
+    </storefront-asset-frame>
+
+    <storefront-asset-frame aspect="1-1" fit="cover">
+      <img
+        src="https://snif.co/cdn/shop/files/Snif_Me_ProductImage_10ml_2.jpg?v=1736378361&width=1600"
+        alt="Snif Me 10ml Fragrance Product">
+    </storefront-asset-frame>
+
+    <storefront-asset-frame aspect="1-1" fit="cover">
+      <img
+        src="https://snif.co/cdn/shop/files/Snif_Me_ProductImage_10m_casel_2.jpg?v=1738292292&width=1600"
+        alt="Snif Me Product with Case">
+    </storefront-asset-frame>
   </storefront-assets>
 
   <storefront-form variant="surface-variant" align="start" padding="l">
-    <h2>Liqit Topcoat</h2>
-    <p>Flavored top coat that looks top-shelf. Long-lasting shine and protection for your manicure.</p>
-    <p><strong>$19.00</strong></p>
-    <button>Add to Cart</button>
+    <!-- Product Info -->
+    <div class="product-info">
+      <h2 class="type-heading-2">Liqit Topcoat</h2>
+      <p class="type-body">Flavored top coat that looks top-shelf, and is totally safe to taste. Each flavor is crafted to dry smooth, shine strong, and linger sweet.</p>
+      <p class="type-price">$19</p>
+    </div>
+
+    <!-- Flavor Selection - Using Web Components -->
+    <storefront-button-group name="flavor" variant="secondary" size="medium" shape="pill">
+      <legend class="button-group__legend">Add the flavor</legend>
+      <div class="button-group__buttons">
+        <storefront-button-group-button value="cherry-pop" label="Cherry Pop"></storefront-button-group-button>
+        <storefront-button-group-button value="vanilla-vanity" label="Vanilla Vanity"></storefront-button-group-button>
+        <storefront-button-group-button value="money-honey" label="Money Honey"></storefront-button-group-button>
+      </div>
+    </storefront-button-group>
+
+    <!-- Add to Cart Button -->
+    <button class="btn btn--primary btn--large btn--pill btn--full-width">
+      Add to Cart
+    </button>
   </storefront-form>
 </storefront-component>
-
-<!-- Example 2: 60/40 split with image in assets -->
-<storefront-component layout="60-40" gap="m">
-  <storefront-assets variant="surface" align="center" aspect="4-3">
-    <!-- Single image gets full-bleed treatment via :has() -->
-    <img src="https://placehold.co/800x600/6200ea/ffffff?text=Product+Image" alt="Product visualization">
-  </storefront-assets>
-
-  <storefront-form variant="primary" align="center" padding="xl">
-    <h2>Limited Edition</h2>
-    <p>Exclusive color available for a limited time only.</p>
-    <button>Shop Now</button>
-  </storefront-form>
-</storefront-component>
-
-<!-- Example 3: Full-width (no container constraint) -->
-<storefront-component layout="half" gap="xl" constrain="false">
-  <storefront-assets variant="tertiary" align="end">
-    <h3>New Arrivals</h3>
-    <p>Check out our latest collection of vibrant shades.</p>
-  </storefront-assets>
-
-  <storefront-form variant="secondary" align="start" padding="m">
-    <h3>Sign Up for Updates</h3>
-    <p>Be the first to know about new releases and exclusive offers.</p>
-    <input type="email" placeholder="Enter your email">
-    <button>Subscribe</button>
-  </storefront-form>
-</storefront-component>
-
-<!--
-  Attribute Reference:
-
-  <storefront-component>
-    layout: "half" | "60-40" | "40-60" | "70-30" | "30-70" | "80-20" | "20-80"
-    gap: "3xs" | "2xs" | "xs" | "s" | "m" | "l" | "xl" | "2xl" | "3xl"
-    constrain: "true" | "false"
-
-  <storefront-assets>
-    variant: "primary" | "secondary" | "tertiary" | "surface"
-    align: "start" | "center" | "end" | "stretch"
-    aspect: "1-1" | "16-9" | "4-3" | "3-2" | "none"
-
-  <storefront-form>
-    variant: "surface" | "surface-variant" | "primary" | "secondary"
-    align: "start" | "center" | "end" | "stretch"
-    padding: "s" | "m" | "l" | "xl"
--->
