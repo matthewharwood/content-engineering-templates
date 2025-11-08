@@ -39,12 +39,22 @@
 class StorefrontComponent extends HTMLElement {
   static observedAttributes = ['layout', 'gap', 'constrain'];
 
+  constructor() {
+    super();
+    // Initialize carousel state
+    this._currentIndex = 0;
+    this._totalFrames = 0;
+  }
+
   connectedCallback() {
     // Apply base class for component identification
     this.classList.add('storefront');
 
     // Apply layout classes based on attributes
     this.updateLayout();
+
+    // Initialize carousel functionality
+    this.initializeCarousel();
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -105,6 +115,77 @@ class StorefrontComponent extends HTMLElement {
     // Apply gap class based on gap attribute
     const gap = this.getAttribute('gap') || 'l';
     this.classList.add(`l-gap-${gap}`);
+  }
+
+  /**
+   * Initializes mobile carousel functionality
+   * - Counts asset frames
+   * - Assigns index attributes
+   * - Sets up button event listeners
+   * - Syncs current-index to storefront-assets
+   */
+  initializeCarousel() {
+    const assetsContainer = this.querySelector('storefront-assets');
+    if (!assetsContainer) return;
+
+    const frames = assetsContainer.querySelectorAll('storefront-asset-frame');
+    this._totalFrames = frames.length;
+
+    // Assign index attributes to each frame
+    frames.forEach((frame, index) => {
+      frame.setAttribute('index', String(index));
+    });
+
+    // Set initial current-index on assets container
+    this.updateCarouselIndex();
+
+    // Set up event listeners for carousel buttons
+    this.setupCarouselButtons();
+  }
+
+  /**
+   * Sets up event listeners for prev/next carousel buttons
+   */
+  setupCarouselButtons() {
+    const prevButton = this.querySelector('storefront-carousel-button[direction="prev"] button');
+    const nextButton = this.querySelector('storefront-carousel-button[direction="next"] button');
+
+    if (prevButton) {
+      prevButton.addEventListener('click', () => this.decrementIndex());
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener('click', () => this.incrementIndex());
+    }
+  }
+
+  /**
+   * Increments carousel index (cyclical using modulo)
+   */
+  incrementIndex() {
+    if (this._totalFrames === 0) return;
+    this._currentIndex = (this._currentIndex + 1) % this._totalFrames;
+    this.updateCarouselIndex();
+  }
+
+  /**
+   * Decrements carousel index (cyclical using modulo)
+   */
+  decrementIndex() {
+    if (this._totalFrames === 0) return;
+    this._currentIndex = (this._currentIndex - 1 + this._totalFrames) % this._totalFrames;
+    this.updateCarouselIndex();
+  }
+
+  /**
+   * Updates the current-index attribute on storefront-assets
+   * This triggers visibility changes in child asset frames
+   */
+  updateCarouselIndex() {
+    const assetsContainer = this.querySelector('storefront-assets');
+    if (!assetsContainer) return;
+
+    assetsContainer.setAttribute('current-index', String(this._currentIndex));
   }
 
   // Public property getters/setters with attribute reflection

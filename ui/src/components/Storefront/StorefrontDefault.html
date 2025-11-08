@@ -11,6 +11,7 @@
 <script type="module" src="./StorefrontAssetFrame.js"></script>
 <script type="module" src="./StorefrontButtonGroup.js"></script>
 <script type="module" src="./StorefrontButtonGroupButton.js"></script>
+<script type="module" src="./StorefrontCarouselButton.js"></script>
 
 <!--
   Storefront Component - Attribute-Based Usage
@@ -48,6 +49,14 @@
         src="https://snif.co/cdn/shop/files/Snif_Me_ProductImage_10m_casel_2.jpg?v=1738292292&width=1600"
         alt="Snif Me Product with Case">
     </storefront-asset-frame>
+
+    <!-- Carousel Navigation (Mobile Only) -->
+    <storefront-carousel-button direction="prev">
+      <button>‹</button>
+    </storefront-carousel-button>
+    <storefront-carousel-button direction="next">
+      <button>›</button>
+    </storefront-carousel-button>
   </storefront-assets>
 
   <storefront-form variant="surface-variant" align="start" padding="l">

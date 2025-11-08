@@ -334,12 +334,93 @@
     /**
      * Asset Frame: Vertical Stacking
      * When multiple asset frames exist inside storefront-assets,
-     * stack them vertically with gap spacing
+     * stack them vertically with gap spacing on desktop
      */
-    .storefront-assets:has(storefront-asset-frame) {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-m);
+    @media (min-width: 768px) {
+      .storefront-assets:has(storefront-asset-frame) {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-m);
+      }
     }
+
+    /**
+     * Mobile Carousel: Absolute Positioning
+     * On mobile, stack asset frames on top of each other using absolute positioning
+     */
+    @media (max-width: 767px) {
+      .storefront-assets:has(storefront-asset-frame) {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 0; /* No gap on mobile - frames stack absolutely */
+      }
+
+      .storefront-assets storefront-asset-frame {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1); /* ease-in-out */
+        pointer-events: none;
+      }
+
+      .storefront-assets storefront-asset-frame.is-active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      /* Reserve space for carousel buttons */
+      .storefront-assets {
+        padding-bottom: var(--space-2xl);
+      }
+    }
+  }
+
+  /* ========================================
+     Carousel Navigation Buttons
+     ======================================== */
+
+  /**
+   * Carousel buttons: Mini circular buttons for prev/next navigation
+   * Only visible on mobile, positioned at the bottom of assets container
+   */
+  storefront-carousel-button {
+    display: none; /* Hidden on desktop */
+  }
+
+  @media (max-width: 767px) {
+    storefront-carousel-button {
+      display: block;
+      position: absolute;
+      bottom: var(--space-m);
+      z-index: 10;
+    }
+
+    storefront-carousel-button[direction="prev"] {
+      left: var(--space-m);
+    }
+
+    storefront-carousel-button[direction="next"] {
+      right: var(--space-m);
+    }
+
+    /* Ensure carousel buttons are positioned relative to assets container */
+    .storefront-assets {
+      position: relative;
+    }
+  }
+
+  /* Carousel button styling */
+  .carousel-button {
+    cursor: pointer;
+    user-select: none;
+    touch-action: manipulation;
+  }
+
+  .carousel-button:active {
+    transform: scale(0.95);
   }
 }

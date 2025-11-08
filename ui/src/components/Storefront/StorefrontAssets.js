@@ -34,7 +34,7 @@
  * Content structure is declared in HTML as children of this element.
  */
 class StorefrontAssets extends HTMLElement {
-  static observedAttributes = ['variant', 'align', 'aspect'];
+  static observedAttributes = ['variant', 'align', 'aspect', 'current-index'];
 
   connectedCallback() {
     // Apply base class for styling

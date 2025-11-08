@@ -39,7 +39,7 @@
  * Media elements are declared as children in HTML.
  */
 class StorefrontAssetFrame extends HTMLElement {
-  static observedAttributes = ['aspect', 'fit'];
+  static observedAttributes = ['aspect', 'fit', 'index'];
 
   connectedCallback() {
     // Apply base class for styling
@@ -52,11 +52,18 @@ class StorefrontAssetFrame extends HTMLElement {
 
     // Initialize video autoplay if video element exists
     this.initializeVideo();
+
+    // Listen for carousel changes from parent
+    this.observeParentCarousel();
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (oldValue !== newValue) {
-      this.updateDataAttributes();
+      if (name === 'index') {
+        this.updateVisibility();
+      } else {
+        this.updateDataAttributes();
+      }
     }
   }
 
@@ -98,6 +105,55 @@ class StorefrontAssetFrame extends HTMLElement {
           // Note: User interaction will be required to play video
           // Consider showing a play button overlay if needed
         });
+    }
+  }
+
+  /**
+   * Observes parent storefront-assets for current-index changes
+   * Used for mobile carousel functionality
+   */
+  observeParentCarousel() {
+    // Find parent storefront-assets element
+    const parent = this.closest('storefront-assets');
+    if (!parent) return;
+
+    // Create mutation observer to watch for current-index changes
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'current-index') {
+          this.updateVisibility();
+        }
+      });
+    });
+
+    // Observe parent for attribute changes
+    observer.observe(parent, {
+      attributes: true,
+      attributeFilter: ['current-index']
+    });
+
+    // Store observer for cleanup if needed
+    this._carouselObserver = observer;
+
+    // Initial visibility update
+    this.updateVisibility();
+  }
+
+  /**
+   * Updates visibility based on current carousel index
+   * Adds/removes 'is-active' class for CSS opacity transitions
+   */
+  updateVisibility() {
+    const parent = this.closest('storefront-assets');
+    if (!parent) return;
+
+    const currentIndex = parseInt(parent.getAttribute('current-index') || '0', 10);
+    const myIndex = parseInt(this.getAttribute('index') || '0', 10);
+
+    if (currentIndex === myIndex) {
+      this.classList.add('is-active');
+    } else {
+      this.classList.remove('is-active');
     }
   }
 
