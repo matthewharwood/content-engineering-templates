@@ -239,11 +239,17 @@
    * Sticky positioning for storefront-form
    * When enabled, form stays in viewport during scroll until bottom reaches parent bottom
    * Only applies on desktop (tablet and above) - mobile uses natural scroll
+   *
+   * Top offset calculation:
+   * - Navigation container height = padding-block (--space-s × 2) + logo height (56px)
+   * - Total ≈ (18-20px × 2) + 56px = 92-96px
+   * - Using calc(var(--space-s) * 2 + 56px + var(--space-s)) for proper clearance
+   * - Additional --space-s provides visual breathing room between navigation and sticky form
    */
   @media (min-width: 768px) {
     .storefront-form[data-sticky="true"] {
       position: sticky;
-      top: var(--space-m); /* Small offset from top of viewport */
+      top: calc(var(--space-s) * 2 + 56px + var(--space-s)); /* Navigation height + spacing */
       align-self: start; /* Ensure proper grid alignment at top of cell */
     }
   }

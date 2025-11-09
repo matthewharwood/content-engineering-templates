@@ -38,11 +38,13 @@
   display: flex;
   gap: var(--space-2xs);
   flex-wrap: wrap;
+  align-items: stretch; /* Ensure all buttons stretch to same height */
 }
 
 /* Individual Button */
 .button-group__button {
   position: relative;
+  display: flex; /* Make button container flex to allow label to stretch */
 }
 
 /* Hide native radio input */
@@ -58,6 +60,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-align: center; /* Center-align text within button */
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
@@ -66,6 +69,7 @@
   border: none;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   gap: var(--space-3xs);
+  height: 100%; /* Fill parent height to ensure all buttons are same height */
 }
 
 /* Primary Variant */
