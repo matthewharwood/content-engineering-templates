@@ -25,6 +25,12 @@
 /* Import Radio Button Group styles for flavor selection */
 @import "../Radio/RadioButtonGroup.css";
 
+/* Import Button Tags styles for fragrance notes and certifications */
+@import "../ButtonTags/ButtonTags.css";
+
+/* Import FAQ styles for product information */
+@import "../FAQ/FAQ.css";
+
 /* ========================================
    Component Layer Organization
    ======================================== */
@@ -99,7 +105,7 @@
      ======================================== */
 
   .storefront-assets--primary {
-    background: var(--color-primary);
+    /*background: var(--color-primary);*/
     color: var(--color-on-primary);
   }
 
@@ -128,7 +134,7 @@
   }
 
   .storefront-form--surface-variant {
-    background: var(--color-surface-variant);
+    /*background: var(--color-surface-variant);*/
     color: var(--color-on-surface-variant);
   }
 
@@ -200,6 +206,10 @@
      Padding States (via data-padding)
      ======================================== */
 
+  .storefront-form[data-padding="none"] {
+    padding: 0;
+  }
+
   .storefront-form[data-padding="s"] {
     padding: var(--space-s);
   }
@@ -217,8 +227,25 @@
   }
 
   /* Default padding for assets (if not using aspect ratio) */
-  .storefront-assets:not([data-aspect="1-1"]):not([data-aspect="16-9"]):not([data-aspect="4-3"]):not([data-aspect="3-2"]) {
-    padding: var(--space-l);
+  /*.storefront-assets:not([data-aspect="1-1"]):not([data-aspect="16-9"]):not([data-aspect="4-3"]):not([data-aspect="3-2"]) {*/
+  /*  padding: var(--space-l);*/
+  /*}*/
+
+  /* ========================================
+     Sticky States (via data-sticky)
+     ======================================== */
+
+  /**
+   * Sticky positioning for storefront-form
+   * When enabled, form stays in viewport during scroll until bottom reaches parent bottom
+   * Only applies on desktop (tablet and above) - mobile uses natural scroll
+   */
+  @media (min-width: 768px) {
+    .storefront-form[data-sticky="true"] {
+      position: sticky;
+      top: var(--space-m); /* Small offset from top of viewport */
+      align-self: start; /* Ensure proper grid alignment at top of cell */
+    }
   }
 
   /* ========================================
@@ -332,7 +359,58 @@
     }
 
     /**
-     * Asset Frame: Vertical Stacking
+     * Flavor Collections: Absolute Stacking Within Grid Cell
+     * All flavor collections occupy the same grid cell and stack with opacity transitions
+     */
+
+    /* All flavor collections occupy the same grid position */
+    .storefront storefront-assets[flavor] {
+      grid-column: 1;
+      grid-row: 1;
+      opacity: 0;
+      transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1); /* ease-in-out */
+      pointer-events: none;
+    }
+
+    /* Only the active flavor collection is visible */
+    .storefront storefront-assets[flavor].is-active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Mobile: Assets and form stack vertically */
+    @media (max-width: 767px) {
+      .storefront storefront-assets[flavor],
+      .storefront storefront-form {
+        grid-column: 1;
+      }
+
+      /* Flavor assets stack in row 1 */
+      .storefront storefront-assets[flavor] {
+        grid-row: 1;
+      }
+
+      /* Form goes to row 2 */
+      .storefront storefront-form {
+        grid-row: 2;
+      }
+    }
+
+    /* Desktop: Assets in first column, form in second */
+    @media (min-width: 768px) {
+      .storefront storefront-assets[flavor] {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .storefront storefront-form {
+        grid-column: 2;
+        grid-row: 1;
+      }
+    }
+
+    /**
+     * Asset Frame: Vertical Stacking on Desktop
      * When multiple asset frames exist inside storefront-assets,
      * stack them vertically with gap spacing on desktop
      */
@@ -345,7 +423,7 @@
     }
 
     /**
-     * Mobile Carousel: Absolute Positioning
+     * Mobile Carousel: Absolute Positioning for Asset Frames
      * On mobile, stack asset frames on top of each other using absolute positioning
      */
     @media (max-width: 767px) {

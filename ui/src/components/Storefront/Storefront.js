@@ -10,6 +10,7 @@
  * - Uses existing layout utilities (.l-container, .l-split-half)
  * - Attributes control layout behavior
  * - Composes child elements declaratively
+ * - Manages flavor selection state and independent carousel indexes
  *
  * Public API:
  *
@@ -26,9 +27,18 @@
  *     Whether to constrain content to max-width container
  *     Default: "true" (applies .l-container)
  *
+ *   selected-flavor="cherry-pop" | "vanilla-vanity" | "money-honey"
+ *     Controls which flavor assets collection is visible
+ *     Default: "cherry-pop"
+ *
+ * Methods:
+ *   setFlavor(flavor) - Switch active flavor collection
+ *
  * Usage:
  *   <storefront-component layout="half" gap="l">
- *     <storefront-assets>...</storefront-assets>
+ *     <storefront-assets flavor="cherry-pop">...</storefront-assets>
+ *     <storefront-assets flavor="vanilla-vanity">...</storefront-assets>
+ *     <storefront-assets flavor="money-honey">...</storefront-assets>
  *     <storefront-form>...</storefront-form>
  *   </storefront-component>
  *
@@ -37,29 +47,45 @@
  * declared in HTML, following the composition-over-manipulation principle.
  */
 class StorefrontComponent extends HTMLElement {
-  static observedAttributes = ['layout', 'gap', 'constrain'];
+  static observedAttributes = ['layout', 'gap', 'constrain', 'selected-flavor'];
 
   constructor() {
     super();
-    // Initialize carousel state
-    this._currentIndex = 0;
-    this._totalFrames = 0;
+    // Initialize flavor-specific carousel state
+    // Each flavor maintains its own independent carousel index
+    this._carouselState = {
+      'cherry-pop': { currentIndex: 0, totalFrames: 0 },
+      'vanilla-vanity': { currentIndex: 0, totalFrames: 0 },
+      'money-honey': { currentIndex: 0, totalFrames: 0 }
+    };
   }
 
   connectedCallback() {
     // Apply base class for component identification
     this.classList.add('storefront');
 
+    // Set default selected flavor if not specified
+    if (!this.hasAttribute('selected-flavor')) {
+      this.setAttribute('selected-flavor', 'cherry-pop');
+    }
+
     // Apply layout classes based on attributes
     this.updateLayout();
 
-    // Initialize carousel functionality
-    this.initializeCarousel();
+    // Initialize carousel functionality for all flavor collections
+    this.initializeCarousels();
+
+    // Update active flavor collection
+    this.updateActiveFlavor();
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (oldValue !== newValue) {
-      this.updateLayout();
+      if (name === 'selected-flavor') {
+        this.updateActiveFlavor();
+      } else {
+        this.updateLayout();
+      }
     }
   }
 
@@ -118,74 +144,119 @@ class StorefrontComponent extends HTMLElement {
   }
 
   /**
-   * Initializes mobile carousel functionality
-   * - Counts asset frames
-   * - Assigns index attributes
-   * - Sets up button event listeners
-   * - Syncs current-index to storefront-assets
+   * Initializes carousel functionality for all flavor asset collections
+   * Each flavor collection gets its own independent carousel state
    */
-  initializeCarousel() {
-    const assetsContainer = this.querySelector('storefront-assets');
-    if (!assetsContainer) return;
+  initializeCarousels() {
+    const allAssetsContainers = this.querySelectorAll('storefront-assets[flavor]');
 
-    const frames = assetsContainer.querySelectorAll('storefront-asset-frame');
-    this._totalFrames = frames.length;
+    allAssetsContainers.forEach(container => {
+      const flavor = container.getAttribute('flavor');
+      if (!flavor || !this._carouselState[flavor]) return;
 
-    // Assign index attributes to each frame
-    frames.forEach((frame, index) => {
-      frame.setAttribute('index', String(index));
+      const frames = container.querySelectorAll('storefront-asset-frame');
+      this._carouselState[flavor].totalFrames = frames.length;
+
+      // Assign index attributes to each frame
+      frames.forEach((frame, index) => {
+        frame.setAttribute('index', String(index));
+      });
+
+      // Set initial current-index on this assets container
+      this.updateCarouselIndex(flavor);
+
+      // Set up event listeners for carousel buttons within this container
+      this.setupCarouselButtons(container, flavor);
     });
-
-    // Set initial current-index on assets container
-    this.updateCarouselIndex();
-
-    // Set up event listeners for carousel buttons
-    this.setupCarouselButtons();
   }
 
   /**
-   * Sets up event listeners for prev/next carousel buttons
+   * Sets up event listeners for prev/next carousel buttons for a specific flavor
+   * @param {HTMLElement} container - The storefront-assets container
+   * @param {string} flavor - The flavor identifier
    */
-  setupCarouselButtons() {
-    const prevButton = this.querySelector('storefront-carousel-button[direction="prev"] button');
-    const nextButton = this.querySelector('storefront-carousel-button[direction="next"] button');
+  setupCarouselButtons(container, flavor) {
+    const prevButton = container.querySelector('storefront-carousel-button[direction="prev"] button');
+    const nextButton = container.querySelector('storefront-carousel-button[direction="next"] button');
 
     if (prevButton) {
-      prevButton.addEventListener('click', () => this.decrementIndex());
+      prevButton.addEventListener('click', () => this.decrementIndex(flavor));
     }
 
     if (nextButton) {
-      nextButton.addEventListener('click', () => this.incrementIndex());
+      nextButton.addEventListener('click', () => this.incrementIndex(flavor));
     }
   }
 
   /**
-   * Increments carousel index (cyclical using modulo)
+   * Increments carousel index for a specific flavor (cyclical using modulo)
+   * @param {string} flavor - The flavor identifier
    */
-  incrementIndex() {
-    if (this._totalFrames === 0) return;
-    this._currentIndex = (this._currentIndex + 1) % this._totalFrames;
-    this.updateCarouselIndex();
+  incrementIndex(flavor) {
+    const state = this._carouselState[flavor];
+    if (!state || state.totalFrames === 0) return;
+
+    state.currentIndex = (state.currentIndex + 1) % state.totalFrames;
+    this.updateCarouselIndex(flavor);
   }
 
   /**
-   * Decrements carousel index (cyclical using modulo)
+   * Decrements carousel index for a specific flavor (cyclical using modulo)
+   * @param {string} flavor - The flavor identifier
    */
-  decrementIndex() {
-    if (this._totalFrames === 0) return;
-    this._currentIndex = (this._currentIndex - 1 + this._totalFrames) % this._totalFrames;
-    this.updateCarouselIndex();
+  decrementIndex(flavor) {
+    const state = this._carouselState[flavor];
+    if (!state || state.totalFrames === 0) return;
+
+    state.currentIndex = (state.currentIndex - 1 + state.totalFrames) % state.totalFrames;
+    this.updateCarouselIndex(flavor);
   }
 
   /**
-   * Updates the current-index attribute on storefront-assets
+   * Updates the current-index attribute on a specific flavor's storefront-assets
    * This triggers visibility changes in child asset frames
+   * @param {string} flavor - The flavor identifier
    */
-  updateCarouselIndex() {
-    const assetsContainer = this.querySelector('storefront-assets');
+  updateCarouselIndex(flavor) {
+    const assetsContainer = this.querySelector(`storefront-assets[flavor="${flavor}"]`);
     if (!assetsContainer) return;
 
-    assetsContainer.setAttribute('current-index', String(this._currentIndex));
+    const state = this._carouselState[flavor];
+    if (!state) return;
+
+    assetsContainer.setAttribute('current-index', String(state.currentIndex));
+  }
+
+  /**
+   * Updates which flavor collection is visible
+   * Sets selected-flavor attribute which child components observe
+   */
+  updateActiveFlavor() {
+    const selectedFlavor = this.getAttribute('selected-flavor') || 'cherry-pop';
+
+    // Update all storefront-assets containers
+    const allAssetsContainers = this.querySelectorAll('storefront-assets[flavor]');
+    allAssetsContainers.forEach(container => {
+      const flavor = container.getAttribute('flavor');
+      // StorefrontAssets component will observe this attribute change
+      // and update its own is-active class
+    });
+  }
+
+  /**
+   * Public method to set the active flavor
+   * Called by StorefrontButtonGroupButton when flavor selection changes
+   * @param {string} flavor - The flavor to activate
+   */
+  setFlavor(flavor) {
+    // Validate flavor
+    const validFlavors = ['cherry-pop', 'vanilla-vanity', 'money-honey'];
+    if (!validFlavors.includes(flavor)) {
+      console.warn(`[Storefront] Invalid flavor: ${flavor}`);
+      return;
+    }
+
+    this.setAttribute('selected-flavor', flavor);
   }
 
   // Public property getters/setters with attribute reflection
@@ -212,6 +283,14 @@ class StorefrontComponent extends HTMLElement {
 
   set constrain(value) {
     this.setAttribute('constrain', value ? 'true' : 'false');
+  }
+
+  get selectedFlavor() {
+    return this.getAttribute('selected-flavor') || 'cherry-pop';
+  }
+
+  set selectedFlavor(value) {
+    this.setFlavor(value);
   }
 }
 

@@ -281,3 +281,17 @@
   z-index: 1;
   position: relative;
 }
+
+/* Fill Variant - Buttons fill 100% width evenly distributed */
+.button-group[data-fill="true"] .button-group__buttons {
+  width: 100%;
+}
+
+.button-group[data-fill="true"] .button-group__button {
+  flex: 1;
+  min-width: 0;
+}
+
+.button-group[data-fill="true"] .button-group__label {
+  width: 100%;
+}

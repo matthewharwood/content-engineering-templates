@@ -23,9 +23,10 @@
   - Components manage their own classes
 -->
 
-<!-- Example 1: Default 50/50 split with asset frames -->
-<storefront-component layout="half" gap="l">
-  <storefront-assets variant="primary" align="center">
+<!-- Example 1: Flavor Selection with 3 separate asset collections -->
+<storefront-component layout="half" gap="l" constrain="true">
+  <!-- Cherry Pop Collection (Default Selected) -->
+  <storefront-assets variant="primary" align="top" flavor="cherry-pop">
     <storefront-asset-frame aspect="1-1" fit="cover">
       <video
         src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
@@ -41,13 +42,13 @@
     <storefront-asset-frame aspect="1-1" fit="cover">
       <img
         src="https://snif.co/cdn/shop/files/Snif_Me_ProductImage_10ml_2.jpg?v=1736378361&width=1600"
-        alt="Snif Me 10ml Fragrance Product">
+        alt="Cherry Pop Flavor - 10ml Product">
     </storefront-asset-frame>
 
     <storefront-asset-frame aspect="1-1" fit="cover">
       <img
         src="https://snif.co/cdn/shop/files/Snif_Me_ProductImage_10m_casel_2.jpg?v=1738292292&width=1600"
-        alt="Snif Me Product with Case">
+        alt="Cherry Pop Flavor - Product with Case">
     </storefront-asset-frame>
 
     <!-- Carousel Navigation (Mobile Only) -->
@@ -59,7 +60,77 @@
     </storefront-carousel-button>
   </storefront-assets>
 
-  <storefront-form variant="surface-variant" align="start" padding="l">
+  <!-- Vanilla Vanity Collection -->
+  <storefront-assets variant="primary" align="top" flavor="vanilla-vanity">
+    <storefront-asset-frame aspect="1-1" fit="cover">
+      <img
+        src="https://snif.co/cdn/shop/files/Snif_Me_ProductImage_10ml_2.jpg?v=1736378361&width=1600"
+        alt="Vanilla Vanity Flavor - Image 1">
+    </storefront-asset-frame>
+
+    <storefront-asset-frame aspect="1-1" fit="cover">
+      <img
+        src="https://snif.co/cdn/shop/files/Snif_Me_ProductImage_10m_casel_2.jpg?v=1738292292&width=1600"
+        alt="Vanilla Vanity Flavor - Image 2">
+    </storefront-asset-frame>
+
+    <storefront-asset-frame aspect="1-1" fit="cover">
+      <video
+        src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        data-autoplay>
+      </video>
+    </storefront-asset-frame>
+
+    <!-- Carousel Navigation (Mobile Only) -->
+    <storefront-carousel-button direction="prev">
+      <button>‹</button>
+    </storefront-carousel-button>
+    <storefront-carousel-button direction="next">
+      <button>›</button>
+    </storefront-carousel-button>
+  </storefront-assets>
+
+  <!-- Money Honey Collection -->
+  <storefront-assets variant="primary" align="top" flavor="money-honey">
+    <storefront-asset-frame aspect="1-1" fit="cover">
+      <img
+        src="https://snif.co/cdn/shop/files/Snif_Me_ProductImage_10m_casel_2.jpg?v=1738292292&width=1600"
+        alt="Money Honey Flavor - Image 1">
+    </storefront-asset-frame>
+
+    <storefront-asset-frame aspect="1-1" fit="cover">
+      <video
+        src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        data-autoplay>
+      </video>
+    </storefront-asset-frame>
+
+    <storefront-asset-frame aspect="1-1" fit="cover">
+      <img
+        src="https://snif.co/cdn/shop/files/Snif_Me_ProductImage_10ml_2.jpg?v=1736378361&width=1600"
+        alt="Money Honey Flavor - Image 3">
+    </storefront-asset-frame>
+
+    <!-- Carousel Navigation (Mobile Only) -->
+    <storefront-carousel-button direction="prev">
+      <button>‹</button>
+    </storefront-carousel-button>
+    <storefront-carousel-button direction="next">
+      <button>›</button>
+    </storefront-carousel-button>
+  </storefront-assets>
+
+  <storefront-form variant="surface-variant" align="start" padding="none" sticky>
     <!-- Product Info -->
     <div class="product-info">
       <h2 class="type-heading-2">Liqit Topcoat</h2>
@@ -68,10 +139,10 @@
     </div>
 
     <!-- Flavor Selection - Using Web Components -->
-    <storefront-button-group name="flavor" variant="secondary" size="medium" shape="pill">
+    <storefront-button-group name="flavor" variant="secondary" size="medium" shape="pill" fill>
       <legend class="button-group__legend">Add the flavor</legend>
       <div class="button-group__buttons">
-        <storefront-button-group-button value="cherry-pop" label="Cherry Pop"></storefront-button-group-button>
+        <storefront-button-group-button value="cherry-pop" label="Cherry Pop" checked></storefront-button-group-button>
         <storefront-button-group-button value="vanilla-vanity" label="Vanilla Vanity"></storefront-button-group-button>
         <storefront-button-group-button value="money-honey" label="Money Honey"></storefront-button-group-button>
       </div>
@@ -81,5 +152,43 @@
     <button class="btn btn--primary btn--large btn--pill btn--full-width">
       Add to Cart
     </button>
+
+    <!-- Product Details Section -->
+
+    <!-- FAQ Section -->
+    <div class="col-span-12 col-span-md-6">
+      <div class="faq faq--medium faq--surface">
+        <details class="faq__item">
+          <summary class="faq__question">
+            <span class="faq__question-text">clean formula</span>
+            <span class="icon faq__icon">expand_more</span>
+          </summary>
+          <div class="faq__answer">
+            <p>All LIQIT top coats are vegan, cruelty-free, and made with safe, edible ingredients. Our polishes are free from parabens, phthalates, synthetic dyes, and harsh chemicals—crafted to shine on your nails and taste good on your lips.</p>
+          </div>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__question">
+            <span class="faq__question-text">lasting power</span>
+            <span class="icon faq__icon">expand_more</span>
+          </summary>
+          <div class="faq__answer">
+            <p>Our top coats are designed to deliver salon-level gloss and durability. Expect days of chip-resistant shine, plus flavor that lingers with every lick.</p>
+          </div>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__question">
+            <span class="faq__question-text">ingredients</span>
+            <span class="icon faq__icon">expand_more</span>
+          </summary>
+          <div class="faq__answer">
+            <p><strong>Purified Water · Food-Grade Flavors · Plant-Based Film Formers · Natural Colorants · Vegetable Glycerin · Safe Preservatives</strong></p>
+            <p>Our flavors are crafted with a blend of natural extracts and safe synthetics. While our formulas are nut-free, if you're concerned about potential allergens, please email us at hello@liqit.co</p>
+          </div>
+        </details>
+      </div>
+    </div>
   </storefront-form>
 </storefront-component>

@@ -9,6 +9,7 @@
  * - No innerHTML or DOM manipulation
  * - Attributes control visual presentation
  * - Children are declared in HTML
+ * - Observes parent's selected-flavor to control visibility
  *
  * Public API:
  *
@@ -25,16 +26,26 @@
  *     Applies aspect ratio constraint to container
  *     Default: "none" (uses min-height instead)
  *
+ *   flavor="cherry-pop" | "vanilla-vanity" | "money-honey"
+ *     Identifies which flavor collection this represents
+ *     Used to determine visibility based on parent's selected-flavor
+ *
  * Usage:
- *   <storefront-assets variant="primary" align="center">
+ *   <storefront-assets variant="primary" align="center" flavor="cherry-pop">
  *     <img src="product.jpg" alt="Product" />
  *   </storefront-assets>
  *
  * Note: This component applies semantic styling via CSS.
  * Content structure is declared in HTML as children of this element.
+ * The is-active class is controlled based on parent's selected-flavor.
  */
 class StorefrontAssets extends HTMLElement {
-  static observedAttributes = ['variant', 'align', 'aspect', 'current-index'];
+  static observedAttributes = ['variant', 'align', 'aspect', 'current-index', 'flavor'];
+
+  constructor() {
+    super();
+    this._parentObserver = null;
+  }
 
   connectedCallback() {
     // Apply base class for styling
@@ -42,11 +53,30 @@ class StorefrontAssets extends HTMLElement {
 
     // Apply attribute-based classes
     this.updatePresentation();
+
+    // Start observing parent's selected-flavor attribute
+    this.observeParentFlavor();
+
+    // Update active state based on current parent attribute
+    this.updateActiveState();
+  }
+
+  disconnectedCallback() {
+    // Cleanup: disconnect observer to prevent memory leaks
+    if (this._parentObserver) {
+      this._parentObserver.disconnect();
+      this._parentObserver = null;
+    }
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (oldValue !== newValue) {
-      this.updatePresentation();
+      if (name === 'flavor') {
+        // Re-evaluate active state when flavor attribute changes
+        this.updateActiveState();
+      } else {
+        this.updatePresentation();
+      }
     }
   }
 
@@ -76,6 +106,48 @@ class StorefrontAssets extends HTMLElement {
     this.dataset.aspect = aspect;
   }
 
+  /**
+   * Observes parent storefront-component's selected-flavor attribute
+   * Uses MutationObserver to watch for attribute changes
+   */
+  observeParentFlavor() {
+    const parent = this.closest('storefront-component');
+    if (!parent) return;
+
+    // Create observer that watches for attribute changes on parent
+    this._parentObserver = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'selected-flavor') {
+          this.updateActiveState();
+        }
+      });
+    });
+
+    // Start observing parent's attributes
+    this._parentObserver.observe(parent, {
+      attributes: true,
+      attributeFilter: ['selected-flavor']
+    });
+  }
+
+  /**
+   * Updates the is-active class based on parent's selected-flavor
+   * This controls visibility via CSS opacity transitions
+   */
+  updateActiveState() {
+    const parent = this.closest('storefront-component');
+    if (!parent) return;
+
+    const selectedFlavor = parent.getAttribute('selected-flavor');
+    const thisFlavor = this.getAttribute('flavor');
+
+    if (selectedFlavor === thisFlavor) {
+      this.classList.add('is-active');
+    } else {
+      this.classList.remove('is-active');
+    }
+  }
+
   // Public property getters/setters with attribute reflection
 
   get variant() {
@@ -100,6 +172,18 @@ class StorefrontAssets extends HTMLElement {
 
   set aspect(value) {
     this.setAttribute('aspect', value);
+  }
+
+  get flavor() {
+    return this.getAttribute('flavor');
+  }
+
+  set flavor(value) {
+    if (value) {
+      this.setAttribute('flavor', value);
+    } else {
+      this.removeAttribute('flavor');
+    }
   }
 }
 

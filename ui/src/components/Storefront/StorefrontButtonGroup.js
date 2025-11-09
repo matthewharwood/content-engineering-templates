@@ -29,6 +29,7 @@
  * - size (optional): Button size ("mini", "small", "medium", "large") - default: "medium"
  * - shape (optional): Button shape ("pill", "rounded", "square", "circle") - default: "pill"
  * - required (optional): Marks the fieldset as required
+ * - fill (optional): Buttons fill 100% width of parent, distributed evenly
  *
  * The component automatically:
  * 1. Applies the `button-group` base class
@@ -41,7 +42,7 @@ class StorefrontButtonGroup extends HTMLElement {
   /**
    * Observed attributes - component reacts to changes in these attributes
    */
-  static observedAttributes = ['name', 'variant', 'size', 'shape', 'required'];
+  static observedAttributes = ['name', 'variant', 'size', 'shape', 'required', 'fill'];
 
   /**
    * Constructor - initialize private state
@@ -77,8 +78,8 @@ class StorefrontButtonGroup extends HTMLElement {
     // Only update if the component is already connected
     if (!this.isConnected) return;
 
-    // Update data attributes when variant/size/shape changes
-    if (name === 'variant' || name === 'size' || name === 'shape') {
+    // Update data attributes when variant/size/shape/fill changes
+    if (name === 'variant' || name === 'size' || name === 'shape' || name === 'fill') {
       this.updateDataAttributes();
     }
   }
@@ -91,6 +92,7 @@ class StorefrontButtonGroup extends HTMLElement {
     const variant = this.getAttribute('variant') || 'secondary';
     const size = this.getAttribute('size') || 'medium';
     const shape = this.getAttribute('shape') || 'pill';
+    const fill = this.hasAttribute('fill');
 
     // Validate variant
     const validVariants = ['primary', 'secondary', 'tertiary', 'outline'];
@@ -108,6 +110,7 @@ class StorefrontButtonGroup extends HTMLElement {
     this.dataset.variant = finalVariant;
     this.dataset.size = finalSize;
     this.dataset.shape = finalShape;
+    this.dataset.fill = fill ? 'true' : 'false';
   }
 
   /**
@@ -159,6 +162,18 @@ class StorefrontButtonGroup extends HTMLElement {
       this.setAttribute('required', '');
     } else {
       this.removeAttribute('required');
+    }
+  }
+
+  get fill() {
+    return this.hasAttribute('fill');
+  }
+
+  set fill(value) {
+    if (value) {
+      this.setAttribute('fill', '');
+    } else {
+      this.removeAttribute('fill');
     }
   }
 }

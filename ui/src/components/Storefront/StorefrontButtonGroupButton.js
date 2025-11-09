@@ -173,12 +173,20 @@ class StorefrontButtonGroupButton extends HTMLElement {
     this.appendChild(this._label);
 
     // Add event listener for state management
-    // When radio button is checked, update global store
+    // When radio button is checked, update global store AND parent component
     this._input.addEventListener('change', () => {
       if (this._input.checked) {
         const value = this._input.value;
+
         // Update global store with selected value
         setSelectedItem(value);
+
+        // Update parent storefront-component's selected-flavor attribute
+        // This enables flavor-based asset collection switching
+        const storefrontParent = this.closest('storefront-component');
+        if (storefrontParent && storefrontParent.setFlavor) {
+          storefrontParent.setFlavor(value);
+        }
       }
     });
   }
